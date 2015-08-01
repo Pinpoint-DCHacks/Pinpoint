@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ContactsViewController.h
 //  Pinpoint
 //
 //  Created by Spencer Atkin on 8/1/15.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ContactsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *importButton;
 
 @end
-
