@@ -1,0 +1,10 @@
+PODS:
+  - Onboard (2.1.1)
+
+DEPENDENCIES:
+  - Onboard
+
+SPEC CHECKSUMS:
+  Onboard: 27cdf8db29740f0c17ed81371a003b9833a5e700
+
+COCOAPODS: 0.37.2
