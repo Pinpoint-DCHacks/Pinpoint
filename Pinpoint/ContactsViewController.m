@@ -11,13 +11,19 @@
 
 @interface ContactsViewController ()
 
+@property (strong, nonatomic) NSArray *contacts;
+
 @end
 
 @implementation ContactsViewController
 
+NSString *cellID = @"TableCellID";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+        [self importContacts];
+    }
     // Do any additional setup after loading the view.
 }
 
@@ -31,6 +37,16 @@
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self.importButton removeFromSuperview];
     }
+    else {
+        [self.tableView setHidden:YES];
+    }
+}
+
+- (void)importContacts {
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    self.contacts = (__bridge NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
+    NSLog(@"%@", self.contacts);
+    
 }
 
 - (IBAction)didTapImport:(id)sender {
@@ -60,6 +76,21 @@
         [requestContacts addAction:confirm];
         [self presentViewController:requestContacts animated:YES completion:nil];
     }
+}
+
+#pragma mark - UITableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.contacts count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)self.contacts[indexPath.row], kABPersonFirstNameProperty), (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)self.contacts[indexPath.row], kABPersonLastNameProperty)]];
+    return cell;
 }
 
 /*
