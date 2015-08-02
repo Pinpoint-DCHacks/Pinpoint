@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *importButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

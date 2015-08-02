@@ -11,19 +11,21 @@
 
 @interface ContactsViewController ()
 
-@property (strong, nonatomic) NSArray *contacts;
-
 @end
 
 @implementation ContactsViewController
 
 NSString *cellID = @"TableCellID";
+NSMutableArray *contacts;
+NSMutableArray *names;
+NSArray *searchResults;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }
+    self.navigationItem.titleView = self.searchBarTop
     // Do any additional setup after loading the view.
 }
 
@@ -44,8 +46,20 @@ NSString *cellID = @"TableCellID";
 
 - (void)importContacts {
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-    self.contacts = (__bridge NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
-    NSLog(@"%@", self.contacts);
+    contacts = (__bridge NSMutableArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
+    names = [[NSMutableArray alloc] initWithCapacity:[contacts count]];
+    for (NSInteger x = 0; x < [contacts count]; x++) {
+        NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)contacts[x], kABPersonFirstNameProperty);
+        NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)contacts[x], kABPersonLastNameProperty);
+        if (firstName == nil || lastName == nil) {
+            [contacts removeObjectAtIndex:x];
+            x -= 1;
+        }
+        else {
+            names[x] = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+        }
+    }
+    NSLog(@"%@", contacts);
     
 }
 
@@ -70,6 +84,8 @@ NSString *cellID = @"TableCellID";
                 }
                 NSLog(@"Just authorized");
                 [sender removeFromSuperview];
+                [self.tableView setHidden:NO];
+                [self importContacts];
             });
         }];
         [requestContacts addAction:cancel];
@@ -81,7 +97,13 @@ NSString *cellID = @"TableCellID";
 #pragma mark - UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.contacts count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+        
+    }
+    else {
+        return [contacts count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,8 +111,29 @@ NSString *cellID = @"TableCellID";
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)self.contacts[indexPath.row], kABPersonFirstNameProperty), (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)self.contacts[indexPath.row], kABPersonLastNameProperty)]];
+    NSString *name = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        name = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        name = [names objectAtIndex:indexPath.row];
+    }
+    [cell.textLabel setText:name];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    return YES;
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
+    searchResults = [names filteredArrayUsingPredicate:resultPredicate];
 }
 
 /*
