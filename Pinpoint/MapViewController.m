@@ -19,6 +19,8 @@
 @property (strong, nonatomic) GeoFire *geofire;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
+
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @end
 
 @implementation MapViewController
@@ -55,11 +57,20 @@ UIAlertController *waitAlert;
         NSLog(@"Getting location");
         if (error == nil) {
             NSLog(@"Location successfully tranferred");
+            // Annotation
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             [annotation setCoordinate:location.coordinate];
             [annotation setTitle:@"Last location"];
+            NSDateFormatter *df = [[NSDateFormatter alloc] init];
+            [df setDateStyle:NSDateFormatterNoStyle];
+            [df setTimeStyle:NSDateFormatterMediumStyle];
+            [annotation setSubtitle:[df stringFromDate:location.timestamp]];
             [self removeAllAnnotations];
             [self.mapView addAnnotation:annotation];
+            
+            // Distance label
+            CLLocation *currentLocation = self.mapView.userLocation.location;
+            [self.distanceLabel setText:[NSString stringWithFormat:@"%.02f meters", [currentLocation distanceFromLocation:location]]];
         }
         else {
             NSLog(@"Error fetching location %@", error);

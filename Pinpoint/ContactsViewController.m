@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
+@property (nonatomic) UIBackgroundTaskIdentifier task;
 @end
 
 @implementation ContactsViewController
@@ -71,6 +72,10 @@ BOOL updateOnce = false;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    self.task = [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"Location-send" expirationHandler:^{
+        NSLog(@"Expired");
+        self.task = UIBackgroundTaskInvalid;
+    }];
     NSLog(@"Location update");
     NSString *numb = self.number;
     [self.geofire setLocation:[locations lastObject] forKey:self.number withCompletionBlock:^(NSError *error) {
@@ -85,7 +90,7 @@ BOOL updateOnce = false;
     if (!updateOnce) {
         [self.manager performSelector:@selector(startUpdatingLocation) withObject:nil afterDelay:5];
     }
-    
+    [[UIApplication sharedApplication] endBackgroundTask:self.task];
 }
 
 - (void)checkAlwaysAuthorization {
