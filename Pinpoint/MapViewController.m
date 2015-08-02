@@ -15,13 +15,16 @@
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
+@property (strong, nonatomic) FDataSnapshot *lastData;
 @end
 
 @implementation MapViewController
 
+BOOL allowed = false;
+UIAlertController *waitAlert;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.recipientNumber);
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
     self.firebase = [[Firebase alloc] initWithUrl:kFirechatNS];
@@ -35,18 +38,57 @@
     [self checkAlwaysAuthorization];
     // Firebase
     [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        if ([snapshot.value[@"number"] isEqualToString:self.number]) { //TODO: Define user id value
-            NSLog(@"Equal");
+        NSLog(@"--------------- %@", self.name);
+        NSLog(@"Recieved message");
+        NSLog(@"reciever %@", snapshot.value[@"reciever-number"]);
+        NSLog(@"self.number: %@, recipient number: %@", self.number, self.recipientNumber);
+        if ([snapshot.value[@"reciever-number"] isEqualToString:self.number]) {
+            NSLog(@"Processing");
+            if ([snapshot.value[@"request"] isEqualToString:@"location"]) {
+                NSLog(@"LOCATION REQUEST");
+                if (!allowed) {
+                    NSLog(@"REQUESTING PERMISSON TO VIEW LOCATION");
+                    UIAlertController *allow = [UIAlertController alertControllerWithTitle:@"Location requested" message:[NSString stringWithFormat:@"%@ would like to find you.", snapshot.value[@"name"]] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *deny = [UIAlertAction actionWithTitle:@"Deny" style:UIAlertActionStyleCancel handler:nil];
+                    UIAlertAction *accept = [UIAlertAction actionWithTitle:@"Allow" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
+                    [self.manager startUpdatingLocation];
+                    }];
+                    [allow addAction:deny];
+                    [allow addAction:accept];
+                    [self presentViewController:allow animated:YES completion:nil];
+                }
+                else {
+                    NSLog(@"STARTING LOCATION UPDATES");
+                    [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
+                    [self.manager startUpdatingLocation];
+                }
+            }
+            else if ([snapshot.value[@"request"] isEqualToString:@"response"]) {
+                NSLog(@"LOCATION RECIEVED");
+                [waitAlert dismissViewControllerAnimated:YES completion:nil];
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                [annotation setCoordinate:((CLLocation *)snapshot.value[@"data"]).coordinate];
+                [self.mapView addAnnotation:annotation];
+            }
         }
     }];
     // Send location request
-    [[self.firebase childByAutoId] setValue:@{@"number": self.number, @"request": @"location", @"name": self.name}];
+    [[self.firebase childByAutoId] setValue:@{@"sender-number": self.number, @"reciever-number": self.recipientNumber, @"request": @"location", @"name": self.name}];
+    waitAlert = [UIAlertController alertControllerWithTitle:@"Please wait" message:@"Requesting permission to view location." preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:waitAlert animated:YES completion:nil];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"LOCATION UPDATE");
+    [[self.firebase childByAutoId] setValue:@{@"sender-number": self.lastData.value[@"reciever-number"], @"reciever-number": self.lastData.value[@"sender-number"], @"request": @"response", @"name": self.name, @"data": (CLLocation *)[locations lastObject]}];
+    [self.manager stopUpdatingLocation];
 }
 
 - (void)checkAlwaysAuthorization {

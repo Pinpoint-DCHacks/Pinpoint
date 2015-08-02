@@ -10,8 +10,15 @@
 #import "MapViewController.h"
 @import AddressBook;
 
-@interface ContactsViewController ()
+#define kFirechatNS @"pinpoint.firebaseIO.com"
 
+@interface ContactsViewController ()
+@property (strong, nonatomic) CLLocationManager *manager;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *number;
+@property (strong, nonatomic) FDataSnapshot *lastData;
+@property (strong, nonatomic) Firebase *firebase;
+@property (strong, nonatomic) NSString *recipientNumber;
 @end
 
 @implementation ContactsViewController
@@ -21,6 +28,7 @@ NSMutableArray *contacts;
 NSMutableArray *names;
 NSMutableArray *phoneNumbers;
 NSIndexPath *selected;
+BOOL accessAllowed = false;
 /*NSArray *searchResults;
 NSMutableArray *numbers;
 NSArray *numberSearchResults;*/
@@ -30,7 +38,84 @@ NSArray *numberSearchResults;*/
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }
+    self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
+    self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
+    self.firebase = [[Firebase alloc] initWithUrl:kFirechatNS];
+    
+    // Location manager
+    self.manager = [[CLLocationManager alloc] init];
+    [self checkAlwaysAuthorization];
+    // Firebase
+    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"--------------- %@", self.name);
+        NSLog(@"Recieved message");
+        NSLog(@"reciever %@", snapshot.value[@"reciever-number"]);
+        NSLog(@"self.number: %@, recipient number: %@", self.number, self.recipientNumber);
+        if (snapshot.value[@"reciever-number"] != nil) {
+            if ([snapshot.value[@"reciever-number"] isEqualToString:self.number]) {
+                NSLog(@"Processing");
+                if ([snapshot.value[@"request"] isEqualToString:@"location"]) {
+                    NSLog(@"LOCATION REQUEST");
+                    if (!accessAllowed) {
+                        NSLog(@"REQUESTING PERMISSON TO VIEW LOCATION");
+                        UIAlertController *allow = [UIAlertController alertControllerWithTitle:@"Location requested" message:[NSString stringWithFormat:@"%@ would like to find you.", snapshot.value[@"name"]] preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertAction *deny = [UIAlertAction actionWithTitle:@"Deny" style:UIAlertActionStyleCancel handler:nil];
+                        UIAlertAction *accept = [UIAlertAction actionWithTitle:@"Allow" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                            [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
+                            [self.manager startUpdatingLocation];
+                        }];
+                        [allow addAction:deny];
+                        [allow addAction:accept];
+                        [self presentViewController:allow animated:YES completion:nil];
+                    }
+                    else {
+                        NSLog(@"STARTING LOCATION UPDATES");
+                        [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
+                        [self.manager startUpdatingLocation];
+                    }
+                }
+                /*else if ([snapshot.value[@"request"] isEqualToString:@"response"]) {
+                    NSLog(@"LOCATION RECIEVED");
+                    [waitAlert dismissViewControllerAnimated:YES completion:nil];
+                    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                    [annotation setCoordinate:((CLLocation *)snapshot.value[@"data"]).coordinate];
+                    [self.mapView addAnnotation:annotation];
+                }*/
+            }
+        }
+    }];
     // Do any additional setup after loading the view.
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"LOCATION UPDATE");
+    [[self.firebase childByAutoId] setValue:@{@"sender-number": self.lastData.value[@"reciever-number"], @"reciever-number": self.lastData.value[@"sender-number"], @"request": @"response", @"name": self.name, @"data": (CLLocation *)[locations lastObject]}];
+    [self.manager stopUpdatingLocation];
+}
+
+- (void)checkAlwaysAuthorization {
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    // If the status is denied or only granted for when in use, display an alert
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
+        NSLog(@"Denied");
+        NSString *title =  (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
+        NSString *message = @"To use background location you must turn on 'Always' in the Location Services Settings";
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        }];
+        [alertController addAction:cancelAction];
+        [alertController addAction:settingsAction];
+        [self showViewController:alertController sender:self];
+    }
+    
+    else if (status == kCLAuthorizationStatusNotDetermined) {
+        if([self.manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [self.manager requestAlwaysAuthorization];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,8 +169,6 @@ NSArray *numberSearchResults;*/
                 [contacts removeObjectAtIndex:x];
                 x -= 1;
             }
-            NSLog(@"phoneArray: %@ %@", phoneString, [phoneString class]);
-            NSLog(@"phone numbers: %@", phoneNumbers);
             //NSLog(@"%@", (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)contacts[x], kABPersonPhoneProperty));
         }
     }
@@ -112,10 +195,16 @@ NSArray *numberSearchResults;*/
         else {
             [returnArray addObject:numberArray[x]];
         }*/
-        NSLog(@"%ld %@", x, numberArray[x]);
-        if ([numberArray[x] isEqualToString:@"("] || [numberArray[x] isEqualToString:@")"] || [numberArray[x] isEqualToString:@"-"] || [numberArray[x] isEqualToString:@" "]) {
-            [numberArray removeObjectAtIndex:x];
-            x--;
+        if (!([numberArray[x] isEqualToString:@"1"] || [numberArray[x] isEqualToString:@"2"] || [numberArray[x] isEqualToString:@"3"] || [numberArray[x] isEqualToString:@"4"] || [numberArray[x] isEqualToString:@"5"] || [numberArray[x] isEqualToString:@"6"] || [numberArray[x] isEqualToString:@"7"] || [numberArray[x] isEqualToString:@"8"] || [numberArray[x] isEqualToString:@"9"] || [numberArray[x] isEqualToString:@"0"])) {
+            if ([numberArray[x] isEqualToString:@"+"]) {
+                [numberArray removeObjectAtIndex:x];
+                [numberArray removeObjectAtIndex:x+1];
+                x -= 2;
+            }
+            else {
+                [numberArray removeObjectAtIndex:x];
+                x--;
+            }
         }
         else {
             [returnArray addObject:numberArray[x]];
