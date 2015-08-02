@@ -31,7 +31,8 @@ MKPointAnnotation *annotation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self checkAlwaysAuthorization];
+    self.manager = [[CLLocationManager alloc] init];
+    [self.manager setDelegate:self];
     annotation = [[MKPointAnnotation alloc] init];
     [self.mapView addAnnotation:annotation];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
@@ -44,13 +45,18 @@ MKPointAnnotation *annotation;
     NSMutableArray *items = [[NSMutableArray alloc] initWithArray:[self.toolbar items]];
     [items insertObject:trackingButton atIndex:0];
     [self.toolbar setItems:items];
-    [self startRefreshingLocation];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self checkAlwaysAuthorization];
+    [self startRefreshingLocation];
 }
 
 - (void)startRefreshingLocation {
@@ -108,6 +114,7 @@ MKPointAnnotation *annotation;
 }
 
 - (void)checkAlwaysAuthorization {
+    NSLog(@"Checking status");
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
@@ -126,6 +133,7 @@ MKPointAnnotation *annotation;
     }
     
     else if (status == kCLAuthorizationStatusNotDetermined) {
+        NSLog(@"Not determined");
         if([self.manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.manager requestAlwaysAuthorization];
         }
