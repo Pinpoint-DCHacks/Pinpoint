@@ -10,6 +10,7 @@
 		09529F2B1B6D66400080E32B /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2A1B6D66400080E32B /* StartViewController.m */; };
 		09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */; };
 		09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F301B6DA8CB0080E32B /* MapViewController.m */; };
+		095A31BE1B6E5A3500CED8E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095A31BD1B6E5A3500CED8E9 /* MapKit.framework */; };
 		0964B6D81B6D5D15009EA05D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964B6D71B6D5D15009EA05D /* main.m */; };
 		0964B6DB1B6D5D15009EA05D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964B6DA1B6D5D15009EA05D /* AppDelegate.m */; };
 		0964B6E11B6D5D15009EA05D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0964B6DF1B6D5D15009EA05D /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		09529F2F1B6DA8CB0080E32B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		09529F301B6DA8CB0080E32B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		095A31BD1B6E5A3500CED8E9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0964B6D21B6D5D15009EA05D /* Pinpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0964B6D61B6D5D15009EA05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0964B6D71B6D5D15009EA05D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095A31BE1B6E5A3500CED8E9 /* MapKit.framework in Frameworks */,
 				8E6441F4930C3E82486357F0 /* libPods-Pinpoint.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +142,7 @@
 		620660C86472AC8AEFB0A880 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				095A31BD1B6E5A3500CED8E9 /* MapKit.framework */,
 				60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */,
 			);
 			name = Frameworks;
@@ -204,6 +208,14 @@
 				TargetAttributes = {
 					0964B6D11B6D5D15009EA05D = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0964B6EA1B6D5D15009EA05D = {
 						CreatedOnToolsVersion = 6.4;

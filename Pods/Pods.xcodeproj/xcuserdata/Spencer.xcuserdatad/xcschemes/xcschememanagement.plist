@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Pinpoint-GeoFire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Pinpoint-Onboard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>E4984F3F98598AA878A75F3D</key>
+		<key>26407DBF619E9210E8C22E9D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED007EB721495C0A343CE199</key>
+		<key>80AD8251D09EFB275DEA9917</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACD61D7F75612553F645DDA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

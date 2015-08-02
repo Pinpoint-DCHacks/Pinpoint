@@ -1,13 +1,17 @@
 PODS:
   - Firebase (2.2.0)
+  - GeoFire (1.1.0):
+    - Firebase (~> 2.1)
   - Onboard (2.1.1)
 
 DEPENDENCIES:
   - Firebase
+  - GeoFire
   - Onboard
 
 SPEC CHECKSUMS:
   Firebase: e7a2ea2ffeff99f9c37028b354194dcc9718d36b
+  GeoFire: df138789309f6a9f35c2655ea7282957f19070b5
   Onboard: 27cdf8db29740f0c17ed81371a003b9833a5e700
 
 COCOAPODS: 0.37.2

@@ -5,6 +5,7 @@ target 'Pinpoint' do
 
     pod 'Onboard'
     pod 'Firebase'
+    pod 'GeoFire'
 
 end
 

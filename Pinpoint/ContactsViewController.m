@@ -8,17 +8,19 @@
 
 #import "ContactsViewController.h"
 #import "MapViewController.h"
+#import <GeoFire/GeoFire+Private.h>
 @import AddressBook;
 
-#define kFirechatNS @"pinpoint.firebaseIO.com"
+#define kPinpointURL @"pinpoint.firebaseIO.com"
 
 @interface ContactsViewController ()
 @property (strong, nonatomic) CLLocationManager *manager;
+@property (strong, nonatomic) Firebase *firebase;
+@property (strong, nonatomic) GeoFire *geofire;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
-@property (strong, nonatomic) FDataSnapshot *lastData;
-@property (strong, nonatomic) Firebase *firebase;
-@property (strong, nonatomic) NSString *recipientNumber;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
+@property (nonatomic) UIBackgroundTaskIdentifier task;
 @end
 
 @implementation ContactsViewController
@@ -29,9 +31,8 @@ NSMutableArray *names;
 NSMutableArray *phoneNumbers;
 NSIndexPath *selected;
 BOOL accessAllowed = false;
-/*NSArray *searchResults;
-NSMutableArray *numbers;
-NSArray *numberSearchResults;*/
+BOOL updateOnce = false;
+NSString *pin = @"12345";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,60 +41,68 @@ NSArray *numberSearchResults;*/
     }
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
-    self.firebase = [[Firebase alloc] initWithUrl:kFirechatNS];
-    
-    // Location manager
-    self.manager = [[CLLocationManager alloc] init];
-    [self checkAlwaysAuthorization];
-    // Firebase
-    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"--------------- %@", self.name);
-        NSLog(@"Recieved message");
-        NSLog(@"reciever %@", snapshot.value[@"reciever-number"]);
-        NSLog(@"self.number: %@, recipient number: %@", self.number, self.recipientNumber);
-        if (snapshot.value[@"reciever-number"] != nil) {
-            if ([snapshot.value[@"reciever-number"] isEqualToString:self.number]) {
-                NSLog(@"Processing");
-                if ([snapshot.value[@"request"] isEqualToString:@"location"]) {
-                    NSLog(@"LOCATION REQUEST");
-                    if (!accessAllowed) {
-                        NSLog(@"REQUESTING PERMISSON TO VIEW LOCATION");
-                        UIAlertController *allow = [UIAlertController alertControllerWithTitle:@"Location requested" message:[NSString stringWithFormat:@"%@ would like to find you.", snapshot.value[@"name"]] preferredStyle:UIAlertControllerStyleAlert];
-                        UIAlertAction *deny = [UIAlertAction actionWithTitle:@"Deny" style:UIAlertActionStyleCancel handler:nil];
-                        UIAlertAction *accept = [UIAlertAction actionWithTitle:@"Allow" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                            [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
-                            [self.manager startUpdatingLocation];
-                        }];
-                        [allow addAction:deny];
-                        [allow addAction:accept];
-                        [self presentViewController:allow animated:YES completion:nil];
-                    }
-                    else {
-                        NSLog(@"STARTING LOCATION UPDATES");
-                        [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
-                        [self.manager startUpdatingLocation];
-                    }
-                }
-                /*else if ([snapshot.value[@"request"] isEqualToString:@"response"]) {
-                    NSLog(@"LOCATION RECIEVED");
-                    [waitAlert dismissViewControllerAnimated:YES completion:nil];
-                    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-                    [annotation setCoordinate:((CLLocation *)snapshot.value[@"data"]).coordinate];
-                    [self.mapView addAnnotation:annotation];
-                }*/
-            }
-        }
-    }];
+    self.firebase = [[Firebase alloc] initWithUrl:kPinpointURL];
+    self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)didTapShare:(id)sender {
+    updateOnce = false;
+    if ([self.sharingButton.title isEqualToString:@"Start Sharing"]) {
+        self.sharingButton.title = @"Stop Sharing";
+        self.manager = [[CLLocationManager alloc] init];
+        [self.manager setDelegate:self];
+        [self checkAlwaysAuthorization];
+        [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [self.manager startUpdatingLocation];
+    }
+    else {
+        self.sharingButton.title = @"Start Sharing";
+        [self.manager stopUpdatingLocation];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self.manager];
+    }
+}
+
+- (IBAction)didTapShareOnce:(id)sender {
+    updateOnce = true;
+    self.manager = [[CLLocationManager alloc] init];
+    [self.manager setDelegate:self];
+    [self checkAlwaysAuthorization];
+    [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [self.manager startUpdatingLocation];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"LOCATION UPDATE");
-    [[self.firebase childByAutoId] setValue:@{@"sender-number": self.lastData.value[@"reciever-number"], @"reciever-number": self.lastData.value[@"sender-number"], @"request": @"response", @"name": self.name, @"data": (CLLocation *)[locations lastObject]}];
-    [self.manager stopUpdatingLocation];
+    self.task = [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"Location-send" expirationHandler:^{
+        NSLog(@"Expired");
+        self.task = UIBackgroundTaskInvalid;
+    }];
+    if ([locations lastObject] != nil) {
+        NSLog(@"Location update");
+        NSLog(@"%@", self.number);
+        NSString *numb = self.number;
+        if (self.number != nil) {
+            [self.geofire setLocation:[locations lastObject] forKey:self.number withCompletionBlock:^(NSError *error) {
+                if (error == nil) {
+                    NSLog(@"Wrote new location to %@", numb);
+                }
+                else {
+                    NSLog(@"Error posting location %@", error);
+                }
+            }];
+        }
+        [self.manager stopUpdatingLocation];
+        if (!updateOnce) {
+            [self.manager performSelector:@selector(startUpdatingLocation) withObject:nil afterDelay:5];
+        }
+    }
+    [[UIApplication sharedApplication] endBackgroundTask:self.task];
 }
 
 - (void)checkAlwaysAuthorization {
+    self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
+    self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
+    NSLog(@"Checking status");
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
@@ -112,6 +121,7 @@ NSArray *numberSearchResults;*/
     }
     
     else if (status == kCLAuthorizationStatusNotDetermined) {
+        NSLog(@"requesting");
         if([self.manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.manager requestAlwaysAuthorization];
         }
@@ -140,6 +150,10 @@ NSArray *numberSearchResults;*/
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+    UIAlertController *pinShower = [UIAlertController alertControllerWithTitle:@"PIN" message:[NSString stringWithFormat:@"Pin for Kate Bell is %@", pin] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [pinShower addAction:ok];
+    [self presentViewController:pinShower animated:YES completion:nil];
 }
 
 - (void)importContacts {
@@ -247,12 +261,7 @@ NSArray *numberSearchResults;*/
 #pragma mark - UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //if (tableView == self.searchDisplayController.searchResultsTableView) {
-    //    return [searchResults count];
-    //}
-    //else {
         return [contacts count];
-    //}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -261,12 +270,7 @@ NSArray *numberSearchResults;*/
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     NSString *name = nil;
-    //if (tableView == self.searchDisplayController.searchResultsTableView) {
-    //    name = [searchResults objectAtIndex:indexPath.row];
-    //
-    //} else {
-        name = [names objectAtIndex:indexPath.row];
-    //}
+    name = [names objectAtIndex:indexPath.row];
     [cell.textLabel setText:name];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
@@ -275,18 +279,19 @@ NSArray *numberSearchResults;*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     selected = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
+    UIAlertController *pinInput = [UIAlertController alertControllerWithTitle:@"Input pin" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [pinInput addTextFieldWithConfigurationHandler:nil];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UITextField *pinField = pinInput.textFields.firstObject;
+        if ([pinField.text isEqualToString:pin]) {
+            [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
+        }
+    }];
+    [pinInput addAction:cancel];
+    [pinInput addAction:ok];
+    [self presentViewController:pinInput animated:YES completion:nil];
 }
-
-/*- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
-    return YES;
-}
-
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
-    searchResults = [names filteredArrayUsingPredicate:resultPredicate];
-}*/
 
 #pragma mark - Navigation
 
