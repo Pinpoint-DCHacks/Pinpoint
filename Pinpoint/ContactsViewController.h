@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate>
+@interface ContactsViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *importButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

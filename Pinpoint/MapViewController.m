@@ -7,15 +7,18 @@
 //
 
 #import "MapViewController.h"
-#import <CoreLocation/CoreLocation.h>
+//#import <CoreLocation/CoreLocation.h>
+#import <Firebase/Firebase.h>
+#import <GeoFire/GeoFire+Private.h>
 
-#define kFirechatNS @"pinpoint.firebaseIO.com"
+#define kPinpointURL @"pinpoint.firebaseIO.com"
 
 @interface MapViewController ()
 @property (strong, nonatomic) CLLocationManager *manager;
+@property (strong, nonatomic) Firebase *firebase;
+@property (strong, nonatomic) GeoFire *geofire;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
-@property (strong, nonatomic) FDataSnapshot *lastData;
 @end
 
 @implementation MapViewController
@@ -25,58 +28,18 @@ UIAlertController *waitAlert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self checkAlwaysAuthorization];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
-    self.firebase = [[Firebase alloc] initWithUrl:kFirechatNS];
+    self.firebase = [[Firebase alloc] initWithUrl:kPinpointURL];
+    self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
+    
     // Setup bar button item
     MKUserTrackingBarButtonItem *trackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
     NSMutableArray *items = [[NSMutableArray alloc] initWithArray:[self.toolbar items]];
     [items insertObject:trackingButton atIndex:0];
     [self.toolbar setItems:items];
-    // Location manager
-    self.manager = [[CLLocationManager alloc] init];
-    [self checkAlwaysAuthorization];
-    // Firebase
-    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"--------------- %@", self.name);
-        NSLog(@"Recieved message");
-        NSLog(@"reciever %@", snapshot.value[@"reciever-number"]);
-        NSLog(@"self.number: %@, recipient number: %@", self.number, self.recipientNumber);
-        if ([snapshot.value[@"reciever-number"] isEqualToString:self.number]) {
-            NSLog(@"Processing");
-            if ([snapshot.value[@"request"] isEqualToString:@"location"]) {
-                NSLog(@"LOCATION REQUEST");
-                if (!allowed) {
-                    NSLog(@"REQUESTING PERMISSON TO VIEW LOCATION");
-                    UIAlertController *allow = [UIAlertController alertControllerWithTitle:@"Location requested" message:[NSString stringWithFormat:@"%@ would like to find you.", snapshot.value[@"name"]] preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction *deny = [UIAlertAction actionWithTitle:@"Deny" style:UIAlertActionStyleCancel handler:nil];
-                    UIAlertAction *accept = [UIAlertAction actionWithTitle:@"Allow" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                    [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
-                    [self.manager startUpdatingLocation];
-                    }];
-                    [allow addAction:deny];
-                    [allow addAction:accept];
-                    [self presentViewController:allow animated:YES completion:nil];
-                }
-                else {
-                    NSLog(@"STARTING LOCATION UPDATES");
-                    [self.manager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
-                    [self.manager startUpdatingLocation];
-                }
-            }
-            else if ([snapshot.value[@"request"] isEqualToString:@"response"]) {
-                NSLog(@"LOCATION RECIEVED");
-                [waitAlert dismissViewControllerAnimated:YES completion:nil];
-                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-                [annotation setCoordinate:((CLLocation *)snapshot.value[@"data"]).coordinate];
-                [self.mapView addAnnotation:annotation];
-            }
-        }
-    }];
-    // Send location request
-    [[self.firebase childByAutoId] setValue:@{@"sender-number": self.number, @"reciever-number": self.recipientNumber, @"request": @"location", @"name": self.name}];
-    waitAlert = [UIAlertController alertControllerWithTitle:@"Please wait" message:@"Requesting permission to view location." preferredStyle:UIAlertControllerStyleAlert];
-    [self presentViewController:waitAlert animated:YES completion:nil];
+    [self startRefreshingLocation];
     // Do any additional setup after loading the view.
 }
 
@@ -85,10 +48,43 @@ UIAlertController *waitAlert;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)startRefreshingLocation {
+    NSLog(@"Refreshing location");
+    NSLog(@"%@", self.recipientNumber);
+    [self.geofire getLocationForKey:self.recipientNumber withCallback:^(CLLocation *location, NSError *error) {
+        NSLog(@"Getting location");
+        if (error == nil) {
+            NSLog(@"Location successfully tranferred");
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            [annotation setCoordinate:location.coordinate];
+            [annotation setTitle:@"Last location"];
+            [self removeAllAnnotations];
+            [self.mapView addAnnotation:annotation];
+        }
+        else {
+            NSLog(@"Error fetching location %@", error);
+        }
+    }];
+    [self performSelector:@selector(startRefreshingLocation) withObject:nil afterDelay:5];
+}
+
+- (void)stopRefreshingLocation {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+}
+
+- (void)removeAllAnnotations {
+    id userLocation = [self.mapView userLocation];  // Current location
+    NSMutableArray *pins = [[NSMutableArray alloc] initWithArray:[self.mapView annotations]];   // All annotations on the map
+    if (userLocation != nil) {
+        [pins removeObject:userLocation]; // Remove user location from the annotations
+    }
+    [self.mapView removeAnnotations:pins];
+    // Removes all annotations from the mapview, excluding user location
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     NSLog(@"LOCATION UPDATE");
-    [[self.firebase childByAutoId] setValue:@{@"sender-number": self.lastData.value[@"reciever-number"], @"reciever-number": self.lastData.value[@"sender-number"], @"request": @"response", @"name": self.name, @"data": (CLLocation *)[locations lastObject]}];
-    [self.manager stopUpdatingLocation];
+    
 }
 
 - (void)checkAlwaysAuthorization {
@@ -106,7 +102,7 @@ UIAlertController *waitAlert;
         }];
         [alertController addAction:cancelAction];
         [alertController addAction:settingsAction];
-        [self showViewController:alertController sender:self];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
     
     else if (status == kCLAuthorizationStatusNotDetermined) {

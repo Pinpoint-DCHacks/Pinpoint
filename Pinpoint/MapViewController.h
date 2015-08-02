@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import <Firebase/Firebase.h>
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (strong, nonatomic) Firebase *firebase;
 @property (strong, nonatomic) NSString *recipientNumber;
 @end
