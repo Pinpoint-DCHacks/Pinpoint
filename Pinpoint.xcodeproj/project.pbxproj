@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		09529F2B1B6D66400080E32B /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2A1B6D66400080E32B /* StartViewController.m */; };
 		09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */; };
+		09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F301B6DA8CB0080E32B /* MapViewController.m */; };
 		0964B6D81B6D5D15009EA05D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964B6D71B6D5D15009EA05D /* main.m */; };
 		0964B6DB1B6D5D15009EA05D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964B6DA1B6D5D15009EA05D /* AppDelegate.m */; };
 		0964B6E11B6D5D15009EA05D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0964B6DF1B6D5D15009EA05D /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 		09529F2A1B6D66400080E32B /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		09529F2C1B6D6C3F0080E32B /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		09529F2F1B6DA8CB0080E32B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		09529F301B6DA8CB0080E32B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		0964B6D21B6D5D15009EA05D /* Pinpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0964B6D61B6D5D15009EA05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0964B6D71B6D5D15009EA05D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				09529F2A1B6D66400080E32B /* StartViewController.m */,
 				09529F2C1B6D6C3F0080E32B /* ContactsViewController.h */,
 				09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */,
+				09529F2F1B6DA8CB0080E32B /* MapViewController.h */,
+				09529F301B6DA8CB0080E32B /* MapViewController.m */,
 				0964B6DF1B6D5D15009EA05D /* Main.storyboard */,
 				0964B6E21B6D5D15009EA05D /* Images.xcassets */,
 				0964B6E41B6D5D15009EA05D /* LaunchScreen.xib */,
@@ -285,6 +290,7 @@
 			files = (
 				09529F2B1B6D66400080E32B /* StartViewController.m in Sources */,
 				09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */,
+				09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */,
 				0964B6DB1B6D5D15009EA05D /* AppDelegate.m in Sources */,
 				0964B6D81B6D5D15009EA05D /* main.m in Sources */,
 			);

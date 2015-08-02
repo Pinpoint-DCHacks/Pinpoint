@@ -25,7 +25,6 @@ NSArray *searchResults;
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }
-    self.navigationItem.titleView = self.searchBarTop
     // Do any additional setup after loading the view.
 }
 
@@ -123,7 +122,8 @@ NSArray *searchResults;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
@@ -136,14 +136,13 @@ NSArray *searchResults;
     searchResults = [names filteredArrayUsingPredicate:resultPredicate];
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"ShowMapSegue"]) {
+        [[[segue destinationViewController] navigationItem] setTitle:[[sender textLabel] text]];
+    }
 }
-*/
+
 
 @end

@@ -83,7 +83,7 @@
                         <outlet property="importButton" destination="fnn-kh-gz8" id="cVs-xD-G0e"/>
                         <outlet property="searchDisplayController" destination="3vc-iM-Frp" id="HQz-Fp-ruE"/>
                         <outlet property="tableView" destination="VyA-rH-2Hm" id="JQ0-eR-EGN"/>
-                        <segue destination="qU9-Pz-6t0" kind="push" id="eMX-Ng-OCV"/>
+                        <segue destination="qU9-Pz-6t0" kind="push" identifier="ShowMapSegue" id="eMX-Ng-OCV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFJ-8v-Zm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,13 +102,31 @@
         <!--Map-->
         <scene sceneID="fXz-Et-6Vl">
             <objects>
-                <viewController id="qU9-Pz-6t0" sceneMemberID="viewController">
+                <viewController id="qU9-Pz-6t0" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbd-Dw-Tpk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Ofz-fa-IlH">
+                                <rect key="frame" x="0.0" y="64" width="320" height="354"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zhh-Bd-8eY">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ohl-KZ-HHB"/>
+                                    <barButtonItem title="Compass" id="3rN-D1-gYt"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="Cm7-Li-9RQ"/>
+                    <connections>
+                        <outlet property="mapView" destination="Ofz-fa-IlH" id="lKH-zV-tzk"/>
+                        <outlet property="toolbar" destination="zhh-Bd-8eY" id="tcO-0o-b8r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfO-1i-7ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
