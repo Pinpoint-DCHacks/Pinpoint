@@ -9,21 +9,38 @@
 #import "MapViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
+#define kFirechatNS @"pinpoint.firebaseIO.com"
+
 @interface MapViewController ()
 @property (strong, nonatomic) CLLocationManager *manager;
-
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *number;
 @end
 
 @implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@", self.recipientNumber);
+    self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
+    self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
+    self.firebase = [[Firebase alloc] initWithUrl:kFirechatNS];
+    // Setup bar button item
     MKUserTrackingBarButtonItem *trackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
     NSMutableArray *items = [[NSMutableArray alloc] initWithArray:[self.toolbar items]];
     [items insertObject:trackingButton atIndex:0];
     [self.toolbar setItems:items];
+    // Location manager
     self.manager = [[CLLocationManager alloc] init];
     [self checkAlwaysAuthorization];
+    // Firebase
+    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        if ([snapshot.value[@"number"] isEqualToString:self.number]) { //TODO: Define user id value
+            NSLog(@"Equal");
+        }
+    }];
+    // Send location request
+    [[self.firebase childByAutoId] setValue:@{@"number": self.number, @"request": @"location", @"name": self.name}];
     // Do any additional setup after loading the view.
 }
 
@@ -34,7 +51,6 @@
 
 - (void)checkAlwaysAuthorization {
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-    NSLog(@"Hello");
     // If the status is denied or only granted for when in use, display an alert
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
         NSLog(@"Denied");
@@ -52,9 +68,7 @@
     }
     
     else if (status == kCLAuthorizationStatusNotDetermined) {
-        NSLog(@"request");
         if([self.manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            NSLog(@"requesting");
             [self.manager requestAlwaysAuthorization];
         }
     }

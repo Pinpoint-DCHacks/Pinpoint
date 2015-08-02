@@ -7,154 +7,162 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		003AC4E10AD0A75BB400DFF9 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D282DCD397C46EACC0B7993B /* OnboardingViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3014BB02D9A0F6BA1ED4B521 /* OnboardingContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F65A02E96E0FFE69AB488B36 /* OnboardingContentViewController.h */; };
-		5DA8ACFB4371FEF6880C9FE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEED0058FEB4B058C50AA415 /* Foundation.framework */; };
-		652C78DDA6D1DC87585EE9CC /* Pods-Pinpoint-Onboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C7AEB0CEDD583E0679076 /* Pods-Pinpoint-Onboard-dummy.m */; };
-		73C41B48CDB89142D14786EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEED0058FEB4B058C50AA415 /* Foundation.framework */; };
-		BB3DE4DD6390CDEA9CF9950D /* OnboardingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 700B20572096F074AE4452A0 /* OnboardingViewController.h */; };
-		D882E337B55B5CF209F7784E /* Pods-Pinpoint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C40F9420BF43B733C386B /* Pods-Pinpoint-dummy.m */; };
-		F13C0AA50C212D63C674398B /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F3EF9133476EE0544795 /* OnboardingContentViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0C137CF3C51AED1F19F14C37 /* Pods-Pinpoint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 336C864532CB7ACD7B250716 /* Pods-Pinpoint-dummy.m */; };
+		0EC0B8FFCF1E5EB36E15D56B /* OnboardingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2F75635C47535B54C69627 /* OnboardingViewController.h */; };
+		1A54D823F0E57FF3D8E96DB5 /* Pods-Pinpoint-Onboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A13E5FF0098C1D5377B88AF5 /* Pods-Pinpoint-Onboard-dummy.m */; };
+		214D0F43C00FDF1064F586F1 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9F764B152B88359E7F736 /* OnboardingViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		36D8813D213E83E7539C9C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B7962DC2988E62D9ED4F60 /* Foundation.framework */; };
+		54360C1CD9531E4E26DFC62E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B7962DC2988E62D9ED4F60 /* Foundation.framework */; };
+		8AF22BF13FC070259AEB8FBC /* OnboardingContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDE243CE68D0DF299AAB0D0 /* OnboardingContentViewController.h */; };
+		A08742C051D9A66C65E42EB0 /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE48E7DB4891D30F146FF29 /* OnboardingContentViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A2FDEC243E899379CC5B2A9A /* PBXContainerItemProxy */ = {
+		497ED51901F0ACCC9D171AEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C5B434C62ADE475B8801AF07 /* Project object */;
+			containerPortal = 940D1AD7C34819AD67593E24 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BBE474596552A9B9FD2D3A65;
+			remoteGlobalIDString = ED007EB721495C0A343CE199;
 			remoteInfo = "Pods-Pinpoint-Onboard";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B86304DACEA3497DED24083 /* Pods-Pinpoint-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-environment.h"; sourceTree = "<group>"; };
-		29EDBE84E9CD49E49FC6583A /* Pods-Pinpoint-Onboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-Onboard-prefix.pch"; sourceTree = "<group>"; };
-		30A43232E96F105D4B1A9ADF /* Pods-Pinpoint-Onboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard.xcconfig"; sourceTree = "<group>"; };
-		30F8D519C3EBBEB042260A2A /* Pods-Pinpoint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pinpoint-acknowledgements.markdown"; sourceTree = "<group>"; };
-		499A6899F7A5E9F71847C2C0 /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
-		4B3C40F9420BF43B733C386B /* Pods-Pinpoint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-dummy.m"; sourceTree = "<group>"; };
-		52DF38BA2B7299DEDB714FE9 /* libPods-Pinpoint-Onboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-Onboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D223185D359AE0BD1F190C1 /* Pods-Pinpoint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pinpoint-acknowledgements.plist"; sourceTree = "<group>"; };
-		700B20572096F074AE4452A0 /* OnboardingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingViewController.h; path = "Objective-C/Onboard/OnboardingViewController.h"; sourceTree = "<group>"; };
-		7E4C7AEB0CEDD583E0679076 /* Pods-Pinpoint-Onboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-Onboard-dummy.m"; sourceTree = "<group>"; };
-		909B7C0A20C7345C2A808D8D /* Pods-Pinpoint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pinpoint-resources.sh"; sourceTree = "<group>"; };
-		967279D68BE2909820AA8EB0 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B190F8E9FE078F7F2C9F941E /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCE4F3EF9133476EE0544795 /* OnboardingContentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingContentViewController.m; path = "Objective-C/Onboard/OnboardingContentViewController.m"; sourceTree = "<group>"; };
-		BEED0058FEB4B058C50AA415 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BFF15C79E62E2E1ECD83BE1D /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
-		D282DCD397C46EACC0B7993B /* OnboardingViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingViewController.m; path = "Objective-C/Onboard/OnboardingViewController.m"; sourceTree = "<group>"; };
-		E06F81AC6C86602B8676CA05 /* Pods-Pinpoint-Onboard-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard-Private.xcconfig"; sourceTree = "<group>"; };
-		F65A02E96E0FFE69AB488B36 /* OnboardingContentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingContentViewController.h; path = "Objective-C/Onboard/OnboardingContentViewController.h"; sourceTree = "<group>"; };
+		00B7962DC2988E62D9ED4F60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		01C6C59EF89B28EA6125176C /* Pods-Pinpoint-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-environment.h"; sourceTree = "<group>"; };
+		08CDDF5E259A3A9EA32EDAD7 /* Pods-Pinpoint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pinpoint-acknowledgements.markdown"; sourceTree = "<group>"; };
+		159DE89D46046BBE69FD4337 /* Pods-Pinpoint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pinpoint-acknowledgements.plist"; sourceTree = "<group>"; };
+		336C864532CB7ACD7B250716 /* Pods-Pinpoint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-dummy.m"; sourceTree = "<group>"; };
+		3CDE243CE68D0DF299AAB0D0 /* OnboardingContentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingContentViewController.h; path = "Objective-C/Onboard/OnboardingContentViewController.h"; sourceTree = "<group>"; };
+		428392A5DF0C3BA759C58B13 /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
+		4A43FBED72FF826A50F5039E /* Pods-Pinpoint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pinpoint-resources.sh"; sourceTree = "<group>"; };
+		4AA5055B449E6E98EC3A26B2 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4CF9F764B152B88359E7F736 /* OnboardingViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingViewController.m; path = "Objective-C/Onboard/OnboardingViewController.m"; sourceTree = "<group>"; };
+		5754AC80CD55CA4579FDDC84 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0D974D29C5615922358591 /* Pods-Pinpoint-Onboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard.xcconfig"; sourceTree = "<group>"; };
+		5D22DD5FB54ACF0340EC1724 /* Pods-Pinpoint-Onboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-Onboard-prefix.pch"; sourceTree = "<group>"; };
+		90A2EE8869DE5E1E5768C759 /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
+		A13E5FF0098C1D5377B88AF5 /* Pods-Pinpoint-Onboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-Onboard-dummy.m"; sourceTree = "<group>"; };
+		AE64E2DC7FCC266E6CA7281D /* Pods-Pinpoint-Onboard-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard-Private.xcconfig"; sourceTree = "<group>"; };
+		BC2F75635C47535B54C69627 /* OnboardingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingViewController.h; path = "Objective-C/Onboard/OnboardingViewController.h"; sourceTree = "<group>"; };
+		CAE48E7DB4891D30F146FF29 /* OnboardingContentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingContentViewController.m; path = "Objective-C/Onboard/OnboardingContentViewController.m"; sourceTree = "<group>"; };
+		CFED08AE8F33461AAE84475B /* libPods-Pinpoint-Onboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-Onboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8298B62F70CF976AD4C62173 /* Frameworks */ = {
+		17971698C477DD31FF273BC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73C41B48CDB89142D14786EC /* Foundation.framework in Frameworks */,
+				54360C1CD9531E4E26DFC62E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1FE4FFAAD6CC89CF8447816 /* Frameworks */ = {
+		CB4FDDEEC474DB731AC22F13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DA8ACFB4371FEF6880C9FE0 /* Foundation.framework in Frameworks */,
+				36D8813D213E83E7539C9C7E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0608D383C0C19CBBBE77C88A = {
+		25283B747031A7C7E64CA2C3 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				967279D68BE2909820AA8EB0 /* Podfile */,
-				B2BE5C868F434A01307D22AA /* Frameworks */,
-				9D528DAAF9F6413506728BB1 /* Pods */,
-				7B6DA03955B39B332CC586EF /* Products */,
-				443E080B6F795AB9BE50600C /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		080745AB795184C5EA7A37CC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				BEED0058FEB4B058C50AA415 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		2D7E8148225B0B442D922C22 /* Onboard */ = {
-			isa = PBXGroup;
-			children = (
-				F65A02E96E0FFE69AB488B36 /* OnboardingContentViewController.h */,
-				BCE4F3EF9133476EE0544795 /* OnboardingContentViewController.m */,
-				700B20572096F074AE4452A0 /* OnboardingViewController.h */,
-				D282DCD397C46EACC0B7993B /* OnboardingViewController.m */,
-				B943B9A584214686E606B9BF /* Support Files */,
-			);
-			path = Onboard;
-			sourceTree = "<group>";
-		};
-		443E080B6F795AB9BE50600C /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6E36713BA2702CE94EFAF9C2 /* Pods-Pinpoint */,
+				A931734570C300A91B2E95CF /* Pods-Pinpoint */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6E36713BA2702CE94EFAF9C2 /* Pods-Pinpoint */ = {
+		2977B3ABA48591A144E530DA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				30F8D519C3EBBEB042260A2A /* Pods-Pinpoint-acknowledgements.markdown */,
-				5D223185D359AE0BD1F190C1 /* Pods-Pinpoint-acknowledgements.plist */,
-				4B3C40F9420BF43B733C386B /* Pods-Pinpoint-dummy.m */,
-				1B86304DACEA3497DED24083 /* Pods-Pinpoint-environment.h */,
-				909B7C0A20C7345C2A808D8D /* Pods-Pinpoint-resources.sh */,
-				499A6899F7A5E9F71847C2C0 /* Pods-Pinpoint.debug.xcconfig */,
-				BFF15C79E62E2E1ECD83BE1D /* Pods-Pinpoint.release.xcconfig */,
+				00B7962DC2988E62D9ED4F60 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5401F1CFFF01C8A97BB559AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2977B3ABA48591A144E530DA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62033EFA80F14474051B40A0 = {
+			isa = PBXGroup;
+			children = (
+				4AA5055B449E6E98EC3A26B2 /* Podfile */,
+				5401F1CFFF01C8A97BB559AF /* Frameworks */,
+				92BB8517D02F6064F070E0DE /* Pods */,
+				870B39996F74F5D6E4ACC3EB /* Products */,
+				25283B747031A7C7E64CA2C3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		778C02C9AFB53FE31FA5C618 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				3CDE243CE68D0DF299AAB0D0 /* OnboardingContentViewController.h */,
+				CAE48E7DB4891D30F146FF29 /* OnboardingContentViewController.m */,
+				BC2F75635C47535B54C69627 /* OnboardingViewController.h */,
+				4CF9F764B152B88359E7F736 /* OnboardingViewController.m */,
+				FFD0D61E764EEA48B6F2027B /* Support Files */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		870B39996F74F5D6E4ACC3EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5754AC80CD55CA4579FDDC84 /* libPods-Pinpoint.a */,
+				CFED08AE8F33461AAE84475B /* libPods-Pinpoint-Onboard.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92BB8517D02F6064F070E0DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC25A45209E5EB2D14F0EA37 /* Firebase */,
+				778C02C9AFB53FE31FA5C618 /* Onboard */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A931734570C300A91B2E95CF /* Pods-Pinpoint */ = {
+			isa = PBXGroup;
+			children = (
+				08CDDF5E259A3A9EA32EDAD7 /* Pods-Pinpoint-acknowledgements.markdown */,
+				159DE89D46046BBE69FD4337 /* Pods-Pinpoint-acknowledgements.plist */,
+				336C864532CB7ACD7B250716 /* Pods-Pinpoint-dummy.m */,
+				01C6C59EF89B28EA6125176C /* Pods-Pinpoint-environment.h */,
+				4A43FBED72FF826A50F5039E /* Pods-Pinpoint-resources.sh */,
+				90A2EE8869DE5E1E5768C759 /* Pods-Pinpoint.debug.xcconfig */,
+				428392A5DF0C3BA759C58B13 /* Pods-Pinpoint.release.xcconfig */,
 			);
 			name = "Pods-Pinpoint";
 			path = "Target Support Files/Pods-Pinpoint";
 			sourceTree = "<group>";
 		};
-		7B6DA03955B39B332CC586EF /* Products */ = {
+		BC25A45209E5EB2D14F0EA37 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				B190F8E9FE078F7F2C9F941E /* libPods-Pinpoint.a */,
-				52DF38BA2B7299DEDB714FE9 /* libPods-Pinpoint-Onboard.a */,
 			);
-			name = Products;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
-		9D528DAAF9F6413506728BB1 /* Pods */ = {
+		FFD0D61E764EEA48B6F2027B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2D7E8148225B0B442D922C22 /* Onboard */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B2BE5C868F434A01307D22AA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				080745AB795184C5EA7A37CC /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B943B9A584214686E606B9BF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				30A43232E96F105D4B1A9ADF /* Pods-Pinpoint-Onboard.xcconfig */,
-				E06F81AC6C86602B8676CA05 /* Pods-Pinpoint-Onboard-Private.xcconfig */,
-				7E4C7AEB0CEDD583E0679076 /* Pods-Pinpoint-Onboard-dummy.m */,
-				29EDBE84E9CD49E49FC6583A /* Pods-Pinpoint-Onboard-prefix.pch */,
+				5C0D974D29C5615922358591 /* Pods-Pinpoint-Onboard.xcconfig */,
+				AE64E2DC7FCC266E6CA7281D /* Pods-Pinpoint-Onboard-Private.xcconfig */,
+				A13E5FF0098C1D5377B88AF5 /* Pods-Pinpoint-Onboard-dummy.m */,
+				5D22DD5FB54ACF0340EC1724 /* Pods-Pinpoint-Onboard-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Pinpoint-Onboard";
@@ -163,25 +171,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D06BC7DD5F2872454C7520B0 /* Headers */ = {
+		BCAF153E520C1EC0826D313A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3014BB02D9A0F6BA1ED4B521 /* OnboardingContentViewController.h in Headers */,
-				BB3DE4DD6390CDEA9CF9950D /* OnboardingViewController.h in Headers */,
+				8AF22BF13FC070259AEB8FBC /* OnboardingContentViewController.h in Headers */,
+				0EC0B8FFCF1E5EB36E15D56B /* OnboardingViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BBE474596552A9B9FD2D3A65 /* Pods-Pinpoint-Onboard */ = {
+		E4984F3F98598AA878A75F3D /* Pods-Pinpoint */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 672E5CD6DB80940FD55E7E84 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */;
+			buildConfigurationList = 832B7C518C9D963F49DE1261 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */;
 			buildPhases = (
-				FEFE7A436196894792E69022 /* Sources */,
-				E1FE4FFAAD6CC89CF8447816 /* Frameworks */,
-				D06BC7DD5F2872454C7520B0 /* Headers */,
+				CB8A101F96052C830D69AA0B /* Sources */,
+				CB4FDDEEC474DB731AC22F13 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				074EBDFBE14CC725B8E63814 /* PBXTargetDependency */,
+			);
+			name = "Pods-Pinpoint";
+			productName = "Pods-Pinpoint";
+			productReference = 5754AC80CD55CA4579FDDC84 /* libPods-Pinpoint.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ED007EB721495C0A343CE199 /* Pods-Pinpoint-Onboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 348DFCCC43D4DA7CF2A1F6AB /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */;
+			buildPhases = (
+				9B45D0150C0953231D06221C /* Sources */,
+				17971698C477DD31FF273BC2 /* Frameworks */,
+				BCAF153E520C1EC0826D313A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -189,84 +214,83 @@
 			);
 			name = "Pods-Pinpoint-Onboard";
 			productName = "Pods-Pinpoint-Onboard";
-			productReference = 52DF38BA2B7299DEDB714FE9 /* libPods-Pinpoint-Onboard.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		CBB9C4508A689608499E6815 /* Pods-Pinpoint */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 73AB588E259F6B99E9634904 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */;
-			buildPhases = (
-				276F7E52DF00532EC453AE65 /* Sources */,
-				8298B62F70CF976AD4C62173 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				99341E42F37D636BE1E9C6B1 /* PBXTargetDependency */,
-			);
-			name = "Pods-Pinpoint";
-			productName = "Pods-Pinpoint";
-			productReference = B190F8E9FE078F7F2C9F941E /* libPods-Pinpoint.a */;
+			productReference = CFED08AE8F33461AAE84475B /* libPods-Pinpoint-Onboard.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C5B434C62ADE475B8801AF07 /* Project object */ = {
+		940D1AD7C34819AD67593E24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = D9E3CD1629BB9899EB2F9F8C /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = A2DD816EEA7EA0231F12D67B /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 0608D383C0C19CBBBE77C88A;
-			productRefGroup = 7B6DA03955B39B332CC586EF /* Products */;
+			mainGroup = 62033EFA80F14474051B40A0;
+			productRefGroup = 870B39996F74F5D6E4ACC3EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CBB9C4508A689608499E6815 /* Pods-Pinpoint */,
-				BBE474596552A9B9FD2D3A65 /* Pods-Pinpoint-Onboard */,
+				E4984F3F98598AA878A75F3D /* Pods-Pinpoint */,
+				ED007EB721495C0A343CE199 /* Pods-Pinpoint-Onboard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		276F7E52DF00532EC453AE65 /* Sources */ = {
+		9B45D0150C0953231D06221C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D882E337B55B5CF209F7784E /* Pods-Pinpoint-dummy.m in Sources */,
+				A08742C051D9A66C65E42EB0 /* OnboardingContentViewController.m in Sources */,
+				214D0F43C00FDF1064F586F1 /* OnboardingViewController.m in Sources */,
+				1A54D823F0E57FF3D8E96DB5 /* Pods-Pinpoint-Onboard-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEFE7A436196894792E69022 /* Sources */ = {
+		CB8A101F96052C830D69AA0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F13C0AA50C212D63C674398B /* OnboardingContentViewController.m in Sources */,
-				003AC4E10AD0A75BB400DFF9 /* OnboardingViewController.m in Sources */,
-				652C78DDA6D1DC87585EE9CC /* Pods-Pinpoint-Onboard-dummy.m in Sources */,
+				0C137CF3C51AED1F19F14C37 /* Pods-Pinpoint-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		99341E42F37D636BE1E9C6B1 /* PBXTargetDependency */ = {
+		074EBDFBE14CC725B8E63814 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Pinpoint-Onboard";
-			target = BBE474596552A9B9FD2D3A65 /* Pods-Pinpoint-Onboard */;
-			targetProxy = A2FDEC243E899379CC5B2A9A /* PBXContainerItemProxy */;
+			target = ED007EB721495C0A343CE199 /* Pods-Pinpoint-Onboard */;
+			targetProxy = 497ED51901F0ACCC9D171AEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		28B5A888C17B36EC545986C8 /* Release */ = {
+		1992E95AC464D139B55E3B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE64E2DC7FCC266E6CA7281D /* Pods-Pinpoint-Onboard-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2AE29ECD085FBA84512DF817 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -300,9 +324,9 @@
 			};
 			name = Release;
 		};
-		48E3AC369EDECA450C352615 /* Release */ = {
+		977E55144B6232A8F0AC7654 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFF15C79E62E2E1ECD83BE1D /* Pods-Pinpoint.release.xcconfig */;
+			baseConfigurationReference = 428392A5DF0C3BA759C58B13 /* Pods-Pinpoint.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -316,23 +340,7 @@
 			};
 			name = Release;
 		};
-		6F036EA4A1A465C844202F1A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E06F81AC6C86602B8676CA05 /* Pods-Pinpoint-Onboard-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		93801989559481276B43BECF /* Debug */ = {
+		BC7764640D27335C16DD34BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -371,25 +379,25 @@
 			};
 			name = Debug;
 		};
-		A84EA2B91CC58016FE950B22 /* Debug */ = {
+		C5B1768E53309064B67C5521 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E06F81AC6C86602B8676CA05 /* Pods-Pinpoint-Onboard-Private.xcconfig */;
+			baseConfigurationReference = AE64E2DC7FCC266E6CA7281D /* Pods-Pinpoint-Onboard-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		B4343177D94BE0412FADA7C2 /* Debug */ = {
+		DA62DD19AADEC6FBF26000A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 499A6899F7A5E9F71847C2C0 /* Pods-Pinpoint.debug.xcconfig */;
+			baseConfigurationReference = 90A2EE8869DE5E1E5768C759 /* Pods-Pinpoint.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -406,34 +414,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		672E5CD6DB80940FD55E7E84 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */ = {
+		348DFCCC43D4DA7CF2A1F6AB /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A84EA2B91CC58016FE950B22 /* Debug */,
-				6F036EA4A1A465C844202F1A /* Release */,
+				1992E95AC464D139B55E3B87 /* Debug */,
+				C5B1768E53309064B67C5521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73AB588E259F6B99E9634904 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */ = {
+		832B7C518C9D963F49DE1261 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4343177D94BE0412FADA7C2 /* Debug */,
-				48E3AC369EDECA450C352615 /* Release */,
+				DA62DD19AADEC6FBF26000A2 /* Debug */,
+				977E55144B6232A8F0AC7654 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9E3CD1629BB9899EB2F9F8C /* Build configuration list for PBXProject "Pods" */ = {
+		A2DD816EEA7EA0231F12D67B /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				93801989559481276B43BECF /* Debug */,
-				28B5A888C17B36EC545986C8 /* Release */,
+				BC7764640D27335C16DD34BB /* Debug */,
+				2AE29ECD085FBA84512DF817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C5B434C62ADE475B8801AF07 /* Project object */;
+	rootObject = 940D1AD7C34819AD67593E24 /* Project object */;
 }

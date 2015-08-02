@@ -1,10 +1,13 @@
 PODS:
+  - Firebase (2.2.0)
   - Onboard (2.1.1)
 
 DEPENDENCIES:
+  - Firebase
   - Onboard
 
 SPEC CHECKSUMS:
+  Firebase: e7a2ea2ffeff99f9c37028b354194dcc9718d36b
   Onboard: 27cdf8db29740f0c17ed81371a003b9833a5e700
 
 COCOAPODS: 0.37.2

@@ -4,6 +4,7 @@
 target 'Pinpoint' do
 
     pod 'Onboard'
+    pod 'Firebase'
 
 end
 
