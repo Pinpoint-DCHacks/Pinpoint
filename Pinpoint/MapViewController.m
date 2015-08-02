@@ -27,10 +27,13 @@
 
 BOOL allowed = false;
 UIAlertController *waitAlert;
+MKPointAnnotation *annotation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self checkAlwaysAuthorization];
+    annotation = [[MKPointAnnotation alloc] init];
+    [self.mapView addAnnotation:annotation];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
     self.firebase = [[Firebase alloc] initWithUrl:kPinpointURL];
@@ -58,15 +61,21 @@ UIAlertController *waitAlert;
         if (error == nil) {
             NSLog(@"Location successfully tranferred");
             // Annotation
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-            [annotation setCoordinate:location.coordinate];
+            [UIView beginAnimations:nil context:NULL]; // animate the following:
+            annotation.coordinate = location.coordinate; // move to new location
+            [UIView setAnimationDuration:2.0f];
+            [UIView commitAnimations];
+            /*[UIView animateWithDuration:2.0f animations:^{
+                annotation.coordinate = location.coordinate;
+            } completion:nil];*/
+            //[annotation setCoordinate:location.coordinate];
             [annotation setTitle:@"Last location"];
             NSDateFormatter *df = [[NSDateFormatter alloc] init];
             [df setDateStyle:NSDateFormatterNoStyle];
             [df setTimeStyle:NSDateFormatterMediumStyle];
             [annotation setSubtitle:[df stringFromDate:location.timestamp]];
-            [self removeAllAnnotations];
-            [self.mapView addAnnotation:annotation];
+            //[self removeAllAnnotations];
+            
             
             // Distance label
             CLLocation *currentLocation = self.mapView.userLocation.location;

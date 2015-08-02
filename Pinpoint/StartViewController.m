@@ -26,6 +26,7 @@
 - (IBAction)didTapStart:(id)sender {
     [[NSUserDefaults standardUserDefaults] setObject:self.nameText.text forKey:@"name"];
     [[NSUserDefaults standardUserDefaults] setObject:[self formatPhoneNumber:self.numberText.text] forKey:@"number"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

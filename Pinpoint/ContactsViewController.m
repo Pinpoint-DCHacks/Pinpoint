@@ -32,6 +32,7 @@ NSMutableArray *phoneNumbers;
 NSIndexPath *selected;
 BOOL accessAllowed = false;
 BOOL updateOnce = false;
+NSString *pin = @"12345";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,24 +77,31 @@ BOOL updateOnce = false;
         NSLog(@"Expired");
         self.task = UIBackgroundTaskInvalid;
     }];
-    NSLog(@"Location update");
-    NSString *numb = self.number;
-    [self.geofire setLocation:[locations lastObject] forKey:self.number withCompletionBlock:^(NSError *error) {
-        if (error == nil) {
-            NSLog(@"Wrote new location to %@", numb);
+    if ([locations lastObject] != nil) {
+        NSLog(@"Location update");
+        NSLog(@"%@", self.number);
+        NSString *numb = self.number;
+        if (self.number != nil) {
+            [self.geofire setLocation:[locations lastObject] forKey:self.number withCompletionBlock:^(NSError *error) {
+                if (error == nil) {
+                    NSLog(@"Wrote new location to %@", numb);
+                }
+                else {
+                    NSLog(@"Error posting location %@", error);
+                }
+            }];
         }
-        else {
-            NSLog(@"Error posting location %@", error);
+        [self.manager stopUpdatingLocation];
+        if (!updateOnce) {
+            [self.manager performSelector:@selector(startUpdatingLocation) withObject:nil afterDelay:5];
         }
-    }];
-    [self.manager stopUpdatingLocation];
-    if (!updateOnce) {
-        [self.manager performSelector:@selector(startUpdatingLocation) withObject:nil afterDelay:5];
     }
     [[UIApplication sharedApplication] endBackgroundTask:self.task];
 }
 
 - (void)checkAlwaysAuthorization {
+    self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
+    self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
     NSLog(@"Checking status");
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert
@@ -142,6 +150,10 @@ BOOL updateOnce = false;
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+    UIAlertController *pinShower = [UIAlertController alertControllerWithTitle:@"PIN" message:[NSString stringWithFormat:@"Pin for Kate Bell is %@", pin] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [pinShower addAction:ok];
+    [self presentViewController:pinShower animated:YES completion:nil];
 }
 
 - (void)importContacts {
@@ -267,7 +279,18 @@ BOOL updateOnce = false;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     selected = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
+    UIAlertController *pinInput = [UIAlertController alertControllerWithTitle:@"Input pin" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [pinInput addTextFieldWithConfigurationHandler:nil];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UITextField *pinField = pinInput.textFields.firstObject;
+        if ([pinField.text isEqualToString:pin]) {
+            [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
+        }
+    }];
+    [pinInput addAction:cancel];
+    [pinInput addAction:ok];
+    [self presentViewController:pinInput animated:YES completion:nil];
 }
 
 #pragma mark - Navigation
