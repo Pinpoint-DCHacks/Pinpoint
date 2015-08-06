@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-//#import <CoreLocation/CoreLocation.h>
+#import "LGSideMenuController.h"
 #import <Firebase/Firebase.h>
 #import <GeoFire/GeoFire+Private.h>
 
