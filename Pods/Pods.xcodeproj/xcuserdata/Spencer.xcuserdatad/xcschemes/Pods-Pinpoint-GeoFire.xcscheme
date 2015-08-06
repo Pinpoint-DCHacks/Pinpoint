@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D0ED9F7FB164B235377DD13"
+               BlueprintIdentifier = "2C0556EA45770493F3BF4EEB"
                BuildableName = "libPods-Pinpoint-GeoFire.a"
                BlueprintName = "Pods-Pinpoint-GeoFire"
                ReferencedContainer = "container:Pods.xcodeproj">

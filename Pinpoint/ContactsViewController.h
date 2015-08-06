@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "LGSideMenuController.h"
 
 @interface ContactsViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *importButton;
