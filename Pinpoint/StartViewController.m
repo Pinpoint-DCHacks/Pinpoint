@@ -7,7 +7,6 @@
 //
 
 #import "StartViewController.h"
-#import "ContactsViewController.h"
 #import "UserData.h"
 #import "RMPhoneFormat.h"
 #import <Firebase/Firebase.h>
@@ -37,6 +36,7 @@
 - (IBAction)didTapStart:(id)sender {
     UserData *data = [UserData sharedInstance];
     data.name = self.nameText.text;
+    data.username = self.usernameText.text;
     data.number = self.numberText.text;
     data.email = self.emailText.text;
     data.password = self.passText.text;
@@ -51,9 +51,18 @@
             data.uid = uid;
             [data save];
             NSLog(@"Successfully created user account with uid: %@", uid);
+            
         }
     }];
-    [(ContactsViewController *)self.parentViewController viewDidLoad];
+    NSLog(@"username: %@, uid: %@", data.username, @"2");// TODO: real name
+    [[ref childByAppendingPath:@"users/usernames"] updateChildValues:@{data.username: data.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+        if (error) {
+            NSLog(@"Error writing username: %@", error);
+        }
+        else {
+            NSLog(@"Wrote successfully");
+        }
+    }];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

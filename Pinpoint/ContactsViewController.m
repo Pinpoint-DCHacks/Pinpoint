@@ -38,11 +38,15 @@ NSString *pin = @"12345";
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }
-    NSLog(@"Number: %@", [UserData sharedInstance].number);
-    NSLog(@"Email: %@", [UserData sharedInstance].email);
     self.firebase = [[Firebase alloc] initWithUrl:kPinpointURL];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
-    [self.firebase authUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"email"] password:[[NSUserDefaults standardUserDefaults] objectForKey:@"password"] withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    // Do any additional setup after loading the view.
+}
+
+- (void)login {
+    NSLog(@"Number: %@", [UserData sharedInstance].number);
+    NSLog(@"Email: %@", [UserData sharedInstance].email);
+    [self.firebase authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
         if (error) {
             NSLog(@"Error logging in: %@", error);
         }
@@ -51,7 +55,6 @@ NSString *pin = @"12345";
             [UserData sharedInstance].uid = authData.uid;
         }
     }];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)didTapShare:(id)sender {
