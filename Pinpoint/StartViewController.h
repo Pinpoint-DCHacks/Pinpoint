@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface StartViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *emailText;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
+@property (weak, nonatomic) IBOutlet UITextField *passText;
 @property (weak, nonatomic) IBOutlet UITextField *numberText;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
 

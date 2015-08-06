@@ -7,18 +7,17 @@
 //
 
 #import "ContactsViewController.h"
+#import "UserData.h"
 #import "MapViewController.h"
 #import <GeoFire/GeoFire+Private.h>
 @import AddressBook;
 
-#define kPinpointURL @"pinpoint.firebaseIO.com"
+#define kPinpointURL @"pinpoint.firebaseio.com"
 
 @interface ContactsViewController ()
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) Firebase *firebase;
 @property (strong, nonatomic) GeoFire *geofire;
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *number;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
 @property (nonatomic) UIBackgroundTaskIdentifier task;
 @end
@@ -39,10 +38,19 @@ NSString *pin = @"12345";
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }
-    self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
-    self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
+    NSLog(@"Number: %@", [UserData sharedInstance].number);
+    NSLog(@"Email: %@", [UserData sharedInstance].email);
     self.firebase = [[Firebase alloc] initWithUrl:kPinpointURL];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
+    [self.firebase authUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"email"] password:[[NSUserDefaults standardUserDefaults] objectForKey:@"password"] withCompletionBlock:^(NSError *error, FAuthData *authData) {
+        if (error) {
+            NSLog(@"Error logging in: %@", error);
+        }
+        else {
+            NSLog(@"Successfully logged in");
+            [UserData sharedInstance].uid = authData.uid;
+        }
+    }];
     // Do any additional setup after loading the view.
 }
 
@@ -79,12 +87,16 @@ NSString *pin = @"12345";
     }];
     if ([locations lastObject] != nil) {
         NSLog(@"Location update");
-        NSLog(@"%@", self.number);
-        NSString *numb = self.number;
-        if (self.number != nil) {
-            [self.geofire setLocation:[locations lastObject] forKey:self.number withCompletionBlock:^(NSError *error) {
+        NSLog(@"%@", [UserData sharedInstance].number);
+        if ([UserData sharedInstance].number != nil) {
+            [[self.firebase childByAppendingPath:[NSString stringWithFormat:@"%@/userData", [UserData sharedInstance].uid]] updateChildValues:@{@"test":@"test"} withCompletionBlock:^(NSError *error, Firebase *ref) {
                 if (error == nil) {
-                    NSLog(@"Wrote new location to %@", numb);
+                    NSLog(@"Wrote to location");
+                }
+            }];
+            [self.geofire setLocation:[locations lastObject] forKey:[UserData sharedInstance].uid withCompletionBlock:^(NSError *error) {
+                if (error == nil) {
+                    NSLog(@"Wrote new location to %@", [UserData sharedInstance].number);
                 }
                 else {
                     NSLog(@"Error posting location %@", error);
@@ -100,8 +112,6 @@ NSString *pin = @"12345";
 }
 
 - (void)checkAlwaysAuthorization {
-    self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
-    self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
     NSLog(@"Checking status");
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert
