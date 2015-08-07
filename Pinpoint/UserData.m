@@ -20,6 +20,16 @@
     return _sharedObject;
 }
 
++ (Firebase *)sharedRef {
+    static dispatch_once_t o = 0;
+    static Firebase *_sharedRef = nil;
+    
+    dispatch_once(&o, ^{
+        _sharedRef = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com"];
+    });
+    return _sharedRef;
+}
+
 - (void)load {
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     self.auth = [def objectForKey:@"firebase.auth"];

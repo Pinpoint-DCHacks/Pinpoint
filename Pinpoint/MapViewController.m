@@ -7,10 +7,9 @@
 //
 
 #import "MapViewController.h"
+#import "UserData.h"
 #import <Firebase/Firebase.h>
 #import <GeoFire/GeoFire+Private.h>
-
-#define kPinpointURL @"pinpoint.firebaseIO.com"
 
 @interface MapViewController ()
 @property (strong, nonatomic) CLLocationManager *manager;
@@ -36,7 +35,7 @@ MKPointAnnotation *annotation;
     [self.mapView addAnnotation:annotation];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
-    self.firebase = [[Firebase alloc] initWithUrl:kPinpointURL];
+    self.firebase = [UserData sharedRef];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     
     // Setup bar button item

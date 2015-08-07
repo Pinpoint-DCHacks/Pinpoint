@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString *uid;
 
 + (instancetype)sharedInstance;
++ (Firebase *)sharedRef;
 
 - (void)load;
 - (void)save;

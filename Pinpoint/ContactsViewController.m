@@ -9,6 +9,7 @@
 #import "ContactsViewController.h"
 #import "UserData.h"
 #import "MapViewController.h"
+#import "LoginViewController.h"
 #import <GeoFire/GeoFire+Private.h>
 @import AddressBook;
 
@@ -38,7 +39,7 @@ NSString *pin = @"12345";
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }
-    self.firebase = [[Firebase alloc] initWithUrl:kPinpointURL];
+    self.firebase = [UserData sharedRef];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     // Do any additional setup after loading the view.
 }
@@ -159,7 +160,7 @@ NSString *pin = @"12345";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
-        [self performSegueWithIdentifier:@"ShowStartSegue" sender:self];
+        [self performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }

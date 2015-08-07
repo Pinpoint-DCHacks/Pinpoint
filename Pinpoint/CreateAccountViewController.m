@@ -1,21 +1,21 @@
 //
-//  StartViewController.m
+//  CreateAccountViewController.m
 //  Pinpoint
 //
 //  Created by Spencer Atkin on 8/1/15.
 //  Copyright (c) 2015 Pinpoint-DCHacks. All rights reserved.
 //
 
-#import "StartViewController.h"
+#import "CreateAccountViewController.h"
 #import "UserData.h"
 #import "RMPhoneFormat.h"
 #import <Firebase/Firebase.h>
 
-@interface StartViewController ()
+@interface CreateAccountViewController ()
 
 @end
 
-@implementation StartViewController {
+@implementation CreateAccountViewController {
     RMPhoneFormat *phoneFormat;
     NSMutableCharacterSet *phoneChars;
 }
@@ -33,7 +33,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)didTapStart:(id)sender {
+
+- (IBAction)didTapRegister:(id)sender {
     UserData *data = [UserData sharedInstance];
     data.name = self.nameText.text;
     data.username = self.usernameText.text;
@@ -42,28 +43,42 @@
     data.password = self.passText.text;
     [data save];
     
-    Firebase *ref = [[Firebase alloc] initWithUrl:@"pinpoint.firebaseio.com"];
-    [ref createUser:self.emailText.text password:self.passText.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
-        if (error) {
-            NSLog(@"Error: %@", error);
-        } else {
-            NSString *uid = [result objectForKey:@"uid"];
-            data.uid = uid;
-            [data save];
-            NSLog(@"Successfully created user account with uid: %@", uid);
-            
-        }
-    }];
-    NSLog(@"username: %@, uid: %@", data.username, @"2");// TODO: real name
-    [[ref childByAppendingPath:@"users/usernames"] updateChildValues:@{data.username: data.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
-        if (error) {
-            NSLog(@"Error writing username: %@", error);
+    Firebase *ref = [UserData sharedRef];
+    // Checks if username is used
+    [[ref childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"Snapshot value%@", snapshot.value);
+        if (snapshot.value == nil) {
+            [ref createUser:self.emailText.text password:self.passText.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
+                if (error) {
+                    NSLog(@"Error creating user: %@", error);
+                }
+                else {
+                    NSString *uid = [result objectForKey:@"uid"];
+                    data.uid = uid;
+                    [data save];
+                    NSLog(@"Successfully created user account with uid: %@", uid);
+                    NSLog(@"username: %@, uid: %@", data.username, data.uid);// TODO: real name
+                    [[ref childByAppendingPath:@"users/usernames"] updateChildValues:@{data.username: data.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                        if (error) {
+                            NSLog(@"Error writing username: %@", error);
+                        }
+                        else {
+                            NSLog(@"Wrote username successfully");
+                        }
+                    }];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+            }];
         }
         else {
-            NSLog(@"Wrote successfully");
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Username is taken" message:@"Please try another." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
         }
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"Error observing: %@", error.description);
     }];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*- (NSString *)formatPhoneNumber:(NSString *)number {
