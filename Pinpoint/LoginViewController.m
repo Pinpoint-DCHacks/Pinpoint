@@ -51,11 +51,15 @@
         else {
             NSLog(@"Successfully logged in.");
             UserData *dat = [UserData sharedInstance];
-            dat.auth = authData;
             dat.email = self.emailText.text;
             dat.password = self.passwordText.text;
-            dat.username = authData.providerData[@"username"];
             dat.uid = authData.uid;
+            FirebaseHandle handle = [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/uids/%@", dat.uid]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                NSLog(@"snapshot value: %@", snapshot.value);
+                dat.username = snapshot.value;
+            }];
+            [[UserData sharedRef] removeObserverWithHandle:handle];
+            [dat save];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];

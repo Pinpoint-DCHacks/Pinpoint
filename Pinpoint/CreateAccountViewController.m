@@ -45,27 +45,44 @@
     
     Firebase *ref = [UserData sharedRef];
     // Checks if username is used
-    [[ref childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"Snapshot value%@", snapshot.value);
-        if (snapshot.value == nil) {
+    FirebaseHandle handle = [[ref childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        // No user exists with this username
+        NSLog(@"snapshot value: %@", snapshot.value);
+        if ([snapshot.value isKindOfClass:[NSNull class]]) {
+            // Create user based on credentials
             [ref createUser:self.emailText.text password:self.passText.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
                 if (error) {
                     NSLog(@"Error creating user: %@", error);
                 }
                 else {
-                    NSString *uid = [result objectForKey:@"uid"];
-                    data.uid = uid;
-                    [data save];
-                    NSLog(@"Successfully created user account with uid: %@", uid);
-                    NSLog(@"username: %@, uid: %@", data.username, data.uid);// TODO: real name
-                    [[ref childByAppendingPath:@"users/usernames"] updateChildValues:@{data.username: data.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                    [ref authUser:self.emailText.text password:self.passText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
                         if (error) {
-                            NSLog(@"Error writing username: %@", error);
+                            NSLog(@"Error logging in %@", error);
                         }
                         else {
-                            NSLog(@"Wrote username successfully");
+                            NSLog(@"Sucessfully logged in");
+                            data.uid = authData.uid;
+                            [data save];
+                            [[[UserData sharedRef] childByAppendingPath:@"users/uids"] updateChildValues:@{authData.uid: self.usernameText.text} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                                if (error) {
+                                    NSLog(@"Error writing uid %@", error);
+                                }
+                                else {
+                                    NSLog(@"Wrote uid successfully");
+                                    NSLog(@"Username: %@", data.username);
+                                }
+                            }];
+                            [[ref childByAppendingPath:@"users/usernames"] updateChildValues:@{data.username: data.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                                if (error) {
+                                    NSLog(@"Error writing username: %@", error);
+                                }
+                                else {
+                                    NSLog(@"Wrote username successfully");
+                                }
+                            }];
                         }
                     }];
+                    // TODO - Set user data values
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }
             }];
@@ -79,6 +96,7 @@
     } withCancelBlock:^(NSError *error) {
         NSLog(@"Error observing: %@", error.description);
     }];
+    [ref removeObserverWithHandle:handle];
 }
 
 /*- (NSString *)formatPhoneNumber:(NSString *)number {

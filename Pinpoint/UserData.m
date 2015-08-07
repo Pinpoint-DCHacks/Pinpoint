@@ -31,19 +31,21 @@
 }
 
 - (void)load {
+    NSLog(@"Loading data");
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    self.auth = [def objectForKey:@"firebase.auth"];
+    self.username = [def objectForKey:@"username"];
     self.name = [def objectForKey:@"name"];
     self.number = [def objectForKey:@"number"];
     self.email = [def objectForKey:@"email"];
     self.uid = [def objectForKey:@"firebase.uid"];
-    self.uid = [def objectForKey:@"password"];
+    self.password = [def objectForKey:@"password"];
     [def synchronize];
 }
 
 - (void)save {
+    NSLog(@"Saving data");
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:self.auth forKey:@"firebase.auth"];
+    [def setObject:self.username forKey:@"username"];
     [def setObject:self.name forKey:@"name"];
     [def setObject:self.number forKey:@"number"];
     [def setObject:self.email forKey:@"email"];

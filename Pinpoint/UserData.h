@@ -11,7 +11,6 @@
 
 @interface UserData : NSObject
 
-@property (strong, nonatomic) FAuthData *auth;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;

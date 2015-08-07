@@ -10,11 +10,11 @@
 
 @implementation FireUser
 
-- (instancetype)initWithName:(NSString *)name identifier:(NSString *)uid {
+- (instancetype)initWithIdentifier:(NSString *)uid username:(NSString *)username {
     self = [super init];
     if (self) {
-        self.name = name;
         self.uid = uid;
+        self.username = username;
     }
     return self;
 }

@@ -10,6 +10,7 @@
 #import "UserData.h"
 #import "MapViewController.h"
 #import "LoginViewController.h"
+#import "FireUser.h"
 #import <GeoFire/GeoFire+Private.h>
 @import AddressBook;
 
@@ -20,25 +21,27 @@
 @property (strong, nonatomic) Firebase *firebase;
 @property (strong, nonatomic) GeoFire *geofire;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
+
+@property (strong, nonatomic) NSMutableArray *contacts;
 @property (nonatomic) UIBackgroundTaskIdentifier task;
 @end
 
 @implementation ContactsViewController
 
 NSString *cellID = @"TableCellID";
-NSMutableArray *contacts;
-NSMutableArray *names;
-NSMutableArray *phoneNumbers;
+//NSMutableArray *contacts;
+//NSMutableArray *names;
+//NSMutableArray *phoneNumbers;
 NSIndexPath *selected;
 BOOL accessAllowed = false;
 BOOL updateOnce = false;
-NSString *pin = @"12345";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+    self.contacts = [[NSMutableArray alloc] initWithObjects:[[FireUser alloc] initWithIdentifier:@"simplelogin:2" username:@"spenceratkin"], nil];
+    /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
-    }
+    }*/
     self.firebase = [UserData sharedRef];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     // Do any additional setup after loading the view.
@@ -89,18 +92,23 @@ NSString *pin = @"12345";
         NSLog(@"Expired");
         self.task = UIBackgroundTaskInvalid;
     }];
+    NSLog(@"uid: %@", [UserData sharedInstance].uid);
+    NSLog(@"username: %@", [UserData sharedInstance].username);
     if ([locations lastObject] != nil) {
         NSLog(@"Location update");
-        NSLog(@"%@", [UserData sharedInstance].number);
-        if ([UserData sharedInstance].number != nil) {
-            [[self.firebase childByAppendingPath:[NSString stringWithFormat:@"%@/userData", [UserData sharedInstance].uid]] updateChildValues:@{@"test":@"test"} withCompletionBlock:^(NSError *error, Firebase *ref) {
-                if (error == nil) {
-                    NSLog(@"Wrote to location");
+        //NSLog(@"%@", [UserData sharedInstance].number);
+        if ([UserData sharedInstance].uid != nil) {
+            /*[[self.firebase childByAppendingPath:[NSString stringWithFormat:@"%@/userData", [UserData sharedInstance].uid]] updateChildValues:@{@"test":@"test"} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                if (error) {
+                    NSLog(@"Error writing to location");
                 }
-            }];
+                else {
+                    NSLog(@"Successfully wrote to location");
+                }
+            }];*/
             [self.geofire setLocation:[locations lastObject] forKey:[UserData sharedInstance].uid withCompletionBlock:^(NSError *error) {
                 if (error == nil) {
-                    NSLog(@"Wrote new location to %@", [UserData sharedInstance].number);
+                    NSLog(@"Wrote new location to %@", [UserData sharedInstance].uid);
                 }
                 else {
                     NSLog(@"Error posting location %@", error);
@@ -164,13 +172,9 @@ NSString *pin = @"12345";
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    UIAlertController *pinShower = [UIAlertController alertControllerWithTitle:@"PIN" message:[NSString stringWithFormat:@"Pin for Kate Bell is %@", pin] preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
-    [pinShower addAction:ok];
-    [self presentViewController:pinShower animated:YES completion:nil];
 }
 
-- (void)importContacts {
+/*- (void)importContacts {
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
     contacts = (__bridge NSMutableArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
     names = [[NSMutableArray alloc] initWithCapacity:[contacts count]];
@@ -202,16 +206,16 @@ NSString *pin = @"12345";
     }
     //NSLog(@"%@", contacts);
     
-}
+}*/
 
-- (NSString *)formatPhoneNumber:(NSString *)number {
+/*- (NSString *)formatPhoneNumber:(NSString *)number {
     NSMutableArray *numberArray = [[NSMutableArray alloc] init];//[[NSMutableArray alloc] initWithArray:[number componentsSeparatedByString:@""]];
     for (NSInteger x = 0; x < [number length]; x++) {
         [numberArray addObject:[NSString stringWithFormat:@"%C", [number characterAtIndex:x]]];
     }
     NSMutableArray *returnArray = [[NSMutableArray alloc] init];
     for (NSInteger x = 0; x < [numberArray count]; x++) {
-        /*if ([numberArray[x] integerValue] == 0) {
+        //BEGIN COMMENTif ([numberArray[x] integerValue] == 0) {
             if (![numberArray[x] isEqualToString:@"0"]) {
                 [numberArray removeObjectAtIndex:x];
                 x--;
@@ -222,7 +226,7 @@ NSString *pin = @"12345";
         }
         else {
             [returnArray addObject:numberArray[x]];
-        }*/
+        }//END COMMENT
         if (!([numberArray[x] isEqualToString:@"1"] || [numberArray[x] isEqualToString:@"2"] || [numberArray[x] isEqualToString:@"3"] || [numberArray[x] isEqualToString:@"4"] || [numberArray[x] isEqualToString:@"5"] || [numberArray[x] isEqualToString:@"6"] || [numberArray[x] isEqualToString:@"7"] || [numberArray[x] isEqualToString:@"8"] || [numberArray[x] isEqualToString:@"9"] || [numberArray[x] isEqualToString:@"0"])) {
             if ([numberArray[x] isEqualToString:@"+"]) {
                 [numberArray removeObjectAtIndex:x];
@@ -239,9 +243,9 @@ NSString *pin = @"12345";
         }
     }
     return [returnArray componentsJoinedByString:@""];
-}
+}*/
 
-- (IBAction)didTapImport:(id)sender {
+/*- (IBAction)didTapImport:(id)sender {
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied ||
         ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusRestricted) {
         NSLog(@"Denied");
@@ -270,12 +274,12 @@ NSString *pin = @"12345";
         [requestContacts addAction:confirm];
         [self presentViewController:requestContacts animated:YES completion:nil];
     }
-}
+}*/
 
 #pragma mark - UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        return [contacts count];
+        return [self.contacts count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -283,9 +287,7 @@ NSString *pin = @"12345";
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    NSString *name = nil;
-    name = [names objectAtIndex:indexPath.row];
-    [cell.textLabel setText:name];
+    [cell.textLabel setText:((FireUser *)[self.contacts objectAtIndex:indexPath.row]).username];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
@@ -293,25 +295,16 @@ NSString *pin = @"12345";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     selected = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UIAlertController *pinInput = [UIAlertController alertControllerWithTitle:@"Input pin" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [pinInput addTextFieldWithConfigurationHandler:nil];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        UITextField *pinField = pinInput.textFields.firstObject;
-        if ([pinField.text isEqualToString:pin]) {
-            [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
-        }
-    }];
-    [pinInput addAction:cancel];
-    [pinInput addAction:ok];
-    [self presentViewController:pinInput animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]
+     ];
 }
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowMapSegue"]) {
-        [((MapViewController *)[segue destinationViewController]) setRecipientNumber:phoneNumbers[selected.row]];
+        [((MapViewController *)[segue destinationViewController]) setRecipientId:((FireUser *)self.contacts[selected.row]).uid];
+        NSLog(@"sending uid: %@", ((FireUser *)self.contacts[selected.row]).uid);
         [[[segue destinationViewController] navigationItem] setTitle:[[sender textLabel] text]];
     }
 }

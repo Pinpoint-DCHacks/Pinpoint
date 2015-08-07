@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface FireUser : NSObject
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *uid;
+
+- (instancetype)initWithIdentifier:(NSString *)uid username:(NSString *)username;
 @end

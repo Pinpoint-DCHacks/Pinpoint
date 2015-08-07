@@ -57,10 +57,18 @@ MKPointAnnotation *annotation;
     [self startRefreshingLocation];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.isMovingFromParentViewController) {
+        NSLog(@"Stopping location updates");
+        [self stopRefreshingLocation];
+    }
+}
+
 - (void)startRefreshingLocation {
     NSLog(@"Refreshing location");
-    NSLog(@"%@", self.recipientNumber);
-    [self.geofire getLocationForKey:self.recipientNumber withCallback:^(CLLocation *location, NSError *error) {
+    NSLog(@"%@", self.recipientId);
+    [self.geofire getLocationForKey:self.recipientId withCallback:^(CLLocation *location, NSError *error) {
         NSLog(@"Getting location");
         if (error == nil) {
             NSLog(@"Location successfully tranferred");
