@@ -7,330 +7,295 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		123B86472B253E06B0B7AA61 /* GFGeoHashQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F5B1A064EC2E26ABC8F90D /* GFGeoHashQuery.h */; };
-		146A47FFA83BF46CDC508793 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1C0FA5C0C7AE3596FE1BCA /* Foundation.framework */; };
-		1FD7A04EFECD9FBFB4556494 /* GFGeoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = F652DC1B970816B272D16C3F /* GFGeoHash.h */; };
-		3951ADDF8DBCD2569FB640F1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC3F3554820479151ADC15D /* CoreLocation.framework */; };
-		427CBCB4E0C858D68B4C812B /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41193A2082F329E202A135FC /* OnboardingContentViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5380CD3F0E077BBE3EC079B0 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0105D8F9438A966182AE0008 /* GFGeoHash.m */; };
-		56A5CC60B40334713C7D1622 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D69F0301B9664FC9043B28 /* GFQuery.m */; };
-		60B9B01F99A9625EB48F3610 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB701AF2F11B52F0ACF7C59 /* OnboardingViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6D86B29AFAC8B200CCCF7CAD /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 59006010AF457C8A97B59B35 /* GeoFire.m */; };
-		79B80B41A330D4840A848D7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1C0FA5C0C7AE3596FE1BCA /* Foundation.framework */; };
-		7DA6EADCD785F7DF4DFEBA85 /* GFCircleQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 04C4B6AE7EC8CDB58DC8AD40 /* GFCircleQuery.h */; };
-		97173BE3642CA4E459B81302 /* OnboardingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 644D9B7276706A7068DB772A /* OnboardingViewController.h */; };
-		9BB2E2D9F2C85A3AFB83113D /* OnboardingContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 11C60DCC48BD0144D87BE45C /* OnboardingContentViewController.h */; };
-		A6882D2DFFC64F8991103A0E /* GFQuery+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = FD48FAA438964A8159FBEFE0 /* GFQuery+Private.h */; };
-		AD700E478C065EB595F8B997 /* GFBase32Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = F16205C5C784EFC9CF213CD5 /* GFBase32Utils.h */; };
-		B23A98BFC5EBB3AD64163275 /* Pods-Pinpoint-GeoFire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A9FE1B667D3C446BF96F37 /* Pods-Pinpoint-GeoFire-dummy.m */; };
-		C324CDDC6D28E97B4AA5A18C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1C0FA5C0C7AE3596FE1BCA /* Foundation.framework */; };
-		CE6084E0666E5BCF129A2161 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D17841FAD8ECC4BAEE429E33 /* GFGeoHashQuery.m */; };
-		D19C04ED6CD215689DF55D8D /* GFRegionQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA7EB74721CF6A81524B1EF /* GFRegionQuery.h */; };
-		DACC802E5AE4D6F5165A027B /* Pods-Pinpoint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C62E7820A47DD35840D0353 /* Pods-Pinpoint-dummy.m */; };
-		EAE5358BCD461FC9601BC899 /* GeoFire.h in Headers */ = {isa = PBXBuildFile; fileRef = B82F230E6939A85EAA9198B6 /* GeoFire.h */; };
-		F3D9A4AEBBBB80EBBBC57C4F /* GeoFire+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = A7C5D158D2BF314808CC87D0 /* GeoFire+Private.h */; };
-		F7F15DDAB376F42574DBAE9F /* Pods-Pinpoint-Onboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690AA12B740B7E0F5E91AA0 /* Pods-Pinpoint-Onboard-dummy.m */; };
-		F980736AC1D3690288F367DA /* GFQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 60DA377AEB5A59F84A7633D1 /* GFQuery.h */; };
-		FE6353E23E10E9E19F0F61A3 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B63DE37F72C7752E86886 /* GFBase32Utils.m */; };
+		017352506495BACF3A5766FC /* Pods-Pinpoint-Onboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A81D9D92DED91CD0013C8AB /* Pods-Pinpoint-Onboard-dummy.m */; };
+		05EF0AFB8EB400F68A5E0D0F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A8CBC7D4ABA593177AFF89 /* CoreLocation.framework */; };
+		067F67F4D5084C903AB70E8B /* GeoFire+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 683CC8B09090351EF323A202 /* GeoFire+Private.h */; };
+		11F47756B10C95FB1081DCD8 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB9F21F41730C57861CE3A /* GFGeoHash.m */; };
+		17DC6EB97531C3D84EEC05F3 /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA3F9CE5A9EBAF0354AEB0 /* OnboardingContentViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1EC0D1B685C0BD28C218FDDA /* Pods-Pinpoint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A562B4C18833D2F404D4C0 /* Pods-Pinpoint-dummy.m */; };
+		22A7132BF5D98E418EBA65B8 /* OnboardingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7857EB2125A78EEA6F984A3D /* OnboardingViewController.h */; };
+		32B3428D8964C60AA1727DC1 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6774F1C02EF769E876D67DD6 /* OnboardingViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		34E90BB224A91F73AAFAFDDF /* GFCircleQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 85FEE15BD8C80DC1593AEE7B /* GFCircleQuery.h */; };
+		41667E57D3548008948709A6 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB2DC5742ED774B4A6063 /* GeoFire.m */; };
+		44951876BCD8D976E4CAA226 /* GFRegionQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 806A79172648F8D775E5B9E9 /* GFRegionQuery.h */; };
+		4E7B923146655493EC836844 /* OnboardingContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F04E4A61D5C220DAE2BDDE43 /* OnboardingContentViewController.h */; };
+		7CC1305413577077166305D2 /* GeoFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 319D2E919B366CFCC971CE02 /* GeoFire.h */; };
+		7FF3E52B3DD43C987FAFAF1F /* GFBase32Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8519C60F2D4FFA8EF48E97D2 /* GFBase32Utils.h */; };
+		A8F68976B904E87613022A6B /* GFQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C414AC4CCE20A388C43793A /* GFQuery.h */; };
+		B083CB63392E264D20E02950 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF95E36ECBC4712D38F75CAF /* GFBase32Utils.m */; };
+		C6F1AF577D699C8B4BF59C3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7964E6D0781EEAAD20F8 /* Foundation.framework */; };
+		D5746A672F19868DB1202485 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A52564EBE36A4E0CBB574AC5 /* GFGeoHashQuery.m */; };
+		E49767B16F31B5D4A80EEF1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7964E6D0781EEAAD20F8 /* Foundation.framework */; };
+		E9E0CB819F7722040528CE08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7964E6D0781EEAAD20F8 /* Foundation.framework */; };
+		EC0CA7E4D199086AE933C26E /* GFQuery+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3746BF968BF6E8AC86244FE2 /* GFQuery+Private.h */; };
+		EE95FC771753B2A2E8E91191 /* GFGeoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D6D3AE7271B6E3C9AE8F08F /* GFGeoHash.h */; };
+		F3B15629ACD266D91941AF88 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ACC69200B8B78AF22A1176 /* GFQuery.m */; };
+		F47BC11B8AF0606B1561B0BD /* Pods-Pinpoint-GeoFire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BADD03450A56F9043E8D49 /* Pods-Pinpoint-GeoFire-dummy.m */; };
+		F65960BC2AC67D328E91ED89 /* GFGeoHashQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D6CC360743DC0859DC4344B /* GFGeoHashQuery.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2960396E99A27B1721E131CD /* PBXContainerItemProxy */ = {
+		2099D1221FE607E6FA63DC07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 74892A56CB3EF50DC002191E /* Project object */;
+			containerPortal = 411FE7760FF43A2A24A2C297 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2C0556EA45770493F3BF4EEB;
-			remoteInfo = "Pods-Pinpoint-GeoFire";
-		};
-		34DA4598236D2A2E71FF599F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 74892A56CB3EF50DC002191E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAB78E039F7CCF710A8C23F5;
+			remoteGlobalIDString = 659C17D1434986AA68909E88;
 			remoteInfo = "Pods-Pinpoint-Onboard";
+		};
+		9077BC248BEA486477B4CECB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 411FE7760FF43A2A24A2C297 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A28665D973F95523494F9E04;
+			remoteInfo = "Pods-Pinpoint-GeoFire";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0105D8F9438A966182AE0008 /* GFGeoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHash.m; path = GeoFire/Implementation/GFGeoHash.m; sourceTree = "<group>"; };
-		03503B2D026983500253C8CA /* Pods-Pinpoint-Onboard-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard-Private.xcconfig"; sourceTree = "<group>"; };
-		04C4B6AE7EC8CDB58DC8AD40 /* GFCircleQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFCircleQuery.h; path = GeoFire/API/GFCircleQuery.h; sourceTree = "<group>"; };
-		05DA2C89BCAE115E0C5E5D26 /* Pods-Pinpoint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pinpoint-acknowledgements.plist"; sourceTree = "<group>"; };
-		08E345D55CF885D80A38D3DC /* Pods-Pinpoint-Onboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-Onboard-prefix.pch"; sourceTree = "<group>"; };
-		09D69F0301B9664FC9043B28 /* GFQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFQuery.m; path = GeoFire/Implementation/GFQuery.m; sourceTree = "<group>"; };
-		0BDCD0F8750B58D0E5AAC066 /* Pods-Pinpoint-GeoFire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire-Private.xcconfig"; sourceTree = "<group>"; };
-		0FB701AF2F11B52F0ACF7C59 /* OnboardingViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingViewController.m; path = "Objective-C/Onboard/OnboardingViewController.m"; sourceTree = "<group>"; };
-		11C60DCC48BD0144D87BE45C /* OnboardingContentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingContentViewController.h; path = "Objective-C/Onboard/OnboardingContentViewController.h"; sourceTree = "<group>"; };
-		1543E261E78F58C597CB9B8D /* libPods-Pinpoint-GeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-GeoFire.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EE4E7082C48AA445867D58B /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23F9AF3C5F4B82699AA654CB /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
-		2544D8529FDAB326C6DEEC0A /* Pods-Pinpoint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pinpoint-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2614E322A8A9BE28025C3F6B /* Pods-Pinpoint-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-environment.h"; sourceTree = "<group>"; };
-		2CC3F3554820479151ADC15D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		385509A57893C7466E60097E /* Pods-Pinpoint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pinpoint-resources.sh"; sourceTree = "<group>"; };
-		3A8B63DE37F72C7752E86886 /* GFBase32Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFBase32Utils.m; path = GeoFire/Implementation/GFBase32Utils.m; sourceTree = "<group>"; };
-		41193A2082F329E202A135FC /* OnboardingContentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingContentViewController.m; path = "Objective-C/Onboard/OnboardingContentViewController.m"; sourceTree = "<group>"; };
-		59006010AF457C8A97B59B35 /* GeoFire.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GeoFire.m; path = GeoFire/Implementation/GeoFire.m; sourceTree = "<group>"; };
-		608A8D45502E764755659663 /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
-		60DA377AEB5A59F84A7633D1 /* GFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFQuery.h; path = GeoFire/API/GFQuery.h; sourceTree = "<group>"; };
-		644D9B7276706A7068DB772A /* OnboardingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingViewController.h; path = "Objective-C/Onboard/OnboardingViewController.h"; sourceTree = "<group>"; };
-		77F5B1A064EC2E26ABC8F90D /* GFGeoHashQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHashQuery.h; path = GeoFire/Implementation/GFGeoHashQuery.h; sourceTree = "<group>"; };
-		8690AA12B740B7E0F5E91AA0 /* Pods-Pinpoint-Onboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-Onboard-dummy.m"; sourceTree = "<group>"; };
-		9C62E7820A47DD35840D0353 /* Pods-Pinpoint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-dummy.m"; sourceTree = "<group>"; };
-		9E9E984803C50B6B1996B6EA /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A7C5D158D2BF314808CC87D0 /* GeoFire+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeoFire+Private.h"; path = "GeoFire/Implementation/GeoFire+Private.h"; sourceTree = "<group>"; };
-		B0A9FE1B667D3C446BF96F37 /* Pods-Pinpoint-GeoFire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-GeoFire-dummy.m"; sourceTree = "<group>"; };
-		B82F230E6939A85EAA9198B6 /* GeoFire.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoFire.h; path = GeoFire/API/GeoFire.h; sourceTree = "<group>"; };
-		C78A16BB16189C639067BC55 /* Pods-Pinpoint-GeoFire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire.xcconfig"; sourceTree = "<group>"; };
-		D17841FAD8ECC4BAEE429E33 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHashQuery.m; path = GeoFire/Implementation/GFGeoHashQuery.m; sourceTree = "<group>"; };
-		D39C8275EFBB166976CF69AA /* Pods-Pinpoint-Onboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard.xcconfig"; sourceTree = "<group>"; };
-		E07A4CBFF66389ECFEEB0C79 /* libPods-Pinpoint-Onboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-Onboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F16205C5C784EFC9CF213CD5 /* GFBase32Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFBase32Utils.h; path = GeoFire/Implementation/GFBase32Utils.h; sourceTree = "<group>"; };
-		F43799EDCDEE254809BC6C52 /* Pods-Pinpoint-GeoFire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-GeoFire-prefix.pch"; sourceTree = "<group>"; };
-		F652DC1B970816B272D16C3F /* GFGeoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHash.h; path = GeoFire/Implementation/GFGeoHash.h; sourceTree = "<group>"; };
-		FD1C0FA5C0C7AE3596FE1BCA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FD48FAA438964A8159FBEFE0 /* GFQuery+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GFQuery+Private.h"; path = "GeoFire/Implementation/GFQuery+Private.h"; sourceTree = "<group>"; };
-		FDA7EB74721CF6A81524B1EF /* GFRegionQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFRegionQuery.h; path = GeoFire/API/GFRegionQuery.h; sourceTree = "<group>"; };
+		0A81D9D92DED91CD0013C8AB /* Pods-Pinpoint-Onboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-Onboard-dummy.m"; sourceTree = "<group>"; };
+		0C414AC4CCE20A388C43793A /* GFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFQuery.h; path = GeoFire/API/GFQuery.h; sourceTree = "<group>"; };
+		0E1149CBB1904F84A14F0C60 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E5FB2DC5742ED774B4A6063 /* GeoFire.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GeoFire.m; path = GeoFire/Implementation/GeoFire.m; sourceTree = "<group>"; };
+		0FF58F42D0FEA63D7E03E466 /* libPods-Pinpoint-Onboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-Onboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17DD0295E32A96434B2CFF24 /* Pods-Pinpoint-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-environment.h"; sourceTree = "<group>"; };
+		1E41E767178C4F9580F491BF /* Pods-Pinpoint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pinpoint-acknowledgements.plist"; sourceTree = "<group>"; };
+		29BADD03450A56F9043E8D49 /* Pods-Pinpoint-GeoFire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-GeoFire-dummy.m"; sourceTree = "<group>"; };
+		3111C421CC8327716F1A68D7 /* Pods-Pinpoint-GeoFire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire.xcconfig"; sourceTree = "<group>"; };
+		319D2E919B366CFCC971CE02 /* GeoFire.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoFire.h; path = GeoFire/API/GeoFire.h; sourceTree = "<group>"; };
+		345F0C2B859D9DCAA2E1BB1D /* Pods-Pinpoint-Onboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-Onboard-prefix.pch"; sourceTree = "<group>"; };
+		35ACC69200B8B78AF22A1176 /* GFQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFQuery.m; path = GeoFire/Implementation/GFQuery.m; sourceTree = "<group>"; };
+		3746BF968BF6E8AC86244FE2 /* GFQuery+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GFQuery+Private.h"; path = "GeoFire/Implementation/GFQuery+Private.h"; sourceTree = "<group>"; };
+		415013A0C563F1171E0691E6 /* Pods-Pinpoint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pinpoint-resources.sh"; sourceTree = "<group>"; };
+		55058E41ED3075FA86DC8A4A /* Pods-Pinpoint-GeoFire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-GeoFire-prefix.pch"; sourceTree = "<group>"; };
+		6774F1C02EF769E876D67DD6 /* OnboardingViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingViewController.m; path = "Objective-C/Onboard/OnboardingViewController.m"; sourceTree = "<group>"; };
+		683CC8B09090351EF323A202 /* GeoFire+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeoFire+Private.h"; path = "GeoFire/Implementation/GeoFire+Private.h"; sourceTree = "<group>"; };
+		6B69706F9A8212358F6273EE /* libPods-Pinpoint-GeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-GeoFire.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		739D78E7EF5DFF17C20665FF /* Pods-Pinpoint-Onboard-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard-Private.xcconfig"; sourceTree = "<group>"; };
+		75BB9F21F41730C57861CE3A /* GFGeoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHash.m; path = GeoFire/Implementation/GFGeoHash.m; sourceTree = "<group>"; };
+		7857EB2125A78EEA6F984A3D /* OnboardingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingViewController.h; path = "Objective-C/Onboard/OnboardingViewController.h"; sourceTree = "<group>"; };
+		7AD1F261214796797D896FE4 /* Pods-Pinpoint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pinpoint-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7D6D3AE7271B6E3C9AE8F08F /* GFGeoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHash.h; path = GeoFire/Implementation/GFGeoHash.h; sourceTree = "<group>"; };
+		806A79172648F8D775E5B9E9 /* GFRegionQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFRegionQuery.h; path = GeoFire/API/GFRegionQuery.h; sourceTree = "<group>"; };
+		8519C60F2D4FFA8EF48E97D2 /* GFBase32Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFBase32Utils.h; path = GeoFire/Implementation/GFBase32Utils.h; sourceTree = "<group>"; };
+		85FEE15BD8C80DC1593AEE7B /* GFCircleQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFCircleQuery.h; path = GeoFire/API/GFCircleQuery.h; sourceTree = "<group>"; };
+		8D6CC360743DC0859DC4344B /* GFGeoHashQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHashQuery.h; path = GeoFire/Implementation/GFGeoHashQuery.h; sourceTree = "<group>"; };
+		90D5D9E7BC739D6EB323800D /* Pods-Pinpoint-GeoFire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire-Private.xcconfig"; sourceTree = "<group>"; };
+		9D1BDA2EAC38B2A17A7D4848 /* Pods-Pinpoint-Onboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard.xcconfig"; sourceTree = "<group>"; };
+		9DFA3F9CE5A9EBAF0354AEB0 /* OnboardingContentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingContentViewController.m; path = "Objective-C/Onboard/OnboardingContentViewController.m"; sourceTree = "<group>"; };
+		A4A562B4C18833D2F404D4C0 /* Pods-Pinpoint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-dummy.m"; sourceTree = "<group>"; };
+		A52564EBE36A4E0CBB574AC5 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHashQuery.m; path = GeoFire/Implementation/GFGeoHashQuery.m; sourceTree = "<group>"; };
+		BDDF0538C5CB4F9393A38D1C /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
+		BF95E36ECBC4712D38F75CAF /* GFBase32Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFBase32Utils.m; path = GeoFire/Implementation/GFBase32Utils.m; sourceTree = "<group>"; };
+		CD404C88416DD3B305BAC1E2 /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
+		CECB7964E6D0781EEAAD20F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F04E4A61D5C220DAE2BDDE43 /* OnboardingContentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingContentViewController.h; path = "Objective-C/Onboard/OnboardingContentViewController.h"; sourceTree = "<group>"; };
+		F0A8CBC7D4ABA593177AFF89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		F837F69BF32825DE57AE6FE5 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00FCD46D41041ACBD28C6DDB /* Frameworks */ = {
+		17677F2A9C8EE11EB550055B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				146A47FFA83BF46CDC508793 /* Foundation.framework in Frameworks */,
+				C6F1AF577D699C8B4BF59C3F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		306780506D8B7A5F1A82EA60 /* Frameworks */ = {
+		1B1B2EB5E670596CA103FF0A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79B80B41A330D4840A848D7A /* Foundation.framework in Frameworks */,
+				05EF0AFB8EB400F68A5E0D0F /* CoreLocation.framework in Frameworks */,
+				E9E0CB819F7722040528CE08 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56CE38FFDFB48EF78B9C417C /* Frameworks */ = {
+		E1483097BB4AF4BF0D0EF0F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3951ADDF8DBCD2569FB640F1 /* CoreLocation.framework in Frameworks */,
-				C324CDDC6D28E97B4AA5A18C /* Foundation.framework in Frameworks */,
+				E49767B16F31B5D4A80EEF1F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D08EF3AFCA856CED8C623B9 /* Frameworks */ = {
+		194ABE9303216F1E1413816D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D61A25C742327C37E7A109B /* iOS */,
+				685C20094EA90D7ADAD404C7 /* Firebase */,
+				6410D4CC102B24FDDED7970B /* GeoFire */,
+				C4952CADDEEB873E18E8E985 /* Onboard */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		27BDCC9C2D2FE3A142F51E16 /* GeoFire */ = {
+		2111885FEE0B3FDEFE5748D7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F16205C5C784EFC9CF213CD5 /* GFBase32Utils.h */,
-				3A8B63DE37F72C7752E86886 /* GFBase32Utils.m */,
-				04C4B6AE7EC8CDB58DC8AD40 /* GFCircleQuery.h */,
-				F652DC1B970816B272D16C3F /* GFGeoHash.h */,
-				0105D8F9438A966182AE0008 /* GFGeoHash.m */,
-				77F5B1A064EC2E26ABC8F90D /* GFGeoHashQuery.h */,
-				D17841FAD8ECC4BAEE429E33 /* GFGeoHashQuery.m */,
-				60DA377AEB5A59F84A7633D1 /* GFQuery.h */,
-				09D69F0301B9664FC9043B28 /* GFQuery.m */,
-				FD48FAA438964A8159FBEFE0 /* GFQuery+Private.h */,
-				FDA7EB74721CF6A81524B1EF /* GFRegionQuery.h */,
-				B82F230E6939A85EAA9198B6 /* GeoFire.h */,
-				59006010AF457C8A97B59B35 /* GeoFire.m */,
-				A7C5D158D2BF314808CC87D0 /* GeoFire+Private.h */,
-				4F4B392D4C19B72E3DCA29A2 /* Support Files */,
-			);
-			path = GeoFire;
-			sourceTree = "<group>";
-		};
-		3D61A25C742327C37E7A109B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				2CC3F3554820479151ADC15D /* CoreLocation.framework */,
-				FD1C0FA5C0C7AE3596FE1BCA /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4F4B392D4C19B72E3DCA29A2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C78A16BB16189C639067BC55 /* Pods-Pinpoint-GeoFire.xcconfig */,
-				0BDCD0F8750B58D0E5AAC066 /* Pods-Pinpoint-GeoFire-Private.xcconfig */,
-				B0A9FE1B667D3C446BF96F37 /* Pods-Pinpoint-GeoFire-dummy.m */,
-				F43799EDCDEE254809BC6C52 /* Pods-Pinpoint-GeoFire-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Pinpoint-GeoFire";
-			sourceTree = "<group>";
-		};
-		5187A4E3F01651F5B27A5F51 /* Pods-Pinpoint */ = {
-			isa = PBXGroup;
-			children = (
-				2544D8529FDAB326C6DEEC0A /* Pods-Pinpoint-acknowledgements.markdown */,
-				05DA2C89BCAE115E0C5E5D26 /* Pods-Pinpoint-acknowledgements.plist */,
-				9C62E7820A47DD35840D0353 /* Pods-Pinpoint-dummy.m */,
-				2614E322A8A9BE28025C3F6B /* Pods-Pinpoint-environment.h */,
-				385509A57893C7466E60097E /* Pods-Pinpoint-resources.sh */,
-				23F9AF3C5F4B82699AA654CB /* Pods-Pinpoint.debug.xcconfig */,
-				608A8D45502E764755659663 /* Pods-Pinpoint.release.xcconfig */,
-			);
-			name = "Pods-Pinpoint";
-			path = "Target Support Files/Pods-Pinpoint";
-			sourceTree = "<group>";
-		};
-		51E27F7DE2EE5F732AB9789D /* Onboard */ = {
-			isa = PBXGroup;
-			children = (
-				11C60DCC48BD0144D87BE45C /* OnboardingContentViewController.h */,
-				41193A2082F329E202A135FC /* OnboardingContentViewController.m */,
-				644D9B7276706A7068DB772A /* OnboardingViewController.h */,
-				0FB701AF2F11B52F0ACF7C59 /* OnboardingViewController.m */,
-				52689468CB3890F880199C1F /* Support Files */,
-			);
-			path = Onboard;
-			sourceTree = "<group>";
-		};
-		52689468CB3890F880199C1F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D39C8275EFBB166976CF69AA /* Pods-Pinpoint-Onboard.xcconfig */,
-				03503B2D026983500253C8CA /* Pods-Pinpoint-Onboard-Private.xcconfig */,
-				8690AA12B740B7E0F5E91AA0 /* Pods-Pinpoint-Onboard-dummy.m */,
-				08E345D55CF885D80A38D3DC /* Pods-Pinpoint-Onboard-prefix.pch */,
+				9D1BDA2EAC38B2A17A7D4848 /* Pods-Pinpoint-Onboard.xcconfig */,
+				739D78E7EF5DFF17C20665FF /* Pods-Pinpoint-Onboard-Private.xcconfig */,
+				0A81D9D92DED91CD0013C8AB /* Pods-Pinpoint-Onboard-dummy.m */,
+				345F0C2B859D9DCAA2E1BB1D /* Pods-Pinpoint-Onboard-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Pinpoint-Onboard";
 			sourceTree = "<group>";
 		};
-		62A7108B01933F57C4EBF538 = {
+		316C2C44481FB4B24A489C1A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9E9E984803C50B6B1996B6EA /* Podfile */,
-				1D08EF3AFCA856CED8C623B9 /* Frameworks */,
-				CB17049AD7FC9EBC3825BE03 /* Pods */,
-				863CD4A5DFD645653853709C /* Products */,
-				843C7BB67103051A1F769B9B /* Targets Support Files */,
+				F0A8CBC7D4ABA593177AFF89 /* CoreLocation.framework */,
+				CECB7964E6D0781EEAAD20F8 /* Foundation.framework */,
 			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		811704152247543DBC605CD9 /* Firebase */ = {
+		6410D4CC102B24FDDED7970B /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				8519C60F2D4FFA8EF48E97D2 /* GFBase32Utils.h */,
+				BF95E36ECBC4712D38F75CAF /* GFBase32Utils.m */,
+				85FEE15BD8C80DC1593AEE7B /* GFCircleQuery.h */,
+				7D6D3AE7271B6E3C9AE8F08F /* GFGeoHash.h */,
+				75BB9F21F41730C57861CE3A /* GFGeoHash.m */,
+				8D6CC360743DC0859DC4344B /* GFGeoHashQuery.h */,
+				A52564EBE36A4E0CBB574AC5 /* GFGeoHashQuery.m */,
+				0C414AC4CCE20A388C43793A /* GFQuery.h */,
+				35ACC69200B8B78AF22A1176 /* GFQuery.m */,
+				3746BF968BF6E8AC86244FE2 /* GFQuery+Private.h */,
+				806A79172648F8D775E5B9E9 /* GFRegionQuery.h */,
+				319D2E919B366CFCC971CE02 /* GeoFire.h */,
+				0E5FB2DC5742ED774B4A6063 /* GeoFire.m */,
+				683CC8B09090351EF323A202 /* GeoFire+Private.h */,
+				E1B6F03EC92ACE03B46391E1 /* Support Files */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		685C20094EA90D7ADAD404C7 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		843C7BB67103051A1F769B9B /* Targets Support Files */ = {
+		71F073C57E18BD85BFFF71E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5187A4E3F01651F5B27A5F51 /* Pods-Pinpoint */,
+				316C2C44481FB4B24A489C1A /* iOS */,
 			);
-			name = "Targets Support Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		863CD4A5DFD645653853709C /* Products */ = {
+		A70DB3F9F3D1872D85C9E2EF /* Pods-Pinpoint */ = {
 			isa = PBXGroup;
 			children = (
-				1EE4E7082C48AA445867D58B /* libPods-Pinpoint.a */,
-				1543E261E78F58C597CB9B8D /* libPods-Pinpoint-GeoFire.a */,
-				E07A4CBFF66389ECFEEB0C79 /* libPods-Pinpoint-Onboard.a */,
+				7AD1F261214796797D896FE4 /* Pods-Pinpoint-acknowledgements.markdown */,
+				1E41E767178C4F9580F491BF /* Pods-Pinpoint-acknowledgements.plist */,
+				A4A562B4C18833D2F404D4C0 /* Pods-Pinpoint-dummy.m */,
+				17DD0295E32A96434B2CFF24 /* Pods-Pinpoint-environment.h */,
+				415013A0C563F1171E0691E6 /* Pods-Pinpoint-resources.sh */,
+				BDDF0538C5CB4F9393A38D1C /* Pods-Pinpoint.debug.xcconfig */,
+				CD404C88416DD3B305BAC1E2 /* Pods-Pinpoint.release.xcconfig */,
+			);
+			name = "Pods-Pinpoint";
+			path = "Target Support Files/Pods-Pinpoint";
+			sourceTree = "<group>";
+		};
+		B6CD3C63C9706EAEFE118AEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E1149CBB1904F84A14F0C60 /* libPods-Pinpoint.a */,
+				6B69706F9A8212358F6273EE /* libPods-Pinpoint-GeoFire.a */,
+				0FF58F42D0FEA63D7E03E466 /* libPods-Pinpoint-Onboard.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CB17049AD7FC9EBC3825BE03 /* Pods */ = {
+		BE9063CDBE375B66A04F71CD /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				811704152247543DBC605CD9 /* Firebase */,
-				27BDCC9C2D2FE3A142F51E16 /* GeoFire */,
-				51E27F7DE2EE5F732AB9789D /* Onboard */,
+				A70DB3F9F3D1872D85C9E2EF /* Pods-Pinpoint */,
 			);
-			name = Pods;
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C4952CADDEEB873E18E8E985 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				F04E4A61D5C220DAE2BDDE43 /* OnboardingContentViewController.h */,
+				9DFA3F9CE5A9EBAF0354AEB0 /* OnboardingContentViewController.m */,
+				7857EB2125A78EEA6F984A3D /* OnboardingViewController.h */,
+				6774F1C02EF769E876D67DD6 /* OnboardingViewController.m */,
+				2111885FEE0B3FDEFE5748D7 /* Support Files */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		E1B6F03EC92ACE03B46391E1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3111C421CC8327716F1A68D7 /* Pods-Pinpoint-GeoFire.xcconfig */,
+				90D5D9E7BC739D6EB323800D /* Pods-Pinpoint-GeoFire-Private.xcconfig */,
+				29BADD03450A56F9043E8D49 /* Pods-Pinpoint-GeoFire-dummy.m */,
+				55058E41ED3075FA86DC8A4A /* Pods-Pinpoint-GeoFire-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Pinpoint-GeoFire";
+			sourceTree = "<group>";
+		};
+		E4726F7925B212B155AA94E7 = {
+			isa = PBXGroup;
+			children = (
+				F837F69BF32825DE57AE6FE5 /* Podfile */,
+				71F073C57E18BD85BFFF71E0 /* Frameworks */,
+				194ABE9303216F1E1413816D /* Pods */,
+				B6CD3C63C9706EAEFE118AEC /* Products */,
+				BE9063CDBE375B66A04F71CD /* Targets Support Files */,
+			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		052A15124ED45399B7822FE0 /* Headers */ = {
+		3A0E45D2F993B6CE77288825 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD700E478C065EB595F8B997 /* GFBase32Utils.h in Headers */,
-				7DA6EADCD785F7DF4DFEBA85 /* GFCircleQuery.h in Headers */,
-				1FD7A04EFECD9FBFB4556494 /* GFGeoHash.h in Headers */,
-				123B86472B253E06B0B7AA61 /* GFGeoHashQuery.h in Headers */,
-				A6882D2DFFC64F8991103A0E /* GFQuery+Private.h in Headers */,
-				F980736AC1D3690288F367DA /* GFQuery.h in Headers */,
-				D19C04ED6CD215689DF55D8D /* GFRegionQuery.h in Headers */,
-				F3D9A4AEBBBB80EBBBC57C4F /* GeoFire+Private.h in Headers */,
-				EAE5358BCD461FC9601BC899 /* GeoFire.h in Headers */,
+				4E7B923146655493EC836844 /* OnboardingContentViewController.h in Headers */,
+				22A7132BF5D98E418EBA65B8 /* OnboardingViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A411644E290D237581AF9FC /* Headers */ = {
+		65DE5F65A87B6A2AECDDB712 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BB2E2D9F2C85A3AFB83113D /* OnboardingContentViewController.h in Headers */,
-				97173BE3642CA4E459B81302 /* OnboardingViewController.h in Headers */,
+				7FF3E52B3DD43C987FAFAF1F /* GFBase32Utils.h in Headers */,
+				34E90BB224A91F73AAFAFDDF /* GFCircleQuery.h in Headers */,
+				EE95FC771753B2A2E8E91191 /* GFGeoHash.h in Headers */,
+				F65960BC2AC67D328E91ED89 /* GFGeoHashQuery.h in Headers */,
+				EC0CA7E4D199086AE933C26E /* GFQuery+Private.h in Headers */,
+				A8F68976B904E87613022A6B /* GFQuery.h in Headers */,
+				44951876BCD8D976E4CAA226 /* GFRegionQuery.h in Headers */,
+				067F67F4D5084C903AB70E8B /* GeoFire+Private.h in Headers */,
+				7CC1305413577077166305D2 /* GeoFire.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2C0556EA45770493F3BF4EEB /* Pods-Pinpoint-GeoFire */ = {
+		659C17D1434986AA68909E88 /* Pods-Pinpoint-Onboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C943CF8D3D3C90BA03C398D /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */;
+			buildConfigurationList = 5A423AEED7D1CAA747D8408C /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */;
 			buildPhases = (
-				9C19CDA5F6A6A8E454E81BAF /* Sources */,
-				56CE38FFDFB48EF78B9C417C /* Frameworks */,
-				052A15124ED45399B7822FE0 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Pinpoint-GeoFire";
-			productName = "Pods-Pinpoint-GeoFire";
-			productReference = 1543E261E78F58C597CB9B8D /* libPods-Pinpoint-GeoFire.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		F578C4BAE9581BF2AAD68BB0 /* Pods-Pinpoint */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8F0D8B75FED87AB244375DDA /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */;
-			buildPhases = (
-				F3233BBF1E8988AA3F8BA9B5 /* Sources */,
-				306780506D8B7A5F1A82EA60 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7A24BFD39B0C2E0B2D1374D4 /* PBXTargetDependency */,
-				30C518AA2F370CB562A012EE /* PBXTargetDependency */,
-			);
-			name = "Pods-Pinpoint";
-			productName = "Pods-Pinpoint";
-			productReference = 1EE4E7082C48AA445867D58B /* libPods-Pinpoint.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		FAB78E039F7CCF710A8C23F5 /* Pods-Pinpoint-Onboard */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1715F129B1BBF85BAFBC6272 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */;
-			buildPhases = (
-				2C2C32443CE6AB7192C61C86 /* Sources */,
-				00FCD46D41041ACBD28C6DDB /* Frameworks */,
-				3A411644E290D237581AF9FC /* Headers */,
+				6D7E0B9E9930CA1D044FBDB7 /* Sources */,
+				17677F2A9C8EE11EB550055B /* Frameworks */,
+				3A0E45D2F993B6CE77288825 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -338,87 +303,138 @@
 			);
 			name = "Pods-Pinpoint-Onboard";
 			productName = "Pods-Pinpoint-Onboard";
-			productReference = E07A4CBFF66389ECFEEB0C79 /* libPods-Pinpoint-Onboard.a */;
+			productReference = 0FF58F42D0FEA63D7E03E466 /* libPods-Pinpoint-Onboard.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8AC12D3F7F6330A0D2535605 /* Pods-Pinpoint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8451BDCA21506C0F4111D45 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */;
+			buildPhases = (
+				CEAB7F5C228AB6461F32EDCB /* Sources */,
+				E1483097BB4AF4BF0D0EF0F8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E60F730A28E190C6730EE28 /* PBXTargetDependency */,
+				77A685FB928A414D6DBF47B0 /* PBXTargetDependency */,
+			);
+			name = "Pods-Pinpoint";
+			productName = "Pods-Pinpoint";
+			productReference = 0E1149CBB1904F84A14F0C60 /* libPods-Pinpoint.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A28665D973F95523494F9E04 /* Pods-Pinpoint-GeoFire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCC8164A7F98D393558F9F9F /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */;
+			buildPhases = (
+				25F1D037C472A909D1131458 /* Sources */,
+				1B1B2EB5E670596CA103FF0A /* Frameworks */,
+				65DE5F65A87B6A2AECDDB712 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Pinpoint-GeoFire";
+			productName = "Pods-Pinpoint-GeoFire";
+			productReference = 6B69706F9A8212358F6273EE /* libPods-Pinpoint-GeoFire.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		74892A56CB3EF50DC002191E /* Project object */ = {
+		411FE7760FF43A2A24A2C297 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = C8A7CB2E63F78A88EC73077F /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = DA2A52BB558EC51E2174F4AF /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 62A7108B01933F57C4EBF538;
-			productRefGroup = 863CD4A5DFD645653853709C /* Products */;
+			mainGroup = E4726F7925B212B155AA94E7;
+			productRefGroup = B6CD3C63C9706EAEFE118AEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F578C4BAE9581BF2AAD68BB0 /* Pods-Pinpoint */,
-				2C0556EA45770493F3BF4EEB /* Pods-Pinpoint-GeoFire */,
-				FAB78E039F7CCF710A8C23F5 /* Pods-Pinpoint-Onboard */,
+				8AC12D3F7F6330A0D2535605 /* Pods-Pinpoint */,
+				A28665D973F95523494F9E04 /* Pods-Pinpoint-GeoFire */,
+				659C17D1434986AA68909E88 /* Pods-Pinpoint-Onboard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2C2C32443CE6AB7192C61C86 /* Sources */ = {
+		25F1D037C472A909D1131458 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				427CBCB4E0C858D68B4C812B /* OnboardingContentViewController.m in Sources */,
-				60B9B01F99A9625EB48F3610 /* OnboardingViewController.m in Sources */,
-				F7F15DDAB376F42574DBAE9F /* Pods-Pinpoint-Onboard-dummy.m in Sources */,
+				B083CB63392E264D20E02950 /* GFBase32Utils.m in Sources */,
+				11F47756B10C95FB1081DCD8 /* GFGeoHash.m in Sources */,
+				D5746A672F19868DB1202485 /* GFGeoHashQuery.m in Sources */,
+				F3B15629ACD266D91941AF88 /* GFQuery.m in Sources */,
+				41667E57D3548008948709A6 /* GeoFire.m in Sources */,
+				F47BC11B8AF0606B1561B0BD /* Pods-Pinpoint-GeoFire-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C19CDA5F6A6A8E454E81BAF /* Sources */ = {
+		6D7E0B9E9930CA1D044FBDB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE6353E23E10E9E19F0F61A3 /* GFBase32Utils.m in Sources */,
-				5380CD3F0E077BBE3EC079B0 /* GFGeoHash.m in Sources */,
-				CE6084E0666E5BCF129A2161 /* GFGeoHashQuery.m in Sources */,
-				56A5CC60B40334713C7D1622 /* GFQuery.m in Sources */,
-				6D86B29AFAC8B200CCCF7CAD /* GeoFire.m in Sources */,
-				B23A98BFC5EBB3AD64163275 /* Pods-Pinpoint-GeoFire-dummy.m in Sources */,
+				17DC6EB97531C3D84EEC05F3 /* OnboardingContentViewController.m in Sources */,
+				32B3428D8964C60AA1727DC1 /* OnboardingViewController.m in Sources */,
+				017352506495BACF3A5766FC /* Pods-Pinpoint-Onboard-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3233BBF1E8988AA3F8BA9B5 /* Sources */ = {
+		CEAB7F5C228AB6461F32EDCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DACC802E5AE4D6F5165A027B /* Pods-Pinpoint-dummy.m in Sources */,
+				1EC0D1B685C0BD28C218FDDA /* Pods-Pinpoint-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		30C518AA2F370CB562A012EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Pinpoint-Onboard";
-			target = FAB78E039F7CCF710A8C23F5 /* Pods-Pinpoint-Onboard */;
-			targetProxy = 34DA4598236D2A2E71FF599F /* PBXContainerItemProxy */;
-		};
-		7A24BFD39B0C2E0B2D1374D4 /* PBXTargetDependency */ = {
+		1E60F730A28E190C6730EE28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Pinpoint-GeoFire";
-			target = 2C0556EA45770493F3BF4EEB /* Pods-Pinpoint-GeoFire */;
-			targetProxy = 2960396E99A27B1721E131CD /* PBXContainerItemProxy */;
+			target = A28665D973F95523494F9E04 /* Pods-Pinpoint-GeoFire */;
+			targetProxy = 9077BC248BEA486477B4CECB /* PBXContainerItemProxy */;
+		};
+		77A685FB928A414D6DBF47B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Pinpoint-Onboard";
+			target = 659C17D1434986AA68909E88 /* Pods-Pinpoint-Onboard */;
+			targetProxy = 2099D1221FE607E6FA63DC07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		13CA7DFD2E2F3AE5ADBB4DF9 /* Release */ = {
+		064F10C7E2664030258DB066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D5D9E7BC739D6EB323800D /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-GeoFire/Pods-Pinpoint-GeoFire-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2496EABBD563525E892A23A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -452,9 +468,73 @@
 			};
 			name = Release;
 		};
-		189B6ED1E055C8996E3B4020 /* Debug */ = {
+		5BACF14D0D2B17833D19B375 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03503B2D026983500253C8CA /* Pods-Pinpoint-Onboard-Private.xcconfig */;
+			baseConfigurationReference = BDDF0538C5CB4F9393A38D1C /* Pods-Pinpoint.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5E471275DF7D1312AB727766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 739D78E7EF5DFF17C20665FF /* Pods-Pinpoint-Onboard-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8D1DAA8AA0101C157586FABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD404C88416DD3B305BAC1E2 /* Pods-Pinpoint.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A0D6AC8D88BCF9E4492196F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D5D9E7BC739D6EB323800D /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-GeoFire/Pods-Pinpoint-GeoFire-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		ACFF9DEABA6B1C5E77F65552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 739D78E7EF5DFF17C20665FF /* Pods-Pinpoint-Onboard-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
@@ -468,7 +548,7 @@
 			};
 			name = Debug;
 		};
-		52B42CF0B2E0CB83D8489A4A /* Debug */ = {
+		D2B289C75258F5C264F51923 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -507,126 +587,46 @@
 			};
 			name = Debug;
 		};
-		89E4950BA9CF53254717C18B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BDCD0F8750B58D0E5AAC066 /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-GeoFire/Pods-Pinpoint-GeoFire-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B1C98E1300BA035E17ABC1FE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23F9AF3C5F4B82699AA654CB /* Pods-Pinpoint.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		EF7160FE6D8E229991FDC51B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 608A8D45502E764755659663 /* Pods-Pinpoint.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F127028E38AA6B83E80BF528 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03503B2D026983500253C8CA /* Pods-Pinpoint-Onboard-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		FFE0DEF48CF6BEA92CA04EAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BDCD0F8750B58D0E5AAC066 /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-GeoFire/Pods-Pinpoint-GeoFire-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1715F129B1BBF85BAFBC6272 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */ = {
+		5A423AEED7D1CAA747D8408C /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				189B6ED1E055C8996E3B4020 /* Debug */,
-				F127028E38AA6B83E80BF528 /* Release */,
+				ACFF9DEABA6B1C5E77F65552 /* Debug */,
+				5E471275DF7D1312AB727766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C943CF8D3D3C90BA03C398D /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */ = {
+		DA2A52BB558EC51E2174F4AF /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				89E4950BA9CF53254717C18B /* Debug */,
-				FFE0DEF48CF6BEA92CA04EAE /* Release */,
+				D2B289C75258F5C264F51923 /* Debug */,
+				2496EABBD563525E892A23A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8F0D8B75FED87AB244375DDA /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */ = {
+		E8451BDCA21506C0F4111D45 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1C98E1300BA035E17ABC1FE /* Debug */,
-				EF7160FE6D8E229991FDC51B /* Release */,
+				5BACF14D0D2B17833D19B375 /* Debug */,
+				8D1DAA8AA0101C157586FABF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8A7CB2E63F78A88EC73077F /* Build configuration list for PBXProject "Pods" */ = {
+		FCC8164A7F98D393558F9F9F /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52B42CF0B2E0CB83D8489A4A /* Debug */,
-				13CA7DFD2E2F3AE5ADBB4DF9 /* Release */,
+				064F10C7E2664030258DB066 /* Debug */,
+				A0D6AC8D88BCF9E4492196F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 74892A56CB3EF50DC002191E /* Project object */;
+	rootObject = 411FE7760FF43A2A24A2C297 /* Project object */;
 }
