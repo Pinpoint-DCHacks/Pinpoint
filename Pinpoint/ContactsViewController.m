@@ -47,20 +47,6 @@ BOOL updateOnce = false;
     // Do any additional setup after loading the view.
 }
 
-- (void)login {
-    NSLog(@"Number: %@", [UserData sharedInstance].number);
-    NSLog(@"Email: %@", [UserData sharedInstance].email);
-    [self.firebase authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
-        if (error) {
-            NSLog(@"Error logging in: %@", error);
-        }
-        else {
-            NSLog(@"Successfully logged in");
-            [UserData sharedInstance].uid = authData.uid;
-        }
-    }];
-}
-
 - (IBAction)didTapShare:(id)sender {
     updateOnce = false;
     if ([self.sharingButton.title isEqualToString:@"Start Sharing"]) {
@@ -171,6 +157,16 @@ BOOL updateOnce = false;
         [self performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else {
+        [[UserData sharedRef] authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
+            if (error) {
+                NSLog(@"Error logging in");
+            }
+            else {
+                NSLog(@"Logged in %@ successfully", [UserData sharedInstance].email);
+            }
+        }];
     }
 }
 

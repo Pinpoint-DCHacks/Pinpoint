@@ -55,7 +55,7 @@
             dat.password = self.passwordText.text;
             dat.uid = authData.uid;
             FirebaseHandle handle = [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/uids/%@", dat.uid]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                NSLog(@"snapshot value: %@", snapshot.value);
+                NSLog(@"user being logged in: %@", snapshot.value);
                 dat.username = snapshot.value;
             }];
             [[UserData sharedRef] removeObserverWithHandle:handle];
