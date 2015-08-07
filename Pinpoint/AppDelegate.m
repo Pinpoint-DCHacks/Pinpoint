@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <Firebase/Firebase.h>
+#import "UserData.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UserData sharedInstance] load];
     // Override point for customization after application launch.
     return YES;
 }
@@ -40,6 +41,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    [[UserData sharedInstance] save];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

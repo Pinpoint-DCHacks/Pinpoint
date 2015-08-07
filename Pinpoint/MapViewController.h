@@ -12,5 +12,5 @@
 @interface MapViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (strong, nonatomic) NSString *recipientNumber;
+@property (strong, nonatomic) NSString *recipientId;
 @end

@@ -1,5 +1,5 @@
 //
-//  StartViewController.h
+//  CreateAccountViewController.h
 //  Pinpoint
 //
 //  Created by Spencer Atkin on 8/1/15.
@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StartViewController : UIViewController <UITextFieldDelegate>
+@interface CreateAccountViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *emailText;
+@property (weak, nonatomic) IBOutlet UITextField *usernameText;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
+@property (weak, nonatomic) IBOutlet UITextField *passText;
 @property (weak, nonatomic) IBOutlet UITextField *numberText;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
 
