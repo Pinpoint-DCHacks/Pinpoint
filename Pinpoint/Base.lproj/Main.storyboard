@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="-330"/>
+            <point key="canvasLocation" x="2852" y="-330"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="g8i-e0-KQK">
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2L-tK-ITt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="-330"/>
+            <point key="canvasLocation" x="2430" y="-330"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="s1N-Pd-nwO">
@@ -179,6 +179,9 @@
                     <navigationItem key="navigationItem" title="Contacts" id="0qI-dR-85m">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5aB-W3-s5C">
                             <color key="tintColor" red="0.20392156859999999" green="0.54117647059999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapAdd:" destination="LGc-Oi-goc" id="NFp-k1-w9l"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -189,6 +192,7 @@
                         <outlet property="tableView" destination="VyA-rH-2Hm" id="JQ0-eR-EGN"/>
                         <segue destination="qU9-Pz-6t0" kind="push" identifier="ShowMapSegue" id="eMX-Ng-OCV"/>
                         <segue destination="61c-8t-JnQ" kind="modal" identifier="ShowLoginSegue" modalTransitionStyle="crossDissolve" id="ow8-6I-X8w"/>
+                        <segue destination="z6X-5L-npR" kind="modal" identifier="ShowAddContactSegue" modalTransitionStyle="coverVertical" id="DLl-RR-b4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFJ-8v-Zm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,7 +232,7 @@
                                 <color key="barTintColor" red="0.20392156859999999" green="0.54117647059999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UAt-a0-Ggv">
-                                <rect key="frame" x="96.000000602320597" y="487" width="208" height="21"/>
+                                <rect key="frame" x="96.00000092745988" y="487" width="208" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -253,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfO-1i-7ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="290"/>
+            <point key="canvasLocation" x="2011" y="290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RbS-Wv-7p6">
@@ -273,6 +277,43 @@
             </objects>
             <point key="canvasLocation" x="1156" y="290"/>
         </scene>
+        <!--Add Contact-->
+        <scene sceneID="id2-2E-NWu">
+            <objects>
+                <viewController id="XRj-Lw-qHO" customClass="AddViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tJg-d2-mNx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="dM8-gK-eTG">
+                                <rect key="frame" x="90" y="110" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Contact" id="N4h-DL-HuH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eS2-TG-GNx">
+                            <connections>
+                                <action selector="didTapCancel:" destination="XRj-Lw-qHO" id="lsG-I1-iHz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="RZw-QL-ugL">
+                            <connections>
+                                <action selector="didTapAdd:" destination="XRj-Lw-qHO" id="Jw1-SY-HOV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="usernameTextField" destination="dM8-gK-eTG" id="U6b-ha-0uM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLj-VH-rml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="-330"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="SVP-Wa-tnh">
             <objects>
@@ -289,7 +330,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9h-hW-U39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392" y="-330"/>
+            <point key="canvasLocation" x="2011" y="-330"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hY9-Tn-JzI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z6X-5L-npR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="oek-Z6-WXR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vRT-ar-NPW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XRj-Lw-qHO" kind="relationship" relationship="rootViewController" id="tHB-xS-e0z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgq-46-mUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="-330"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

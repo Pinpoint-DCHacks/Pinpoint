@@ -14,6 +14,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Pinpoint-RBBAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Pinpoint-SDCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Pinpoint-SDCAutoLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Pinpoint-UITextField+Shake.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Pinpoint.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>659C17D1434986AA68909E88</key>
+		<key>06E053D9632F2C6162527649</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AC12D3F7F6330A0D2535605</key>
+		<key>1BBE339B97513A328EBAE250</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A28665D973F95523494F9E04</key>
+		<key>7E82D43B3DBB46AE818D573F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84394FF7B7DBD03124391CDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BAE89CD6F2F960E4C3EF48E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB9A61B32CF2D88F6E59517D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECC15E8579BF565DA3B9F216</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[UserData sharedInstance] load];
+    NSLog(@"User data: %@", [UserData sharedInstance]);
     // Override point for customization after application launch.
     return YES;
 }
@@ -41,6 +42,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    NSLog(@"User data: %@", [UserData sharedInstance]);
     [[UserData sharedInstance] save];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }

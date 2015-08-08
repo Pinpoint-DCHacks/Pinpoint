@@ -6,6 +6,8 @@ target 'Pinpoint' do
     pod 'Onboard'
     pod 'Firebase'
     pod 'GeoFire'
+    pod 'UITextField+Shake'
+    pod 'SDCAlertView'
 
 end
 

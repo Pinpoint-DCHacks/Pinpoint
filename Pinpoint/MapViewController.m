@@ -71,7 +71,7 @@ MKPointAnnotation *annotation;
     [self.geofire getLocationForKey:self.recipientId withCallback:^(CLLocation *location, NSError *error) {
         NSLog(@"Getting location");
         if (error == nil) {
-            NSLog(@"Location successfully tranferred");
+            NSLog(@"Location successfully retrieved");
             // Annotation
             [UIView beginAnimations:nil context:NULL]; // animate the following:
             annotation.coordinate = location.coordinate; // move to new location

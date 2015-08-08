@@ -10,8 +10,11 @@
 #import "UserData.h"
 #import "MapViewController.h"
 #import "LoginViewController.h"
+#import "AddViewController.h"
 #import "FireUser.h"
 #import <GeoFire/GeoFire+Private.h>
+#import <SDCAlertController.h>
+#import <UITextField+Shake/UITextField+Shake.h>
 @import AddressBook;
 
 #define kPinpointURL @"pinpoint.firebaseio.com"
@@ -38,12 +41,25 @@ BOOL updateOnce = false;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.contacts = [[NSMutableArray alloc] initWithObjects:[[FireUser alloc] initWithIdentifier:@"simplelogin:2" username:@"spenceratkin"], nil];
+    self.contacts = [[NSMutableArray alloc] init];//WithObjects:[[FireUser alloc] initWithIdentifier:@"simplelogin:2" username:@"spenceratkin"], nil];
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }*/
     self.firebase = [UserData sharedRef];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
+    
+    // Initialize location manager
+    self.manager = [[CLLocationManager alloc] init];
+    [self.manager setDelegate:self];
+    
+    // Register observer for contacts being added
+    [AddViewController registerObserver:^(NSNotification *note) {
+        if (note.name != ContactsChangedNotification) {
+            return;
+        }
+        self.contacts = note.object;
+        [self.tableView reloadData];
+    }];
     // Do any additional setup after loading the view.
 }
 
@@ -51,8 +67,6 @@ BOOL updateOnce = false;
     updateOnce = false;
     if ([self.sharingButton.title isEqualToString:@"Start Sharing"]) {
         self.sharingButton.title = @"Stop Sharing";
-        self.manager = [[CLLocationManager alloc] init];
-        [self.manager setDelegate:self];
         [self checkAlwaysAuthorization];
         [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
         [self.manager startUpdatingLocation];
@@ -66,8 +80,6 @@ BOOL updateOnce = false;
 
 - (IBAction)didTapShareOnce:(id)sender {
     updateOnce = true;
-    self.manager = [[CLLocationManager alloc] init];
-    [self.manager setDelegate:self];
     [self checkAlwaysAuthorization];
     [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
     [self.manager startUpdatingLocation];
@@ -109,6 +121,42 @@ BOOL updateOnce = false;
     [[UIApplication sharedApplication] endBackgroundTask:self.task];
 }
 
+- (IBAction)didTapAdd:(id)sender {
+    [self performSegueWithIdentifier:@"ShowAddContactSegue" sender:self];
+    /*SDCAlertController *add = [SDCAlertController alertControllerWithTitle:@"Add contact" message:nil preferredStyle:SDCAlertControllerStyleAlert];
+    [add addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Username";
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    }];
+    UITextField *usernameTextField = ((UITextField *)[[add textFields] objectAtIndex:0]);
+    SDCAlertAction *cancel = [SDCAlertAction actionWithTitle:@"Cancel" style:SDCAlertActionStyleCancel handler:nil];
+    SDCAlertAction *ok = [SDCAlertAction actionWithTitle:@"Ok" style:SDCAlertActionStyleDefault handler:nil];
+    add.shouldDismissBlock = ^BOOL (SDCAlertAction *action) {
+        if (action == cancel) {
+            return YES;
+        }
+        else {            
+            __block BOOL shouldReturn;
+            dispatch_group_t searchGroup = dispatch_group_create();
+            dispatch_block_t query = ^{
+                dispatch_group_wait(searchGroup, DISPATCH_TIME_FOREVER);
+                dispatch_group_enter(searchGroup);
+                NSLog(@"Entered");
+            
+            };
+            NSLog(@"Dispatching");
+            dispatch_block_wait(query, DISPATCH_TIME_FOREVER);
+            NSLog(@"shouldReturn: %d", shouldReturn);
+            return shouldReturn;
+        }
+        return YES;
+    };
+    [add addAction:cancel];
+    [add addAction:ok];
+    [self presentViewController:add animated:YES completion:nil];*/
+}
+
 - (void)checkAlwaysAuthorization {
     NSLog(@"Checking status");
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
@@ -143,12 +191,13 @@ BOOL updateOnce = false;
 
 - (void)loadView {
     [super loadView];
-    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+    [self.importButton removeFromSuperview];
+    /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self.importButton removeFromSuperview];
     }
     else {
         [self.tableView setHidden:YES];
-    }
+    }*/
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -302,6 +351,9 @@ BOOL updateOnce = false;
         [((MapViewController *)[segue destinationViewController]) setRecipientId:((FireUser *)self.contacts[selected.row]).uid];
         NSLog(@"sending uid: %@", ((FireUser *)self.contacts[selected.row]).uid);
         [[[segue destinationViewController] navigationItem] setTitle:[[sender textLabel] text]];
+    }
+    else if ([[segue identifier] isEqualToString:@"ShowAddContactSegue"]) {
+        [((AddViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0]) setContacts:self.contacts];
     }
 }
 
