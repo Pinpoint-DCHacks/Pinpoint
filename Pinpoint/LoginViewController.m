@@ -49,18 +49,22 @@
             [self presentViewController:alert animated:YES completion:nil];
         }
         else {
-            NSLog(@"Successfully logged in.");
-            UserData *dat = [UserData sharedInstance];
-            dat.email = self.emailText.text;
-            dat.password = self.passwordText.text;
+            __block UserData *dat = [UserData sharedInstance];
             dat.uid = authData.uid;
-            FirebaseHandle handle = [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/uids/%@", dat.uid]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                NSLog(@"user being logged in: %@", snapshot.value);
-                dat.username = snapshot.value;
+            [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/uids/%@", dat.uid]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                if (error) {
+                    NSLog(@"Error getting username: %@", error);
+                }
+                else {
+                    NSLog(@"user being logged in: %@", snapshot.value);
+                    dat.username = snapshot.value;
+                    NSLog(@"Successfully logged in.");
+                    dat.email = self.emailText.text;
+                    dat.password = self.passwordText.text;
+                    [dat save];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
             }];
-            [[UserData sharedRef] removeObserverWithHandle:handle];
-            [dat save];
-            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 }

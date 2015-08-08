@@ -30,6 +30,10 @@
     return _sharedRef;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"username: %@ email: %@ uid: %@ password: %@", self.username, self.email, self.uid, self.password];
+}
+
 - (void)load {
     NSLog(@"Loading data");
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];

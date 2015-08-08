@@ -1,7 +1,7 @@
 #include "Pods-Pinpoint-GeoFire.xcconfig"
 FRAMEWORK_SEARCH_PATHS = ${PODS_PINPOINT_GEOFIRE_FRAMEWORK_SEARCH_PATHS}
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/GeoFire" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Firebase" "${PODS_ROOT}/Headers/Public/GeoFire" "${PODS_ROOT}/Headers/Public/Onboard"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/GeoFire" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Firebase" "${PODS_ROOT}/Headers/Public/GeoFire" "${PODS_ROOT}/Headers/Public/Onboard" "${PODS_ROOT}/Headers/Public/RBBAnimation" "${PODS_ROOT}/Headers/Public/SDCAlertView" "${PODS_ROOT}/Headers/Public/SDCAutoLayout" "${PODS_ROOT}/Headers/Public/UITextField+Shake"
 OTHER_LDFLAGS = ${PODS_PINPOINT_GEOFIRE_OTHER_LDFLAGS} -ObjC
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES
