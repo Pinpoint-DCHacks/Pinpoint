@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ECC15E8579BF565DA3B9F216"
+               BlueprintIdentifier = "18B61C89A852B0ABA2EE35D3"
                BuildableName = "libPods-Pinpoint-RBBAnimation.a"
                BlueprintName = "Pods-Pinpoint-RBBAnimation"
                ReferencedContainer = "container:Pods.xcodeproj">

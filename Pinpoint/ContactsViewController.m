@@ -15,6 +15,7 @@
 #import <GeoFire/GeoFire+Private.h>
 #import <SDCAlertController.h>
 #import <UITextField+Shake/UITextField+Shake.h>
+#import "KSToastView.h"
 @import AddressBook;
 
 #define kPinpointURL @"pinpoint.firebaseio.com"
@@ -66,12 +67,14 @@ BOOL updateOnce = false;
 - (IBAction)didTapShare:(id)sender {
     updateOnce = false;
     if ([self.sharingButton.title isEqualToString:@"Start Sharing"]) {
+        [KSToastView ks_showToast:@"Started sharing location." duration:1.0f];
         self.sharingButton.title = @"Stop Sharing";
         [self checkAlwaysAuthorization];
         [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
         [self.manager startUpdatingLocation];
     }
     else {
+        [KSToastView ks_showToast:@"Stopped sharing location." duration:1.0f];
         self.sharingButton.title = @"Start Sharing";
         [self.manager stopUpdatingLocation];
         [NSObject cancelPreviousPerformRequestsWithTarget:self.manager];
@@ -79,6 +82,7 @@ BOOL updateOnce = false;
 }
 
 - (IBAction)didTapShareOnce:(id)sender {
+    [KSToastView ks_showToast:@"Shared one location." duration:1.0f];
     updateOnce = true;
     [self checkAlwaysAuthorization];
     [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];

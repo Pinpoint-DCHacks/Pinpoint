@@ -35,13 +35,7 @@
 }
 
 - (IBAction)didTapRegister:(id)sender {
-    UserData *data = [UserData sharedInstance];
-    data.name = self.nameText.text;
-    data.username = self.usernameText.text;
-    data.number = self.numberText.text;
-    data.email = self.emailText.text;
-    data.password = self.passText.text;
-    [data save];
+    __block UserData *data = [UserData sharedInstance];
     
     Firebase *ref = [UserData sharedRef];
     // Checks if username is used
@@ -72,7 +66,7 @@
                                     NSLog(@"Username: %@", data.username);
                                 }
                             }];
-                            [[ref childByAppendingPath:@"users/usernames"] updateChildValues:@{data.username: data.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                            [[[UserData sharedRef] childByAppendingPath:@"users/usernames"] updateChildValues:@{self.usernameText.text: authData.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
                                 if (error) {
                                     NSLog(@"Error writing username: %@", error);
                                 }
@@ -80,10 +74,15 @@
                                     NSLog(@"Wrote username successfully");
                                 }
                             }];
+                            data.name = self.nameText.text;
+                            data.username = self.usernameText.text;
+                            data.number = self.numberText.text;
+                            data.email = self.emailText.text;
+                            data.password = self.passText.text;
+                            [data save];
+                            [self dismissViewControllerAnimated:YES completion:nil];
                         }
                     }];
-                    // TODO - Set user data values
-                    [self dismissViewControllerAnimated:YES completion:nil];
                 }
             }];
         }
