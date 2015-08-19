@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Ccz-rf-oYu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hsI-vE-i0u">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -34,7 +34,7 @@
                                 <rect key="frame" x="16" y="65" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="89b-Sn-W05">
@@ -74,7 +74,7 @@
                                 <rect key="frame" x="16" y="65" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="bht-WS-fuJ">
@@ -130,11 +130,11 @@
             <objects>
                 <viewController id="LGc-Oi-goc" customClass="ContactsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xfM-GI-WPl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fnn-kh-gz8">
-                                <rect key="frame" x="104" y="269" width="112" height="30"/>
+                                <rect key="frame" x="104" y="238.5" width="112" height="26.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Import Contacts">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VyA-rH-2Hm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -152,33 +152,40 @@
                                     <outlet property="delegate" destination="LGc-Oi-goc" id="2ST-Jk-vkc"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VUD-qH-Kzp">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="VUD-qH-Kzp">
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem title="Share Current" id="Heg-OB-k8X">
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.1137254902" green="0.56862745100000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="didTapShareOnce:" destination="LGc-Oi-goc" id="TWS-kF-ygO"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Kuo-Dk-a8I"/>
                                     <barButtonItem title="Start Sharing" id="JRE-1Y-EeQ">
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.1137254902" green="0.56862745100000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="didTapShare:" destination="LGc-Oi-goc" id="xCH-P0-1vI"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.20392156859999999" green="0.54117647059999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.1137254902" green="0.56862745100000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="0qI-dR-85m">
+                        <barButtonItem key="leftBarButtonItem" image="List 1" id="bxb-j5-hBf">
+                            <color key="tintColor" red="0.1137254902" green="0.56862745100000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="openLeftView:" destination="LGc-Oi-goc" id="hPB-69-ZAk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5aB-W3-s5C">
-                            <color key="tintColor" red="0.20392156859999999" green="0.54117647059999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.1137254902" green="0.56862745100000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapAdd:" destination="LGc-Oi-goc" id="NFp-k1-w9l"/>
                             </connections>
@@ -190,9 +197,7 @@
                         <outlet property="searchDisplayController" destination="3vc-iM-Frp" id="HQz-Fp-ruE"/>
                         <outlet property="sharingButton" destination="JRE-1Y-EeQ" id="xmG-Mx-U29"/>
                         <outlet property="tableView" destination="VyA-rH-2Hm" id="JQ0-eR-EGN"/>
-                        <segue destination="qU9-Pz-6t0" kind="push" identifier="ShowMapSegue" id="eMX-Ng-OCV"/>
-                        <segue destination="61c-8t-JnQ" kind="modal" identifier="ShowLoginSegue" modalTransitionStyle="crossDissolve" id="ow8-6I-X8w"/>
-                        <segue destination="z6X-5L-npR" kind="modal" identifier="ShowAddContactSegue" modalTransitionStyle="coverVertical" id="DLl-RR-b4b"/>
+                        <segue destination="qU9-Pz-6t0" kind="push" identifier="ShowMapSegue" id="vu8-UP-Bhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFJ-8v-Zm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,34 +217,35 @@
             <objects>
                 <viewController id="qU9-Pz-6t0" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbd-Dw-Tpk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Ofz-fa-IlH">
-                                <rect key="frame" x="0.0" y="64" width="320" height="409"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="421"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="qU9-Pz-6t0" id="56t-L2-NlP"/>
                                 </connections>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zhh-Bd-8eY">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="zhh-Bd-8eY">
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ohl-KZ-HHB"/>
                                 </items>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.20392156859999999" green="0.54117647059999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.1137254902" green="0.56862745100000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UAt-a0-Ggv">
-                                <rect key="frame" x="96" y="487" width="208" height="21"/>
+                                <rect key="frame" x="96.000000602320597" y="432" width="208" height="18.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KMC-n2-THa">
-                                <rect key="frame" x="16" y="487" width="72" height="21"/>
+                                <rect key="frame" x="16" y="432" width="72" height="18.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -262,11 +268,15 @@
         <!--Navigation Controller-->
         <scene sceneID="RbS-Wv-7p6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ccz-rf-oYu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ccz-rf-oYu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4wh-Cn-fLh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4wh-Cn-fLh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -276,6 +286,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFT-vV-vjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156" y="290"/>
+        </scene>
+        <!--Side Menu Controller-->
+        <scene sceneID="Ed6-nv-YV3">
+            <objects>
+                <viewController id="hsI-vE-i0u" customClass="SideMenuController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t1g-pk-AaK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="leftViewBackgroundColor">
+                            <color key="value" red="0.16862745100000001" green="0.25490196079999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="z6X-5L-npR" kind="modal" identifier="ShowAddContactSegue" modalTransitionStyle="coverVertical" id="AMv-Ay-nes"/>
+                        <segue destination="61c-8t-JnQ" kind="modal" identifier="ShowLoginSegue" modalTransitionStyle="coverVertical" id="I4W-dA-Z8g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJ6-3T-b5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="924"/>
         </scene>
         <!--Add Contact-->
         <scene sceneID="id2-2E-NWu">
@@ -351,11 +384,43 @@
             </objects>
             <point key="canvasLocation" x="1156" y="-330"/>
         </scene>
+        <!--Left Table View Controller-->
+        <scene sceneID="Gkp-jT-Vwk">
+            <objects>
+                <tableViewController storyboardIdentifier="LeftTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nkn-Um-Ib2" customClass="LeftTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7mx-qe-70R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xSw-ay-t9j" customClass="LeftViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xSw-ay-t9j" id="mle-4F-8eH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Nkn-Um-Ib2" id="fW6-I8-Itj"/>
+                            <outlet property="delegate" destination="Nkn-Um-Ib2" id="jpO-bW-FeE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZd-AJ-WQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="1532"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="List 1" width="22" height="18"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="0.20392156862745098" green="0.54117647058823526" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.1137254902" green="0.56862745100000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>

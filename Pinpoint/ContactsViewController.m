@@ -8,9 +8,11 @@
 
 #import "ContactsViewController.h"
 #import "UserData.h"
+#import "AppDelegate.h"
 #import "MapViewController.h"
 #import "LoginViewController.h"
 #import "AddViewController.h"
+#import "SideMenuController.h"
 #import "FireUser.h"
 #import <GeoFire/GeoFire+Private.h>
 #import <SDCAlertController.h>
@@ -26,7 +28,6 @@
 @property (strong, nonatomic) GeoFire *geofire;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
 
-@property (strong, nonatomic) NSMutableArray *contacts;
 @property (nonatomic) UIBackgroundTaskIdentifier task;
 @end
 
@@ -36,7 +37,6 @@ NSString *cellID = @"TableCellID";
 //NSMutableArray *contacts;
 //NSMutableArray *names;
 //NSMutableArray *phoneNumbers;
-NSIndexPath *selected;
 BOOL accessAllowed = false;
 BOOL updateOnce = false;
 
@@ -58,10 +58,20 @@ BOOL updateOnce = false;
         if (note.name != ContactsChangedNotification) {
             return;
         }
+        NSLog(@"Observed");
         self.contacts = note.object;
         [self.tableView reloadData];
     }];
     // Do any additional setup after loading the view.
+}
+
+- (void)awakeFromNib {
+    NSLog(@"Awake");
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(openLeftView)];
+}
+
+- (IBAction)openLeftView:(id)sender {
+    [kSideMenuController showLeftViewAnimated:YES completionHandler:nil];
 }
 
 - (IBAction)didTapShare:(id)sender {
@@ -126,7 +136,7 @@ BOOL updateOnce = false;
 }
 
 - (IBAction)didTapAdd:(id)sender {
-    [self performSegueWithIdentifier:@"ShowAddContactSegue" sender:self];
+    [kSideMenuController performSegueWithIdentifier:@"ShowAddContactSegue" sender:self];
     /*SDCAlertController *add = [SDCAlertController alertControllerWithTitle:@"Add contact" message:nil preferredStyle:SDCAlertControllerStyleAlert];
     [add addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"Username";
@@ -207,7 +217,7 @@ BOOL updateOnce = false;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
-        [self performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
+        [kSideMenuController performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
@@ -342,7 +352,7 @@ BOOL updateOnce = false;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    selected = indexPath;
+    self.selected = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]
      ];
@@ -352,14 +362,10 @@ BOOL updateOnce = false;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowMapSegue"]) {
-        [((MapViewController *)[segue destinationViewController]) setRecipientId:((FireUser *)self.contacts[selected.row]).uid];
-        NSLog(@"sending uid: %@", ((FireUser *)self.contacts[selected.row]).uid);
+        [((MapViewController *)[segue destinationViewController]) setRecipientId:((FireUser *)self.contacts[self.selected.row]).uid];
+        NSLog(@"sending uid: %@", ((FireUser *)self.contacts[self.selected.row]).uid);
         [[[segue destinationViewController] navigationItem] setTitle:[[sender textLabel] text]];
     }
-    else if ([[segue identifier] isEqualToString:@"ShowAddContactSegue"]) {
-        [((AddViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0]) setContacts:self.contacts];
-    }
 }
-
 
 @end

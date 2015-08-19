@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SideMenuController.h"
+
+#define kSideMenuController ((SideMenuController *)[[(AppDelegate *)[[UIApplication sharedApplication] delegate] window] rootViewController])
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

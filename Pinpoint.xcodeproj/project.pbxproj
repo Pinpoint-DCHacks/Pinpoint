@@ -24,6 +24,10 @@
 		096E64871B7314F9001842F6 /* PhoneFormats.dat in Resources */ = {isa = PBXBuildFile; fileRef = 096E64861B7314F9001842F6 /* PhoneFormats.dat */; };
 		0999E0F81B7664DC00D8D57D /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0999E0F71B7664DC00D8D57D /* AddViewController.m */; };
 		09ADFD981B76831800F25D8E /* KSToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFD971B76831800F25D8E /* KSToastView.m */; };
+		09ADFE0C1B7E6C6D00F25D8E /* SideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE0B1B7E6C6C00F25D8E /* SideMenuController.m */; };
+		09ADFE0F1B7E6C8F00F25D8E /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */; };
+		09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE121B7E744400F25D8E /* LeftTableViewController.m */; };
+		09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F4DCBE1B7EAF420069139F /* LeftViewCell.m */; };
 		8E6441F4930C3E82486357F0 /* libPods-Pinpoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,14 @@
 		0999E0F71B7664DC00D8D57D /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		09ADFD961B76831800F25D8E /* KSToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSToastView.h; path = KSToastView/KSToastView.h; sourceTree = "<group>"; };
 		09ADFD971B76831800F25D8E /* KSToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSToastView.m; path = KSToastView/KSToastView.m; sourceTree = "<group>"; };
+		09ADFE0A1B7E6C6C00F25D8E /* SideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuController.h; sourceTree = "<group>"; };
+		09ADFE0B1B7E6C6C00F25D8E /* SideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuController.m; sourceTree = "<group>"; };
+		09ADFE0D1B7E6C8F00F25D8E /* LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuController.h; sourceTree = "<group>"; };
+		09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuController.m; sourceTree = "<group>"; };
+		09ADFE111B7E744400F25D8E /* LeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewController.h; sourceTree = "<group>"; };
+		09ADFE121B7E744400F25D8E /* LeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewController.m; sourceTree = "<group>"; };
+		09F4DCBD1B7EAF420069139F /* LeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewCell.h; sourceTree = "<group>"; };
+		09F4DCBE1B7EAF420069139F /* LeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewCell.m; sourceTree = "<group>"; };
 		60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C74ED7C40729B8E77CB7 /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinpoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinpoint/Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
 		D6EF172C0F1E98D521FF84AC /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinpoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinpoint/Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +146,7 @@
 				0999E0F61B7664DC00D8D57D /* AddViewController.h */,
 				0999E0F71B7664DC00D8D57D /* AddViewController.m */,
 				095EF2AD1B740BAC00AEAE26 /* Account */,
+				09F4DCC01B7EAF680069139F /* Side Menu */,
 				09529F2C1B6D6C3F0080E32B /* ContactsViewController.h */,
 				09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */,
 				09529F2F1B6DA8CB0080E32B /* MapViewController.h */,
@@ -202,9 +215,32 @@
 			name = KSToastView;
 			sourceTree = "<group>";
 		};
+		09ADFE101B7E6C9800F25D8E /* LGSideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				09ADFE0D1B7E6C8F00F25D8E /* LGSideMenuController.h */,
+				09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */,
+			);
+			name = LGSideMenuController;
+			sourceTree = "<group>";
+		};
+		09F4DCC01B7EAF680069139F /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				09ADFE0A1B7E6C6C00F25D8E /* SideMenuController.h */,
+				09ADFE0B1B7E6C6C00F25D8E /* SideMenuController.m */,
+				09ADFE111B7E744400F25D8E /* LeftTableViewController.h */,
+				09ADFE121B7E744400F25D8E /* LeftTableViewController.m */,
+				09F4DCBD1B7EAF420069139F /* LeftViewCell.h */,
+				09F4DCBE1B7EAF420069139F /* LeftViewCell.m */,
+			);
+			name = "Side Menu";
+			sourceTree = "<group>";
+		};
 		620660C86472AC8AEFB0A880 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09ADFE101B7E6C9800F25D8E /* LGSideMenuController */,
 				09ADFD991B76831D00F25D8E /* KSToastView */,
 				096E64841B730FC6001842F6 /* RMPhoneFormat */,
 				095A31BD1B6E5A3500CED8E9 /* MapKit.framework */,
@@ -372,11 +408,15 @@
 				096E64831B730FC3001842F6 /* RMPhoneFormat.m in Sources */,
 				09529F2B1B6D66400080E32B /* CreateAccountViewController.m in Sources */,
 				095EF2A71B73D68D00AEAE26 /* FireUser.m in Sources */,
+				09ADFE0C1B7E6C6D00F25D8E /* SideMenuController.m in Sources */,
+				09ADFE0F1B7E6C8F00F25D8E /* LGSideMenuController.m in Sources */,
 				095EF2A41B73C2C800AEAE26 /* UserData.m in Sources */,
 				09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */,
 				095EF2B41B740BFB00AEAE26 /* LoginViewController.m in Sources */,
 				09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */,
 				0964B6DB1B6D5D15009EA05D /* AppDelegate.m in Sources */,
+				09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */,
+				09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */,
 				0964B6D81B6D5D15009EA05D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

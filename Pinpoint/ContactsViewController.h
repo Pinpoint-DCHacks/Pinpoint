@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
+@property (strong, nonatomic) NSMutableArray *contacts;
+@property (strong, nonatomic) NSIndexPath *selected;
 @end
