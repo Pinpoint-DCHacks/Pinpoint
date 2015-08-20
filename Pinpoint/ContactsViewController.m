@@ -42,6 +42,11 @@ BOOL updateOnce = false;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.contacts = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"contacts"]];
+    if (!self.contacts) {
+        self.contacts = [[NSMutableArray alloc] init];
+    }
+    NSLog(@"tint: %@", self.view.tintColor);
     self.contacts = [[NSMutableArray alloc] init];//WithObjects:[[FireUser alloc] initWithIdentifier:@"simplelogin:2" username:@"spenceratkin"], nil];
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
@@ -58,15 +63,16 @@ BOOL updateOnce = false;
         if (note.name != ContactsChangedNotification) {
             return;
         }
-        NSLog(@"Observed");
+        NSLog(@"Observed contacts change");
         self.contacts = note.object;
         [self.tableView reloadData];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.contacts] forKey:@"contacts"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }];
     // Do any additional setup after loading the view.
 }
 
 - (void)awakeFromNib {
-    NSLog(@"Awake");
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(openLeftView)];
 }
 

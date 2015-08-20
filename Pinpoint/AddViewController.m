@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 #import "UserData.h"
 #import "FireUser.h"
+#import "KSToastView.h"
 #import <UITextField+Shake/UITextField+Shake.h>
 
 @interface AddViewController ()
@@ -44,6 +45,7 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
 }
 
 - (IBAction)didTapAdd:(id)sender {
+    NSLog(@"Add");
     if ([self.usernameTextField.text isEqualToString:@""]) {
         [self.usernameTextField shake:10 withDelta:5];
     }
@@ -51,7 +53,7 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
         [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
             NSLog(@"Observing FEventTypeValue");
             if ([snapshot.value isKindOfClass:[NSNull class]]) {
-                NSLog(@"No name exists");
+                [KSToastView ks_showToast:@"That user does not exist." duration:1.0f];
                 [self.usernameTextField shake:10 withDelta:5];
             }
             else {

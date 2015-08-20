@@ -308,7 +308,6 @@
         
         _rootVC = rootViewController;
         
-#warning Commented out these lines
         [self addChildViewController:_rootVC];
         [self.view addSubview:_rootVC.view];
         
@@ -1214,7 +1213,6 @@
     if (kLGSideMenuSystemVersion >= 7.0 && !_savedStatusBarHidden && kLGSideMenuStatusBarHidden && !self.isRightViewShowing)
     {
         [self addChildViewController:_rootVC];
-#warning Status bar
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     }
     

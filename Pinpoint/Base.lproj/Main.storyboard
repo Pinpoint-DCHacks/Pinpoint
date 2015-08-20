@@ -238,7 +238,7 @@
                                 <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UAt-a0-Ggv">
-                                <rect key="frame" x="96.000000602320597" y="432" width="208" height="18.5"/>
+                                <rect key="frame" x="96.00000092745988" y="432" width="208" height="18.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

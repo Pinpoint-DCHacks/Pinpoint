@@ -15,7 +15,6 @@
 @implementation LeftViewCell
 
 - (void)awakeFromNib {
-    NSLog(@"Cell awake");
     [super awakeFromNib];
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -41,7 +40,7 @@
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
     if (highlighted)
-        self.textLabel.textColor = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f];
+        self.textLabel.textColor = [UIColor colorWithRed:29.f / 255.f green:145.f / 255.f blue:86.f / 255.f alpha:1.f];//[UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f];
     else
         self.textLabel.textColor = _tintColor;
 }

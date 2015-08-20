@@ -29,7 +29,7 @@ CGRect bounds;
     self.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
     self.leftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftTableViewController"];
     [self setLeftViewEnabledWithWidth:250.f
-                    presentationStyle:LGSideMenuPresentationStyleScaleFromLittle
+                    presentationStyle:LGSideMenuPresentationStyleScaleFromBig
                  alwaysVisibleOptions:0];
     
     self.leftViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnNone;
