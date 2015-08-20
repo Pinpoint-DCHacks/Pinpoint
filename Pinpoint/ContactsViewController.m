@@ -42,11 +42,13 @@ BOOL updateOnce = false;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.contacts = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"contacts"]];
+    NSData *contactsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"contacts"];
+    if (contactsData) {
+        self.contacts = [NSKeyedUnarchiver unarchiveObjectWithData:contactsData];
+    }
     if (!self.contacts) {
         self.contacts = [[NSMutableArray alloc] init];
     }
-    NSLog(@"tint: %@", self.view.tintColor);
     self.contacts = [[NSMutableArray alloc] init];//WithObjects:[[FireUser alloc] initWithIdentifier:@"simplelogin:2" username:@"spenceratkin"], nil];
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
@@ -230,7 +232,11 @@ BOOL updateOnce = false;
     else {
         [[UserData sharedRef] authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
             if (error) {
-                NSLog(@"Error logging in");
+                NSLog(@"Error logging in: %@", error);
+                if (error.code == -15) {
+                    // Internet connection appears to be offline
+                }
+                [KSToastView ks_showToast:@"Error logging in." duration:1.0f];
             }
             else {
                 NSLog(@"Logged in %@ successfully", [UserData sharedInstance].email);

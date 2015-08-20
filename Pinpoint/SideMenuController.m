@@ -26,7 +26,7 @@ CGRect bounds;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    self.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContactsNavController"];
     self.leftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftTableViewController"];
     [self setLeftViewEnabledWithWidth:250.f
                     presentationStyle:LGSideMenuPresentationStyleScaleFromBig

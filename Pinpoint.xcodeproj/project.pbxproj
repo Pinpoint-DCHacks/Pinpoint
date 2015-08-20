@@ -27,6 +27,8 @@
 		09ADFE0C1B7E6C6D00F25D8E /* SideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE0B1B7E6C6C00F25D8E /* SideMenuController.m */; };
 		09ADFE0F1B7E6C8F00F25D8E /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */; };
 		09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE121B7E744400F25D8E /* LeftTableViewController.m */; };
+		09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D441B8609310005AB97 /* PrivacyViewController.m */; };
+		09CD5D481B860C430005AB97 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D471B860C430005AB97 /* GroupsViewController.m */; };
 		09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F4DCBE1B7EAF420069139F /* LeftViewCell.m */; };
 		8E6441F4930C3E82486357F0 /* libPods-Pinpoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,10 @@
 		09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuController.m; sourceTree = "<group>"; };
 		09ADFE111B7E744400F25D8E /* LeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewController.h; sourceTree = "<group>"; };
 		09ADFE121B7E744400F25D8E /* LeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewController.m; sourceTree = "<group>"; };
+		09CD5D431B8609310005AB97 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
+		09CD5D441B8609310005AB97 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
+		09CD5D461B860C430005AB97 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
+		09CD5D471B860C430005AB97 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
 		09F4DCBD1B7EAF420069139F /* LeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewCell.h; sourceTree = "<group>"; };
 		09F4DCBE1B7EAF420069139F /* LeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewCell.m; sourceTree = "<group>"; };
 		60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +157,10 @@
 				09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */,
 				09529F2F1B6DA8CB0080E32B /* MapViewController.h */,
 				09529F301B6DA8CB0080E32B /* MapViewController.m */,
+				09CD5D431B8609310005AB97 /* PrivacyViewController.h */,
+				09CD5D441B8609310005AB97 /* PrivacyViewController.m */,
+				09CD5D461B860C430005AB97 /* GroupsViewController.h */,
+				09CD5D471B860C430005AB97 /* GroupsViewController.m */,
 				0964B6DF1B6D5D15009EA05D /* Main.storyboard */,
 				0964B6E21B6D5D15009EA05D /* Images.xcassets */,
 				0964B6E41B6D5D15009EA05D /* LaunchScreen.xib */,
@@ -411,6 +421,7 @@
 				09ADFE0C1B7E6C6D00F25D8E /* SideMenuController.m in Sources */,
 				09ADFE0F1B7E6C8F00F25D8E /* LGSideMenuController.m in Sources */,
 				095EF2A41B73C2C800AEAE26 /* UserData.m in Sources */,
+				09CD5D481B860C430005AB97 /* GroupsViewController.m in Sources */,
 				09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */,
 				095EF2B41B740BFB00AEAE26 /* LoginViewController.m in Sources */,
 				09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */,
@@ -418,6 +429,7 @@
 				09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */,
 				09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */,
 				0964B6D81B6D5D15009EA05D /* main.m in Sources */,
+				09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
