@@ -10,9 +10,11 @@
 #import <CoreLocation/CoreLocation.h>
 #import "RMPhoneFormat.h"
 
-@interface ContactsViewController : UIViewController <CLLocationManagerDelegate>
+@interface ContactsViewController : UIViewController <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *importButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
+@property (strong, nonatomic) NSMutableArray *contacts;
+@property (strong, nonatomic) NSIndexPath *selected;
 @end

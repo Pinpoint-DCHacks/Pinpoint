@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pinpoint/ContactsViewController.m"
-            timestampString = "460746664.275777"
+            timestampString = "461790651.743394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-didTapAdd:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pinpoint/ContactsViewController.m"
-            timestampString = "460746664.275777"
+            timestampString = "461790651.743394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "-didTapAdd:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pinpoint/ContactsViewController.m"
-            timestampString = "460746664.275777"
+            timestampString = "461790651.743394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-didTapAdd:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pinpoint/ContactsViewController.m"
-            timestampString = "460746664.275777"
+            timestampString = "461790651.743394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "-didTapAdd:"
             landmarkType = "5">
          </BreakpointContent>

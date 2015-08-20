@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FireUser : NSObject
+@interface FireUser : NSObject <NSCoding>
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *uid;
 

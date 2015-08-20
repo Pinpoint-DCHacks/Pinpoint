@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 #import "UserData.h"
 #import "FireUser.h"
+#import "KSToastView.h"
 #import <UITextField+Shake/UITextField+Shake.h>
 
 @interface AddViewController ()
@@ -44,37 +45,44 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
 }
 
 - (IBAction)didTapAdd:(id)sender {
-    [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"Observing FEventTypeValue");
-        if ([snapshot.value isKindOfClass:[NSNull class]]) {
-            NSLog(@"No name exists");
-            [self.usernameTextField shake:10 withDelta:5];
-        }
-        else {
-            NSLog(@"Contact valid");
-            BOOL exists = NO;
-            // Checks is user with this username has already been added.
-            for (NSInteger x = 0; x < [self.contacts count]; x++) {
-                if ([((FireUser *)[self.contacts objectAtIndex:x]).username isEqualToString:self.usernameTextField.text]) {
-                    exists = YES;
-                    break;
-                }
-            }
-            if (!exists) {
-                [self.contacts addObject:[[FireUser alloc] initWithIdentifier:snapshot.value username:self.usernameTextField.text]];
-                [AddViewController notifyChange:self.contacts];
-                [self.usernameTextField resignFirstResponder];
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-            else {
+    NSLog(@"Add");
+    if ([self.usernameTextField.text isEqualToString:@""]) {
+        [self.usernameTextField shake:10 withDelta:5];
+    }
+    else {
+        [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            NSLog(@"Observing FEventTypeValue");
+            if ([snapshot.value isKindOfClass:[NSNull class]]) {
+                [KSToastView ks_showToast:@"That user does not exist." duration:1.0f];
                 [self.usernameTextField shake:10 withDelta:5];
             }
-        }
-        //[self performSelector:@selector(cancel) onThread:[NSThread currentThread] withObject:nil waitUntilDone:YES];
-    }];
+            else {
+                NSLog(@"Contact valid");
+                BOOL exists = NO;
+                // Checks is user with this username has already been added.
+                for (NSInteger x = 0; x < [self.contacts count]; x++) {
+                    if ([((FireUser *)[self.contacts objectAtIndex:x]).username isEqualToString:self.usernameTextField.text]) {
+                        exists = YES;
+                        break;
+                    }
+                }
+                if (!exists) {
+                    [self.contacts addObject:[[FireUser alloc] initWithIdentifier:snapshot.value username:self.usernameTextField.text]];
+                    [AddViewController notifyChange:self.contacts];
+                    [self.usernameTextField resignFirstResponder];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+                else {
+                    [self.usernameTextField shake:10 withDelta:5];
+                }
+            }
+            //[self performSelector:@selector(cancel) onThread:[NSThread currentThread] withObject:nil waitUntilDone:YES];
+        }];
+    }
 }
 
 - (IBAction)didTapCancel:(id)sender {
+    [self.usernameTextField resignFirstResponder];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -8,13 +8,16 @@
 
 #import "ContactsViewController.h"
 #import "UserData.h"
+#import "AppDelegate.h"
 #import "MapViewController.h"
 #import "LoginViewController.h"
 #import "AddViewController.h"
+#import "SideMenuController.h"
 #import "FireUser.h"
 #import <GeoFire/GeoFire+Private.h>
 #import <SDCAlertController.h>
 #import <UITextField+Shake/UITextField+Shake.h>
+#import "KSToastView.h"
 @import AddressBook;
 
 #define kPinpointURL @"pinpoint.firebaseio.com"
@@ -25,7 +28,6 @@
 @property (strong, nonatomic) GeoFire *geofire;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
 
-@property (strong, nonatomic) NSMutableArray *contacts;
 @property (nonatomic) UIBackgroundTaskIdentifier task;
 @end
 
@@ -35,13 +37,18 @@ NSString *cellID = @"TableCellID";
 //NSMutableArray *contacts;
 //NSMutableArray *names;
 //NSMutableArray *phoneNumbers;
-NSIndexPath *selected;
 BOOL accessAllowed = false;
 BOOL updateOnce = false;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.contacts = [[NSMutableArray alloc] init];//WithObjects:[[FireUser alloc] initWithIdentifier:@"simplelogin:2" username:@"spenceratkin"], nil];
+    NSData *contactsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"contacts"];
+    if (contactsData) {
+        self.contacts = [NSKeyedUnarchiver unarchiveObjectWithData:contactsData];
+    }
+    if (!self.contacts) {
+        self.contacts = [[NSMutableArray alloc] init];
+    }
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }*/
@@ -57,21 +64,34 @@ BOOL updateOnce = false;
         if (note.name != ContactsChangedNotification) {
             return;
         }
+        NSLog(@"Observed contacts change");
         self.contacts = note.object;
         [self.tableView reloadData];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.contacts] forKey:@"contacts"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }];
     // Do any additional setup after loading the view.
+}
+
+- (void)awakeFromNib {
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(openLeftView)];
+}
+
+- (IBAction)openLeftView:(id)sender {
+    [kSideMenuController showLeftViewAnimated:YES completionHandler:nil];
 }
 
 - (IBAction)didTapShare:(id)sender {
     updateOnce = false;
     if ([self.sharingButton.title isEqualToString:@"Start Sharing"]) {
+        [KSToastView ks_showToast:@"Started sharing location." duration:1.0f];
         self.sharingButton.title = @"Stop Sharing";
         [self checkAlwaysAuthorization];
         [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
         [self.manager startUpdatingLocation];
     }
     else {
+        [KSToastView ks_showToast:@"Stopped sharing location." duration:1.0f];
         self.sharingButton.title = @"Start Sharing";
         [self.manager stopUpdatingLocation];
         [NSObject cancelPreviousPerformRequestsWithTarget:self.manager];
@@ -79,6 +99,7 @@ BOOL updateOnce = false;
 }
 
 - (IBAction)didTapShareOnce:(id)sender {
+    [KSToastView ks_showToast:@"Shared one location." duration:1.0f];
     updateOnce = true;
     [self checkAlwaysAuthorization];
     [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -122,7 +143,7 @@ BOOL updateOnce = false;
 }
 
 - (IBAction)didTapAdd:(id)sender {
-    [self performSegueWithIdentifier:@"ShowAddContactSegue" sender:self];
+    [kSideMenuController performSegueWithIdentifier:@"ShowAddContactSegue" sender:self];
     /*SDCAlertController *add = [SDCAlertController alertControllerWithTitle:@"Add contact" message:nil preferredStyle:SDCAlertControllerStyleAlert];
     [add addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"Username";
@@ -203,14 +224,18 @@ BOOL updateOnce = false;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
-        [self performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
+        [kSideMenuController performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else {
         [[UserData sharedRef] authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
             if (error) {
-                NSLog(@"Error logging in");
+                NSLog(@"Error logging in: %@", error);
+                if (error.code == -15) {
+                    // Internet connection appears to be offline
+                }
+                [KSToastView ks_showToast:@"Error logging in." duration:1.0f];
             }
             else {
                 NSLog(@"Logged in %@ successfully", [UserData sharedInstance].email);
@@ -338,7 +363,7 @@ BOOL updateOnce = false;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    selected = indexPath;
+    self.selected = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"ShowMapSegue" sender:[tableView cellForRowAtIndexPath:indexPath]
      ];
@@ -348,14 +373,10 @@ BOOL updateOnce = false;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowMapSegue"]) {
-        [((MapViewController *)[segue destinationViewController]) setRecipientId:((FireUser *)self.contacts[selected.row]).uid];
-        NSLog(@"sending uid: %@", ((FireUser *)self.contacts[selected.row]).uid);
+        [((MapViewController *)[segue destinationViewController]) setRecipientId:((FireUser *)self.contacts[self.selected.row]).uid];
+        NSLog(@"sending uid: %@", ((FireUser *)self.contacts[self.selected.row]).uid);
         [[[segue destinationViewController] navigationItem] setTitle:[[sender textLabel] text]];
     }
-    else if ([[segue identifier] isEqualToString:@"ShowAddContactSegue"]) {
-        [((AddViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0]) setContacts:self.contacts];
-    }
 }
-
 
 @end
