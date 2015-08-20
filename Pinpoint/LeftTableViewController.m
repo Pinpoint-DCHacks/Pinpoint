@@ -34,7 +34,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [[UserData sharedInstance] load];
-    _titlesArray = @[[UserData sharedInstance].username,
+#warning Doesn't work first time
+    _titlesArray = @[/*[UserData sharedInstance].username*/@"spenceratkin",
                      @"",
                      @"Contacts",
                      @"Profile",

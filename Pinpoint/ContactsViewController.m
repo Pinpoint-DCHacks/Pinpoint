@@ -49,7 +49,6 @@ BOOL updateOnce = false;
     if (!self.contacts) {
         self.contacts = [[NSMutableArray alloc] init];
     }
-    self.contacts = [[NSMutableArray alloc] init];//WithObjects:[[FireUser alloc] initWithIdentifier:@"simplelogin:2" username:@"spenceratkin"], nil];
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }*/
