@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHMultipleSelect.h"
 
-@interface PrivacyViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PrivacyViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SHMultipleSelectDelegate>
 
 @end

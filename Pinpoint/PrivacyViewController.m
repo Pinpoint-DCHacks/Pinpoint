@@ -8,16 +8,29 @@
 
 #import "PrivacyViewController.h"
 #import "AppDelegate.h"
+#import "FireUser.h"
 
 @interface PrivacyViewController ()
 @property (nonatomic) NSInteger privacyValue;
 @property (strong, nonatomic) UISegmentedControl *privacyControl;
+@property (strong, nonatomic) NSMutableArray *contacts;
+@property (strong, nonatomic) NSArray *dataSource;
 @end
 
 @implementation PrivacyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSData *contactsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"contacts"];
+    if (contactsData) {
+        self.contacts = [NSKeyedUnarchiver unarchiveObjectWithData:contactsData];
+    }
+    if (!self.contacts) {
+        self.contacts = [[NSMutableArray alloc] init];
+    }
+    if (!self.dataSource) {
+        self.dataSource = [[NSArray alloc] init];
+    }
     self.privacyValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"privacySettingValue"];
     // Do any additional setup after loading the view.
 }
@@ -64,12 +77,9 @@
             cell = [[UITableViewCell alloc] init];
         }
         if (indexPath.row == 1) {
-            self.privacyControl = [[UISegmentedControl alloc] initWithItems:@[@"Use Default", @"Ask"]];
-            CGFloat cellWidth = cell.frame.size.width;
-            self.privacyControl.frame = CGRectMake((cellWidth - (cellWidth - 65)) / 2, (cell.frame.size.height - 29) / 2, cellWidth - 65, 29);
+            self.privacyControl = cell.contentView.subviews[0];
             self.privacyControl.selectedSegmentIndex = self.privacyValue;
             [self.privacyControl addTarget:self action:@selector(didTapPrivacyControl) forControlEvents:UIControlEventValueChanged];
-            [cell.contentView addSubview:self.privacyControl];
         }
     }
     else {
@@ -85,6 +95,31 @@
 - (void)didTapPrivacyControl {
     self.privacyValue = self.privacyControl.selectedSegmentIndex;
     [[NSUserDefaults standardUserDefaults] setInteger:self.privacyControl.selectedSegmentIndex forKey:@"privacySettingValue"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath indexAtPosition:0] == 1) {
+        SHMultipleSelect *multipleSelect = [[SHMultipleSelect alloc] init];
+        multipleSelect.delegate = self;
+        if (indexPath.row == 0) {
+            self.dataSource = (NSArray *)self.contacts;
+        }
+        multipleSelect.rowsCount = self.dataSource.count;
+        [multipleSelect show];
+    }
+}
+
+#pragma mark - SHMultipleSelectDelegate
+- (void)multipleSelectView:(SHMultipleSelect*)multipleSelectView clickedBtnAtIndex:(NSInteger)clickedBtnIndex withSelectedIndexPaths:(NSArray *)selectedIndexPaths {
+    if (clickedBtnIndex == 1) { // Done btn
+        for (NSIndexPath *indexPath in selectedIndexPaths) {
+            NSLog(@"%@", ((FireUser *)self.dataSource[indexPath.row]).username);
+        }
+    }
+}
+
+- (NSString*)multipleSelectView:(SHMultipleSelect*)multipleSelectView titleForRowAtIndexPath:(NSIndexPath*)indexPath {
+    return ((FireUser *)self.dataSource[indexPath.row]).username;
 }
 
 /*

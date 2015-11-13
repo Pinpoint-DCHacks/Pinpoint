@@ -30,7 +30,10 @@
 		09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D441B8609310005AB97 /* PrivacyViewController.m */; };
 		09CD5D481B860C430005AB97 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D471B860C430005AB97 /* GroupsViewController.m */; };
 		09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F4DCBE1B7EAF420069139F /* LeftViewCell.m */; };
-		8E6441F4930C3E82486357F0 /* libPods-Pinpoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */; };
+		09F5C3651B8683170067ECA0 /* SHMultipleSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F5C3601B8683170067ECA0 /* SHMultipleSelect.m */; };
+		09F5C3661B8683170067ECA0 /* UIImage+SHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F5C3621B8683170067ECA0 /* UIImage+SHAdditions.m */; };
+		09F5C3671B8683170067ECA0 /* UIView+SHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F5C3641B8683170067ECA0 /* UIView+SHAdditions.m */; };
+		FB0AEC919B7F6E5A8719359E /* libPods-Pinpoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B0B2CF80F85907F3200E50 /* libPods-Pinpoint.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +90,13 @@
 		09CD5D471B860C430005AB97 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
 		09F4DCBD1B7EAF420069139F /* LeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewCell.h; sourceTree = "<group>"; };
 		09F4DCBE1B7EAF420069139F /* LeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewCell.m; sourceTree = "<group>"; };
-		60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09F5C35F1B8683170067ECA0 /* SHMultipleSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHMultipleSelect.h; path = SHMultipleSelect/SHMultipleSelect.h; sourceTree = "<group>"; };
+		09F5C3601B8683170067ECA0 /* SHMultipleSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHMultipleSelect.m; path = SHMultipleSelect/SHMultipleSelect.m; sourceTree = "<group>"; };
+		09F5C3611B8683170067ECA0 /* UIImage+SHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SHAdditions.h"; path = "SHMultipleSelect/UIImage+SHAdditions.h"; sourceTree = "<group>"; };
+		09F5C3621B8683170067ECA0 /* UIImage+SHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SHAdditions.m"; path = "SHMultipleSelect/UIImage+SHAdditions.m"; sourceTree = "<group>"; };
+		09F5C3631B8683170067ECA0 /* UIView+SHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SHAdditions.h"; path = "SHMultipleSelect/UIView+SHAdditions.h"; sourceTree = "<group>"; };
+		09F5C3641B8683170067ECA0 /* UIView+SHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SHAdditions.m"; path = "SHMultipleSelect/UIView+SHAdditions.m"; sourceTree = "<group>"; };
+		96B0B2CF80F85907F3200E50 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C74ED7C40729B8E77CB7 /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinpoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinpoint/Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
 		D6EF172C0F1E98D521FF84AC /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinpoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinpoint/Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				095A31BE1B6E5A3500CED8E9 /* MapKit.framework in Frameworks */,
-				8E6441F4930C3E82486357F0 /* libPods-Pinpoint.a in Frameworks */,
+				FB0AEC919B7F6E5A8719359E /* libPods-Pinpoint.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,14 +256,28 @@
 			name = "Side Menu";
 			sourceTree = "<group>";
 		};
+		09F5C3681B86831C0067ECA0 /* SHMultipleSelect */ = {
+			isa = PBXGroup;
+			children = (
+				09F5C35F1B8683170067ECA0 /* SHMultipleSelect.h */,
+				09F5C3601B8683170067ECA0 /* SHMultipleSelect.m */,
+				09F5C3611B8683170067ECA0 /* UIImage+SHAdditions.h */,
+				09F5C3621B8683170067ECA0 /* UIImage+SHAdditions.m */,
+				09F5C3631B8683170067ECA0 /* UIView+SHAdditions.h */,
+				09F5C3641B8683170067ECA0 /* UIView+SHAdditions.m */,
+			);
+			name = SHMultipleSelect;
+			sourceTree = "<group>";
+		};
 		620660C86472AC8AEFB0A880 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09F5C3681B86831C0067ECA0 /* SHMultipleSelect */,
 				09ADFE101B7E6C9800F25D8E /* LGSideMenuController */,
 				09ADFD991B76831D00F25D8E /* KSToastView */,
 				096E64841B730FC6001842F6 /* RMPhoneFormat */,
 				095A31BD1B6E5A3500CED8E9 /* MapKit.framework */,
-				60F5FC141B1CD7EEA3EA7080 /* libPods-Pinpoint.a */,
+				96B0B2CF80F85907F3200E50 /* libPods-Pinpoint.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +337,7 @@
 		0964B6CA1B6D5D15009EA05D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Pinpoint-DCHacks";
 				TargetAttributes = {
 					0964B6D11B6D5D15009EA05D = {
@@ -414,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09ADFD981B76831800F25D8E /* KSToastView.m in Sources */,
+				09F5C3661B8683170067ECA0 /* UIImage+SHAdditions.m in Sources */,
 				0999E0F81B7664DC00D8D57D /* AddViewController.m in Sources */,
 				096E64831B730FC3001842F6 /* RMPhoneFormat.m in Sources */,
 				09529F2B1B6D66400080E32B /* CreateAccountViewController.m in Sources */,
@@ -425,10 +449,12 @@
 				09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */,
 				095EF2B41B740BFB00AEAE26 /* LoginViewController.m in Sources */,
 				09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */,
+				09F5C3671B8683170067ECA0 /* UIView+SHAdditions.m in Sources */,
 				0964B6DB1B6D5D15009EA05D /* AppDelegate.m in Sources */,
 				09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */,
 				09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */,
 				0964B6D81B6D5D15009EA05D /* main.m in Sources */,
+				09F5C3651B8683170067ECA0 /* SHMultipleSelect.m in Sources */,
 				09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +518,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -561,6 +588,7 @@
 				INFOPLIST_FILE = Pinpoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.spenceratkin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -576,6 +604,7 @@
 				INFOPLIST_FILE = Pinpoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.spenceratkin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -595,6 +624,7 @@
 				);
 				INFOPLIST_FILE = PinpointTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.spenceratkin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinpoint.app/Pinpoint";
 			};
@@ -610,6 +640,7 @@
 				);
 				INFOPLIST_FILE = PinpointTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.spenceratkin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinpoint.app/Pinpoint";
 			};

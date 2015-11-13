@@ -7,811 +7,738 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		081FFB04DF43F7423940DDEE /* SDCAlertLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D5F77B3E69CEE6CDE176F5 /* SDCAlertLabel.m */; };
-		0B474B7BF39A028738BB74D2 /* UIViewController+Current.h in Headers */ = {isa = PBXBuildFile; fileRef = A817CC5594BEE81B658DAC58 /* UIViewController+Current.h */; };
-		0F88983BD187960441910EDF /* SDCAlertTextFieldTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E94BF105028909A356413B6 /* SDCAlertTextFieldTableViewCell.h */; };
-		16B4A80DA03EE383821BACC8 /* SDCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73F6D7039EA809C5A6EB5 /* SDCAlertController.m */; };
-		178EB1CBD26391FCC9AE15A4 /* SDCAlertPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF53DF89B366AF3B8560D1 /* SDCAlertPresentationController.m */; };
-		2133C8E92E5C2718BD1D1B8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC4EA4207B4A36BB8EDBED /* Foundation.framework */; };
-		25EF17EDB9CEFA20D957F18F /* RBBEasingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C2843037F6AE379763232C /* RBBEasingFunction.m */; };
-		26361422B71A2E2B45FEAF0A /* SDCAlertControllerDefaultVisualStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B2436EFA41E9A91B61571912 /* SDCAlertControllerDefaultVisualStyle.m */; };
-		27B2BB72FB7BEE17A3B8E8FE /* SDCAlertControllerScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 734C8009D1A17DAC928B4F64 /* SDCAlertControllerScrollView.h */; };
-		2A48FDF40E52AC7BBD09D244 /* SDCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A65E71C9526D3EF438A63CF /* SDCAlertView.m */; };
-		2C90B8920E4A365F435F57C1 /* GFGeoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B50769AED7B10B8B95E45E /* GFGeoHash.h */; };
-		2D0DE029DC8954534AAFB206 /* RBBBlockBasedArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B355886388052684CCEA61D /* RBBBlockBasedArray.m */; };
-		2E1A0854840B469FD7A9A446 /* UITextField+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EE2907FAA1FF6B8B92B8EA /* UITextField+Shake.m */; };
-		2E9B2FFA61E61C6E39584CEE /* GFRegionQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C4F32BEE863C0AE0A9E423C /* GFRegionQuery.h */; };
-		2EDB13AB1DCD5FCC244BF870 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 742B9E3B8FECB48FFFCA1FD9 /* GFQuery.m */; };
-		3120A52B2980781CF74DD818 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722626848B599C5452DE8B27 /* CoreLocation.framework */; };
-		34E4E6D60DF0ACB337532510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC4EA4207B4A36BB8EDBED /* Foundation.framework */; };
-		34EA56E607760DF42DE0C35E /* RBBCubicBezier.h in Headers */ = {isa = PBXBuildFile; fileRef = 516D6BDF84497D2C691941D7 /* RBBCubicBezier.h */; };
-		3BEDFD8B3B48ACCB5E57AFAC /* SDCAlertPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD2F6FD07B3AFFD45FC1B12 /* SDCAlertPresentationController.h */; };
-		3C484CAB00F7D2467B8C8829 /* SDCAlertControllerCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C4EF000DCC88BED791906A /* SDCAlertControllerCollectionViewFlowLayout.h */; };
-		3E6DAE7C6CA13443712C8E60 /* SDCAlertControllerVisualStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = D896930F5B1662057DF10C29 /* SDCAlertControllerVisualStyle.h */; };
-		3FB439E15ADC39DC52C7A515 /* SDCAlertControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C328FC56DD22E29CBD81B3B1 /* SDCAlertControllerTransition.m */; };
-		49D361B59D6A784D33A0832C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE22897D44EB902AF4FFDD9 /* QuartzCore.framework */; };
-		4C01AE9697D5E21161561D7A /* UIView+SDCAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3412110DC5A55440E3A2DF /* UIView+SDCAutoLayout.m */; };
-		4C27B166390D32721C829656 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC4EA4207B4A36BB8EDBED /* Foundation.framework */; };
-		4CFF4E95A6FF94B820E23C36 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4F2FDC480AF58C6D69F5F /* GeoFire.m */; };
-		53F28AA8D5743872F08872AF /* UITextField+Shake.h in Headers */ = {isa = PBXBuildFile; fileRef = CB28277524EB1CB4801A058D /* UITextField+Shake.h */; };
-		5C3E954C669A46A87DB715F2 /* SDCAlertCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B89241D15EBBCC95CBD43 /* SDCAlertCollectionViewCell.m */; };
-		5E54F4076731E7CB0ABD8F7C /* Pods-Pinpoint-RBBAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A7328BF56A0987D16FDEE3 /* Pods-Pinpoint-RBBAnimation-dummy.m */; };
-		61F7964239B6E3572975CB34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC4EA4207B4A36BB8EDBED /* Foundation.framework */; };
-		66523E57047076FF6F00A64A /* Pods-Pinpoint-SDCAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDDE5FAF8998D2750D0998 /* Pods-Pinpoint-SDCAlertView-dummy.m */; };
-		66626F2020C3AE614D1A0679 /* SDCIntrinsicallySizedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470124EE0E33C1C4653ADBDB /* SDCIntrinsicallySizedView.m */; };
-		68727EE753961C303DE65ADE /* GeoFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 608EF5BA8E9C9F1AB233FDF4 /* GeoFire.h */; };
-		68F5D3DF99B8DB6A47CBB729 /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EBAFAB456269B3F622812 /* OnboardingContentViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6BF946B2A2162351D8BAAD7B /* RBBTweenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D13B417EB6B6466F01DBCF2B /* RBBTweenAnimation.m */; };
-		70CC1F035A79CA41CB7EBA09 /* OnboardingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B4B2CC58732610899C58EE /* OnboardingViewController.h */; };
-		72AF9ED53AD5186D15864A72 /* SDCAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C6446C1219B74091C455A015 /* SDCAlertAction.m */; };
-		74153E0C3A1211CE66CAFE3B /* RBBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4F844478A65FF96935F59 /* RBBAnimation.m */; };
-		745F75668412417F15D5BD38 /* SDCAlertControllerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22655B0215D02C66E8CF131C /* SDCAlertControllerView.h */; };
-		75D361ED3296F659E0B48C4F /* RBBAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AFC61135B97E9665B3C4AB1 /* RBBAnimation.h */; };
-		7B1CDE04AA1701CCCA197EBC /* SDCAlertControllerTextFieldViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 33611BA88C3C74EB73E7B19B /* SDCAlertControllerTextFieldViewController.h */; };
-		807587D0B71C181317B67876 /* SDCAlertLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE35CB56E9CDD91093BADF1 /* SDCAlertLabel.h */; };
-		8943A1BDA4DBE31D2E37AFF5 /* GFGeoHashQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = D1C2FC26BB9696712E42F144 /* GFGeoHashQuery.h */; };
-		8D7FD450A5331C2C4A3CAD3B /* SDCAlertViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F402ECFD4092FF4804F7B80A /* SDCAlertViewCoordinator.m */; };
-		8DE4A005BE461515B6292288 /* GeoFire+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9B64DDBD24BB2D128D26D1 /* GeoFire+Private.h */; };
-		8EFA11BC85F7EEA8D778C1B8 /* SDCAlertTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DF27A1A895D1269E70FCC0 /* SDCAlertTextFieldTableViewCell.m */; };
-		9154D6A5B2A19B661CD86290 /* Pods-Pinpoint-UITextField+Shake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A88982512AF9F703E4DE98 /* Pods-Pinpoint-UITextField+Shake-dummy.m */; };
-		92417032689C84585B1528FF /* SDCAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79BEC15BAFB2F008A5A78C /* SDCAlertViewController.m */; };
-		92CB82E92F765E0B02CFE38F /* RBBCustomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = EBC7B383F03612D0F1B1E039 /* RBBCustomAnimation.h */; };
-		95980A29C7F033974CA8B054 /* RBBLinearInterpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 31940B30E67B793366D7BC93 /* RBBLinearInterpolation.h */; };
-		95E1FFBAD6DAECFEFF351F2E /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2AD2970589D9691C4F5BAD /* GFBase32Utils.m */; };
-		968CB628FA9C0E487763A9B3 /* SDCDemoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F4C1437972F65603970A3A1C /* SDCDemoViewController.h */; };
-		989E304657C9D538589D3601 /* SDCAlertViewCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE983582B4599AF856E623A /* SDCAlertViewCoordinator.h */; };
-		9ABD3A6025204583346ACD9F /* SDCDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2607FBCF87B7239F77EB0 /* SDCDemoViewController.m */; };
-		9C4038B364AC4C828F973AE2 /* RBBEasingFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 87364728CB2A780672D91AD0 /* RBBEasingFunction.h */; };
-		9C6407942359458C650035B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC4EA4207B4A36BB8EDBED /* Foundation.framework */; };
-		9F3D53BB4D97DCA413CECF9C /* RBBSpringAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 86B3A986268EABF8F828C8A8 /* RBBSpringAnimation.h */; };
-		A1A41F7955E448120E9F12B1 /* RBBBlockBasedArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 7674FC79DBBFC8AB418CE9A8 /* RBBBlockBasedArray.h */; };
-		A4036B0711FF0DCCA4DBA15E /* SDCAlertControllerTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = B1AA1699BF65A4E4218D250A /* SDCAlertControllerTransition.h */; };
-		A5714DD8A18754A0B71C2DA2 /* SDCAlertViewContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA807DA4CEB33E26D8B308CF /* SDCAlertViewContentView.m */; };
-		A60ABCE3043CF40B55072B2E /* SDCAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF8647C3D2A6EA65E078520 /* SDCAlertViewController.h */; };
-		A61F7698E53388660646F485 /* GFQuery+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9BBBB20A39A82E263FF5CA /* GFQuery+Private.h */; };
-		AEB8FA4FA883EAF7AC97692A /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE553BE909666779D74E190 /* GFGeoHash.m */; };
-		B847686E20863042125B67AE /* SDCAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = A053138077D874D297FAC017 /* SDCAlertController.h */; };
-		BB3E1675B2BFA587B43AE7CB /* SDCAlertControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A615806477D9242E12FFC6C7 /* SDCAlertControllerView.m */; };
-		BC6E847FECA13EFAEF49972C /* SDCIntrinsicallySizedView.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C7ED0E2301AA9F16933307 /* SDCIntrinsicallySizedView.h */; };
-		BE0643CCA0AAE7558E47EFA2 /* SDCAlertViewBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B099B7569CC8DA53A5A64D /* SDCAlertViewBackgroundView.h */; };
-		C065113141561A3F083BDDB7 /* Pods-Pinpoint-Onboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D84B142C1AB8571BAA8AD0E /* Pods-Pinpoint-Onboard-dummy.m */; };
-		C1957DA7C67F8DC4734780A9 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D68C49140AE554864326CF /* OnboardingViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C341E4FE6640754492A25029 /* SDCAlertControllerTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC06B7ACB91F1E5189533B /* SDCAlertControllerTextFieldViewController.m */; };
-		C3C3F573A472092CAB2BC8D3 /* SDCAlertViewBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC27BDA9B38866F09BF41DDB /* SDCAlertViewBackgroundView.m */; };
-		C69378238A3130C33575EB0E /* RBBCubicBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E25515DF5230C440A3374E2 /* RBBCubicBezier.m */; };
-		C6D82BC6E4A398F12B124712 /* SDCAlertControllerCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B5988A29715DB423C5F92 /* SDCAlertControllerCollectionViewFlowLayout.m */; };
-		C79CA73F68C8EDCA64160CC6 /* GFCircleQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = D56206EAC256C66500ADDF1E /* GFCircleQuery.h */; };
-		C9363BAF0E785E34DDBE40D4 /* UIView+SDCAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C7F35CB8A313B798EA6F299 /* UIView+SDCAutoLayout.h */; };
-		CC75E908EE1B6E72519A0F19 /* RBBCustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D76A51EE57E2A2C70F5F2F61 /* RBBCustomAnimation.m */; };
-		CDECEF518FEB60763FC45E01 /* SDCAlertControllerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A04E94484F6E82E2DABBDD /* SDCAlertControllerScrollView.m */; };
-		CEBA1049B27D5B45ED9429B1 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AA07EC326F284D4069F25 /* GFGeoHashQuery.m */; };
-		D31E62D85614B0EE06624770 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC4EA4207B4A36BB8EDBED /* Foundation.framework */; };
-		D3CDB188EC9761EE5EDF9D7D /* SDCAlertCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 41DC978DE4121561031DFDF8 /* SDCAlertCollectionViewCell.h */; };
-		D4B2D7E39667F6A042F18546 /* RBBLinearInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A9BA1080F77AF897A8FFF /* RBBLinearInterpolation.m */; };
-		D4E6666C9E85C49C0894BBEC /* GFQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C1109B0A191C80313890C8E /* GFQuery.h */; };
-		DDBCA715F46525AA8066EE30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC4EA4207B4A36BB8EDBED /* Foundation.framework */; };
-		DE66B670668A1CA38663596D /* GFBase32Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A23E445EFF5D2E0E7F84BDD /* GFBase32Utils.h */; };
-		DFEDCD4B527A3A0BA6227FED /* SDCAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 33FC3BE239455DB9A348F395 /* SDCAlertView.h */; };
-		E1C4CF989925EB26F3645977 /* Pods-Pinpoint-SDCAutoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE39B2723051310AF6849CB /* Pods-Pinpoint-SDCAutoLayout-dummy.m */; };
-		E38005DA599FDEF4C6307E36 /* RBBSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 612D195161CECF28AA3D03FA /* RBBSpringAnimation.m */; };
-		E4238DA7453018A8B08FB6AD /* UIView+Parallax.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A2BA84141D37AE0D51C847 /* UIView+Parallax.h */; };
-		EAD34C2D82E1B413CB27C612 /* UIView+Parallax.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B83A38B8B895D07D5498287 /* UIView+Parallax.m */; };
-		EBB91F59119AC740CE9E308D /* SDCAlertViewContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = D51FC0BFFB8BD6D8529D74EB /* SDCAlertViewContentView.h */; };
-		F3DA045F338F09E2F01F0FE3 /* OnboardingContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD5F460BE485A4BAB10B040 /* OnboardingContentViewController.h */; };
-		F5277B2A3B197077244A5C7E /* Pods-Pinpoint-GeoFire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EEEDF8DCEFEAF660F243CF /* Pods-Pinpoint-GeoFire-dummy.m */; };
-		F5CA9EA0CF547F15104B7AA1 /* UIViewController+Current.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CDD4EBB233BBFB8691F5DB /* UIViewController+Current.m */; };
-		F7721F64EE6D6CAA091D8E48 /* Pods-Pinpoint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8F8C5F9662FB5D9439BF8 /* Pods-Pinpoint-dummy.m */; };
-		F8BBACA1CE63117E9DB425C4 /* SDCAlertControllerDefaultVisualStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B0E50947AD5B1B3155F6B3FD /* SDCAlertControllerDefaultVisualStyle.h */; };
-		FC896ABBD49D931796F59201 /* SDCAlertViewTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 9740FB739F0269BBFAA66B9B /* SDCAlertViewTransitioning.h */; };
-		FD15035D63F62743D4B0DCAC /* RBBTweenAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B427063312B207726201F00E /* RBBTweenAnimation.h */; };
+		01BFCDF90B2ABB79EFDCB0F6 /* SDCIntrinsicallySizedView.h in Headers */ = {isa = PBXBuildFile; fileRef = DA41F7E0DF4460C34D9F9DE8 /* SDCIntrinsicallySizedView.h */; };
+		04F17629EF3591F7BF232828 /* SDCAlertLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C63F6B204D1354E9F3801398 /* SDCAlertLabel.m */; };
+		09D598C241AE42D5BC6354DB /* SDCAlertControllerTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = FFC9D44A5045A8053C0C1F06 /* SDCAlertControllerTransition.h */; };
+		0BE2EC17BD0468B2D9C21D63 /* GFGeoHashQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFBDA47FE5349DB7F36AEFF /* GFGeoHashQuery.h */; };
+		12496D142D349D2B57A2CAF7 /* SDCAlertViewBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = E8DBBDA0D539B6C4A131FC6E /* SDCAlertViewBackgroundView.h */; };
+		1384E730E518C8A2EAA30811 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 7920339D261B3489D6811AB4 /* GeoFire.m */; };
+		16449A927BE39309D976B0A3 /* Pods-Pinpoint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3DFBFE48DC0D6A8D1D45E /* Pods-Pinpoint-dummy.m */; };
+		18C7EEC33807B006E347CFAC /* Pods-Pinpoint-SDCAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B0E5BC5C3796862ED66A52 /* Pods-Pinpoint-SDCAlertView-dummy.m */; };
+		19F4242787DD10D4895DE3CA /* SDCAlertControllerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CF8702EEBDEA65559108A4 /* SDCAlertControllerView.h */; };
+		1CEB3174F6C3E7EAE05CFB57 /* RBBCustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B0ADE8674140AC1D2813A /* RBBCustomAnimation.m */; };
+		220737FD546D705988D07D71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8426B8D6919DBB576C45B6 /* Foundation.framework */; };
+		223DEC144FDCA47295A624E5 /* RBBCubicBezier.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D1C26550A05111B4C50036 /* RBBCubicBezier.h */; };
+		25C492C735D87CF180FAF200 /* SDCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCC2CC4C0918C7B708431D5 /* SDCAlertView.m */; };
+		2909522D07CD761D6B467B8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8426B8D6919DBB576C45B6 /* Foundation.framework */; };
+		2938035FD470924895363DE4 /* SDCAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F991CBEBC116B48D068E30AE /* SDCAlertViewController.h */; };
+		2A4EA62438C8126A31C80405 /* SDCAlertViewCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E3512E00BF147FA58D133CC4 /* SDCAlertViewCoordinator.h */; };
+		2CABE17FF5B3CC2AA0CD9A8F /* GFQuery+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 68FE0327E61CD9EDF4EA4B9E /* GFQuery+Private.h */; };
+		2CFBE93AFC1A6052D97B282D /* SDCAlertTextFieldTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 814DBE33DC44740BA253E57C /* SDCAlertTextFieldTableViewCell.h */; };
+		2FD4033FEDE451FEC1D0E9DA /* RBBSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36ACDB658BC0FBABD8C50237 /* RBBSpringAnimation.m */; };
+		303AC2D9475002C015323491 /* SDCAlertControllerCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8619A7D7F06858E0DA815C2F /* SDCAlertControllerCollectionViewFlowLayout.m */; };
+		380368AAD2DC03F2D1D6F793 /* SDCAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB2088DA32FB59AD829E332 /* SDCAlertAction.m */; };
+		3936A7EC1722E59DE573CDE2 /* UIView+Parallax.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A148F3FA867C1485448574 /* UIView+Parallax.m */; };
+		3C2EDC1C6CE3260B9D0D9A6E /* RBBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CB1F250BC5BC6DCF20242D /* RBBAnimation.m */; };
+		3E746A6DE85C816FE4F46F5E /* SDCAlertControllerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E569257140FFBD09395331 /* SDCAlertControllerScrollView.m */; };
+		3EF7ACF3C47AE6F93595E7FD /* UIView+SDCAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34672DA431EFC0405FA345 /* UIView+SDCAutoLayout.m */; };
+		4B1C05843A7F9B36EC9B0472 /* SDCAlertViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D8EDEE74C8149EC3B78F77 /* SDCAlertViewCoordinator.m */; };
+		4F2A9E81FF1B201A7D6C81AB /* SDCAlertControllerVisualStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 65269E2FA9DF877A09F40F2F /* SDCAlertControllerVisualStyle.h */; };
+		5141F266F87542EC93058BAA /* SDCAlertCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CCDEA771EE5948AB6153717 /* SDCAlertCollectionViewCell.m */; };
+		521169E9CD5A30109EACE7AD /* Pods-Pinpoint-RBBAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E821B85D0CABD8E2586F6 /* Pods-Pinpoint-RBBAnimation-dummy.m */; };
+		559B86272EC876BE6A783B4C /* RBBBlockBasedArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB8EE20E0B79EABDFFBA69E /* RBBBlockBasedArray.h */; };
+		5C521270398E564045E1E450 /* SDCAlertViewContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA51435E678930EA90FB849 /* SDCAlertViewContentView.m */; };
+		5DD76BCBBEBBCD32656355D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8426B8D6919DBB576C45B6 /* Foundation.framework */; };
+		618E7F4B82527EA329B3F3EB /* SDCAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 51744071A72A9FEB430C1E36 /* SDCAlertView.h */; };
+		6375F959EA635EBB8680212F /* RBBLinearInterpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A87DBC42D6024BDC780E808 /* RBBLinearInterpolation.h */; };
+		63BA98CD343D553BBCAEBD23 /* SDCAlertControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FE596FF19F6476E5CB6189A0 /* SDCAlertControllerTransition.m */; };
+		64A490ED70D8319974311C6C /* RBBBlockBasedArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E697D9AA0A5FD9FEF82E16 /* RBBBlockBasedArray.m */; };
+		6500C7F29F4B461106A93C32 /* SDCAlertCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F07C6B50BCFAC3A44A518DDB /* SDCAlertCollectionViewCell.h */; };
+		6D49EA6EFA2BDBF5B21D52B1 /* SDCIntrinsicallySizedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4612D57CCB6B99135CD8FE1E /* SDCIntrinsicallySizedView.m */; };
+		71FE293AB246B5FCE99ED241 /* SDCAlertControllerDefaultVisualStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B02B3B0037D3DD923799C98 /* SDCAlertControllerDefaultVisualStyle.m */; };
+		78D9018930184A14FA33E526 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8426B8D6919DBB576C45B6 /* Foundation.framework */; };
+		7926C2728B89BB5862A4E2BC /* GFQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = E8C4A12DA0215C09CB1EEDB9 /* GFQuery.h */; };
+		7AACE9E321C3061841BA032B /* SDCAlertControllerTextFieldViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3C5E29553432B52F2B8232 /* SDCAlertControllerTextFieldViewController.h */; };
+		7E36EB1BD19745E11729ED6E /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E1037D1D7665E080193066 /* GFGeoHash.m */; };
+		80034770B20D4DD56A851D98 /* Pods-Pinpoint-GeoFire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F072242D4C058CAFC8D60 /* Pods-Pinpoint-GeoFire-dummy.m */; };
+		80E17C9D561D1A901C323C2A /* RBBEasingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 03004BAADC7C11F3237DDF19 /* RBBEasingFunction.m */; };
+		81C78CB2CC7201816B586B4B /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD3A1E39422E8009A842E4B /* GFQuery.m */; };
+		820C36B8C03186C74B0ECACF /* UIViewController+Current.m in Sources */ = {isa = PBXBuildFile; fileRef = 26506D53DF1AB760C2374BB1 /* UIViewController+Current.m */; };
+		822866459D0AFAC11AF6009C /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7410B74E741CF7F1A2B751 /* OnboardingContentViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		86BA099A9824CED10868D13D /* RBBTweenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A388F926B29D8CA6BA89C35B /* RBBTweenAnimation.m */; };
+		946EE300BFA1D16E55CA829B /* SDCAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = A433C6E954E3202E6739B652 /* SDCAlertController.h */; };
+		94B21922F9AD6C644B5DFC3B /* SDCAlertControllerTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03087CD4A7D2F741710A7569 /* SDCAlertControllerTextFieldViewController.m */; };
+		96102CE0EE384BA9DC6F8FEC /* RBBCubicBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = E5659E1146D6EC34AEC5595B /* RBBCubicBezier.m */; };
+		96D73ABB3089CADF645F24BA /* SDCAlertPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C3E9D72CC3B9B0A1098C2 /* SDCAlertPresentationController.m */; };
+		971B7FB236664AC3ED61DDD6 /* SDCAlertControllerScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9348E3A05B8D98C9D4A7648F /* SDCAlertControllerScrollView.h */; };
+		979531B863B10B909BFB3C7B /* SDCAlertViewBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B45BEEC71CD21CE55253CCCC /* SDCAlertViewBackgroundView.m */; };
+		988A4C735B450D73C92DE7CD /* SDCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF93382079E52D3BDFD27F /* SDCAlertController.m */; };
+		995C370F6C959A0D36C8F390 /* Pods-Pinpoint-SDCAutoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 333A87B319F53D4458B3D033 /* Pods-Pinpoint-SDCAutoLayout-dummy.m */; };
+		9B2A7FA9BA585EBE48615A06 /* Pods-Pinpoint-UITextField+Shake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF96CBF957D9DF86C03FB9 /* Pods-Pinpoint-UITextField+Shake-dummy.m */; };
+		A31DFA9E5C42F3A571764035 /* GFCircleQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 35BD92207F656431740FF72A /* GFCircleQuery.h */; };
+		A599E53B51C50012CE606B08 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A588D99365CA0D2018E14 /* GFBase32Utils.m */; };
+		A6BA28E8850072A814797A3E /* GFGeoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 14EB573B947D4A47D35B6692 /* GFGeoHash.h */; };
+		A6DD7785A368A684F5455795 /* GFBase32Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E429D6DBD2F9A729CA3ADCD /* GFBase32Utils.h */; };
+		A7DD06AF90C66D21D1B72E89 /* GFRegionQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CFA196BEF7C043A7066F2FB /* GFRegionQuery.h */; };
+		AAA7EC33F49E7318CF055B3D /* SDCAlertTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B14509D2C319D63317CBA0 /* SDCAlertTextFieldTableViewCell.m */; };
+		ABA3693EF68AD480061BC297 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8426B8D6919DBB576C45B6 /* Foundation.framework */; };
+		B05ABAA1EE986EEA85641839 /* RBBLinearInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C8A115E597CDA537905494 /* RBBLinearInterpolation.m */; };
+		B070BAAAFDE0CA956D3237D4 /* SDCAlertViewContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2476C50F388946067041AA /* SDCAlertViewContentView.h */; };
+		B088546E3D45754140B318D5 /* RBBAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 79E818623B3C241F37600EFB /* RBBAnimation.h */; };
+		B3ECB9235A742B351733F058 /* SDCAlertControllerDefaultVisualStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCE246EC45CC488DF1317C8 /* SDCAlertControllerDefaultVisualStyle.h */; };
+		B612E829D59C61AAF0B37BF9 /* UIView+SDCAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB2EC38AF14223AACA8107 /* UIView+SDCAutoLayout.h */; };
+		B6EEB469599BD58D2FFD6CE1 /* SDCAlertPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 61F45D4C1E6DB7EEF8B703F2 /* SDCAlertPresentationController.h */; };
+		BCD38E5D70DD4FD37A37546E /* UIViewController+Current.h in Headers */ = {isa = PBXBuildFile; fileRef = ACF7DB22103E9FAA4C14F13C /* UIViewController+Current.h */; };
+		BDE5AAC695F84F03F5B610CF /* UIView+Parallax.h in Headers */ = {isa = PBXBuildFile; fileRef = B4B37D5195EE16A81A96D639 /* UIView+Parallax.h */; };
+		BDF275B503910C40D22FAE85 /* RBBTweenAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F10E2D5326184825898134 /* RBBTweenAnimation.h */; };
+		CAFA76BD60145917ABF56BD6 /* SDCAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371EF0A6E87C0582C1C77459 /* SDCAlertViewController.m */; };
+		CB5EE7DB42A9A5B1B4C7CBFC /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5C5EC4654A394A78E6F968 /* GFGeoHashQuery.m */; };
+		CB94EBED3B8EA857B1B587F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8426B8D6919DBB576C45B6 /* Foundation.framework */; };
+		CD56EE3943E4F47DF070128F /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AD3DCFB5DC5CBD26DF2083 /* OnboardingViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D0F2B12E1B40BD289C3D3ADD /* UITextField+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 359E5976875AD2861FA75BC5 /* UITextField+Shake.m */; };
+		D2EA367F166BFB88B085C119 /* OnboardingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B7FCA958CE2C894D43C0F672 /* OnboardingViewController.h */; };
+		D426A49F328D8A5C4A7E914A /* SDCAlertControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA12505A071C0AC0E9ABE0C /* SDCAlertControllerView.m */; };
+		D509BB8C138E7D0910E54BAE /* UITextField+Shake.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A57BCDEB0D6736531BB32B1 /* UITextField+Shake.h */; };
+		D598D274185E30EC989742DE /* SDCAlertLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B2184E28CDAEB502779C6D17 /* SDCAlertLabel.h */; };
+		D69A8F574E0F78917C905E43 /* Pods-Pinpoint-Onboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A93858732CF0A59D2C7947 /* Pods-Pinpoint-Onboard-dummy.m */; };
+		DF4E7A48E00377447C0DA1E4 /* SDCDemoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E852814AA714B9A7DBCD67 /* SDCDemoViewController.h */; };
+		E02B158EE42EAE89F33D5342 /* RBBCustomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 68EAEB44C74D68993AEC441D /* RBBCustomAnimation.h */; };
+		E40636E4C30DA353E168A173 /* GeoFire+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A4FE54B1C19A9A31BB8B08 /* GeoFire+Private.h */; };
+		E47706E09000CA9DC153A511 /* RBBEasingFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB9968D26891E52310F1FAD /* RBBEasingFunction.h */; };
+		E555A4282C657DA2E7FDAFC4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2E5B5A78856A3AEAA8BB13 /* QuartzCore.framework */; };
+		E72B04B4419B8B59C654BE6E /* SDCAlertViewTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DF3B8B1C8341257FD56233D /* SDCAlertViewTransitioning.h */; };
+		EB4C682F4E304D2DDC92F46F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BD05FD3D54B71B9826F05 /* CoreLocation.framework */; };
+		ED4F6AFECC7C6D27CBD9D62F /* RBBSpringAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9912F8F26F0ACCCAEC40211E /* RBBSpringAnimation.h */; };
+		ED955CCAE5AC99B6314CFD65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8426B8D6919DBB576C45B6 /* Foundation.framework */; };
+		F603091F4A972B350DC55C77 /* OnboardingContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C194D5165F20D5D69B8F4C6 /* OnboardingContentViewController.h */; };
+		FD2662E34C53AB7802F0E629 /* GeoFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DB8CFD0132537594F1C8D63 /* GeoFire.h */; };
+		FD4AD236112EEACBEA06CBF5 /* SDCAlertControllerCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 65274ECEDBA6AFAFB414B69F /* SDCAlertControllerCollectionViewFlowLayout.h */; };
+		FEC4DEBB7743BAC3291C13D9 /* SDCDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B668B0ABE4A237261DFC4C31 /* SDCDemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		033A9AE81E3DB6E5DB3B1E2C /* PBXContainerItemProxy */ = {
+		03275E42213A9AF3A30D9870 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9568FB5E1B780586A7CE2A12;
+			remoteGlobalIDString = 3B6228697404B94148622F52;
 			remoteInfo = "Pods-Pinpoint-GeoFire";
 		};
-		66A1C6158E7D40783D9978D0 /* PBXContainerItemProxy */ = {
+		28594AFEE895739F6F37B3B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D1D97FD23202813D20E93A48;
-			remoteInfo = "Pods-Pinpoint-SDCAlertView";
-		};
-		9193AA5E0D4E2028E5552BD2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2973BFA9AAC7A39ED9CE64D;
-			remoteInfo = "Pods-Pinpoint-SDCAutoLayout";
-		};
-		AB2D037BD22B6486784EA7CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98896B9F9994AFED42B719C1;
+			remoteGlobalIDString = 1520B9C8A06DDA03892380BF;
 			remoteInfo = "Pods-Pinpoint-Onboard";
 		};
-		CEC1BC3E4352C55CC2BE2098 /* PBXContainerItemProxy */ = {
+		63902B87102CB8C1C5411946 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 37D687EF5F54607370AC79EE;
-			remoteInfo = "Pods-Pinpoint-UITextField+Shake";
+			remoteGlobalIDString = 77B66418E1717FEEDF343B0F;
+			remoteInfo = "Pods-Pinpoint-SDCAlertView";
 		};
-		DB4EF860C3B0533A6E97B9CE /* PBXContainerItemProxy */ = {
+		833D73DECECA6F65E235E69E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2973BFA9AAC7A39ED9CE64D;
+			remoteGlobalIDString = D2DDB3286262FC28B44549DA;
 			remoteInfo = "Pods-Pinpoint-SDCAutoLayout";
 		};
-		DEDBD5A893B2671F3E85A303 /* PBXContainerItemProxy */ = {
+		86D3052349C7BAF462D40C6C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7929D2084171CAB7F41435EA;
+			remoteGlobalIDString = B224842E76860DBAF9237BFC;
+			remoteInfo = "Pods-Pinpoint-UITextField+Shake";
+		};
+		A768C1B255A9FA2C57093F80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BE2B79760CF6C3BE779F81C;
 			remoteInfo = "Pods-Pinpoint-RBBAnimation";
 		};
-		EE5AC6111E5D715E56FC4D93 /* PBXContainerItemProxy */ = {
+		C2FE3D4CF52394C097697722 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7929D2084171CAB7F41435EA;
+			remoteGlobalIDString = 6BE2B79760CF6C3BE779F81C;
 			remoteInfo = "Pods-Pinpoint-RBBAnimation";
+		};
+		D424387B6FF87A9953BC86D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 946D028A57042DD493811705 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2DDB3286262FC28B44549DA;
+			remoteInfo = "Pods-Pinpoint-SDCAutoLayout";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09EA7DA841288EFA4D7EBF76 /* Pods-Pinpoint-RBBAnimation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-RBBAnimation.xcconfig"; sourceTree = "<group>"; };
-		0E6B89241D15EBBCC95CBD43 /* SDCAlertCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertCollectionViewCell.m; path = SDCAlertView/Source/SDCAlertCollectionViewCell.m; sourceTree = "<group>"; };
-		10B099B7569CC8DA53A5A64D /* SDCAlertViewBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewBackgroundView.h; path = SDCAlertView/Source/SDCAlertViewBackgroundView.h; sourceTree = "<group>"; };
-		13E346A32CD3A75DB2087371 /* Pods-Pinpoint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pinpoint-resources.sh"; sourceTree = "<group>"; };
-		14A04E94484F6E82E2DABBDD /* SDCAlertControllerScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerScrollView.m; path = SDCAlertView/Source/SDCAlertControllerScrollView.m; sourceTree = "<group>"; };
-		1879E1A1FE7133323CC7FEB7 /* Pods-Pinpoint-SDCAutoLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAutoLayout.xcconfig"; sourceTree = "<group>"; };
-		187AA07EC326F284D4069F25 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHashQuery.m; path = GeoFire/Implementation/GFGeoHashQuery.m; sourceTree = "<group>"; };
-		1B91C0AE0685097532220FBD /* libPods-Pinpoint-UITextField+Shake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-UITextField+Shake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C1109B0A191C80313890C8E /* GFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFQuery.h; path = GeoFire/API/GFQuery.h; sourceTree = "<group>"; };
-		1C79BEC15BAFB2F008A5A78C /* SDCAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewController.m; path = SDCAlertView/Source/SDCAlertViewController.m; sourceTree = "<group>"; };
-		1D89C6FE68829291C9958A76 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DE983582B4599AF856E623A /* SDCAlertViewCoordinator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewCoordinator.h; path = SDCAlertView/Source/SDCAlertViewCoordinator.h; sourceTree = "<group>"; };
-		1E25515DF5230C440A3374E2 /* RBBCubicBezier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBCubicBezier.m; path = RBBAnimation/RBBCubicBezier.m; sourceTree = "<group>"; };
-		1EE553BE909666779D74E190 /* GFGeoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHash.m; path = GeoFire/Implementation/GFGeoHash.m; sourceTree = "<group>"; };
-		1FCF53DF89B366AF3B8560D1 /* SDCAlertPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertPresentationController.m; path = SDCAlertView/Source/SDCAlertPresentationController.m; sourceTree = "<group>"; };
-		216EF4332E903DFCE72B2B07 /* Pods-Pinpoint-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-environment.h"; sourceTree = "<group>"; };
-		22655B0215D02C66E8CF131C /* SDCAlertControllerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerView.h; path = SDCAlertView/Source/SDCAlertControllerView.h; sourceTree = "<group>"; };
-		27F383479E33E228587658C2 /* Pods-Pinpoint-GeoFire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire-Private.xcconfig"; sourceTree = "<group>"; };
-		2C7BFAACC97EFE0FDF29D5C0 /* Pods-Pinpoint-UITextField+Shake.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-UITextField+Shake.xcconfig"; sourceTree = "<group>"; };
-		2D84B142C1AB8571BAA8AD0E /* Pods-Pinpoint-Onboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-Onboard-dummy.m"; sourceTree = "<group>"; };
-		2DE39B2723051310AF6849CB /* Pods-Pinpoint-SDCAutoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-SDCAutoLayout-dummy.m"; sourceTree = "<group>"; };
-		2E4A9BA1080F77AF897A8FFF /* RBBLinearInterpolation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBLinearInterpolation.m; path = RBBAnimation/RBBLinearInterpolation.m; sourceTree = "<group>"; };
-		2E9BBBB20A39A82E263FF5CA /* GFQuery+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GFQuery+Private.h"; path = "GeoFire/Implementation/GFQuery+Private.h"; sourceTree = "<group>"; };
-		30A6E7306542F4BE604FB361 /* Pods-Pinpoint-GeoFire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire.xcconfig"; sourceTree = "<group>"; };
-		31940B30E67B793366D7BC93 /* RBBLinearInterpolation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBLinearInterpolation.h; path = RBBAnimation/RBBLinearInterpolation.h; sourceTree = "<group>"; };
-		33611BA88C3C74EB73E7B19B /* SDCAlertControllerTextFieldViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerTextFieldViewController.h; path = SDCAlertView/Source/SDCAlertControllerTextFieldViewController.h; sourceTree = "<group>"; };
-		33FC3BE239455DB9A348F395 /* SDCAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertView.h; path = SDCAlertView/Source/SDCAlertView.h; sourceTree = "<group>"; };
-		39CDDE5FAF8998D2750D0998 /* Pods-Pinpoint-SDCAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-SDCAlertView-dummy.m"; sourceTree = "<group>"; };
-		3E9A33558F763355EC70B207 /* libPods-Pinpoint-SDCAutoLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-SDCAutoLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		41DC978DE4121561031DFDF8 /* SDCAlertCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertCollectionViewCell.h; path = SDCAlertView/Source/SDCAlertCollectionViewCell.h; sourceTree = "<group>"; };
-		41DF27A1A895D1269E70FCC0 /* SDCAlertTextFieldTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertTextFieldTableViewCell.m; path = SDCAlertView/Source/SDCAlertTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		41EEEDF8DCEFEAF660F243CF /* Pods-Pinpoint-GeoFire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-GeoFire-dummy.m"; sourceTree = "<group>"; };
-		470124EE0E33C1C4653ADBDB /* SDCIntrinsicallySizedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCIntrinsicallySizedView.m; path = SDCAlertView/Source/SDCIntrinsicallySizedView.m; sourceTree = "<group>"; };
-		48B4B2CC58732610899C58EE /* OnboardingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingViewController.h; path = "Objective-C/Onboard/OnboardingViewController.h"; sourceTree = "<group>"; };
-		4A23E445EFF5D2E0E7F84BDD /* GFBase32Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFBase32Utils.h; path = GeoFire/Implementation/GFBase32Utils.h; sourceTree = "<group>"; };
-		4B83A38B8B895D07D5498287 /* UIView+Parallax.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Parallax.m"; path = "SDCAlertView/Source/UIView+Parallax.m"; sourceTree = "<group>"; };
-		516D6BDF84497D2C691941D7 /* RBBCubicBezier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBCubicBezier.h; path = RBBAnimation/RBBCubicBezier.h; sourceTree = "<group>"; };
-		5329E0A7B504DDBA5CD1E222 /* Pods-Pinpoint-Onboard-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard-Private.xcconfig"; sourceTree = "<group>"; };
-		56A2BA84141D37AE0D51C847 /* UIView+Parallax.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Parallax.h"; path = "SDCAlertView/Source/UIView+Parallax.h"; sourceTree = "<group>"; };
-		57A88982512AF9F703E4DE98 /* Pods-Pinpoint-UITextField+Shake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-UITextField+Shake-dummy.m"; sourceTree = "<group>"; };
-		5BC4F844478A65FF96935F59 /* RBBAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBAnimation.m; path = RBBAnimation/RBBAnimation.m; sourceTree = "<group>"; };
-		5BE35CB56E9CDD91093BADF1 /* SDCAlertLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertLabel.h; path = SDCAlertView/Source/SDCAlertLabel.h; sourceTree = "<group>"; };
-		5DC73F6D7039EA809C5A6EB5 /* SDCAlertController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertController.m; path = SDCAlertView/Source/SDCAlertController.m; sourceTree = "<group>"; };
-		608EF5BA8E9C9F1AB233FDF4 /* GeoFire.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoFire.h; path = GeoFire/API/GeoFire.h; sourceTree = "<group>"; };
-		612D195161CECF28AA3D03FA /* RBBSpringAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBSpringAnimation.m; path = RBBAnimation/RBBSpringAnimation.m; sourceTree = "<group>"; };
-		617AC696CF1717970A202D1F /* libPods-Pinpoint-Onboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-Onboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		63109E28D999C6194FADF4E3 /* libPods-Pinpoint-SDCAlertView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-SDCAlertView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		66409DAA82FE347113CC2AC7 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAlertView-Private.xcconfig"; sourceTree = "<group>"; };
-		675EBAFAB456269B3F622812 /* OnboardingContentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingContentViewController.m; path = "Objective-C/Onboard/OnboardingContentViewController.m"; sourceTree = "<group>"; };
-		6C7F35CB8A313B798EA6F299 /* UIView+SDCAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SDCAutoLayout.h"; path = "AutoLayout/UIView+SDCAutoLayout.h"; sourceTree = "<group>"; };
-		6E94BF105028909A356413B6 /* SDCAlertTextFieldTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertTextFieldTableViewCell.h; path = SDCAlertView/Source/SDCAlertTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		6F28A789AA10A447E68F1125 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-UITextField+Shake-Private.xcconfig"; sourceTree = "<group>"; };
-		722626848B599C5452DE8B27 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		72B8F8C5F9662FB5D9439BF8 /* Pods-Pinpoint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-dummy.m"; sourceTree = "<group>"; };
-		734C8009D1A17DAC928B4F64 /* SDCAlertControllerScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerScrollView.h; path = SDCAlertView/Source/SDCAlertControllerScrollView.h; sourceTree = "<group>"; };
-		742B9E3B8FECB48FFFCA1FD9 /* GFQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFQuery.m; path = GeoFire/Implementation/GFQuery.m; sourceTree = "<group>"; };
-		7674FC79DBBFC8AB418CE9A8 /* RBBBlockBasedArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBBlockBasedArray.h; path = RBBAnimation/RBBBlockBasedArray.h; sourceTree = "<group>"; };
-		769D4B4BAA3D1F0704B42B8A /* libPods-Pinpoint-RBBAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-RBBAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AFC61135B97E9665B3C4AB1 /* RBBAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBAnimation.h; path = RBBAnimation/RBBAnimation.h; sourceTree = "<group>"; };
-		820279B6D8EB54EFD71EA0F6 /* libPods-Pinpoint-GeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-GeoFire.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85D5F77B3E69CEE6CDE176F5 /* SDCAlertLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertLabel.m; path = SDCAlertView/Source/SDCAlertLabel.m; sourceTree = "<group>"; };
-		86B3A986268EABF8F828C8A8 /* RBBSpringAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBSpringAnimation.h; path = RBBAnimation/RBBSpringAnimation.h; sourceTree = "<group>"; };
-		87364728CB2A780672D91AD0 /* RBBEasingFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBEasingFunction.h; path = RBBAnimation/RBBEasingFunction.h; sourceTree = "<group>"; };
-		899320C7827D4C0D593329EB /* Pods-Pinpoint-Onboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard.xcconfig"; sourceTree = "<group>"; };
-		8A65E71C9526D3EF438A63CF /* SDCAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertView.m; path = SDCAlertView/Source/SDCAlertView.m; sourceTree = "<group>"; };
-		8B9B64DDBD24BB2D128D26D1 /* GeoFire+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeoFire+Private.h"; path = "GeoFire/Implementation/GeoFire+Private.h"; sourceTree = "<group>"; };
-		8F5B5988A29715DB423C5F92 /* SDCAlertControllerCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerCollectionViewFlowLayout.m; path = SDCAlertView/Source/SDCAlertControllerCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		90AC4EA4207B4A36BB8EDBED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9496CBBFD5E4720815AE168C /* Pods-Pinpoint-GeoFire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-GeoFire-prefix.pch"; sourceTree = "<group>"; };
-		9740FB739F0269BBFAA66B9B /* SDCAlertViewTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewTransitioning.h; path = SDCAlertView/Source/SDCAlertViewTransitioning.h; sourceTree = "<group>"; };
-		98CC06B7ACB91F1E5189533B /* SDCAlertControllerTextFieldViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerTextFieldViewController.m; path = SDCAlertView/Source/SDCAlertControllerTextFieldViewController.m; sourceTree = "<group>"; };
-		9AD2F6FD07B3AFFD45FC1B12 /* SDCAlertPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertPresentationController.h; path = SDCAlertView/Source/SDCAlertPresentationController.h; sourceTree = "<group>"; };
-		9B355886388052684CCEA61D /* RBBBlockBasedArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBBlockBasedArray.m; path = RBBAnimation/RBBBlockBasedArray.m; sourceTree = "<group>"; };
-		9C4F32BEE863C0AE0A9E423C /* GFRegionQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFRegionQuery.h; path = GeoFire/API/GFRegionQuery.h; sourceTree = "<group>"; };
-		A053138077D874D297FAC017 /* SDCAlertController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertController.h; path = SDCAlertView/Source/SDCAlertController.h; sourceTree = "<group>"; };
-		A1C2843037F6AE379763232C /* RBBEasingFunction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBEasingFunction.m; path = RBBAnimation/RBBEasingFunction.m; sourceTree = "<group>"; };
-		A1EE2907FAA1FF6B8B92B8EA /* UITextField+Shake.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Shake.m"; path = "UITextField-Shake/UITextField+Shake.m"; sourceTree = "<group>"; };
-		A3A7328BF56A0987D16FDEE3 /* Pods-Pinpoint-RBBAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-RBBAnimation-dummy.m"; sourceTree = "<group>"; };
-		A615806477D9242E12FFC6C7 /* SDCAlertControllerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerView.m; path = SDCAlertView/Source/SDCAlertControllerView.m; sourceTree = "<group>"; };
-		A817CC5594BEE81B658DAC58 /* UIViewController+Current.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Current.h"; path = "SDCAlertView/Source/UIViewController+Current.h"; sourceTree = "<group>"; };
-		A8A0055373B65021824BB466 /* Pods-Pinpoint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pinpoint-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AA807DA4CEB33E26D8B308CF /* SDCAlertViewContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewContentView.m; path = SDCAlertView/Source/SDCAlertViewContentView.m; sourceTree = "<group>"; };
-		AD3EFCBB9E6B47E948C457AA /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
-		B0C7ED0E2301AA9F16933307 /* SDCIntrinsicallySizedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCIntrinsicallySizedView.h; path = SDCAlertView/Source/SDCIntrinsicallySizedView.h; sourceTree = "<group>"; };
-		B0E50947AD5B1B3155F6B3FD /* SDCAlertControllerDefaultVisualStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerDefaultVisualStyle.h; path = SDCAlertView/Source/SDCAlertControllerDefaultVisualStyle.h; sourceTree = "<group>"; };
-		B0E92071B184D27F122EDFA7 /* Pods-Pinpoint-SDCAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-SDCAlertView-prefix.pch"; sourceTree = "<group>"; };
-		B1AA1699BF65A4E4218D250A /* SDCAlertControllerTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerTransition.h; path = SDCAlertView/Source/SDCAlertControllerTransition.h; sourceTree = "<group>"; };
-		B2436EFA41E9A91B61571912 /* SDCAlertControllerDefaultVisualStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerDefaultVisualStyle.m; path = SDCAlertView/Source/SDCAlertControllerDefaultVisualStyle.m; sourceTree = "<group>"; };
-		B427063312B207726201F00E /* RBBTweenAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBTweenAnimation.h; path = RBBAnimation/RBBTweenAnimation.h; sourceTree = "<group>"; };
-		BB2AD2970589D9691C4F5BAD /* GFBase32Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFBase32Utils.m; path = GeoFire/Implementation/GFBase32Utils.m; sourceTree = "<group>"; };
-		BDF8647C3D2A6EA65E078520 /* SDCAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewController.h; path = SDCAlertView/Source/SDCAlertViewController.h; sourceTree = "<group>"; };
-		C19D7A98F4CB71D7C82B35EB /* Pods-Pinpoint-SDCAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAlertView.xcconfig"; sourceTree = "<group>"; };
-		C28A2ABD369E6E63E7459210 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C328FC56DD22E29CBD81B3B1 /* SDCAlertControllerTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerTransition.m; path = SDCAlertView/Source/SDCAlertControllerTransition.m; sourceTree = "<group>"; };
-		C32FAB73EB642B9C01B037BD /* Pods-Pinpoint-UITextField+Shake-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-UITextField+Shake-prefix.pch"; sourceTree = "<group>"; };
-		C44FD6B0B40CBADC1829DB08 /* Pods-Pinpoint-SDCAutoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-SDCAutoLayout-prefix.pch"; sourceTree = "<group>"; };
-		C6446C1219B74091C455A015 /* SDCAlertAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertAction.m; path = SDCAlertView/Source/SDCAlertAction.m; sourceTree = "<group>"; };
-		CB28277524EB1CB4801A058D /* UITextField+Shake.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+Shake.h"; path = "UITextField-Shake/UITextField+Shake.h"; sourceTree = "<group>"; };
-		CC27BDA9B38866F09BF41DDB /* SDCAlertViewBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewBackgroundView.m; path = SDCAlertView/Source/SDCAlertViewBackgroundView.m; sourceTree = "<group>"; };
-		D13B417EB6B6466F01DBCF2B /* RBBTweenAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBTweenAnimation.m; path = RBBAnimation/RBBTweenAnimation.m; sourceTree = "<group>"; };
-		D1C2FC26BB9696712E42F144 /* GFGeoHashQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHashQuery.h; path = GeoFire/Implementation/GFGeoHashQuery.h; sourceTree = "<group>"; };
-		D22BBB70C4F79F28090C9F13 /* Pods-Pinpoint-Onboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-Onboard-prefix.pch"; sourceTree = "<group>"; };
-		D51FC0BFFB8BD6D8529D74EB /* SDCAlertViewContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewContentView.h; path = SDCAlertView/Source/SDCAlertViewContentView.h; sourceTree = "<group>"; };
-		D56206EAC256C66500ADDF1E /* GFCircleQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFCircleQuery.h; path = GeoFire/API/GFCircleQuery.h; sourceTree = "<group>"; };
-		D6CDD4EBB233BBFB8691F5DB /* UIViewController+Current.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Current.m"; path = "SDCAlertView/Source/UIViewController+Current.m"; sourceTree = "<group>"; };
-		D76A51EE57E2A2C70F5F2F61 /* RBBCustomAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBCustomAnimation.m; path = RBBAnimation/RBBCustomAnimation.m; sourceTree = "<group>"; };
-		D896930F5B1662057DF10C29 /* SDCAlertControllerVisualStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerVisualStyle.h; path = SDCAlertView/Source/SDCAlertControllerVisualStyle.h; sourceTree = "<group>"; };
-		DAE22897D44EB902AF4FFDD9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		E1656E7734FCCDCA860C3643 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAutoLayout-Private.xcconfig"; sourceTree = "<group>"; };
-		E21B6A91324A4F5A370AE014 /* Pods-Pinpoint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pinpoint-acknowledgements.plist"; sourceTree = "<group>"; };
-		E2B50769AED7B10B8B95E45E /* GFGeoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHash.h; path = GeoFire/Implementation/GFGeoHash.h; sourceTree = "<group>"; };
-		E4F4F2FDC480AF58C6D69F5F /* GeoFire.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GeoFire.m; path = GeoFire/Implementation/GeoFire.m; sourceTree = "<group>"; };
-		E7C4EF000DCC88BED791906A /* SDCAlertControllerCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerCollectionViewFlowLayout.h; path = SDCAlertView/Source/SDCAlertControllerCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		E8D2607FBCF87B7239F77EB0 /* SDCDemoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCDemoViewController.m; path = SDCAlertView/Source/SDCDemoViewController.m; sourceTree = "<group>"; };
-		EBC7B383F03612D0F1B1E039 /* RBBCustomAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBCustomAnimation.h; path = RBBAnimation/RBBCustomAnimation.h; sourceTree = "<group>"; };
-		EC38B85E5312A635CC53701B /* Pods-Pinpoint-RBBAnimation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-RBBAnimation-prefix.pch"; sourceTree = "<group>"; };
-		ECD5F460BE485A4BAB10B040 /* OnboardingContentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingContentViewController.h; path = "Objective-C/Onboard/OnboardingContentViewController.h"; sourceTree = "<group>"; };
-		F1D68C49140AE554864326CF /* OnboardingViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingViewController.m; path = "Objective-C/Onboard/OnboardingViewController.m"; sourceTree = "<group>"; };
-		F402ECFD4092FF4804F7B80A /* SDCAlertViewCoordinator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewCoordinator.m; path = SDCAlertView/Source/SDCAlertViewCoordinator.m; sourceTree = "<group>"; };
-		F4C1437972F65603970A3A1C /* SDCDemoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCDemoViewController.h; path = SDCAlertView/Source/SDCDemoViewController.h; sourceTree = "<group>"; };
-		F5E38E52405365EE25ACBCF1 /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
-		FA3412110DC5A55440E3A2DF /* UIView+SDCAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDCAutoLayout.m"; path = "AutoLayout/UIView+SDCAutoLayout.m"; sourceTree = "<group>"; };
-		FDFBB89CA9B1FCC2D58A1488 /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-RBBAnimation-Private.xcconfig"; sourceTree = "<group>"; };
+		03004BAADC7C11F3237DDF19 /* RBBEasingFunction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBEasingFunction.m; path = RBBAnimation/RBBEasingFunction.m; sourceTree = "<group>"; };
+		03087CD4A7D2F741710A7569 /* SDCAlertControllerTextFieldViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerTextFieldViewController.m; path = SDCAlertView/Source/SDCAlertControllerTextFieldViewController.m; sourceTree = "<group>"; };
+		06111DB638DEE7C3CFAD49D2 /* libPods-Pinpoint-GeoFire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-GeoFire.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A4D62BB985F42D31B88AB9 /* Pods-Pinpoint-Onboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-Onboard-prefix.pch"; sourceTree = "<group>"; };
+		0A778587A040359EA39F3136 /* Pods-Pinpoint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pinpoint-acknowledgements.plist"; sourceTree = "<group>"; };
+		0CDDEC952E5EBA300908E825 /* Pods-Pinpoint-SDCAutoLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAutoLayout.xcconfig"; sourceTree = "<group>"; };
+		0DB8EE20E0B79EABDFFBA69E /* RBBBlockBasedArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBBlockBasedArray.h; path = RBBAnimation/RBBBlockBasedArray.h; sourceTree = "<group>"; };
+		0E429D6DBD2F9A729CA3ADCD /* GFBase32Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFBase32Utils.h; path = GeoFire/Implementation/GFBase32Utils.h; sourceTree = "<group>"; };
+		11A233EE1C3DA70F20A9946A /* Pods-Pinpoint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pinpoint-acknowledgements.markdown"; sourceTree = "<group>"; };
+		11E1037D1D7665E080193066 /* GFGeoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHash.m; path = GeoFire/Implementation/GFGeoHash.m; sourceTree = "<group>"; };
+		124C3E9D72CC3B9B0A1098C2 /* SDCAlertPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertPresentationController.m; path = SDCAlertView/Source/SDCAlertPresentationController.m; sourceTree = "<group>"; };
+		12AD3DCFB5DC5CBD26DF2083 /* OnboardingViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingViewController.m; path = "Objective-C/Onboard/OnboardingViewController.m"; sourceTree = "<group>"; };
+		14EB573B947D4A47D35B6692 /* GFGeoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHash.h; path = GeoFire/Implementation/GFGeoHash.h; sourceTree = "<group>"; };
+		16C83EE74E7A02650AC9423D /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
+		1A57BCDEB0D6736531BB32B1 /* UITextField+Shake.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+Shake.h"; path = "UITextField-Shake/UITextField+Shake.h"; sourceTree = "<group>"; };
+		1B59A6269795256B935D066C /* libPods-Pinpoint-Onboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-Onboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D03F8160FB7E7D03BCC7A27 /* Pods-Pinpoint-Onboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard.xcconfig"; sourceTree = "<group>"; };
+		24E569257140FFBD09395331 /* SDCAlertControllerScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerScrollView.m; path = SDCAlertView/Source/SDCAlertControllerScrollView.m; sourceTree = "<group>"; };
+		25D8EDEE74C8149EC3B78F77 /* SDCAlertViewCoordinator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewCoordinator.m; path = SDCAlertView/Source/SDCAlertViewCoordinator.m; sourceTree = "<group>"; };
+		26506D53DF1AB760C2374BB1 /* UIViewController+Current.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Current.m"; path = "SDCAlertView/Source/UIViewController+Current.m"; sourceTree = "<group>"; };
+		2752D7378A5893E1711CF43E /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-RBBAnimation-Private.xcconfig"; sourceTree = "<group>"; };
+		2BCE246EC45CC488DF1317C8 /* SDCAlertControllerDefaultVisualStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerDefaultVisualStyle.h; path = SDCAlertView/Source/SDCAlertControllerDefaultVisualStyle.h; sourceTree = "<group>"; };
+		2CDE4E8FAC921E7C7556B8D3 /* Pods-Pinpoint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pinpoint-resources.sh"; sourceTree = "<group>"; };
+		2DF3B8B1C8341257FD56233D /* SDCAlertViewTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewTransitioning.h; path = SDCAlertView/Source/SDCAlertViewTransitioning.h; sourceTree = "<group>"; };
+		310A42DBC363F907A1279A3B /* libPods-Pinpoint-SDCAlertView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-SDCAlertView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31B90DD895AE0280472A8A98 /* Pods-Pinpoint-Onboard-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-Onboard-Private.xcconfig"; sourceTree = "<group>"; };
+		333A87B319F53D4458B3D033 /* Pods-Pinpoint-SDCAutoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-SDCAutoLayout-dummy.m"; sourceTree = "<group>"; };
+		359E5976875AD2861FA75BC5 /* UITextField+Shake.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Shake.m"; path = "UITextField-Shake/UITextField+Shake.m"; sourceTree = "<group>"; };
+		35BD92207F656431740FF72A /* GFCircleQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFCircleQuery.h; path = GeoFire/API/GFCircleQuery.h; sourceTree = "<group>"; };
+		3697D14173F62F7F3CE8947E /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36ACDB658BC0FBABD8C50237 /* RBBSpringAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBSpringAnimation.m; path = RBBAnimation/RBBSpringAnimation.m; sourceTree = "<group>"; };
+		371EF0A6E87C0582C1C77459 /* SDCAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewController.m; path = SDCAlertView/Source/SDCAlertViewController.m; sourceTree = "<group>"; };
+		38C8A115E597CDA537905494 /* RBBLinearInterpolation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBLinearInterpolation.m; path = RBBAnimation/RBBLinearInterpolation.m; sourceTree = "<group>"; };
+		39CB1F250BC5BC6DCF20242D /* RBBAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBAnimation.m; path = RBBAnimation/RBBAnimation.m; sourceTree = "<group>"; };
+		3BA51435E678930EA90FB849 /* SDCAlertViewContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewContentView.m; path = SDCAlertView/Source/SDCAlertViewContentView.m; sourceTree = "<group>"; };
+		3C7410B74E741CF7F1A2B751 /* OnboardingContentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OnboardingContentViewController.m; path = "Objective-C/Onboard/OnboardingContentViewController.m"; sourceTree = "<group>"; };
+		3F2DECFC98153A9B54CDC86B /* Pods-Pinpoint-RBBAnimation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-RBBAnimation.xcconfig"; sourceTree = "<group>"; };
+		45DA8D348511544DDB2E29B5 /* Pods-Pinpoint-GeoFire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-GeoFire-prefix.pch"; sourceTree = "<group>"; };
+		45F00FF65CAD69392E931408 /* Pods-Pinpoint-UITextField+Shake-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-UITextField+Shake-prefix.pch"; sourceTree = "<group>"; };
+		4612D57CCB6B99135CD8FE1E /* SDCIntrinsicallySizedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCIntrinsicallySizedView.m; path = SDCAlertView/Source/SDCIntrinsicallySizedView.m; sourceTree = "<group>"; };
+		47A4FE54B1C19A9A31BB8B08 /* GeoFire+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeoFire+Private.h"; path = "GeoFire/Implementation/GeoFire+Private.h"; sourceTree = "<group>"; };
+		4CFA196BEF7C043A7066F2FB /* GFRegionQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFRegionQuery.h; path = GeoFire/API/GFRegionQuery.h; sourceTree = "<group>"; };
+		4E0B0ADE8674140AC1D2813A /* RBBCustomAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBCustomAnimation.m; path = RBBAnimation/RBBCustomAnimation.m; sourceTree = "<group>"; };
+		51744071A72A9FEB430C1E36 /* SDCAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertView.h; path = SDCAlertView/Source/SDCAlertView.h; sourceTree = "<group>"; };
+		53FD09BC37D33CEBD9BB2046 /* Pods-Pinpoint-UITextField+Shake.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-UITextField+Shake.xcconfig"; sourceTree = "<group>"; };
+		595447C96443BFEE201448B8 /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
+		5B02B3B0037D3DD923799C98 /* SDCAlertControllerDefaultVisualStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerDefaultVisualStyle.m; path = SDCAlertView/Source/SDCAlertControllerDefaultVisualStyle.m; sourceTree = "<group>"; };
+		5C194D5165F20D5D69B8F4C6 /* OnboardingContentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingContentViewController.h; path = "Objective-C/Onboard/OnboardingContentViewController.h"; sourceTree = "<group>"; };
+		60B14509D2C319D63317CBA0 /* SDCAlertTextFieldTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertTextFieldTableViewCell.m; path = SDCAlertView/Source/SDCAlertTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		61F45D4C1E6DB7EEF8B703F2 /* SDCAlertPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertPresentationController.h; path = SDCAlertView/Source/SDCAlertPresentationController.h; sourceTree = "<group>"; };
+		65269E2FA9DF877A09F40F2F /* SDCAlertControllerVisualStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerVisualStyle.h; path = SDCAlertView/Source/SDCAlertControllerVisualStyle.h; sourceTree = "<group>"; };
+		65274ECEDBA6AFAFB414B69F /* SDCAlertControllerCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerCollectionViewFlowLayout.h; path = SDCAlertView/Source/SDCAlertControllerCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		65CF8702EEBDEA65559108A4 /* SDCAlertControllerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerView.h; path = SDCAlertView/Source/SDCAlertControllerView.h; sourceTree = "<group>"; };
+		68EAEB44C74D68993AEC441D /* RBBCustomAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBCustomAnimation.h; path = RBBAnimation/RBBCustomAnimation.h; sourceTree = "<group>"; };
+		68FE0327E61CD9EDF4EA4B9E /* GFQuery+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GFQuery+Private.h"; path = "GeoFire/Implementation/GFQuery+Private.h"; sourceTree = "<group>"; };
+		6A87DBC42D6024BDC780E808 /* RBBLinearInterpolation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBLinearInterpolation.h; path = RBBAnimation/RBBLinearInterpolation.h; sourceTree = "<group>"; };
+		6ECF93382079E52D3BDFD27F /* SDCAlertController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertController.m; path = SDCAlertView/Source/SDCAlertController.m; sourceTree = "<group>"; };
+		6FBB3952DDDF7E65D4BE7651 /* Pods-Pinpoint-GeoFire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire-Private.xcconfig"; sourceTree = "<group>"; };
+		71EB2EC38AF14223AACA8107 /* UIView+SDCAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SDCAutoLayout.h"; path = "AutoLayout/UIView+SDCAutoLayout.h"; sourceTree = "<group>"; };
+		738380BB8FECE7D1763C873A /* Pods-Pinpoint-GeoFire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-GeoFire.xcconfig"; sourceTree = "<group>"; };
+		7920339D261B3489D6811AB4 /* GeoFire.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GeoFire.m; path = GeoFire/Implementation/GeoFire.m; sourceTree = "<group>"; };
+		79A93858732CF0A59D2C7947 /* Pods-Pinpoint-Onboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-Onboard-dummy.m"; sourceTree = "<group>"; };
+		79E818623B3C241F37600EFB /* RBBAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBAnimation.h; path = RBBAnimation/RBBAnimation.h; sourceTree = "<group>"; };
+		7CCDEA771EE5948AB6153717 /* SDCAlertCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertCollectionViewCell.m; path = SDCAlertView/Source/SDCAlertCollectionViewCell.m; sourceTree = "<group>"; };
+		814DBE33DC44740BA253E57C /* SDCAlertTextFieldTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertTextFieldTableViewCell.h; path = SDCAlertView/Source/SDCAlertTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		8401E080CAF6478360EC1270 /* Pods-Pinpoint-SDCAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAlertView.xcconfig"; sourceTree = "<group>"; };
+		8619A7D7F06858E0DA815C2F /* SDCAlertControllerCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerCollectionViewFlowLayout.m; path = SDCAlertView/Source/SDCAlertControllerCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		8AC2940E16A964B764120650 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAutoLayout-Private.xcconfig"; sourceTree = "<group>"; };
+		8DB8CFD0132537594F1C8D63 /* GeoFire.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoFire.h; path = GeoFire/API/GeoFire.h; sourceTree = "<group>"; };
+		9348E3A05B8D98C9D4A7648F /* SDCAlertControllerScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerScrollView.h; path = SDCAlertView/Source/SDCAlertControllerScrollView.h; sourceTree = "<group>"; };
+		97E8BB72754FBEBD0A28B874 /* Pods-Pinpoint-SDCAutoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-SDCAutoLayout-prefix.pch"; sourceTree = "<group>"; };
+		9912F8F26F0ACCCAEC40211E /* RBBSpringAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBSpringAnimation.h; path = RBBAnimation/RBBSpringAnimation.h; sourceTree = "<group>"; };
+		9B2E5B5A78856A3AEAA8BB13 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		9F4D67D1D982561FE6938512 /* libPods-Pinpoint-UITextField+Shake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-UITextField+Shake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F708D1DC618703CEA02CA98 /* Pods-Pinpoint-SDCAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-SDCAlertView-prefix.pch"; sourceTree = "<group>"; };
+		A388F926B29D8CA6BA89C35B /* RBBTweenAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBTweenAnimation.m; path = RBBAnimation/RBBTweenAnimation.m; sourceTree = "<group>"; };
+		A433C6E954E3202E6739B652 /* SDCAlertController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertController.h; path = SDCAlertView/Source/SDCAlertController.h; sourceTree = "<group>"; };
+		A4A148F3FA867C1485448574 /* UIView+Parallax.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Parallax.m"; path = "SDCAlertView/Source/UIView+Parallax.m"; sourceTree = "<group>"; };
+		A5D1C26550A05111B4C50036 /* RBBCubicBezier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBCubicBezier.h; path = RBBAnimation/RBBCubicBezier.h; sourceTree = "<group>"; };
+		A9F10E2D5326184825898134 /* RBBTweenAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBTweenAnimation.h; path = RBBAnimation/RBBTweenAnimation.h; sourceTree = "<group>"; };
+		AC34672DA431EFC0405FA345 /* UIView+SDCAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDCAutoLayout.m"; path = "AutoLayout/UIView+SDCAutoLayout.m"; sourceTree = "<group>"; };
+		ACF7DB22103E9FAA4C14F13C /* UIViewController+Current.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Current.h"; path = "SDCAlertView/Source/UIViewController+Current.h"; sourceTree = "<group>"; };
+		AF5F072242D4C058CAFC8D60 /* Pods-Pinpoint-GeoFire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-GeoFire-dummy.m"; sourceTree = "<group>"; };
+		B2184E28CDAEB502779C6D17 /* SDCAlertLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertLabel.h; path = SDCAlertView/Source/SDCAlertLabel.h; sourceTree = "<group>"; };
+		B45BEEC71CD21CE55253CCCC /* SDCAlertViewBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertViewBackgroundView.m; path = SDCAlertView/Source/SDCAlertViewBackgroundView.m; sourceTree = "<group>"; };
+		B4B37D5195EE16A81A96D639 /* UIView+Parallax.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Parallax.h"; path = "SDCAlertView/Source/UIView+Parallax.h"; sourceTree = "<group>"; };
+		B668B0ABE4A237261DFC4C31 /* SDCDemoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCDemoViewController.m; path = SDCAlertView/Source/SDCDemoViewController.m; sourceTree = "<group>"; };
+		B6B2DF1663107CA7BDEF5F17 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-SDCAlertView-Private.xcconfig"; sourceTree = "<group>"; };
+		B77BDED883888BC385938803 /* libPods-Pinpoint-RBBAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-RBBAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7FCA958CE2C894D43C0F672 /* OnboardingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OnboardingViewController.h; path = "Objective-C/Onboard/OnboardingViewController.h"; sourceTree = "<group>"; };
+		B8E852814AA714B9A7DBCD67 /* SDCDemoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCDemoViewController.h; path = SDCAlertView/Source/SDCDemoViewController.h; sourceTree = "<group>"; };
+		BB1A588D99365CA0D2018E14 /* GFBase32Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFBase32Utils.m; path = GeoFire/Implementation/GFBase32Utils.m; sourceTree = "<group>"; };
+		C3DE901735B569C10EB1387F /* Pods-Pinpoint-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-environment.h"; sourceTree = "<group>"; };
+		C63F6B204D1354E9F3801398 /* SDCAlertLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertLabel.m; path = SDCAlertView/Source/SDCAlertLabel.m; sourceTree = "<group>"; };
+		C6E697D9AA0A5FD9FEF82E16 /* RBBBlockBasedArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBBlockBasedArray.m; path = RBBAnimation/RBBBlockBasedArray.m; sourceTree = "<group>"; };
+		CAFBDA47FE5349DB7F36AEFF /* GFGeoHashQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHashQuery.h; path = GeoFire/Implementation/GFGeoHashQuery.h; sourceTree = "<group>"; };
+		CBA12505A071C0AC0E9ABE0C /* SDCAlertControllerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerView.m; path = SDCAlertView/Source/SDCAlertControllerView.m; sourceTree = "<group>"; };
+		CC5C5EC4654A394A78E6F968 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHashQuery.m; path = GeoFire/Implementation/GFGeoHashQuery.m; sourceTree = "<group>"; };
+		CE2476C50F388946067041AA /* SDCAlertViewContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewContentView.h; path = SDCAlertView/Source/SDCAlertViewContentView.h; sourceTree = "<group>"; };
+		CE9BD05FD3D54B71B9826F05 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		CFB2088DA32FB59AD829E332 /* SDCAlertAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertAction.m; path = SDCAlertView/Source/SDCAlertAction.m; sourceTree = "<group>"; };
+		D01E821B85D0CABD8E2586F6 /* Pods-Pinpoint-RBBAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-RBBAnimation-dummy.m"; sourceTree = "<group>"; };
+		DA41F7E0DF4460C34D9F9DE8 /* SDCIntrinsicallySizedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCIntrinsicallySizedView.h; path = SDCAlertView/Source/SDCIntrinsicallySizedView.h; sourceTree = "<group>"; };
+		DC3C5E29553432B52F2B8232 /* SDCAlertControllerTextFieldViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerTextFieldViewController.h; path = SDCAlertView/Source/SDCAlertControllerTextFieldViewController.h; sourceTree = "<group>"; };
+		DCB9968D26891E52310F1FAD /* RBBEasingFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RBBEasingFunction.h; path = RBBAnimation/RBBEasingFunction.h; sourceTree = "<group>"; };
+		DDCC2CC4C0918C7B708431D5 /* SDCAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertView.m; path = SDCAlertView/Source/SDCAlertView.m; sourceTree = "<group>"; };
+		DDEC730F2FB09C3CAB565C36 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pinpoint-UITextField+Shake-Private.xcconfig"; sourceTree = "<group>"; };
+		E3512E00BF147FA58D133CC4 /* SDCAlertViewCoordinator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewCoordinator.h; path = SDCAlertView/Source/SDCAlertViewCoordinator.h; sourceTree = "<group>"; };
+		E5659E1146D6EC34AEC5595B /* RBBCubicBezier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RBBCubicBezier.m; path = RBBAnimation/RBBCubicBezier.m; sourceTree = "<group>"; };
+		E6B0E5BC5C3796862ED66A52 /* Pods-Pinpoint-SDCAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-SDCAlertView-dummy.m"; sourceTree = "<group>"; };
+		E8C4A12DA0215C09CB1EEDB9 /* GFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFQuery.h; path = GeoFire/API/GFQuery.h; sourceTree = "<group>"; };
+		E8DBBDA0D539B6C4A131FC6E /* SDCAlertViewBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewBackgroundView.h; path = SDCAlertView/Source/SDCAlertViewBackgroundView.h; sourceTree = "<group>"; };
+		EFDD4E7C79998F02743244ED /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F07C6B50BCFAC3A44A518DDB /* SDCAlertCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertCollectionViewCell.h; path = SDCAlertView/Source/SDCAlertCollectionViewCell.h; sourceTree = "<group>"; };
+		F0A645472C1636D978532EB7 /* Pods-Pinpoint-RBBAnimation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pinpoint-RBBAnimation-prefix.pch"; sourceTree = "<group>"; };
+		F0BF96CBF957D9DF86C03FB9 /* Pods-Pinpoint-UITextField+Shake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-UITextField+Shake-dummy.m"; sourceTree = "<group>"; };
+		F6164C7F6346B6F0A7D008DB /* libPods-Pinpoint-SDCAutoLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint-SDCAutoLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F991CBEBC116B48D068E30AE /* SDCAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertViewController.h; path = SDCAlertView/Source/SDCAlertViewController.h; sourceTree = "<group>"; };
+		FAB3DFBFE48DC0D6A8D1D45E /* Pods-Pinpoint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pinpoint-dummy.m"; sourceTree = "<group>"; };
+		FE596FF19F6476E5CB6189A0 /* SDCAlertControllerTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCAlertControllerTransition.m; path = SDCAlertView/Source/SDCAlertControllerTransition.m; sourceTree = "<group>"; };
+		FF8426B8D6919DBB576C45B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FFC9D44A5045A8053C0C1F06 /* SDCAlertControllerTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCAlertControllerTransition.h; path = SDCAlertView/Source/SDCAlertControllerTransition.h; sourceTree = "<group>"; };
+		FFD3A1E39422E8009A842E4B /* GFQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFQuery.m; path = GeoFire/Implementation/GFQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		400B343436CEF238132CF56D /* Frameworks */ = {
+		032FCF7B3B3D6A7A0AB1B7EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34E4E6D60DF0ACB337532510 /* Foundation.framework in Frameworks */,
+				78D9018930184A14FA33E526 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45D0A9719E3ABD6253834829 /* Frameworks */ = {
+		3F36AE170D9AA498CF57EA5D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D31E62D85614B0EE06624770 /* Foundation.framework in Frameworks */,
+				CB94EBED3B8EA857B1B587F7 /* Foundation.framework in Frameworks */,
+				E555A4282C657DA2E7FDAFC4 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		691A9093A367BD7DDAD0FEA4 /* Frameworks */ = {
+		56311E1DF2E332039B4D6AF0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2133C8E92E5C2718BD1D1B8B /* Foundation.framework in Frameworks */,
+				220737FD546D705988D07D71 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		885A4898632D3F7B406AACE8 /* Frameworks */ = {
+		824E37B59DC2C4F9C5E30C41 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDBCA715F46525AA8066EE30 /* Foundation.framework in Frameworks */,
+				EB4C682F4E304D2DDC92F46F /* CoreLocation.framework in Frameworks */,
+				ED955CCAE5AC99B6314CFD65 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9318B801A0E06A1CE849537C /* Frameworks */ = {
+		CD3EF4AE4F9FFCB8867EC8AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3120A52B2980781CF74DD818 /* CoreLocation.framework in Frameworks */,
-				4C27B166390D32721C829656 /* Foundation.framework in Frameworks */,
+				5DD76BCBBEBBCD32656355D2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96314995E66BCA8BBF99039A /* Frameworks */ = {
+		DD663ECBD195B3E4E1E1A72C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61F7964239B6E3572975CB34 /* Foundation.framework in Frameworks */,
+				2909522D07CD761D6B467B8E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB2B72C77D7ECC89A2B493FF /* Frameworks */ = {
+		DF14DA25AD7FCCF865E4677D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C6407942359458C650035B1 /* Foundation.framework in Frameworks */,
-				49D361B59D6A784D33A0832C /* QuartzCore.framework in Frameworks */,
+				ABA3693EF68AD480061BC297 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A734A8EF1EE0F3CC82BBA13 /* iOS */ = {
+		2268948DEEF2906B5B959D5D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				722626848B599C5452DE8B27 /* CoreLocation.framework */,
-				90AC4EA4207B4A36BB8EDBED /* Foundation.framework */,
-				DAE22897D44EB902AF4FFDD9 /* QuartzCore.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		0B8DE93494AE4BBEC08F3C97 /* RBBAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				7AFC61135B97E9665B3C4AB1 /* RBBAnimation.h */,
-				5BC4F844478A65FF96935F59 /* RBBAnimation.m */,
-				7674FC79DBBFC8AB418CE9A8 /* RBBBlockBasedArray.h */,
-				9B355886388052684CCEA61D /* RBBBlockBasedArray.m */,
-				516D6BDF84497D2C691941D7 /* RBBCubicBezier.h */,
-				1E25515DF5230C440A3374E2 /* RBBCubicBezier.m */,
-				EBC7B383F03612D0F1B1E039 /* RBBCustomAnimation.h */,
-				D76A51EE57E2A2C70F5F2F61 /* RBBCustomAnimation.m */,
-				87364728CB2A780672D91AD0 /* RBBEasingFunction.h */,
-				A1C2843037F6AE379763232C /* RBBEasingFunction.m */,
-				31940B30E67B793366D7BC93 /* RBBLinearInterpolation.h */,
-				2E4A9BA1080F77AF897A8FFF /* RBBLinearInterpolation.m */,
-				86B3A986268EABF8F828C8A8 /* RBBSpringAnimation.h */,
-				612D195161CECF28AA3D03FA /* RBBSpringAnimation.m */,
-				B427063312B207726201F00E /* RBBTweenAnimation.h */,
-				D13B417EB6B6466F01DBCF2B /* RBBTweenAnimation.m */,
-				305A8A02A76D51E6D0F28254 /* Support Files */,
-			);
-			path = RBBAnimation;
-			sourceTree = "<group>";
-		};
-		1C3847B92FC402BDF2154A2F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1879E1A1FE7133323CC7FEB7 /* Pods-Pinpoint-SDCAutoLayout.xcconfig */,
-				E1656E7734FCCDCA860C3643 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */,
-				2DE39B2723051310AF6849CB /* Pods-Pinpoint-SDCAutoLayout-dummy.m */,
-				C44FD6B0B40CBADC1829DB08 /* Pods-Pinpoint-SDCAutoLayout-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Pinpoint-SDCAutoLayout";
-			sourceTree = "<group>";
-		};
-		247CE26FFD9E67824371CE00 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				59803FE45D177DFD95627E09 /* Pods-Pinpoint */,
+				8CD252B95F80852AA579B0FF /* Pods-Pinpoint */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		279814FEB2E1054514BFC31D /* Support Files */ = {
+		24A1EFB26991404018753531 /* RBBAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				899320C7827D4C0D593329EB /* Pods-Pinpoint-Onboard.xcconfig */,
-				5329E0A7B504DDBA5CD1E222 /* Pods-Pinpoint-Onboard-Private.xcconfig */,
-				2D84B142C1AB8571BAA8AD0E /* Pods-Pinpoint-Onboard-dummy.m */,
-				D22BBB70C4F79F28090C9F13 /* Pods-Pinpoint-Onboard-prefix.pch */,
+				79E818623B3C241F37600EFB /* RBBAnimation.h */,
+				39CB1F250BC5BC6DCF20242D /* RBBAnimation.m */,
+				0DB8EE20E0B79EABDFFBA69E /* RBBBlockBasedArray.h */,
+				C6E697D9AA0A5FD9FEF82E16 /* RBBBlockBasedArray.m */,
+				A5D1C26550A05111B4C50036 /* RBBCubicBezier.h */,
+				E5659E1146D6EC34AEC5595B /* RBBCubicBezier.m */,
+				68EAEB44C74D68993AEC441D /* RBBCustomAnimation.h */,
+				4E0B0ADE8674140AC1D2813A /* RBBCustomAnimation.m */,
+				DCB9968D26891E52310F1FAD /* RBBEasingFunction.h */,
+				03004BAADC7C11F3237DDF19 /* RBBEasingFunction.m */,
+				6A87DBC42D6024BDC780E808 /* RBBLinearInterpolation.h */,
+				38C8A115E597CDA537905494 /* RBBLinearInterpolation.m */,
+				9912F8F26F0ACCCAEC40211E /* RBBSpringAnimation.h */,
+				36ACDB658BC0FBABD8C50237 /* RBBSpringAnimation.m */,
+				A9F10E2D5326184825898134 /* RBBTweenAnimation.h */,
+				A388F926B29D8CA6BA89C35B /* RBBTweenAnimation.m */,
+				9A3FA1CBBFAA742557F4C275 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Pinpoint-Onboard";
+			path = RBBAnimation;
 			sourceTree = "<group>";
 		};
-		305A8A02A76D51E6D0F28254 /* Support Files */ = {
+		3A505CF98835EBBF79B20EB9 /* GeoFire */ = {
 			isa = PBXGroup;
 			children = (
-				09EA7DA841288EFA4D7EBF76 /* Pods-Pinpoint-RBBAnimation.xcconfig */,
-				FDFBB89CA9B1FCC2D58A1488 /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */,
-				A3A7328BF56A0987D16FDEE3 /* Pods-Pinpoint-RBBAnimation-dummy.m */,
-				EC38B85E5312A635CC53701B /* Pods-Pinpoint-RBBAnimation-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Pinpoint-RBBAnimation";
-			sourceTree = "<group>";
-		};
-		352A4D4AE37CCADD24246164 /* GeoFire */ = {
-			isa = PBXGroup;
-			children = (
-				4A23E445EFF5D2E0E7F84BDD /* GFBase32Utils.h */,
-				BB2AD2970589D9691C4F5BAD /* GFBase32Utils.m */,
-				D56206EAC256C66500ADDF1E /* GFCircleQuery.h */,
-				E2B50769AED7B10B8B95E45E /* GFGeoHash.h */,
-				1EE553BE909666779D74E190 /* GFGeoHash.m */,
-				D1C2FC26BB9696712E42F144 /* GFGeoHashQuery.h */,
-				187AA07EC326F284D4069F25 /* GFGeoHashQuery.m */,
-				1C1109B0A191C80313890C8E /* GFQuery.h */,
-				742B9E3B8FECB48FFFCA1FD9 /* GFQuery.m */,
-				2E9BBBB20A39A82E263FF5CA /* GFQuery+Private.h */,
-				9C4F32BEE863C0AE0A9E423C /* GFRegionQuery.h */,
-				608EF5BA8E9C9F1AB233FDF4 /* GeoFire.h */,
-				E4F4F2FDC480AF58C6D69F5F /* GeoFire.m */,
-				8B9B64DDBD24BB2D128D26D1 /* GeoFire+Private.h */,
-				90DD3B50B63DF9F0B9A1B3B2 /* Support Files */,
+				0E429D6DBD2F9A729CA3ADCD /* GFBase32Utils.h */,
+				BB1A588D99365CA0D2018E14 /* GFBase32Utils.m */,
+				35BD92207F656431740FF72A /* GFCircleQuery.h */,
+				14EB573B947D4A47D35B6692 /* GFGeoHash.h */,
+				11E1037D1D7665E080193066 /* GFGeoHash.m */,
+				CAFBDA47FE5349DB7F36AEFF /* GFGeoHashQuery.h */,
+				CC5C5EC4654A394A78E6F968 /* GFGeoHashQuery.m */,
+				E8C4A12DA0215C09CB1EEDB9 /* GFQuery.h */,
+				FFD3A1E39422E8009A842E4B /* GFQuery.m */,
+				68FE0327E61CD9EDF4EA4B9E /* GFQuery+Private.h */,
+				4CFA196BEF7C043A7066F2FB /* GFRegionQuery.h */,
+				8DB8CFD0132537594F1C8D63 /* GeoFire.h */,
+				7920339D261B3489D6811AB4 /* GeoFire.m */,
+				47A4FE54B1C19A9A31BB8B08 /* GeoFire+Private.h */,
+				40C1BF7DC802EB3A5D88F5C4 /* Support Files */,
 			);
 			path = GeoFire;
 			sourceTree = "<group>";
 		};
-		3BE854733A62281C1BE1948B /* Pods */ = {
+		40C1BF7DC802EB3A5D88F5C4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				80BD9DF59BEBE7CF59A3E857 /* Firebase */,
-				352A4D4AE37CCADD24246164 /* GeoFire */,
-				88F84216746981E164B2DB07 /* Onboard */,
-				0B8DE93494AE4BBEC08F3C97 /* RBBAnimation */,
-				A7729073EA4523D83B7056F1 /* SDCAlertView */,
-				581837057951AE51F587B71F /* SDCAutoLayout */,
-				4791C6F66CAE0BFF0AD01C64 /* UITextField+Shake */,
+				738380BB8FECE7D1763C873A /* Pods-Pinpoint-GeoFire.xcconfig */,
+				6FBB3952DDDF7E65D4BE7651 /* Pods-Pinpoint-GeoFire-Private.xcconfig */,
+				AF5F072242D4C058CAFC8D60 /* Pods-Pinpoint-GeoFire-dummy.m */,
+				45DA8D348511544DDB2E29B5 /* Pods-Pinpoint-GeoFire-prefix.pch */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Pinpoint-GeoFire";
 			sourceTree = "<group>";
 		};
-		4791C6F66CAE0BFF0AD01C64 /* UITextField+Shake */ = {
+		5BB42BA32E6C6064AB6BDF37 /* UITextField+Shake */ = {
 			isa = PBXGroup;
 			children = (
-				CB28277524EB1CB4801A058D /* UITextField+Shake.h */,
-				A1EE2907FAA1FF6B8B92B8EA /* UITextField+Shake.m */,
-				7591C6CA836526FD3A0266F0 /* Support Files */,
+				1A57BCDEB0D6736531BB32B1 /* UITextField+Shake.h */,
+				359E5976875AD2861FA75BC5 /* UITextField+Shake.m */,
+				8E7FFACDDE6A68959FAC2499 /* Support Files */,
 			);
 			path = "UITextField+Shake";
 			sourceTree = "<group>";
 		};
-		581837057951AE51F587B71F /* SDCAutoLayout */ = {
+		74E1900033C793857C4D3184 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C7F35CB8A313B798EA6F299 /* UIView+SDCAutoLayout.h */,
-				FA3412110DC5A55440E3A2DF /* UIView+SDCAutoLayout.m */,
-				1C3847B92FC402BDF2154A2F /* Support Files */,
+				9E20456DCF93A9130A50A426 /* Firebase */,
+				3A505CF98835EBBF79B20EB9 /* GeoFire */,
+				914AF9EDE031A2E34204CE6A /* Onboard */,
+				24A1EFB26991404018753531 /* RBBAnimation */,
+				E8C614DE632D5B6A225B28FE /* SDCAlertView */,
+				7D5C630B13116182C05CE506 /* SDCAutoLayout */,
+				5BB42BA32E6C6064AB6BDF37 /* UITextField+Shake */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7D5C630B13116182C05CE506 /* SDCAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				71EB2EC38AF14223AACA8107 /* UIView+SDCAutoLayout.h */,
+				AC34672DA431EFC0405FA345 /* UIView+SDCAutoLayout.m */,
+				C249ABFF54E9145C356296DE /* Support Files */,
 			);
 			path = SDCAutoLayout;
 			sourceTree = "<group>";
 		};
-		59803FE45D177DFD95627E09 /* Pods-Pinpoint */ = {
+		8CD252B95F80852AA579B0FF /* Pods-Pinpoint */ = {
 			isa = PBXGroup;
 			children = (
-				A8A0055373B65021824BB466 /* Pods-Pinpoint-acknowledgements.markdown */,
-				E21B6A91324A4F5A370AE014 /* Pods-Pinpoint-acknowledgements.plist */,
-				72B8F8C5F9662FB5D9439BF8 /* Pods-Pinpoint-dummy.m */,
-				216EF4332E903DFCE72B2B07 /* Pods-Pinpoint-environment.h */,
-				13E346A32CD3A75DB2087371 /* Pods-Pinpoint-resources.sh */,
-				AD3EFCBB9E6B47E948C457AA /* Pods-Pinpoint.debug.xcconfig */,
-				F5E38E52405365EE25ACBCF1 /* Pods-Pinpoint.release.xcconfig */,
+				11A233EE1C3DA70F20A9946A /* Pods-Pinpoint-acknowledgements.markdown */,
+				0A778587A040359EA39F3136 /* Pods-Pinpoint-acknowledgements.plist */,
+				FAB3DFBFE48DC0D6A8D1D45E /* Pods-Pinpoint-dummy.m */,
+				C3DE901735B569C10EB1387F /* Pods-Pinpoint-environment.h */,
+				2CDE4E8FAC921E7C7556B8D3 /* Pods-Pinpoint-resources.sh */,
+				595447C96443BFEE201448B8 /* Pods-Pinpoint.debug.xcconfig */,
+				16C83EE74E7A02650AC9423D /* Pods-Pinpoint.release.xcconfig */,
 			);
 			name = "Pods-Pinpoint";
 			path = "Target Support Files/Pods-Pinpoint";
 			sourceTree = "<group>";
 		};
-		5E8998D7C689C29FBB1CC25D /* Frameworks */ = {
+		8E7FFACDDE6A68959FAC2499 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A734A8EF1EE0F3CC82BBA13 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7591C6CA836526FD3A0266F0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2C7BFAACC97EFE0FDF29D5C0 /* Pods-Pinpoint-UITextField+Shake.xcconfig */,
-				6F28A789AA10A447E68F1125 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */,
-				57A88982512AF9F703E4DE98 /* Pods-Pinpoint-UITextField+Shake-dummy.m */,
-				C32FAB73EB642B9C01B037BD /* Pods-Pinpoint-UITextField+Shake-prefix.pch */,
+				53FD09BC37D33CEBD9BB2046 /* Pods-Pinpoint-UITextField+Shake.xcconfig */,
+				DDEC730F2FB09C3CAB565C36 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */,
+				F0BF96CBF957D9DF86C03FB9 /* Pods-Pinpoint-UITextField+Shake-dummy.m */,
+				45F00FF65CAD69392E931408 /* Pods-Pinpoint-UITextField+Shake-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Pinpoint-UITextField+Shake";
 			sourceTree = "<group>";
 		};
-		80BD9DF59BEBE7CF59A3E857 /* Firebase */ = {
+		914AF9EDE031A2E34204CE6A /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				5C194D5165F20D5D69B8F4C6 /* OnboardingContentViewController.h */,
+				3C7410B74E741CF7F1A2B751 /* OnboardingContentViewController.m */,
+				B7FCA958CE2C894D43C0F672 /* OnboardingViewController.h */,
+				12AD3DCFB5DC5CBD26DF2083 /* OnboardingViewController.m */,
+				99ED3BDD223686695F1D5626 /* Support Files */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		99ED3BDD223686695F1D5626 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D03F8160FB7E7D03BCC7A27 /* Pods-Pinpoint-Onboard.xcconfig */,
+				31B90DD895AE0280472A8A98 /* Pods-Pinpoint-Onboard-Private.xcconfig */,
+				79A93858732CF0A59D2C7947 /* Pods-Pinpoint-Onboard-dummy.m */,
+				07A4D62BB985F42D31B88AB9 /* Pods-Pinpoint-Onboard-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Pinpoint-Onboard";
+			sourceTree = "<group>";
+		};
+		9A3FA1CBBFAA742557F4C275 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F2DECFC98153A9B54CDC86B /* Pods-Pinpoint-RBBAnimation.xcconfig */,
+				2752D7378A5893E1711CF43E /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */,
+				D01E821B85D0CABD8E2586F6 /* Pods-Pinpoint-RBBAnimation-dummy.m */,
+				F0A645472C1636D978532EB7 /* Pods-Pinpoint-RBBAnimation-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Pinpoint-RBBAnimation";
+			sourceTree = "<group>";
+		};
+		9E20456DCF93A9130A50A426 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		88F84216746981E164B2DB07 /* Onboard */ = {
+		A04100F7220C6F04C8B149A4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				ECD5F460BE485A4BAB10B040 /* OnboardingContentViewController.h */,
-				675EBAFAB456269B3F622812 /* OnboardingContentViewController.m */,
-				48B4B2CC58732610899C58EE /* OnboardingViewController.h */,
-				F1D68C49140AE554864326CF /* OnboardingViewController.m */,
-				279814FEB2E1054514BFC31D /* Support Files */,
+				CE9BD05FD3D54B71B9826F05 /* CoreLocation.framework */,
+				FF8426B8D6919DBB576C45B6 /* Foundation.framework */,
+				9B2E5B5A78856A3AEAA8BB13 /* QuartzCore.framework */,
 			);
-			path = Onboard;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		90DD3B50B63DF9F0B9A1B3B2 /* Support Files */ = {
+		ADB66193B672322A5C7864AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30A6E7306542F4BE604FB361 /* Pods-Pinpoint-GeoFire.xcconfig */,
-				27F383479E33E228587658C2 /* Pods-Pinpoint-GeoFire-Private.xcconfig */,
-				41EEEDF8DCEFEAF660F243CF /* Pods-Pinpoint-GeoFire-dummy.m */,
-				9496CBBFD5E4720815AE168C /* Pods-Pinpoint-GeoFire-prefix.pch */,
+				3697D14173F62F7F3CE8947E /* libPods-Pinpoint.a */,
+				06111DB638DEE7C3CFAD49D2 /* libPods-Pinpoint-GeoFire.a */,
+				1B59A6269795256B935D066C /* libPods-Pinpoint-Onboard.a */,
+				B77BDED883888BC385938803 /* libPods-Pinpoint-RBBAnimation.a */,
+				310A42DBC363F907A1279A3B /* libPods-Pinpoint-SDCAlertView.a */,
+				F6164C7F6346B6F0A7D008DB /* libPods-Pinpoint-SDCAutoLayout.a */,
+				9F4D67D1D982561FE6938512 /* libPods-Pinpoint-UITextField+Shake.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C249ABFF54E9145C356296DE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CDDEC952E5EBA300908E825 /* Pods-Pinpoint-SDCAutoLayout.xcconfig */,
+				8AC2940E16A964B764120650 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */,
+				333A87B319F53D4458B3D033 /* Pods-Pinpoint-SDCAutoLayout-dummy.m */,
+				97E8BB72754FBEBD0A28B874 /* Pods-Pinpoint-SDCAutoLayout-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Pods-Pinpoint-GeoFire";
+			path = "../Target Support Files/Pods-Pinpoint-SDCAutoLayout";
 			sourceTree = "<group>";
 		};
-		A7729073EA4523D83B7056F1 /* SDCAlertView */ = {
+		CE42B36C236CFBF61D418211 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C6446C1219B74091C455A015 /* SDCAlertAction.m */,
-				41DC978DE4121561031DFDF8 /* SDCAlertCollectionViewCell.h */,
-				0E6B89241D15EBBCC95CBD43 /* SDCAlertCollectionViewCell.m */,
-				A053138077D874D297FAC017 /* SDCAlertController.h */,
-				5DC73F6D7039EA809C5A6EB5 /* SDCAlertController.m */,
-				E7C4EF000DCC88BED791906A /* SDCAlertControllerCollectionViewFlowLayout.h */,
-				8F5B5988A29715DB423C5F92 /* SDCAlertControllerCollectionViewFlowLayout.m */,
-				B0E50947AD5B1B3155F6B3FD /* SDCAlertControllerDefaultVisualStyle.h */,
-				B2436EFA41E9A91B61571912 /* SDCAlertControllerDefaultVisualStyle.m */,
-				734C8009D1A17DAC928B4F64 /* SDCAlertControllerScrollView.h */,
-				14A04E94484F6E82E2DABBDD /* SDCAlertControllerScrollView.m */,
-				33611BA88C3C74EB73E7B19B /* SDCAlertControllerTextFieldViewController.h */,
-				98CC06B7ACB91F1E5189533B /* SDCAlertControllerTextFieldViewController.m */,
-				B1AA1699BF65A4E4218D250A /* SDCAlertControllerTransition.h */,
-				C328FC56DD22E29CBD81B3B1 /* SDCAlertControllerTransition.m */,
-				22655B0215D02C66E8CF131C /* SDCAlertControllerView.h */,
-				A615806477D9242E12FFC6C7 /* SDCAlertControllerView.m */,
-				D896930F5B1662057DF10C29 /* SDCAlertControllerVisualStyle.h */,
-				5BE35CB56E9CDD91093BADF1 /* SDCAlertLabel.h */,
-				85D5F77B3E69CEE6CDE176F5 /* SDCAlertLabel.m */,
-				9AD2F6FD07B3AFFD45FC1B12 /* SDCAlertPresentationController.h */,
-				1FCF53DF89B366AF3B8560D1 /* SDCAlertPresentationController.m */,
-				6E94BF105028909A356413B6 /* SDCAlertTextFieldTableViewCell.h */,
-				41DF27A1A895D1269E70FCC0 /* SDCAlertTextFieldTableViewCell.m */,
-				33FC3BE239455DB9A348F395 /* SDCAlertView.h */,
-				8A65E71C9526D3EF438A63CF /* SDCAlertView.m */,
-				10B099B7569CC8DA53A5A64D /* SDCAlertViewBackgroundView.h */,
-				CC27BDA9B38866F09BF41DDB /* SDCAlertViewBackgroundView.m */,
-				D51FC0BFFB8BD6D8529D74EB /* SDCAlertViewContentView.h */,
-				AA807DA4CEB33E26D8B308CF /* SDCAlertViewContentView.m */,
-				BDF8647C3D2A6EA65E078520 /* SDCAlertViewController.h */,
-				1C79BEC15BAFB2F008A5A78C /* SDCAlertViewController.m */,
-				1DE983582B4599AF856E623A /* SDCAlertViewCoordinator.h */,
-				F402ECFD4092FF4804F7B80A /* SDCAlertViewCoordinator.m */,
-				9740FB739F0269BBFAA66B9B /* SDCAlertViewTransitioning.h */,
-				F4C1437972F65603970A3A1C /* SDCDemoViewController.h */,
-				E8D2607FBCF87B7239F77EB0 /* SDCDemoViewController.m */,
-				B0C7ED0E2301AA9F16933307 /* SDCIntrinsicallySizedView.h */,
-				470124EE0E33C1C4653ADBDB /* SDCIntrinsicallySizedView.m */,
-				56A2BA84141D37AE0D51C847 /* UIView+Parallax.h */,
-				4B83A38B8B895D07D5498287 /* UIView+Parallax.m */,
-				A817CC5594BEE81B658DAC58 /* UIViewController+Current.h */,
-				D6CDD4EBB233BBFB8691F5DB /* UIViewController+Current.m */,
-				F7D94880AE84450BC8CC3FE8 /* Support Files */,
+				A04100F7220C6F04C8B149A4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1FD4C787D416E9A23D52500 = {
+			isa = PBXGroup;
+			children = (
+				EFDD4E7C79998F02743244ED /* Podfile */,
+				CE42B36C236CFBF61D418211 /* Frameworks */,
+				74E1900033C793857C4D3184 /* Pods */,
+				ADB66193B672322A5C7864AF /* Products */,
+				2268948DEEF2906B5B959D5D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E8C614DE632D5B6A225B28FE /* SDCAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				CFB2088DA32FB59AD829E332 /* SDCAlertAction.m */,
+				F07C6B50BCFAC3A44A518DDB /* SDCAlertCollectionViewCell.h */,
+				7CCDEA771EE5948AB6153717 /* SDCAlertCollectionViewCell.m */,
+				A433C6E954E3202E6739B652 /* SDCAlertController.h */,
+				6ECF93382079E52D3BDFD27F /* SDCAlertController.m */,
+				65274ECEDBA6AFAFB414B69F /* SDCAlertControllerCollectionViewFlowLayout.h */,
+				8619A7D7F06858E0DA815C2F /* SDCAlertControllerCollectionViewFlowLayout.m */,
+				2BCE246EC45CC488DF1317C8 /* SDCAlertControllerDefaultVisualStyle.h */,
+				5B02B3B0037D3DD923799C98 /* SDCAlertControllerDefaultVisualStyle.m */,
+				9348E3A05B8D98C9D4A7648F /* SDCAlertControllerScrollView.h */,
+				24E569257140FFBD09395331 /* SDCAlertControllerScrollView.m */,
+				DC3C5E29553432B52F2B8232 /* SDCAlertControllerTextFieldViewController.h */,
+				03087CD4A7D2F741710A7569 /* SDCAlertControllerTextFieldViewController.m */,
+				FFC9D44A5045A8053C0C1F06 /* SDCAlertControllerTransition.h */,
+				FE596FF19F6476E5CB6189A0 /* SDCAlertControllerTransition.m */,
+				65CF8702EEBDEA65559108A4 /* SDCAlertControllerView.h */,
+				CBA12505A071C0AC0E9ABE0C /* SDCAlertControllerView.m */,
+				65269E2FA9DF877A09F40F2F /* SDCAlertControllerVisualStyle.h */,
+				B2184E28CDAEB502779C6D17 /* SDCAlertLabel.h */,
+				C63F6B204D1354E9F3801398 /* SDCAlertLabel.m */,
+				61F45D4C1E6DB7EEF8B703F2 /* SDCAlertPresentationController.h */,
+				124C3E9D72CC3B9B0A1098C2 /* SDCAlertPresentationController.m */,
+				814DBE33DC44740BA253E57C /* SDCAlertTextFieldTableViewCell.h */,
+				60B14509D2C319D63317CBA0 /* SDCAlertTextFieldTableViewCell.m */,
+				51744071A72A9FEB430C1E36 /* SDCAlertView.h */,
+				DDCC2CC4C0918C7B708431D5 /* SDCAlertView.m */,
+				E8DBBDA0D539B6C4A131FC6E /* SDCAlertViewBackgroundView.h */,
+				B45BEEC71CD21CE55253CCCC /* SDCAlertViewBackgroundView.m */,
+				CE2476C50F388946067041AA /* SDCAlertViewContentView.h */,
+				3BA51435E678930EA90FB849 /* SDCAlertViewContentView.m */,
+				F991CBEBC116B48D068E30AE /* SDCAlertViewController.h */,
+				371EF0A6E87C0582C1C77459 /* SDCAlertViewController.m */,
+				E3512E00BF147FA58D133CC4 /* SDCAlertViewCoordinator.h */,
+				25D8EDEE74C8149EC3B78F77 /* SDCAlertViewCoordinator.m */,
+				2DF3B8B1C8341257FD56233D /* SDCAlertViewTransitioning.h */,
+				B8E852814AA714B9A7DBCD67 /* SDCDemoViewController.h */,
+				B668B0ABE4A237261DFC4C31 /* SDCDemoViewController.m */,
+				DA41F7E0DF4460C34D9F9DE8 /* SDCIntrinsicallySizedView.h */,
+				4612D57CCB6B99135CD8FE1E /* SDCIntrinsicallySizedView.m */,
+				B4B37D5195EE16A81A96D639 /* UIView+Parallax.h */,
+				A4A148F3FA867C1485448574 /* UIView+Parallax.m */,
+				ACF7DB22103E9FAA4C14F13C /* UIViewController+Current.h */,
+				26506D53DF1AB760C2374BB1 /* UIViewController+Current.m */,
+				F1704E81C8B39634A113378F /* Support Files */,
 			);
 			path = SDCAlertView;
 			sourceTree = "<group>";
 		};
-		D99DDC9C50C9B2CF1B5B4AD8 = {
+		F1704E81C8B39634A113378F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C28A2ABD369E6E63E7459210 /* Podfile */,
-				5E8998D7C689C29FBB1CC25D /* Frameworks */,
-				3BE854733A62281C1BE1948B /* Pods */,
-				FD696EDE852F6CCA801A08FC /* Products */,
-				247CE26FFD9E67824371CE00 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		F7D94880AE84450BC8CC3FE8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C19D7A98F4CB71D7C82B35EB /* Pods-Pinpoint-SDCAlertView.xcconfig */,
-				66409DAA82FE347113CC2AC7 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */,
-				39CDDE5FAF8998D2750D0998 /* Pods-Pinpoint-SDCAlertView-dummy.m */,
-				B0E92071B184D27F122EDFA7 /* Pods-Pinpoint-SDCAlertView-prefix.pch */,
+				8401E080CAF6478360EC1270 /* Pods-Pinpoint-SDCAlertView.xcconfig */,
+				B6B2DF1663107CA7BDEF5F17 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */,
+				E6B0E5BC5C3796862ED66A52 /* Pods-Pinpoint-SDCAlertView-dummy.m */,
+				9F708D1DC618703CEA02CA98 /* Pods-Pinpoint-SDCAlertView-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Pinpoint-SDCAlertView";
 			sourceTree = "<group>";
 		};
-		FD696EDE852F6CCA801A08FC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1D89C6FE68829291C9958A76 /* libPods-Pinpoint.a */,
-				820279B6D8EB54EFD71EA0F6 /* libPods-Pinpoint-GeoFire.a */,
-				617AC696CF1717970A202D1F /* libPods-Pinpoint-Onboard.a */,
-				769D4B4BAA3D1F0704B42B8A /* libPods-Pinpoint-RBBAnimation.a */,
-				63109E28D999C6194FADF4E3 /* libPods-Pinpoint-SDCAlertView.a */,
-				3E9A33558F763355EC70B207 /* libPods-Pinpoint-SDCAutoLayout.a */,
-				1B91C0AE0685097532220FBD /* libPods-Pinpoint-UITextField+Shake.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		59EE27778FBD84F836EC0D48 /* Headers */ = {
+		41DEB43FC033B24877F66D34 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53F28AA8D5743872F08872AF /* UITextField+Shake.h in Headers */,
+				A6DD7785A368A684F5455795 /* GFBase32Utils.h in Headers */,
+				A31DFA9E5C42F3A571764035 /* GFCircleQuery.h in Headers */,
+				A6BA28E8850072A814797A3E /* GFGeoHash.h in Headers */,
+				0BE2EC17BD0468B2D9C21D63 /* GFGeoHashQuery.h in Headers */,
+				2CABE17FF5B3CC2AA0CD9A8F /* GFQuery+Private.h in Headers */,
+				7926C2728B89BB5862A4E2BC /* GFQuery.h in Headers */,
+				A7DD06AF90C66D21D1B72E89 /* GFRegionQuery.h in Headers */,
+				E40636E4C30DA353E168A173 /* GeoFire+Private.h in Headers */,
+				FD2662E34C53AB7802F0E629 /* GeoFire.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59F7E286587C4A2241B0DA3B /* Headers */ = {
+		50666252008793915D8FACB0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75D361ED3296F659E0B48C4F /* RBBAnimation.h in Headers */,
-				A1A41F7955E448120E9F12B1 /* RBBBlockBasedArray.h in Headers */,
-				34EA56E607760DF42DE0C35E /* RBBCubicBezier.h in Headers */,
-				92CB82E92F765E0B02CFE38F /* RBBCustomAnimation.h in Headers */,
-				9C4038B364AC4C828F973AE2 /* RBBEasingFunction.h in Headers */,
-				95980A29C7F033974CA8B054 /* RBBLinearInterpolation.h in Headers */,
-				9F3D53BB4D97DCA413CECF9C /* RBBSpringAnimation.h in Headers */,
-				FD15035D63F62743D4B0DCAC /* RBBTweenAnimation.h in Headers */,
+				F603091F4A972B350DC55C77 /* OnboardingContentViewController.h in Headers */,
+				D2EA367F166BFB88B085C119 /* OnboardingViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61D70AD932A1D14C85F76243 /* Headers */ = {
+		7DA4224E62144022DB8E1A9A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9363BAF0E785E34DDBE40D4 /* UIView+SDCAutoLayout.h in Headers */,
+				D509BB8C138E7D0910E54BAE /* UITextField+Shake.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3B7A150ADFC006D4FDBDBF1 /* Headers */ = {
+		C7116FB589CF9E3A1F499BE3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3CDB188EC9761EE5EDF9D7D /* SDCAlertCollectionViewCell.h in Headers */,
-				B847686E20863042125B67AE /* SDCAlertController.h in Headers */,
-				3C484CAB00F7D2467B8C8829 /* SDCAlertControllerCollectionViewFlowLayout.h in Headers */,
-				F8BBACA1CE63117E9DB425C4 /* SDCAlertControllerDefaultVisualStyle.h in Headers */,
-				27B2BB72FB7BEE17A3B8E8FE /* SDCAlertControllerScrollView.h in Headers */,
-				7B1CDE04AA1701CCCA197EBC /* SDCAlertControllerTextFieldViewController.h in Headers */,
-				A4036B0711FF0DCCA4DBA15E /* SDCAlertControllerTransition.h in Headers */,
-				745F75668412417F15D5BD38 /* SDCAlertControllerView.h in Headers */,
-				3E6DAE7C6CA13443712C8E60 /* SDCAlertControllerVisualStyle.h in Headers */,
-				807587D0B71C181317B67876 /* SDCAlertLabel.h in Headers */,
-				3BEDFD8B3B48ACCB5E57AFAC /* SDCAlertPresentationController.h in Headers */,
-				0F88983BD187960441910EDF /* SDCAlertTextFieldTableViewCell.h in Headers */,
-				DFEDCD4B527A3A0BA6227FED /* SDCAlertView.h in Headers */,
-				BE0643CCA0AAE7558E47EFA2 /* SDCAlertViewBackgroundView.h in Headers */,
-				EBB91F59119AC740CE9E308D /* SDCAlertViewContentView.h in Headers */,
-				A60ABCE3043CF40B55072B2E /* SDCAlertViewController.h in Headers */,
-				989E304657C9D538589D3601 /* SDCAlertViewCoordinator.h in Headers */,
-				FC896ABBD49D931796F59201 /* SDCAlertViewTransitioning.h in Headers */,
-				968CB628FA9C0E487763A9B3 /* SDCDemoViewController.h in Headers */,
-				BC6E847FECA13EFAEF49972C /* SDCIntrinsicallySizedView.h in Headers */,
-				E4238DA7453018A8B08FB6AD /* UIView+Parallax.h in Headers */,
-				0B474B7BF39A028738BB74D2 /* UIViewController+Current.h in Headers */,
+				6500C7F29F4B461106A93C32 /* SDCAlertCollectionViewCell.h in Headers */,
+				946EE300BFA1D16E55CA829B /* SDCAlertController.h in Headers */,
+				FD4AD236112EEACBEA06CBF5 /* SDCAlertControllerCollectionViewFlowLayout.h in Headers */,
+				B3ECB9235A742B351733F058 /* SDCAlertControllerDefaultVisualStyle.h in Headers */,
+				971B7FB236664AC3ED61DDD6 /* SDCAlertControllerScrollView.h in Headers */,
+				7AACE9E321C3061841BA032B /* SDCAlertControllerTextFieldViewController.h in Headers */,
+				09D598C241AE42D5BC6354DB /* SDCAlertControllerTransition.h in Headers */,
+				19F4242787DD10D4895DE3CA /* SDCAlertControllerView.h in Headers */,
+				4F2A9E81FF1B201A7D6C81AB /* SDCAlertControllerVisualStyle.h in Headers */,
+				D598D274185E30EC989742DE /* SDCAlertLabel.h in Headers */,
+				B6EEB469599BD58D2FFD6CE1 /* SDCAlertPresentationController.h in Headers */,
+				2CFBE93AFC1A6052D97B282D /* SDCAlertTextFieldTableViewCell.h in Headers */,
+				618E7F4B82527EA329B3F3EB /* SDCAlertView.h in Headers */,
+				12496D142D349D2B57A2CAF7 /* SDCAlertViewBackgroundView.h in Headers */,
+				B070BAAAFDE0CA956D3237D4 /* SDCAlertViewContentView.h in Headers */,
+				2938035FD470924895363DE4 /* SDCAlertViewController.h in Headers */,
+				2A4EA62438C8126A31C80405 /* SDCAlertViewCoordinator.h in Headers */,
+				E72B04B4419B8B59C654BE6E /* SDCAlertViewTransitioning.h in Headers */,
+				DF4E7A48E00377447C0DA1E4 /* SDCDemoViewController.h in Headers */,
+				01BFCDF90B2ABB79EFDCB0F6 /* SDCIntrinsicallySizedView.h in Headers */,
+				BDE5AAC695F84F03F5B610CF /* UIView+Parallax.h in Headers */,
+				BCD38E5D70DD4FD37A37546E /* UIViewController+Current.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4E70C8C7A31C5984327EA98 /* Headers */ = {
+		D70BAADCBD6E7DD20650C1DD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE66B670668A1CA38663596D /* GFBase32Utils.h in Headers */,
-				C79CA73F68C8EDCA64160CC6 /* GFCircleQuery.h in Headers */,
-				2C90B8920E4A365F435F57C1 /* GFGeoHash.h in Headers */,
-				8943A1BDA4DBE31D2E37AFF5 /* GFGeoHashQuery.h in Headers */,
-				A61F7698E53388660646F485 /* GFQuery+Private.h in Headers */,
-				D4E6666C9E85C49C0894BBEC /* GFQuery.h in Headers */,
-				2E9B2FFA61E61C6E39584CEE /* GFRegionQuery.h in Headers */,
-				8DE4A005BE461515B6292288 /* GeoFire+Private.h in Headers */,
-				68727EE753961C303DE65ADE /* GeoFire.h in Headers */,
+				B088546E3D45754140B318D5 /* RBBAnimation.h in Headers */,
+				559B86272EC876BE6A783B4C /* RBBBlockBasedArray.h in Headers */,
+				223DEC144FDCA47295A624E5 /* RBBCubicBezier.h in Headers */,
+				E02B158EE42EAE89F33D5342 /* RBBCustomAnimation.h in Headers */,
+				E47706E09000CA9DC153A511 /* RBBEasingFunction.h in Headers */,
+				6375F959EA635EBB8680212F /* RBBLinearInterpolation.h in Headers */,
+				ED4F6AFECC7C6D27CBD9D62F /* RBBSpringAnimation.h in Headers */,
+				BDF275B503910C40D22FAE85 /* RBBTweenAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF435C8C9A7BB3CF48F9FD5A /* Headers */ = {
+		F3A7BE82B32C520B96DF7E85 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3DA045F338F09E2F01F0FE3 /* OnboardingContentViewController.h in Headers */,
-				70CC1F035A79CA41CB7EBA09 /* OnboardingViewController.h in Headers */,
+				B612E829D59C61AAF0B37BF9 /* UIView+SDCAutoLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		37D687EF5F54607370AC79EE /* Pods-Pinpoint-UITextField+Shake */ = {
+		1520B9C8A06DDA03892380BF /* Pods-Pinpoint-Onboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D842E0B5C8BDE4EA11C4187 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-UITextField+Shake" */;
+			buildConfigurationList = 40A0B3F09FACAD0D041DE3CF /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */;
 			buildPhases = (
-				BE5DBFC3968F70A865A99153 /* Sources */,
-				400B343436CEF238132CF56D /* Frameworks */,
-				59EE27778FBD84F836EC0D48 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Pinpoint-UITextField+Shake";
-			productName = "Pods-Pinpoint-UITextField+Shake";
-			productReference = 1B91C0AE0685097532220FBD /* libPods-Pinpoint-UITextField+Shake.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		497329E840F3F12284716F9B /* Pods-Pinpoint */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07462B2479D691194F60116E /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */;
-			buildPhases = (
-				957AE03A4458EA55FF29B824 /* Sources */,
-				96314995E66BCA8BBF99039A /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2738E2745C0E3A1D8557A8DD /* PBXTargetDependency */,
-				11E402F2E4E9064D50E6F121 /* PBXTargetDependency */,
-				458D90521E1AA37EEDDF7C9B /* PBXTargetDependency */,
-				3AC54BD29EB569FEB0A6225D /* PBXTargetDependency */,
-				10270DB8CFA3A7ED8EDF043D /* PBXTargetDependency */,
-				60D695EAEF48B2F61CA6B391 /* PBXTargetDependency */,
-			);
-			name = "Pods-Pinpoint";
-			productName = "Pods-Pinpoint";
-			productReference = 1D89C6FE68829291C9958A76 /* libPods-Pinpoint.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		7929D2084171CAB7F41435EA /* Pods-Pinpoint-RBBAnimation */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 02E07840F7D6091A349BB6DD /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-RBBAnimation" */;
-			buildPhases = (
-				2F2673FE331F37068E7139C8 /* Sources */,
-				CB2B72C77D7ECC89A2B493FF /* Frameworks */,
-				59F7E286587C4A2241B0DA3B /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Pinpoint-RBBAnimation";
-			productName = "Pods-Pinpoint-RBBAnimation";
-			productReference = 769D4B4BAA3D1F0704B42B8A /* libPods-Pinpoint-RBBAnimation.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		9568FB5E1B780586A7CE2A12 /* Pods-Pinpoint-GeoFire */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82F9D8E7AF744DC6AED155A1 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */;
-			buildPhases = (
-				5A48899007728DD253FE775F /* Sources */,
-				9318B801A0E06A1CE849537C /* Frameworks */,
-				B4E70C8C7A31C5984327EA98 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Pinpoint-GeoFire";
-			productName = "Pods-Pinpoint-GeoFire";
-			productReference = 820279B6D8EB54EFD71EA0F6 /* libPods-Pinpoint-GeoFire.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		98896B9F9994AFED42B719C1 /* Pods-Pinpoint-Onboard */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B70EB4C14C22B06336A4D9BC /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */;
-			buildPhases = (
-				5EFC8671E6E432092894B22F /* Sources */,
-				885A4898632D3F7B406AACE8 /* Frameworks */,
-				CF435C8C9A7BB3CF48F9FD5A /* Headers */,
+				0D7AF01F575C1F3DE159A99E /* Sources */,
+				56311E1DF2E332039B4D6AF0 /* Frameworks */,
+				50666252008793915D8FACB0 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -819,35 +746,108 @@
 			);
 			name = "Pods-Pinpoint-Onboard";
 			productName = "Pods-Pinpoint-Onboard";
-			productReference = 617AC696CF1717970A202D1F /* libPods-Pinpoint-Onboard.a */;
+			productReference = 1B59A6269795256B935D066C /* libPods-Pinpoint-Onboard.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D1D97FD23202813D20E93A48 /* Pods-Pinpoint-SDCAlertView */ = {
+		3B6228697404B94148622F52 /* Pods-Pinpoint-GeoFire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E15317FE4BB7F360495692F4 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAlertView" */;
+			buildConfigurationList = 8A9FEF3782F6F92C060F8403 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */;
 			buildPhases = (
-				9C85DAE989BDE22E4F58B21F /* Sources */,
-				691A9093A367BD7DDAD0FEA4 /* Frameworks */,
-				A3B7A150ADFC006D4FDBDBF1 /* Headers */,
+				DAD3B7067B68A173CED90027 /* Sources */,
+				824E37B59DC2C4F9C5E30C41 /* Frameworks */,
+				41DEB43FC033B24877F66D34 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DAE71130D047BF27A8E3F2E0 /* PBXTargetDependency */,
-				0445F19A08907F3D0D81B757 /* PBXTargetDependency */,
+			);
+			name = "Pods-Pinpoint-GeoFire";
+			productName = "Pods-Pinpoint-GeoFire";
+			productReference = 06111DB638DEE7C3CFAD49D2 /* libPods-Pinpoint-GeoFire.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6BE2B79760CF6C3BE779F81C /* Pods-Pinpoint-RBBAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B1BD0982DBADC5C45E7373 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-RBBAnimation" */;
+			buildPhases = (
+				D4D4A7CF8A74869FA25465D7 /* Sources */,
+				3F36AE170D9AA498CF57EA5D /* Frameworks */,
+				D70BAADCBD6E7DD20650C1DD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Pinpoint-RBBAnimation";
+			productName = "Pods-Pinpoint-RBBAnimation";
+			productReference = B77BDED883888BC385938803 /* libPods-Pinpoint-RBBAnimation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		730C5667098075A6497C29CD /* Pods-Pinpoint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E1AD5857EF44BF723CC6E9D /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */;
+			buildPhases = (
+				C5E95271D925DD02267499C2 /* Sources */,
+				DD663ECBD195B3E4E1E1A72C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F04D4B762798C6E874A31DA /* PBXTargetDependency */,
+				1754B64097FFB43DA6C273D4 /* PBXTargetDependency */,
+				0BDBBFBC02DCE7B83B352D50 /* PBXTargetDependency */,
+				3913A1530FD786BFF3685417 /* PBXTargetDependency */,
+				E7B1935DA2AE862009331584 /* PBXTargetDependency */,
+				6DF3BF75DEE71085F56325F5 /* PBXTargetDependency */,
+			);
+			name = "Pods-Pinpoint";
+			productName = "Pods-Pinpoint";
+			productReference = 3697D14173F62F7F3CE8947E /* libPods-Pinpoint.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		77B66418E1717FEEDF343B0F /* Pods-Pinpoint-SDCAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF106956B3BF0190418A641C /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAlertView" */;
+			buildPhases = (
+				7A8B794F74B0FF7E2FE39FD9 /* Sources */,
+				CD3EF4AE4F9FFCB8867EC8AE /* Frameworks */,
+				C7116FB589CF9E3A1F499BE3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B9A5446BFA4FD994D75C48D /* PBXTargetDependency */,
+				6C00653C663099B86C9EF08B /* PBXTargetDependency */,
 			);
 			name = "Pods-Pinpoint-SDCAlertView";
 			productName = "Pods-Pinpoint-SDCAlertView";
-			productReference = 63109E28D999C6194FADF4E3 /* libPods-Pinpoint-SDCAlertView.a */;
+			productReference = 310A42DBC363F907A1279A3B /* libPods-Pinpoint-SDCAlertView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D2973BFA9AAC7A39ED9CE64D /* Pods-Pinpoint-SDCAutoLayout */ = {
+		B224842E76860DBAF9237BFC /* Pods-Pinpoint-UITextField+Shake */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0662FBB61EBFDE566D2A7D9 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAutoLayout" */;
+			buildConfigurationList = A8EADB6289B0CA0F28A1A7A3 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-UITextField+Shake" */;
 			buildPhases = (
-				39A9F47E1E548B49D500D05A /* Sources */,
-				45D0A9719E3ABD6253834829 /* Frameworks */,
-				61D70AD932A1D14C85F76243 /* Headers */,
+				86DA7F51BD1EE65F47A83A9C /* Sources */,
+				032FCF7B3B3D6A7A0AB1B7EC /* Frameworks */,
+				7DA4224E62144022DB8E1A9A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Pinpoint-UITextField+Shake";
+			productName = "Pods-Pinpoint-UITextField+Shake";
+			productReference = 9F4D67D1D982561FE6938512 /* libPods-Pinpoint-UITextField+Shake.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D2DDB3286262FC28B44549DA /* Pods-Pinpoint-SDCAutoLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC75F33997A3392AD0D2D490 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAutoLayout" */;
+			buildPhases = (
+				56875E3E6CF833DDE92451B3 /* Sources */,
+				DF14DA25AD7FCCF865E4677D /* Frameworks */,
+				F3A7BE82B32C520B96DF7E85 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -855,195 +855,195 @@
 			);
 			name = "Pods-Pinpoint-SDCAutoLayout";
 			productName = "Pods-Pinpoint-SDCAutoLayout";
-			productReference = 3E9A33558F763355EC70B207 /* libPods-Pinpoint-SDCAutoLayout.a */;
+			productReference = F6164C7F6346B6F0A7D008DB /* libPods-Pinpoint-SDCAutoLayout.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		21A8AAEFF07EAA4D7AB58249 /* Project object */ = {
+		946D028A57042DD493811705 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 2B53D5D9F236F291FE9FAD98 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 0195F5B7684ED0F66661625C /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D99DDC9C50C9B2CF1B5B4AD8;
-			productRefGroup = FD696EDE852F6CCA801A08FC /* Products */;
+			mainGroup = E1FD4C787D416E9A23D52500;
+			productRefGroup = ADB66193B672322A5C7864AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				497329E840F3F12284716F9B /* Pods-Pinpoint */,
-				9568FB5E1B780586A7CE2A12 /* Pods-Pinpoint-GeoFire */,
-				98896B9F9994AFED42B719C1 /* Pods-Pinpoint-Onboard */,
-				7929D2084171CAB7F41435EA /* Pods-Pinpoint-RBBAnimation */,
-				D1D97FD23202813D20E93A48 /* Pods-Pinpoint-SDCAlertView */,
-				D2973BFA9AAC7A39ED9CE64D /* Pods-Pinpoint-SDCAutoLayout */,
-				37D687EF5F54607370AC79EE /* Pods-Pinpoint-UITextField+Shake */,
+				730C5667098075A6497C29CD /* Pods-Pinpoint */,
+				3B6228697404B94148622F52 /* Pods-Pinpoint-GeoFire */,
+				1520B9C8A06DDA03892380BF /* Pods-Pinpoint-Onboard */,
+				6BE2B79760CF6C3BE779F81C /* Pods-Pinpoint-RBBAnimation */,
+				77B66418E1717FEEDF343B0F /* Pods-Pinpoint-SDCAlertView */,
+				D2DDB3286262FC28B44549DA /* Pods-Pinpoint-SDCAutoLayout */,
+				B224842E76860DBAF9237BFC /* Pods-Pinpoint-UITextField+Shake */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2F2673FE331F37068E7139C8 /* Sources */ = {
+		0D7AF01F575C1F3DE159A99E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E54F4076731E7CB0ABD8F7C /* Pods-Pinpoint-RBBAnimation-dummy.m in Sources */,
-				74153E0C3A1211CE66CAFE3B /* RBBAnimation.m in Sources */,
-				2D0DE029DC8954534AAFB206 /* RBBBlockBasedArray.m in Sources */,
-				C69378238A3130C33575EB0E /* RBBCubicBezier.m in Sources */,
-				CC75E908EE1B6E72519A0F19 /* RBBCustomAnimation.m in Sources */,
-				25EF17EDB9CEFA20D957F18F /* RBBEasingFunction.m in Sources */,
-				D4B2D7E39667F6A042F18546 /* RBBLinearInterpolation.m in Sources */,
-				E38005DA599FDEF4C6307E36 /* RBBSpringAnimation.m in Sources */,
-				6BF946B2A2162351D8BAAD7B /* RBBTweenAnimation.m in Sources */,
+				822866459D0AFAC11AF6009C /* OnboardingContentViewController.m in Sources */,
+				CD56EE3943E4F47DF070128F /* OnboardingViewController.m in Sources */,
+				D69A8F574E0F78917C905E43 /* Pods-Pinpoint-Onboard-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39A9F47E1E548B49D500D05A /* Sources */ = {
+		56875E3E6CF833DDE92451B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1C4CF989925EB26F3645977 /* Pods-Pinpoint-SDCAutoLayout-dummy.m in Sources */,
-				4C01AE9697D5E21161561D7A /* UIView+SDCAutoLayout.m in Sources */,
+				995C370F6C959A0D36C8F390 /* Pods-Pinpoint-SDCAutoLayout-dummy.m in Sources */,
+				3EF7ACF3C47AE6F93595E7FD /* UIView+SDCAutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A48899007728DD253FE775F /* Sources */ = {
+		7A8B794F74B0FF7E2FE39FD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E1FFBAD6DAECFEFF351F2E /* GFBase32Utils.m in Sources */,
-				AEB8FA4FA883EAF7AC97692A /* GFGeoHash.m in Sources */,
-				CEBA1049B27D5B45ED9429B1 /* GFGeoHashQuery.m in Sources */,
-				2EDB13AB1DCD5FCC244BF870 /* GFQuery.m in Sources */,
-				4CFF4E95A6FF94B820E23C36 /* GeoFire.m in Sources */,
-				F5277B2A3B197077244A5C7E /* Pods-Pinpoint-GeoFire-dummy.m in Sources */,
+				18C7EEC33807B006E347CFAC /* Pods-Pinpoint-SDCAlertView-dummy.m in Sources */,
+				380368AAD2DC03F2D1D6F793 /* SDCAlertAction.m in Sources */,
+				5141F266F87542EC93058BAA /* SDCAlertCollectionViewCell.m in Sources */,
+				988A4C735B450D73C92DE7CD /* SDCAlertController.m in Sources */,
+				303AC2D9475002C015323491 /* SDCAlertControllerCollectionViewFlowLayout.m in Sources */,
+				71FE293AB246B5FCE99ED241 /* SDCAlertControllerDefaultVisualStyle.m in Sources */,
+				3E746A6DE85C816FE4F46F5E /* SDCAlertControllerScrollView.m in Sources */,
+				94B21922F9AD6C644B5DFC3B /* SDCAlertControllerTextFieldViewController.m in Sources */,
+				63BA98CD343D553BBCAEBD23 /* SDCAlertControllerTransition.m in Sources */,
+				D426A49F328D8A5C4A7E914A /* SDCAlertControllerView.m in Sources */,
+				04F17629EF3591F7BF232828 /* SDCAlertLabel.m in Sources */,
+				96D73ABB3089CADF645F24BA /* SDCAlertPresentationController.m in Sources */,
+				AAA7EC33F49E7318CF055B3D /* SDCAlertTextFieldTableViewCell.m in Sources */,
+				25C492C735D87CF180FAF200 /* SDCAlertView.m in Sources */,
+				979531B863B10B909BFB3C7B /* SDCAlertViewBackgroundView.m in Sources */,
+				5C521270398E564045E1E450 /* SDCAlertViewContentView.m in Sources */,
+				CAFA76BD60145917ABF56BD6 /* SDCAlertViewController.m in Sources */,
+				4B1C05843A7F9B36EC9B0472 /* SDCAlertViewCoordinator.m in Sources */,
+				FEC4DEBB7743BAC3291C13D9 /* SDCDemoViewController.m in Sources */,
+				6D49EA6EFA2BDBF5B21D52B1 /* SDCIntrinsicallySizedView.m in Sources */,
+				3936A7EC1722E59DE573CDE2 /* UIView+Parallax.m in Sources */,
+				820C36B8C03186C74B0ECACF /* UIViewController+Current.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EFC8671E6E432092894B22F /* Sources */ = {
+		86DA7F51BD1EE65F47A83A9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F5D3DF99B8DB6A47CBB729 /* OnboardingContentViewController.m in Sources */,
-				C1957DA7C67F8DC4734780A9 /* OnboardingViewController.m in Sources */,
-				C065113141561A3F083BDDB7 /* Pods-Pinpoint-Onboard-dummy.m in Sources */,
+				9B2A7FA9BA585EBE48615A06 /* Pods-Pinpoint-UITextField+Shake-dummy.m in Sources */,
+				D0F2B12E1B40BD289C3D3ADD /* UITextField+Shake.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		957AE03A4458EA55FF29B824 /* Sources */ = {
+		C5E95271D925DD02267499C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7721F64EE6D6CAA091D8E48 /* Pods-Pinpoint-dummy.m in Sources */,
+				16449A927BE39309D976B0A3 /* Pods-Pinpoint-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C85DAE989BDE22E4F58B21F /* Sources */ = {
+		D4D4A7CF8A74869FA25465D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66523E57047076FF6F00A64A /* Pods-Pinpoint-SDCAlertView-dummy.m in Sources */,
-				72AF9ED53AD5186D15864A72 /* SDCAlertAction.m in Sources */,
-				5C3E954C669A46A87DB715F2 /* SDCAlertCollectionViewCell.m in Sources */,
-				16B4A80DA03EE383821BACC8 /* SDCAlertController.m in Sources */,
-				C6D82BC6E4A398F12B124712 /* SDCAlertControllerCollectionViewFlowLayout.m in Sources */,
-				26361422B71A2E2B45FEAF0A /* SDCAlertControllerDefaultVisualStyle.m in Sources */,
-				CDECEF518FEB60763FC45E01 /* SDCAlertControllerScrollView.m in Sources */,
-				C341E4FE6640754492A25029 /* SDCAlertControllerTextFieldViewController.m in Sources */,
-				3FB439E15ADC39DC52C7A515 /* SDCAlertControllerTransition.m in Sources */,
-				BB3E1675B2BFA587B43AE7CB /* SDCAlertControllerView.m in Sources */,
-				081FFB04DF43F7423940DDEE /* SDCAlertLabel.m in Sources */,
-				178EB1CBD26391FCC9AE15A4 /* SDCAlertPresentationController.m in Sources */,
-				8EFA11BC85F7EEA8D778C1B8 /* SDCAlertTextFieldTableViewCell.m in Sources */,
-				2A48FDF40E52AC7BBD09D244 /* SDCAlertView.m in Sources */,
-				C3C3F573A472092CAB2BC8D3 /* SDCAlertViewBackgroundView.m in Sources */,
-				A5714DD8A18754A0B71C2DA2 /* SDCAlertViewContentView.m in Sources */,
-				92417032689C84585B1528FF /* SDCAlertViewController.m in Sources */,
-				8D7FD450A5331C2C4A3CAD3B /* SDCAlertViewCoordinator.m in Sources */,
-				9ABD3A6025204583346ACD9F /* SDCDemoViewController.m in Sources */,
-				66626F2020C3AE614D1A0679 /* SDCIntrinsicallySizedView.m in Sources */,
-				EAD34C2D82E1B413CB27C612 /* UIView+Parallax.m in Sources */,
-				F5CA9EA0CF547F15104B7AA1 /* UIViewController+Current.m in Sources */,
+				521169E9CD5A30109EACE7AD /* Pods-Pinpoint-RBBAnimation-dummy.m in Sources */,
+				3C2EDC1C6CE3260B9D0D9A6E /* RBBAnimation.m in Sources */,
+				64A490ED70D8319974311C6C /* RBBBlockBasedArray.m in Sources */,
+				96102CE0EE384BA9DC6F8FEC /* RBBCubicBezier.m in Sources */,
+				1CEB3174F6C3E7EAE05CFB57 /* RBBCustomAnimation.m in Sources */,
+				80E17C9D561D1A901C323C2A /* RBBEasingFunction.m in Sources */,
+				B05ABAA1EE986EEA85641839 /* RBBLinearInterpolation.m in Sources */,
+				2FD4033FEDE451FEC1D0E9DA /* RBBSpringAnimation.m in Sources */,
+				86BA099A9824CED10868D13D /* RBBTweenAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE5DBFC3968F70A865A99153 /* Sources */ = {
+		DAD3B7067B68A173CED90027 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9154D6A5B2A19B661CD86290 /* Pods-Pinpoint-UITextField+Shake-dummy.m in Sources */,
-				2E1A0854840B469FD7A9A446 /* UITextField+Shake.m in Sources */,
+				A599E53B51C50012CE606B08 /* GFBase32Utils.m in Sources */,
+				7E36EB1BD19745E11729ED6E /* GFGeoHash.m in Sources */,
+				CB5EE7DB42A9A5B1B4C7CBFC /* GFGeoHashQuery.m in Sources */,
+				81C78CB2CC7201816B586B4B /* GFQuery.m in Sources */,
+				1384E730E518C8A2EAA30811 /* GeoFire.m in Sources */,
+				80034770B20D4DD56A851D98 /* Pods-Pinpoint-GeoFire-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0445F19A08907F3D0D81B757 /* PBXTargetDependency */ = {
+		0BDBBFBC02DCE7B83B352D50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-Pinpoint-SDCAutoLayout";
-			target = D2973BFA9AAC7A39ED9CE64D /* Pods-Pinpoint-SDCAutoLayout */;
-			targetProxy = DB4EF860C3B0533A6E97B9CE /* PBXContainerItemProxy */;
+			name = "Pods-Pinpoint-RBBAnimation";
+			target = 6BE2B79760CF6C3BE779F81C /* Pods-Pinpoint-RBBAnimation */;
+			targetProxy = A768C1B255A9FA2C57093F80 /* PBXContainerItemProxy */;
 		};
-		10270DB8CFA3A7ED8EDF043D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Pinpoint-SDCAutoLayout";
-			target = D2973BFA9AAC7A39ED9CE64D /* Pods-Pinpoint-SDCAutoLayout */;
-			targetProxy = 9193AA5E0D4E2028E5552BD2 /* PBXContainerItemProxy */;
-		};
-		11E402F2E4E9064D50E6F121 /* PBXTargetDependency */ = {
+		1754B64097FFB43DA6C273D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Pinpoint-Onboard";
-			target = 98896B9F9994AFED42B719C1 /* Pods-Pinpoint-Onboard */;
-			targetProxy = AB2D037BD22B6486784EA7CC /* PBXContainerItemProxy */;
+			target = 1520B9C8A06DDA03892380BF /* Pods-Pinpoint-Onboard */;
+			targetProxy = 28594AFEE895739F6F37B3B3 /* PBXContainerItemProxy */;
 		};
-		2738E2745C0E3A1D8557A8DD /* PBXTargetDependency */ = {
+		2F04D4B762798C6E874A31DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Pinpoint-GeoFire";
-			target = 9568FB5E1B780586A7CE2A12 /* Pods-Pinpoint-GeoFire */;
-			targetProxy = 033A9AE81E3DB6E5DB3B1E2C /* PBXContainerItemProxy */;
+			target = 3B6228697404B94148622F52 /* Pods-Pinpoint-GeoFire */;
+			targetProxy = 03275E42213A9AF3A30D9870 /* PBXContainerItemProxy */;
 		};
-		3AC54BD29EB569FEB0A6225D /* PBXTargetDependency */ = {
+		3913A1530FD786BFF3685417 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Pinpoint-SDCAlertView";
-			target = D1D97FD23202813D20E93A48 /* Pods-Pinpoint-SDCAlertView */;
-			targetProxy = 66A1C6158E7D40783D9978D0 /* PBXContainerItemProxy */;
+			target = 77B66418E1717FEEDF343B0F /* Pods-Pinpoint-SDCAlertView */;
+			targetProxy = 63902B87102CB8C1C5411946 /* PBXContainerItemProxy */;
 		};
-		458D90521E1AA37EEDDF7C9B /* PBXTargetDependency */ = {
+		3B9A5446BFA4FD994D75C48D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Pinpoint-RBBAnimation";
-			target = 7929D2084171CAB7F41435EA /* Pods-Pinpoint-RBBAnimation */;
-			targetProxy = DEDBD5A893B2671F3E85A303 /* PBXContainerItemProxy */;
+			target = 6BE2B79760CF6C3BE779F81C /* Pods-Pinpoint-RBBAnimation */;
+			targetProxy = C2FE3D4CF52394C097697722 /* PBXContainerItemProxy */;
 		};
-		60D695EAEF48B2F61CA6B391 /* PBXTargetDependency */ = {
+		6C00653C663099B86C9EF08B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Pinpoint-SDCAutoLayout";
+			target = D2DDB3286262FC28B44549DA /* Pods-Pinpoint-SDCAutoLayout */;
+			targetProxy = D424387B6FF87A9953BC86D8 /* PBXContainerItemProxy */;
+		};
+		6DF3BF75DEE71085F56325F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Pinpoint-UITextField+Shake";
-			target = 37D687EF5F54607370AC79EE /* Pods-Pinpoint-UITextField+Shake */;
-			targetProxy = CEC1BC3E4352C55CC2BE2098 /* PBXContainerItemProxy */;
+			target = B224842E76860DBAF9237BFC /* Pods-Pinpoint-UITextField+Shake */;
+			targetProxy = 86D3052349C7BAF462D40C6C /* PBXContainerItemProxy */;
 		};
-		DAE71130D047BF27A8E3F2E0 /* PBXTargetDependency */ = {
+		E7B1935DA2AE862009331584 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-Pinpoint-RBBAnimation";
-			target = 7929D2084171CAB7F41435EA /* Pods-Pinpoint-RBBAnimation */;
-			targetProxy = EE5AC6111E5D715E56FC4D93 /* PBXContainerItemProxy */;
+			name = "Pods-Pinpoint-SDCAutoLayout";
+			target = D2DDB3286262FC28B44549DA /* Pods-Pinpoint-SDCAutoLayout */;
+			targetProxy = 833D73DECECA6F65E235E69E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0C805451A91FD21FFFFCFC65 /* Release */ = {
+		01DCFF83155CCB286D3C8BC2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDFBB89CA9B1FCC2D58A1488 /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */;
+			baseConfigurationReference = 31B90DD895AE0280472A8A98 /* Pods-Pinpoint-Onboard-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-RBBAnimation/Pods-Pinpoint-RBBAnimation-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -1054,87 +1054,7 @@
 			};
 			name = Release;
 		};
-		147BB36C8ED2487678C11356 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27F383479E33E228587658C2 /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-GeoFire/Pods-Pinpoint-GeoFire-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		1D5D2E4BFBAC11AB07E607EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5E38E52405365EE25ACBCF1 /* Pods-Pinpoint.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		1E79F16E9C1C1689C08E23D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1656E7734FCCDCA860C3643 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-SDCAutoLayout/Pods-Pinpoint-SDCAutoLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		46580EA40819D5C288E1625C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F28A789AA10A447E68F1125 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-UITextField+Shake/Pods-Pinpoint-UITextField+Shake-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		559CF9EAA9C1B36D7735B156 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66409DAA82FE347113CC2AC7 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-SDCAlertView/Pods-Pinpoint-SDCAlertView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		5D9B275084EFB3B87489E1A2 /* Release */ = {
+		0D9E115C85671ED2334736B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1168,9 +1088,9 @@
 			};
 			name = Release;
 		};
-		6875B5A71A928767892EBB26 /* Release */ = {
+		0F48F045F8D3F399810461FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27F383479E33E228587658C2 /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
+			baseConfigurationReference = 6FBB3952DDDF7E65D4BE7651 /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-GeoFire/Pods-Pinpoint-GeoFire-prefix.pch";
@@ -1184,7 +1104,55 @@
 			};
 			name = Release;
 		};
-		79643568F029DBF0966ACB8E /* Debug */ = {
+		375572A4628B70AC552B4A2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6B2DF1663107CA7BDEF5F17 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-SDCAlertView/Pods-Pinpoint-SDCAlertView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3B629FF4640DC3A30819A288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AC2940E16A964B764120650 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-SDCAutoLayout/Pods-Pinpoint-SDCAutoLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4356F5F489F4577BE604639B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDEC730F2FB09C3CAB565C36 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-UITextField+Shake/Pods-Pinpoint-UITextField+Shake-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4F3644EAC1CDF17493D991ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1223,60 +1191,60 @@
 			};
 			name = Debug;
 		};
-		980CEDD82F8BA1AEE161FB67 /* Release */ = {
+		56B9893F2C782FE0292ABF1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66409DAA82FE347113CC2AC7 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */;
+			baseConfigurationReference = 2752D7378A5893E1711CF43E /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-RBBAnimation/Pods-Pinpoint-RBBAnimation-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5EA83FD190471B1E564F4DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6B2DF1663107CA7BDEF5F17 /* Pods-Pinpoint-SDCAlertView-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-SDCAlertView/Pods-Pinpoint-SDCAlertView-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		99E991AE2B4A6C3B7B253E63 /* Release */ = {
+		7296C71BAC02F28D1429CD95 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F28A789AA10A447E68F1125 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-UITextField+Shake/Pods-Pinpoint-UITextField+Shake-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		A22A28DAD8E232C0AB8529A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1656E7734FCCDCA860C3643 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */;
+			baseConfigurationReference = 8AC2940E16A964B764120650 /* Pods-Pinpoint-SDCAutoLayout-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-SDCAutoLayout/Pods-Pinpoint-SDCAutoLayout-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		C034188A13B84A948C21BE7A /* Debug */ = {
+		862D2C4FBE11454D7DD075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5329E0A7B504DDBA5CD1E222 /* Pods-Pinpoint-Onboard-Private.xcconfig */;
+			baseConfigurationReference = 6FBB3952DDDF7E65D4BE7651 /* Pods-Pinpoint-GeoFire-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-GeoFire/Pods-Pinpoint-GeoFire-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -1287,9 +1255,25 @@
 			};
 			name = Debug;
 		};
-		CC28A2ECAFC96357F7423AB6 /* Debug */ = {
+		8CE2610A30257544AC89DA3E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD3EFCBB9E6B47E948C457AA /* Pods-Pinpoint.debug.xcconfig */;
+			baseConfigurationReference = 16C83EE74E7A02650AC9423D /* Pods-Pinpoint.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A58C2A2F359A883E1D65EE57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 595447C96443BFEE201448B8 /* Pods-Pinpoint.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1303,9 +1287,9 @@
 			};
 			name = Debug;
 		};
-		E4C06939ED89C9AC3E175382 /* Debug */ = {
+		D8DBBBEDF31E22C85D2FCF46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDFBB89CA9B1FCC2D58A1488 /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */;
+			baseConfigurationReference = 2752D7378A5893E1711CF43E /* Pods-Pinpoint-RBBAnimation-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-RBBAnimation/Pods-Pinpoint-RBBAnimation-prefix.pch";
@@ -1319,12 +1303,28 @@
 			};
 			name = Debug;
 		};
-		EFE95C570074D5005074FF7D /* Release */ = {
+		E6A695396A2DA2919C9ADA7D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5329E0A7B504DDBA5CD1E222 /* Pods-Pinpoint-Onboard-Private.xcconfig */;
+			baseConfigurationReference = 31B90DD895AE0280472A8A98 /* Pods-Pinpoint-Onboard-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-Onboard/Pods-Pinpoint-Onboard-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F951C6202FDF0B11A2EA946F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDEC730F2FB09C3CAB565C36 /* Pods-Pinpoint-UITextField+Shake-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Pinpoint-UITextField+Shake/Pods-Pinpoint-UITextField+Shake-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -1338,79 +1338,79 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02E07840F7D6091A349BB6DD /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-RBBAnimation" */ = {
+		00B1BD0982DBADC5C45E7373 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-RBBAnimation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4C06939ED89C9AC3E175382 /* Debug */,
-				0C805451A91FD21FFFFCFC65 /* Release */,
+				D8DBBBEDF31E22C85D2FCF46 /* Debug */,
+				56B9893F2C782FE0292ABF1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07462B2479D691194F60116E /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */ = {
+		0195F5B7684ED0F66661625C /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC28A2ECAFC96357F7423AB6 /* Debug */,
-				1D5D2E4BFBAC11AB07E607EB /* Release */,
+				4F3644EAC1CDF17493D991ED /* Debug */,
+				0D9E115C85671ED2334736B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B53D5D9F236F291FE9FAD98 /* Build configuration list for PBXProject "Pods" */ = {
+		40A0B3F09FACAD0D041DE3CF /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79643568F029DBF0966ACB8E /* Debug */,
-				5D9B275084EFB3B87489E1A2 /* Release */,
+				E6A695396A2DA2919C9ADA7D /* Debug */,
+				01DCFF83155CCB286D3C8BC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D842E0B5C8BDE4EA11C4187 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-UITextField+Shake" */ = {
+		5E1AD5857EF44BF723CC6E9D /* Build configuration list for PBXNativeTarget "Pods-Pinpoint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46580EA40819D5C288E1625C /* Debug */,
-				99E991AE2B4A6C3B7B253E63 /* Release */,
+				A58C2A2F359A883E1D65EE57 /* Debug */,
+				8CE2610A30257544AC89DA3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82F9D8E7AF744DC6AED155A1 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */ = {
+		8A9FEF3782F6F92C060F8403 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-GeoFire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				147BB36C8ED2487678C11356 /* Debug */,
-				6875B5A71A928767892EBB26 /* Release */,
+				862D2C4FBE11454D7DD075A1 /* Debug */,
+				0F48F045F8D3F399810461FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B70EB4C14C22B06336A4D9BC /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-Onboard" */ = {
+		A8EADB6289B0CA0F28A1A7A3 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-UITextField+Shake" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C034188A13B84A948C21BE7A /* Debug */,
-				EFE95C570074D5005074FF7D /* Release */,
+				4356F5F489F4577BE604639B /* Debug */,
+				F951C6202FDF0B11A2EA946F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E15317FE4BB7F360495692F4 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAlertView" */ = {
+		BC75F33997A3392AD0D2D490 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAutoLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				559CF9EAA9C1B36D7735B156 /* Debug */,
-				980CEDD82F8BA1AEE161FB67 /* Release */,
+				3B629FF4640DC3A30819A288 /* Debug */,
+				7296C71BAC02F28D1429CD95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0662FBB61EBFDE566D2A7D9 /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAutoLayout" */ = {
+		CF106956B3BF0190418A641C /* Build configuration list for PBXNativeTarget "Pods-Pinpoint-SDCAlertView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A22A28DAD8E232C0AB8529A2 /* Debug */,
-				1E79F16E9C1C1689C08E23D4 /* Release */,
+				5EA83FD190471B1E564F4DB9 /* Debug */,
+				375572A4628B70AC552B4A2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 21A8AAEFF07EAA4D7AB58249 /* Project object */;
+	rootObject = 946D028A57042DD493811705 /* Project object */;
 }

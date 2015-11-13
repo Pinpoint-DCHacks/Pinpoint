@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1520B9C8A06DDA03892380BF"
-               BuildableName = "libPods-Pinpoint-Onboard.a"
-               BlueprintName = "Pods-Pinpoint-Onboard"
+               BlueprintIdentifier = "53E6E6D11023EE40BFC32B55"
+               BuildableName = "SHMultipleSelect.bundle"
+               BlueprintName = "Pods-Pinpoint-SHMultipleSelect-SHMultipleSelect"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1520B9C8A06DDA03892380BF"
-            BuildableName = "libPods-Pinpoint-Onboard.a"
-            BlueprintName = "Pods-Pinpoint-Onboard"
+            BlueprintIdentifier = "53E6E6D11023EE40BFC32B55"
+            BuildableName = "SHMultipleSelect.bundle"
+            BlueprintName = "Pods-Pinpoint-SHMultipleSelect-SHMultipleSelect"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

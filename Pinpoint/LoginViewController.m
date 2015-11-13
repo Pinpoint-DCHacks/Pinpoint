@@ -51,6 +51,7 @@
         else {
             __block UserData *dat = [UserData sharedInstance];
             dat.uid = authData.uid;
+            NSLog(@"UID: %@", authData.uid);
             [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/uids/%@", dat.uid]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
                 if (error) {
                     NSLog(@"Error getting username: %@", error);
