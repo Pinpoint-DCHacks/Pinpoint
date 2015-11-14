@@ -18,6 +18,7 @@
 #import <SDCAlertController.h>
 #import <UITextField+Shake/UITextField+Shake.h>
 #import "KSToastView.h"
+#import "SecurityInterface.h"
 @import AddressBook;
 
 #define kPinpointURL @"pinpoint.firebaseio.com"
@@ -52,7 +53,7 @@ BOOL updateOnce = false;
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }*/
-    self.firebase = [UserData sharedRef];
+    self.firebase = self.firebase = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com/locations"];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     
     // Initialize location manager
@@ -202,6 +203,10 @@ BOOL updateOnce = false;
         if([self.manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.manager requestAlwaysAuthorization];
         }
+    }
+    
+    else {
+        NSLog(@"Authorized");
     }
 }
 

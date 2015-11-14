@@ -39,7 +39,7 @@
     
     Firebase *ref = [UserData sharedRef];
     // Checks if username is used
-    FirebaseHandle handle = [[ref childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    FirebaseHandle handle = [[ref childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         // No user exists with this username
         NSLog(@"snapshot value: %@", snapshot.value);
         if ([snapshot.value isKindOfClass:[NSNull class]]) {
@@ -57,7 +57,7 @@
                             NSLog(@"Sucessfully logged in");
                             data.uid = authData.uid;
                             [data save];
-                            [[[UserData sharedRef] childByAppendingPath:@"users/uids"] updateChildValues:@{authData.uid: self.usernameText.text} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                            [[[UserData sharedRef] childByAppendingPath:@"uids"] updateChildValues:@{authData.uid: self.usernameText.text} withCompletionBlock:^(NSError *error, Firebase *ref) {
                                 if (error) {
                                     NSLog(@"Error writing uid %@", error);
                                 }
@@ -66,7 +66,7 @@
                                     NSLog(@"Username: %@", data.username);
                                 }
                             }];
-                            [[[UserData sharedRef] childByAppendingPath:@"users/usernames"] updateChildValues:@{self.usernameText.text: authData.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                            [[[UserData sharedRef] childByAppendingPath:@"usernames"] updateChildValues:@{self.usernameText.text: authData.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
                                 if (error) {
                                     NSLog(@"Error writing username: %@", error);
                                 }

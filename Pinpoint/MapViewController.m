@@ -35,7 +35,7 @@ MKPointAnnotation *annotation;
     [self.mapView addAnnotation:annotation];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
-    self.firebase = [UserData sharedRef];
+    self.firebase = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com/locations"];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     
     // Setup bar button item

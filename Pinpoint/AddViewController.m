@@ -50,7 +50,7 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
         [self.usernameTextField shake:10 withDelta:5];
     }
     else {
-        [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"users/usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
             NSLog(@"Observing FEventTypeValue");
             if ([snapshot.value isKindOfClass:[NSNull class]]) {
                 [KSToastView ks_showToast:@"That user does not exist." duration:1.0f];

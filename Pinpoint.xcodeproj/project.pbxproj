@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09400CA41BF6154600A40C3C /* SecurityInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 09400CA31BF6154600A40C3C /* SecurityInterface.m */; };
 		09529F2B1B6D66400080E32B /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2A1B6D66400080E32B /* CreateAccountViewController.m */; };
 		09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */; };
 		09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F301B6DA8CB0080E32B /* MapViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09400CA21BF6154600A40C3C /* SecurityInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityInterface.h; sourceTree = "<group>"; };
+		09400CA31BF6154600A40C3C /* SecurityInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityInterface.m; sourceTree = "<group>"; };
 		09529F291B6D66400080E32B /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
 		09529F2A1B6D66400080E32B /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		09529F2C1B6D6C3F0080E32B /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				09529F2A1B6D66400080E32B /* CreateAccountViewController.m */,
 				095EF2B11B740BFB00AEAE26 /* LoginViewController.h */,
 				095EF2B21B740BFB00AEAE26 /* LoginViewController.m */,
+				09400CA21BF6154600A40C3C /* SecurityInterface.h */,
+				09400CA31BF6154600A40C3C /* SecurityInterface.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -347,6 +352,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -454,6 +462,7 @@
 				09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */,
 				09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */,
 				0964B6D81B6D5D15009EA05D /* main.m in Sources */,
+				09400CA41BF6154600A40C3C /* SecurityInterface.m in Sources */,
 				09F5C3651B8683170067ECA0 /* SHMultipleSelect.m in Sources */,
 				09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */,
 			);
