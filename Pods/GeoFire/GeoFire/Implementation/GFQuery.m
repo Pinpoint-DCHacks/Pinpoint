@@ -13,11 +13,12 @@
 #import "GeoFire.h"
 #import "GeoFire+Private.h"
 #import "GFGeoHashQuery.h"
+#import <Firebase/Firebase.h>
 
 @interface GFQueryLocationInfo : NSObject
 
 @property (nonatomic) BOOL isInQuery;
-@property (nonatomic) CLLocation *location;
+@property (nonatomic, strong) CLLocation *location;
 @property (nonatomic, strong) GFGeoHash *geoHash;
 
 @end
@@ -58,8 +59,8 @@
                         format:@"Not a valid geo location: [%f,%f]",
              location.coordinate.latitude, location.coordinate.longitude];
         }
-        self->_centerLocation = location;
-        self->_radius = radius;
+        _centerLocation = location;
+        _radius = radius;
     }
     return self;
 }
@@ -72,7 +73,7 @@
                         format:@"Not a valid geo location: [%f,%f]",
              center.coordinate.latitude, center.coordinate.longitude];
         }
-        self->_centerLocation = center;
+        _centerLocation = center;
         [self searchCriteriaDidChange];
     }
 }
@@ -87,7 +88,7 @@
 - (void)setRadius:(double)radius
 {
     @synchronized(self) {
-        self->_radius = radius;
+        _radius = radius;
         [self searchCriteriaDidChange];
     }
 }
@@ -95,7 +96,7 @@
 - (double)radius
 {
     @synchronized(self) {
-        return self->_radius;
+        return _radius;
     }
 }
 
@@ -124,7 +125,7 @@
 {
     self = [super initWithGeoFire:geoFire];
     if (self != nil) {
-        self->_region = region;
+        _region = region;
     }
     return self;
 }
@@ -132,7 +133,7 @@
 - (void)setRegion:(MKCoordinateRegion)region
 {
     @synchronized(self) {
-        self->_region = region;
+        _region = region;
         [self searchCriteriaDidChange];
     }
 }
@@ -140,7 +141,7 @@
 - (MKCoordinateRegion)region
 {
     @synchronized(self) {
-        return self->_region;
+        return _region;
     }
 }
 
@@ -187,8 +188,8 @@
 {
     self = [super init];
     if (self != nil) {
-        self->_geoFire = geoFire;
-        self->_currentHandle = 1;
+        _geoFire = geoFire;
+        _currentHandle = 1;
         [self reset];
     }
     return self;
@@ -398,6 +399,8 @@
         }
     }];
     [self.locationInfos removeObjectsForKeys:oldLocations];
+
+    [self checkAndFireReadyEvent];
 }
 
 - (void)reset

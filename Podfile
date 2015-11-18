@@ -4,10 +4,10 @@
 target 'Pinpoint' do
 
     pod 'Onboard'
-    pod 'Firebase'
+    pod 'Firebase', '~> 2.4.0'
     pod 'GeoFire'
     pod 'UITextField+Shake'
-    pod 'SDCAlertView'
+    #pod 'SDCAlertView'
 
 end
 

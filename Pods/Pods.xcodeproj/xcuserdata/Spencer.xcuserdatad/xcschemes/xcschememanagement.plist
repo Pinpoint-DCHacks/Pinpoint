@@ -4,32 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Pinpoint-GeoFire.xcscheme</key>
+		<key>Firebase.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Pinpoint-Onboard.xcscheme</key>
+		<key>GeoFire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Pinpoint-RBBAnimation.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Pinpoint-SDCAlertView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Pinpoint-SDCAutoLayout.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Pinpoint-UITextField+Shake.xcscheme</key>
+		<key>Onboard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -39,40 +24,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UITextField+Shake.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1520B9C8A06DDA03892380BF</key>
+		<key>24EB01E3504F6F8D9E8C6730ECAC9D9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B6228697404B94148622F52</key>
+		<key>2E2E94D32B3CA7F6E9DE06A24DC88F06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BE2B79760CF6C3BE779F81C</key>
+		<key>587C04E9D5E059992AEE2FEB07FE6289</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>730C5667098075A6497C29CD</key>
+		<key>664F0550DE8A5C84DEB0532D8B58220C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77B66418E1717FEEDF343B0F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B224842E76860DBAF9237BFC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D2DDB3286262FC28B44549DA</key>
+		<key>950E54CEE467D127CA746BEB3A51FF73</key>
 		<dict>
 			<key>primary</key>
 			<true/>

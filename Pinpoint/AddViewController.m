@@ -22,6 +22,7 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.usernameTextField.delegate = self;
     [self.usernameTextField becomeFirstResponder];
     // Do any additional setup after loading the view.
 }
@@ -45,14 +46,16 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
 }
 
 - (IBAction)didTapAdd:(id)sender {
-    NSLog(@"Add");
     if ([self.usernameTextField.text isEqualToString:@""]) {
         [self.usernameTextField shake:10 withDelta:5];
     }
     else {
-        [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"Not empty");
+        Firebase *ref = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com"];
+        [[ref childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
             NSLog(@"Observing FEventTypeValue");
             if ([snapshot.value isKindOfClass:[NSNull class]]) {
+                NSLog(@"Does not exist");
                 [KSToastView ks_showToast:@"That user does not exist." duration:1.0f];
                 [self.usernameTextField shake:10 withDelta:5];
             }
@@ -79,6 +82,11 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
             //[self performSelector:@selector(cancel) onThread:[NSThread currentThread] withObject:nil waitUntilDone:YES];
         }];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self didTapAdd:textField];
+    return NO;
 }
 
 - (IBAction)didTapCancel:(id)sender {

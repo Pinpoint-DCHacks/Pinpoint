@@ -27,6 +27,7 @@ BOOL allowed = false;
 UIAlertController *waitAlert;
 MKPointAnnotation *annotation;
 
+// TODO: Get first location and if access is allowed, create an event listener to update location every time the location node is changed
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.manager = [[CLLocationManager alloc] init];
@@ -35,7 +36,7 @@ MKPointAnnotation *annotation;
     [self.mapView addAnnotation:annotation];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
-    self.firebase = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com/locations"];
+    self.firebase = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"pinpoint.firebaseio.com/locations/%@", self.recipientId]];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     
     // Setup bar button item
@@ -68,7 +69,7 @@ MKPointAnnotation *annotation;
 - (void)startRefreshingLocation {
     NSLog(@"Refreshing location");
     NSLog(@"%@", self.recipientId);
-    [self.geofire getLocationForKey:self.recipientId withCallback:^(CLLocation *location, NSError *error) {
+    [self.geofire getLocationForKey:@"location" withCallback:^(CLLocation *location, NSError *error) {
         NSLog(@"Getting location");
         if (error == nil) {
             NSLog(@"Location successfully retrieved");

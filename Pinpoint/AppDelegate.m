@@ -17,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // First time init of NSUserDefaults values
+    BOOL opened = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasOpenedAppOnce"];
+    if (opened == NO) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasOpenedAppOnce"];
+        [[NSUserDefaults standardUserDefaults] setObject:[[NSArray alloc] init] forKey:@"defaultLocationViewers"];
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"privacySettingValue"];
+    }
     [[UserData sharedInstance] load];
+    
     NSLog(@"User data: %@", [UserData sharedInstance]);
     // Override point for customization after application launch.
     return YES;

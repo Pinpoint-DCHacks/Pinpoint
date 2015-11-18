@@ -86,7 +86,7 @@
         cell = [[UITableViewCell alloc] init];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         if (indexPath.row == 0) {
-            cell.textLabel.text = @"Default";
+            cell.textLabel.text = @"Choose Default";
         }
     }
     return cell;
@@ -106,15 +106,22 @@
         }
         multipleSelect.rowsCount = self.dataSource.count;
         [multipleSelect show];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }
 
+// TODO: Maybe implement copyWithZone: for FireUser so the users can be copied to selectedUsers
 #pragma mark - SHMultipleSelectDelegate
 - (void)multipleSelectView:(SHMultipleSelect*)multipleSelectView clickedBtnAtIndex:(NSInteger)clickedBtnIndex withSelectedIndexPaths:(NSArray *)selectedIndexPaths {
-    if (clickedBtnIndex == 1) { // Done btn
-        for (NSIndexPath *indexPath in selectedIndexPaths) {
-            NSLog(@"%@", ((FireUser *)self.dataSource[indexPath.row]).username);
+    // Gets all selected users and saves them to "approvedLocationViewers" in NSUserDefaults
+    if (clickedBtnIndex == 1) { // Done button
+        NSMutableArray *selectedUsers = [[NSMutableArray alloc] initWithCapacity:[selectedIndexPaths count]];
+        for (NSInteger x = 0; x < [selectedIndexPaths count]; x++) {
+            NSLog(@"%@", ((FireUser *)self.dataSource[((NSIndexPath *)selectedIndexPaths[x]).row]).username);
+            selectedUsers[x] = ((FireUser *)self.dataSource[((NSIndexPath *)selectedIndexPaths[x]).row]).username;
         }
+        [[NSUserDefaults standardUserDefaults] setObject:selectedUsers forKey:@"defaultLocationViewers"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

@@ -15,7 +15,7 @@
 #import "SideMenuController.h"
 #import "FireUser.h"
 #import <GeoFire/GeoFire+Private.h>
-#import <SDCAlertController.h>
+//#import <SDCAlertController.h>
 #import <UITextField+Shake/UITextField+Shake.h>
 #import "KSToastView.h"
 #import "SecurityInterface.h"
@@ -53,7 +53,7 @@ BOOL updateOnce = false;
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }*/
-    self.firebase = self.firebase = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com/locations"];
+    self.firebase = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"pinpoint.firebaseio.com/locations/%@", [UserData sharedInstance].uid]];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     
     // Initialize location manager
@@ -85,11 +85,13 @@ BOOL updateOnce = false;
 - (IBAction)didTapShare:(id)sender {
     updateOnce = false;
     if ([self.sharingButton.title isEqualToString:@"Start Sharing"]) {
-        [KSToastView ks_showToast:@"Started sharing location." duration:1.0f];
-        self.sharingButton.title = @"Stop Sharing";
-        [self checkAlwaysAuthorization];
-        [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
-        [self.manager startUpdatingLocation];
+        [self changePrivacySettingsWithCompletion:^{
+            [KSToastView ks_showToast:@"Started sharing location." duration:1.0f];
+            self.sharingButton.title = @"Stop Sharing";
+            [self checkAlwaysAuthorization];
+            [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
+            [self.manager startUpdatingLocation];
+        }];
     }
     else {
         [KSToastView ks_showToast:@"Stopped sharing location." duration:1.0f];
@@ -99,12 +101,50 @@ BOOL updateOnce = false;
     }
 }
 
+// TODO: Use [self.manager requestLocation];
 - (IBAction)didTapShareOnce:(id)sender {
-    [KSToastView ks_showToast:@"Shared one location." duration:1.0f];
-    updateOnce = true;
-    [self checkAlwaysAuthorization];
-    [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
-    [self.manager startUpdatingLocation];
+    [self changePrivacySettingsWithCompletion:^{
+        [KSToastView ks_showToast:@"Shared one location." duration:1.0f];
+        updateOnce = true;
+        [self checkAlwaysAuthorization];
+        [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [self.manager startUpdatingLocation];
+    }];
+}
+
+typedef void(^completionBlock)(void);
+completionBlock changeSettingsBlock;
+- (void)changePrivacySettingsWithCompletion:(completionBlock)block {
+    NSInteger value = [[NSUserDefaults standardUserDefaults] integerForKey:@"privacySettingValue"];
+    if (value == 0) {
+        [SecurityInterface updateReadRules:[[NSUserDefaults standardUserDefaults] objectForKey:@"defaultLocationViewers"]];
+        block();
+    }
+    else if (value == 1) {
+        changeSettingsBlock = block;
+        SHMultipleSelect *multipleSelect = [[SHMultipleSelect alloc] init];
+        multipleSelect.delegate = self;
+        multipleSelect.rowsCount = [self.contacts count];
+        [multipleSelect show];
+    }
+}
+
+- (void)multipleSelectView:(SHMultipleSelect*)multipleSelectView clickedBtnAtIndex:(NSInteger)clickedBtnIndex withSelectedIndexPaths:(NSArray *)selectedIndexPaths {
+    // Gets all selected users and saves them to "approvedLocationViewers" in NSUserDefaults
+    if (clickedBtnIndex == 1) { // Done button
+        NSMutableArray *selectedUsers = [[NSMutableArray alloc] initWithCapacity:[selectedIndexPaths count]];
+        for (NSInteger x = 0; x < [selectedIndexPaths count]; x++) {
+            NSLog(@"%@", ((FireUser *)self.contacts[((NSIndexPath *)selectedIndexPaths[x]).row]).username);
+            selectedUsers[x] = ((FireUser *)self.contacts[((NSIndexPath *)selectedIndexPaths[x]).row]).username;
+            NSLog(@"Added");
+        }
+        [SecurityInterface updateReadRules:selectedUsers];
+        changeSettingsBlock();
+    }
+}
+
+- (NSString*)multipleSelectView:(SHMultipleSelect*)multipleSelectView titleForRowAtIndexPath:(NSIndexPath*)indexPath {
+    return ((FireUser *)self.contacts[indexPath.row]).username;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -126,7 +166,7 @@ BOOL updateOnce = false;
                     NSLog(@"Successfully wrote to location");
                 }
             }];*/
-            [self.geofire setLocation:[locations lastObject] forKey:[UserData sharedInstance].uid withCompletionBlock:^(NSError *error) {
+            [self.geofire setLocation:[locations lastObject] forKey:@"location" withCompletionBlock:^(NSError *error) {
                 if (error == nil) {
                     NSLog(@"Wrote new location to %@", [UserData sharedInstance].uid);
                 }

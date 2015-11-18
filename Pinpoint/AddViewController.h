@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddViewController : UIViewController
+@interface AddViewController : UIViewController <UITextFieldDelegate>
 extern NSString *const ContactsChangedNotification;
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;

@@ -1,29 +1,20 @@
 PODS:
-  - Firebase (2.2.0)
-  - GeoFire (1.1.0):
-    - Firebase (~> 2.1)
-  - Onboard (2.1.1)
-  - RBBAnimation (0.3.0)
-  - SDCAlertView (2.3):
-    - RBBAnimation (~> 0.3)
-    - SDCAutoLayout (~> 2.0)
-  - SDCAutoLayout (2.0.2)
-  - UITextField+Shake (0.4)
+  - Firebase (2.4.2)
+  - GeoFire (1.1.2):
+    - Firebase (~> 2.2)
+  - Onboard (2.1.7)
+  - UITextField+Shake (1.1.2)
 
 DEPENDENCIES:
-  - Firebase
+  - Firebase (~> 2.4.0)
   - GeoFire
   - Onboard
-  - SDCAlertView
   - UITextField+Shake
 
 SPEC CHECKSUMS:
-  Firebase: e7a2ea2ffeff99f9c37028b354194dcc9718d36b
-  GeoFire: df138789309f6a9f35c2655ea7282957f19070b5
-  Onboard: 27cdf8db29740f0c17ed81371a003b9833a5e700
-  RBBAnimation: 243d73be1a526f1b51d266b182e4aa0cfe9cbf64
-  SDCAlertView: 87219789a6159e7005711754722a3c9b34f445d7
-  SDCAutoLayout: 4a963629725ed2b7d665e789ca4d6cfcd7446822
-  UITextField+Shake: d98b471f0f686021795a8797aeec3658d12fdae2
+  Firebase: 5e898ed5012c81d28ca5fae1113c6b61a172bc6d
+  GeoFire: 03db4e390a4cf3ff97422f19eb71ab1aa7d947dd
+  Onboard: 87648089e1b76d13b4f5bf8f7a1cdb144092f0af
+  UITextField+Shake: 47cc0429dafb3da580686339ad2da091249a8ea2
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2
