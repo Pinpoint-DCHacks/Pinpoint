@@ -24,7 +24,7 @@
 #import "LocationDelegate.h"
 @import AddressBook;
 
-#define kPinpointURL @"pinpoint.firebaseio.com"
+//#define kPinpointURL @"pinpoint.firebaseio.com"
 
 @interface ContactsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;

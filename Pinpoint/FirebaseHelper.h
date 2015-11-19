@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <Firebase/Firebase.h>
+#import <UAObfuscatedString/UAObfuscatedString.h>
 
-#define kPinpointURL @"pinpoint.firebaseio.com"
+#define kPinpointURL [FirebaseHelper firebaseURL]
 
 @interface FirebaseHelper : NSObject
 
 + (void)updateReadRules:(NSArray *)canView;
 + (void)updateLocation:(CLLocation *)location;
++ (NSString *)firebaseURL;
 
 @end

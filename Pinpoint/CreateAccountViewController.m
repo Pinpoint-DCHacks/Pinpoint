@@ -12,7 +12,7 @@
 #import "FirebaseHelper.h"
 #import <Firebase/Firebase.h>
 
-#define kPinpointURL @"pinpoint.firebaseio.com"
+//#define kPinpointURL @"pinpoint.firebaseio.com"
 
 @interface CreateAccountViewController ()
 

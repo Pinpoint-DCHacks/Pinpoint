@@ -5,6 +5,7 @@ PODS:
   - LGSideMenuController (1.0.8)
   - Onboard (2.1.7)
   - SHMultipleSelect (0.2.2)
+  - UAObfuscatedString (0.3.1)
   - UITextField+Shake (1.1.2)
 
 DEPENDENCIES:
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - LGSideMenuController
   - Onboard
   - SHMultipleSelect
+  - UAObfuscatedString
   - UITextField+Shake
 
 SPEC CHECKSUMS:
@@ -21,6 +23,7 @@ SPEC CHECKSUMS:
   LGSideMenuController: 4c788e216647791d0de34f04a9b741862e835eaa
   Onboard: 87648089e1b76d13b4f5bf8f7a1cdb144092f0af
   SHMultipleSelect: 751491f4de21614622c198a760a88272cab62bf3
+  UAObfuscatedString: 292d08bb5423474b92238a40ea40269ee4e8d4b3
   UITextField+Shake: 47cc0429dafb3da580686339ad2da091249a8ea2
 
 COCOAPODS: 0.38.2

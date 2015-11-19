@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5EF53AB8B40BA318DF2D12A"
+               BlueprintIdentifier = "F9E4C39BDAD501B0A7E553CB"
                BuildableName = "libGeoFire.a"
                BlueprintName = "GeoFire"
                ReferencedContainer = "container:Pods.xcodeproj">

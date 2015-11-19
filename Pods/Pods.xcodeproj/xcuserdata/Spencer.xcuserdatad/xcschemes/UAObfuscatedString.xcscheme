@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "641F03B40499CFABA7E31D0C"
-               BuildableName = "SHMultipleSelect.bundle"
-               BlueprintName = "SHMultipleSelect-SHMultipleSelect"
+               BlueprintIdentifier = "E6386244A9A04850A627792A"
+               BuildableName = "libUAObfuscatedString.a"
+               BlueprintName = "UAObfuscatedString"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

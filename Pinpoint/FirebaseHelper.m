@@ -36,7 +36,7 @@
 }
 
 + (void)updateReadRules:(NSArray *)canView {
-    Firebase *ref = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com/locations"];
+    Firebase *ref = [[Firebase alloc] initWithUrl: [NSString stringWithFormat:@"%@/locations", kPinpointURL]];
     NSMutableDictionary *users = [[NSMutableDictionary alloc] initWithCapacity:[canView count]];
     for (NSInteger x = 0; x < [canView count]; x++) {
         users[canView[x]] = @"true";
@@ -61,6 +61,16 @@
             }];;
         }
     }];
+}
+
++ (NSString *)firebaseURL {
+    static dispatch_once_t p = 0;
+    static NSString *url = nil;
+    
+    dispatch_once(&p, ^{
+        url = Obfuscate.p.i.n.p.o.i.n.t.dot.f.i.r.e.b.a.s.e.i.o.dot.c.o.m;
+    });
+    return url;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "UserData.h"
 #import <Firebase/Firebase.h>
+#import "FirebaseHelper.h"
 #import <GeoFire/GeoFire+Private.h>
 
 @interface MapViewController ()
@@ -36,7 +37,7 @@ MKPointAnnotation *annotation;
     [self.mapView addAnnotation:annotation];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
-    self.firebase = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"pinpoint.firebaseio.com/locations/%@", self.recipientId]];
+    self.firebase = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/locations/%@", kPinpointURL, self.recipientId]];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     
     // Setup bar button item

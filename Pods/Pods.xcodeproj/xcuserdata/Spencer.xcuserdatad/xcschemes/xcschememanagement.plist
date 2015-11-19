@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UAObfuscatedString.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITextField+Shake.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,32 +52,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0D037ADC78E00C1AEF71EF15A137D1FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>16777146ED175BA8728FCD1D4909D700</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>24EB01E3504F6F8D9E8C6730ECAC9D9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>34E82EB40DF6CE9CCF6A9E94685A97F9</key>
+		<key>322DB28FF580499013328E60ACA9DE32</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65FAD2E6D9EE10FE6B21794FFD980234</key>
+		<key>35176E637D4A0246E32874873543089D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E673DD267450B4BDCEF20F6F47522CD</key>
+		<key>48F60CA197F37D83745C0B6D677CCC51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96AF30BA0DE73E64EFC860BD0DC796BD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BD33DBE7C86C30F91B798CD350D848DE</key>
+		<key>812596764699633E79D83A68ED44F294</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4ADE45F3E95A768E6C4F3A7A"
+               BlueprintIdentifier = "4B249EA4EEC6FD9662C0421A"
                BuildableName = "libSHMultipleSelect.a"
                BlueprintName = "SHMultipleSelect"
                ReferencedContainer = "container:Pods.xcodeproj">

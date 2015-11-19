@@ -44,9 +44,14 @@
     [self.manager requestLocation];
 }
 
+UIBackgroundTaskIdentifier locationBackgroundTask;
 - (void)beginUpdates {
     NSLog(@"begun");
     [self initializeManager];
+    locationBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[UIApplication sharedApplication] endBackgroundTask:locationBackgroundTask];
+        locationBackgroundTask = UIBackgroundTaskInvalid;
+    } ];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timerSent:) userInfo:nil repeats:YES];
     //[self timerSent];
 }
@@ -58,6 +63,7 @@
 
 - (void)endUpdates {
     NSLog(@"Ending updates");
+    [[UIApplication sharedApplication] endBackgroundTask:locationBackgroundTask];
     [self.timer invalidate];
 }
 

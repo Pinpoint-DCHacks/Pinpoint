@@ -9,6 +9,7 @@ target 'Pinpoint' do
     pod 'UITextField+Shake'
     pod 'SHMultipleSelect'
     pod 'LGSideMenuController'
+    pod 'UAObfuscatedString'
     #pod 'SDCAlertView'
 
 end
