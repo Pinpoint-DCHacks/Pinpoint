@@ -9,7 +9,10 @@
 #import "CreateAccountViewController.h"
 #import "UserData.h"
 #import "RMPhoneFormat.h"
+#import "FirebaseHelper.h"
 #import <Firebase/Firebase.h>
+
+#define kPinpointURL @"pinpoint.firebaseio.com"
 
 @interface CreateAccountViewController ()
 
@@ -37,7 +40,7 @@
 - (IBAction)didTapRegister:(id)sender {
     __block UserData *data = [UserData sharedInstance];
     
-    Firebase *ref = [UserData sharedRef];
+    Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
     // Checks if username is used
     FirebaseHandle handle = [[ref childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         // No user exists with this username
@@ -57,7 +60,7 @@
                             NSLog(@"Sucessfully logged in");
                             data.uid = authData.uid;
                             [data save];
-                            [[[UserData sharedRef] childByAppendingPath:@"uids"] updateChildValues:@{authData.uid: self.usernameText.text} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                            [[ref childByAppendingPath:@"uids"] updateChildValues:@{authData.uid: self.usernameText.text} withCompletionBlock:^(NSError *error, Firebase *ref) {
                                 if (error) {
                                     NSLog(@"Error writing uid %@", error);
                                 }
@@ -66,7 +69,7 @@
                                     NSLog(@"Username: %@", data.username);
                                 }
                             }];
-                            [[[UserData sharedRef] childByAppendingPath:@"usernames"] updateChildValues:@{self.usernameText.text: authData.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                            [[ref childByAppendingPath:@"usernames"] updateChildValues:@{self.usernameText.text: authData.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
                                 if (error) {
                                     NSLog(@"Error writing username: %@", error);
                                 }

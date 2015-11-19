@@ -7,6 +7,8 @@ target 'Pinpoint' do
     pod 'Firebase', '~> 2.4.0'
     pod 'GeoFire'
     pod 'UITextField+Shake'
+    pod 'SHMultipleSelect'
+    pod 'LGSideMenuController'
     #pod 'SDCAlertView'
 
 end

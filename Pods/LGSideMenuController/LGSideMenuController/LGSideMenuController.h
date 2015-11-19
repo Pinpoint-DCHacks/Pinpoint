@@ -41,34 +41,41 @@ static NSString *const kLGSideMenuControllerDidDismissRightViewNotification  = @
 
 @interface LGSideMenuController : UIViewController
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, LGSideMenuAlwaysVisibleOptions)
 {
     LGSideMenuAlwaysVisibleOnNone           = 0,
     LGSideMenuAlwaysVisibleOnPadLandscape   = 1 << 0,
     LGSideMenuAlwaysVisibleOnPadPortrait    = 1 << 1,
     LGSideMenuAlwaysVisibleOnPhoneLandscape = 1 << 2,
     LGSideMenuAlwaysVisibleOnPhonePortrait  = 1 << 3,
-}
-LGSideMenuAlwaysVisibleOptions;
+    LGSideMenuAlwaysVisibleOnAll            = 1 << 4
+};
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, LGSideMenuStatusBarVisibleOptions)
 {
     LGSideMenuStatusBarVisibleOnNone           = 0,
     LGSideMenuStatusBarVisibleOnPadLandscape   = 1 << 0,
     LGSideMenuStatusBarVisibleOnPadPortrait    = 1 << 1,
     LGSideMenuStatusBarVisibleOnPhoneLandscape = 1 << 2,
     LGSideMenuStatusBarVisibleOnPhonePortrait  = 1 << 3,
-}
-LGSideMenuStatusBarVisibleOptions;
+    LGSideMenuStatusBarVisibleOnAll            = 1 << 4
+};
 
-typedef enum
+typedef NS_ENUM(NSUInteger, LGSideMenuPresentationStyle)
 {
     LGSideMenuPresentationStyleSlideAbove      = 0,
     LGSideMenuPresentationStyleSlideBelow      = 1,
     LGSideMenuPresentationStyleScaleFromBig    = 2,
     LGSideMenuPresentationStyleScaleFromLittle = 3
-}
-LGSideMenuPresentationStyle;
+};
+
+typedef NS_ENUM(NSUInteger, LGSideMenuSwipeGestureArea)
+{
+    LGSideMenuSwipeGestureAreaBorders   = 0,
+    LGSideMenuSwipeGestureAreaFull      = 1
+};
+
+@property (assign, nonatomic) IBOutlet UIViewController *rootViewController;
 
 @property (assign, nonatomic, readonly) CGFloat leftViewWidth;
 @property (assign, nonatomic, readonly) CGFloat rightViewWidth;
@@ -82,8 +89,14 @@ LGSideMenuPresentationStyle;
 @property (assign, nonatomic) IBInspectable LGSideMenuStatusBarVisibleOptions leftViewStatusBarVisibleOptions;
 @property (assign, nonatomic) IBInspectable LGSideMenuStatusBarVisibleOptions rightViewStatusBarVisibleOptions;
 
-@property (assign, nonatomic, getter=isLeftViewShowing)  BOOL leftViewShowing;
-@property (assign, nonatomic, getter=isRightViewShowing) BOOL rightViewShowing;
+@property (assign, nonatomic) IBInspectable UIStatusBarStyle leftViewStatusBarStyle;
+@property (assign, nonatomic) IBInspectable UIStatusBarStyle rightViewStatusBarStyle;
+
+@property (assign, nonatomic) IBInspectable UIStatusBarAnimation leftViewStatusBarUpdateAnimation;
+@property (assign, nonatomic) IBInspectable UIStatusBarAnimation rightViewStatusBarUpdateAnimation;
+
+@property (assign, nonatomic, readonly, getter=isLeftViewShowing)  BOOL leftViewShowing;
+@property (assign, nonatomic, readonly, getter=isRightViewShowing) BOOL rightViewShowing;
 
 /** Default is YES */
 @property (assign, nonatomic, getter=isLeftViewHidesOnTouch)  IBInspectable BOOL leftViewHidesOnTouch;
@@ -94,6 +107,11 @@ LGSideMenuPresentationStyle;
 @property (assign, nonatomic, getter=isLeftViewSwipeGestureEnabled)  IBInspectable BOOL leftViewSwipeGestureEnabled;
 /** Default is YES */
 @property (assign, nonatomic, getter=isRightViewSwipeGestureEnabled) IBInspectable BOOL rightViewSwipeGestureEnabled;
+/** Default is YES */
+@property (assign, nonatomic, getter=isGesturesCancelsTouchesInView) IBInspectable BOOL gesturesCancelsTouchesInView;
+
+/** Default is LGSideMenuSwipeGestureAreaBorders */
+@property (assign, nonatomic) IBInspectable LGSideMenuSwipeGestureArea swipeGestureArea;
 
 /**
  Color that hides root view, when left view is showing
@@ -204,12 +222,13 @@ LGSideMenuPresentationStyle;
 @property (strong, nonatomic) IBInspectable UIColor *rightViewLayerShadowColor;
 /** For LGSideMenuPresentationStyleSlideAbove default is 5.f */
 @property (assign, nonatomic) IBInspectable CGFloat rightViewLayerShadowRadius;
+/** Default is 0.5 */
+@property (assign, nonatomic) IBInspectable NSTimeInterval leftViewAnimationSpeed;
+/** Default is 0.5 */
+@property (assign, nonatomic) IBInspectable NSTimeInterval rightViewAnimationSpeed;
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 
-- (void)setRootViewController:(UIViewController *)rootViewController;
-
-- (UIViewController *)rootViewController;
 - (UIView *)leftView;
 - (UIView *)rightView;
 
@@ -237,5 +256,14 @@ LGSideMenuPresentationStyle;
 - (void)showRightViewAnimated:(BOOL)animated completionHandler:(void(^)())completionHandler;
 - (void)hideRightViewAnimated:(BOOL)animated completionHandler:(void(^)())completionHandler;
 - (void)showHideRightViewAnimated:(BOOL)animated completionHandler:(void(^)())completionHandler;
+
+/** Unavailable, select it on your rootViewController */
+- (BOOL)shouldAutorotate __attribute__((unavailable("select it on your rootViewController")));
+/** Unavailable, select it on your rootViewController */
+- (BOOL)prefersStatusBarHidden __attribute__((unavailable("select it on your rootViewController")));
+/** Unavailable, select it on your rootViewController */
+- (UIStatusBarStyle)preferredStatusBarStyle __attribute__((unavailable("select it on your rootViewController")));
+/** Unavailable, select it on your rootViewController */
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation __attribute__((unavailable("select it on your rootViewController")));
 
 @end

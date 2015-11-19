@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LGSideMenuController.h"
+#import <LGSideMenuController/LGSideMenuController.h>
 
 @interface SideMenuController : LGSideMenuController
 

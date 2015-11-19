@@ -14,12 +14,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LGSideMenuController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Onboard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-Pinpoint.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SHMultipleSelect-SHMultipleSelect.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SHMultipleSelect.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,22 +52,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E2E94D32B3CA7F6E9DE06A24DC88F06</key>
+		<key>34E82EB40DF6CE9CCF6A9E94685A97F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>587C04E9D5E059992AEE2FEB07FE6289</key>
+		<key>65FAD2E6D9EE10FE6B21794FFD980234</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>664F0550DE8A5C84DEB0532D8B58220C</key>
+		<key>7E673DD267450B4BDCEF20F6F47522CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>950E54CEE467D127CA746BEB3A51FF73</key>
+		<key>96AF30BA0DE73E64EFC860BD0DC796BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD33DBE7C86C30F91B798CD350D848DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB9352D51F8E1A7C8679520CBD5C920C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC52AB3848801344547F2503835CF6EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

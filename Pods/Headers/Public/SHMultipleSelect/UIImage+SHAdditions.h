@@ -1,0 +1,1 @@
+../../../SHMultipleSelect/Pod/Classes/UIImage+SHAdditions.h

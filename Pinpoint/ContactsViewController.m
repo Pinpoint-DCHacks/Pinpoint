@@ -18,18 +18,17 @@
 //#import <SDCAlertController.h>
 #import <UITextField+Shake/UITextField+Shake.h>
 #import "KSToastView.h"
-#import "SecurityInterface.h"
+#import "RSTToastView.h"
+#import "FirebaseHelper.h"
+#import "SCAHelper.h"
+#import "LocationDelegate.h"
 @import AddressBook;
 
 #define kPinpointURL @"pinpoint.firebaseio.com"
 
 @interface ContactsViewController ()
-@property (strong, nonatomic) CLLocationManager *manager;
-@property (strong, nonatomic) Firebase *firebase;
-@property (strong, nonatomic) GeoFire *geofire;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
-
-@property (nonatomic) UIBackgroundTaskIdentifier task;
+@property (strong, nonatomic) RSTToastView *toastView;
 @end
 
 @implementation ContactsViewController
@@ -43,6 +42,14 @@ BOOL updateOnce = false;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([[LocationDelegate sharedInstance] isRunning]) {
+        self.sharingButton.title = @"Stop Sharing";
+    }
+    else {
+        self.sharingButton.title = @"Start Sharing";
+    }
+    self.toastView = [[RSTToastView alloc] initWithMessage:@""];
+    self.toastView.tintColor = [UIColor colorWithRed:(43.0/255.0) green:(65.0/255.0) blue:(98.0/255.0) alpha:1.0f];
     NSData *contactsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"contacts"];
     if (contactsData) {
         self.contacts = [NSKeyedUnarchiver unarchiveObjectWithData:contactsData];
@@ -53,13 +60,7 @@ BOOL updateOnce = false;
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }*/
-    self.firebase = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"pinpoint.firebaseio.com/locations/%@", [UserData sharedInstance].uid]];
-    self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
-    
-    // Initialize location manager
-    self.manager = [[CLLocationManager alloc] init];
-    [self.manager setDelegate:self];
-    
+    //self.firebase = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"pinpoint.firebaseio.com/locations/%@", [UserData sharedInstance].uid]];
     // Register observer for contacts being added
     [AddViewController registerObserver:^(NSNotification *note) {
         if (note.name != ContactsChangedNotification) {
@@ -86,29 +87,50 @@ BOOL updateOnce = false;
     updateOnce = false;
     if ([self.sharingButton.title isEqualToString:@"Start Sharing"]) {
         [self changePrivacySettingsWithCompletion:^{
-            [KSToastView ks_showToast:@"Started sharing location." duration:1.0f];
+            NSLog(@"completed");
+            sca_dispatch_sync_on_main_thread(^{
+                if (!self.toastView.isVisible) {
+                    self.toastView.message = @"Started sharing location";
+                    [self.toastView showForDuration:1.0f];
+                }
+            });
+            //[KSToastView ks_showToast:@"Started sharing location." duration:1.0f];
             self.sharingButton.title = @"Stop Sharing";
             [self checkAlwaysAuthorization];
-            [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
-            [self.manager startUpdatingLocation];
+            //[self.manager startUpdatingLocation];
+            [[LocationDelegate sharedInstance] beginUpdates];
         }];
     }
     else {
-        [KSToastView ks_showToast:@"Stopped sharing location." duration:1.0f];
+        sca_dispatch_sync_on_main_thread(^{
+            if (!self.toastView.isVisible) {
+                self.toastView.message = @"Stopped sharing location";
+                [self.toastView showForDuration:1.0f];
+            }
+        });
+        //[KSToastView ks_showToast:@"Stopped sharing location." duration:1.0f];
         self.sharingButton.title = @"Start Sharing";
-        [self.manager stopUpdatingLocation];
-        [NSObject cancelPreviousPerformRequestsWithTarget:self.manager];
+        [[LocationDelegate sharedInstance] endUpdates];
+        //[self.manager stopUpdatingLocation];
+        //[NSObject cancelPreviousPerformRequestsWithTarget:self.manager];
     }
 }
 
 // TODO: Use [self.manager requestLocation];
 - (IBAction)didTapShareOnce:(id)sender {
     [self changePrivacySettingsWithCompletion:^{
-        [KSToastView ks_showToast:@"Shared one location." duration:1.0f];
+        sca_dispatch_sync_on_main_thread(^{
+            if (!self.toastView.isVisible) {
+                self.toastView.message = @"Shared one location.";
+                [self.toastView showForDuration:1.0f];
+            }
+        });
+        //[KSToastView ks_showToast:@"Shared one location." duration:1.0f];
         updateOnce = true;
         [self checkAlwaysAuthorization];
-        [self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
-        [self.manager startUpdatingLocation];
+        //[self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
+        //[self.manager startUpdatingLocation];
+        [[LocationDelegate sharedInstance] updateOnce];
     }];
 }
 
@@ -117,7 +139,7 @@ completionBlock changeSettingsBlock;
 - (void)changePrivacySettingsWithCompletion:(completionBlock)block {
     NSInteger value = [[NSUserDefaults standardUserDefaults] integerForKey:@"privacySettingValue"];
     if (value == 0) {
-        [SecurityInterface updateReadRules:[[NSUserDefaults standardUserDefaults] objectForKey:@"defaultLocationViewers"]];
+        [FirebaseHelper updateReadRules:[[NSUserDefaults standardUserDefaults] objectForKey:@"defaultLocationViewers"]];
         block();
     }
     else if (value == 1) {
@@ -135,10 +157,10 @@ completionBlock changeSettingsBlock;
         NSMutableArray *selectedUsers = [[NSMutableArray alloc] initWithCapacity:[selectedIndexPaths count]];
         for (NSInteger x = 0; x < [selectedIndexPaths count]; x++) {
             NSLog(@"%@", ((FireUser *)self.contacts[((NSIndexPath *)selectedIndexPaths[x]).row]).username);
-            selectedUsers[x] = ((FireUser *)self.contacts[((NSIndexPath *)selectedIndexPaths[x]).row]).username;
+            selectedUsers[x] = ((FireUser *)self.contacts[((NSIndexPath *)selectedIndexPaths[x]).row]).uid;
             NSLog(@"Added");
         }
-        [SecurityInterface updateReadRules:selectedUsers];
+        [FirebaseHelper updateReadRules:selectedUsers];
         changeSettingsBlock();
     }
 }
@@ -147,41 +169,7 @@ completionBlock changeSettingsBlock;
     return ((FireUser *)self.contacts[indexPath.row]).username;
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    self.task = [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"Location-send" expirationHandler:^{
-        NSLog(@"Expired");
-        self.task = UIBackgroundTaskInvalid;
-    }];
-    NSLog(@"uid: %@", [UserData sharedInstance].uid);
-    NSLog(@"username: %@", [UserData sharedInstance].username);
-    if ([locations lastObject] != nil) {
-        NSLog(@"Location update");
-        //NSLog(@"%@", [UserData sharedInstance].number);
-        if ([UserData sharedInstance].uid != nil) {
-            /*[[self.firebase childByAppendingPath:[NSString stringWithFormat:@"%@/userData", [UserData sharedInstance].uid]] updateChildValues:@{@"test":@"test"} withCompletionBlock:^(NSError *error, Firebase *ref) {
-                if (error) {
-                    NSLog(@"Error writing to location");
-                }
-                else {
-                    NSLog(@"Successfully wrote to location");
-                }
-            }];*/
-            [self.geofire setLocation:[locations lastObject] forKey:@"location" withCompletionBlock:^(NSError *error) {
-                if (error == nil) {
-                    NSLog(@"Wrote new location to %@", [UserData sharedInstance].uid);
-                }
-                else {
-                    NSLog(@"Error posting location %@", error);
-                }
-            }];
-        }
-        [self.manager stopUpdatingLocation];
-        if (!updateOnce) {
-            [self.manager performSelector:@selector(startUpdatingLocation) withObject:nil afterDelay:5];
-        }
-    }
-    [[UIApplication sharedApplication] endBackgroundTask:self.task];
-}
+
 
 - (IBAction)didTapAdd:(id)sender {
     [kSideMenuController performSegueWithIdentifier:@"ShowAddContactSegue" sender:self];
@@ -221,6 +209,7 @@ completionBlock changeSettingsBlock;
 
 - (void)checkAlwaysAuthorization {
     NSLog(@"Checking status");
+    CLLocationManager *manager = [[CLLocationManager alloc] init];
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
@@ -240,8 +229,8 @@ completionBlock changeSettingsBlock;
     
     else if (status == kCLAuthorizationStatusNotDetermined) {
         NSLog(@"requesting");
-        if([self.manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            [self.manager requestAlwaysAuthorization];
+        if([manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [manager requestAlwaysAuthorization];
         }
     }
     
@@ -266,6 +255,8 @@ completionBlock changeSettingsBlock;
     }*/
 }
 
+
+// TODO: Don't log in every time the view is shown
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
@@ -274,13 +265,20 @@ completionBlock changeSettingsBlock;
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else {
-        [[UserData sharedRef] authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
+        Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
+        [ref authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
             if (error) {
                 NSLog(@"Error logging in: %@", error);
                 if (error.code == -15) {
                     // Internet connection appears to be offline
                 }
-                [KSToastView ks_showToast:@"Error logging in." duration:1.0f];
+                sca_dispatch_sync_on_main_thread(^{
+                    if (!self.toastView.isVisible) {
+                        self.toastView.message = @"Error logging in";
+                        [self.toastView showForDuration:1.0f];
+                    }
+                });
+                //[KSToastView ks_showToast:@"Error logging in." duration:1.0f];
             }
             else {
                 NSLog(@"Logged in %@ successfully", [UserData sharedInstance].email);

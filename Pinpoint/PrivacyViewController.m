@@ -117,8 +117,8 @@
     if (clickedBtnIndex == 1) { // Done button
         NSMutableArray *selectedUsers = [[NSMutableArray alloc] initWithCapacity:[selectedIndexPaths count]];
         for (NSInteger x = 0; x < [selectedIndexPaths count]; x++) {
-            NSLog(@"%@", ((FireUser *)self.dataSource[((NSIndexPath *)selectedIndexPaths[x]).row]).username);
-            selectedUsers[x] = ((FireUser *)self.dataSource[((NSIndexPath *)selectedIndexPaths[x]).row]).username;
+            NSLog(@"%@", ((FireUser *)self.dataSource[((NSIndexPath *)selectedIndexPaths[x]).row]).uid);
+            selectedUsers[x] = ((FireUser *)self.dataSource[((NSIndexPath *)selectedIndexPaths[x]).row]).uid;
         }
         [[NSUserDefaults standardUserDefaults] setObject:selectedUsers forKey:@"defaultLocationViewers"];
         [[NSUserDefaults standardUserDefaults] synchronize];

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 #import "RMPhoneFormat.h"
-#import "SHMultipleSelect.h"
+#import <SHMultipleSelect/SHMultipleSelect.h>
 
-@interface ContactsViewController : UIViewController <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, SHMultipleSelectDelegate>
+@interface ContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SHMultipleSelectDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *importButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;

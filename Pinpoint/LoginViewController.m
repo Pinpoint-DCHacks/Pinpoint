@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "CreateAccountViewController.h"
 #import "UserData.h"
+#import "FirebaseHelper.h"
 #import <Firebase/Firebase.h>
 
 @interface LoginViewController ()
@@ -29,7 +30,8 @@
 
 - (IBAction)didTapLogin:(id)sender {
     NSLog(@"Logging in %@", self.emailText.text);
-    [[UserData sharedRef] authUser:self.emailText.text password:self.passwordText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
+    [ref authUser:self.emailText.text password:self.passwordText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
         if (error) {
             NSLog(@"Error logging in: %@", error);
             NSString *title = @"Error logging in";
@@ -52,7 +54,7 @@
             __block UserData *dat = [UserData sharedInstance];
             dat.uid = authData.uid;
             NSLog(@"UID: %@", authData.uid);
-            [[[UserData sharedRef] childByAppendingPath:[NSString stringWithFormat:@"uids/%@", dat.uid]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            [[ref childByAppendingPath:[NSString stringWithFormat:@"uids/%@", dat.uid]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
                 if (error) {
                     NSLog(@"Error getting username: %@", error);
                 }

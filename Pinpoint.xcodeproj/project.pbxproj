@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09400CA41BF6154600A40C3C /* SecurityInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 09400CA31BF6154600A40C3C /* SecurityInterface.m */; };
+		0938BF7F1BFE11CE0000854C /* SCAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0938BF7E1BFE11CE0000854C /* SCAHelper.m */; };
+		0938BF821BFE19090000854C /* LocationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0938BF811BFE19090000854C /* LocationDelegate.m */; };
 		09529F2B1B6D66400080E32B /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2A1B6D66400080E32B /* CreateAccountViewController.m */; };
 		09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */; };
 		09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09529F301B6DA8CB0080E32B /* MapViewController.m */; };
 		095A31BE1B6E5A3500CED8E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095A31BD1B6E5A3500CED8E9 /* MapKit.framework */; };
+		095CEFB51BFD0B44007D9706 /* RSTToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095CEFB41BFD0B44007D9706 /* RSTToastView.m */; };
+		095CEFB91BFD0FD2007D9706 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 095CEFB81BFD0FD2007D9706 /* FirebaseHelper.m */; };
 		095EF2A41B73C2C800AEAE26 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 095EF2A31B73C2C800AEAE26 /* UserData.m */; };
 		095EF2A71B73D68D00AEAE26 /* FireUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 095EF2A61B73D68D00AEAE26 /* FireUser.m */; };
 		095EF2B41B740BFB00AEAE26 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095EF2B21B740BFB00AEAE26 /* LoginViewController.m */; };
@@ -26,14 +29,10 @@
 		0999E0F81B7664DC00D8D57D /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0999E0F71B7664DC00D8D57D /* AddViewController.m */; };
 		09ADFD981B76831800F25D8E /* KSToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFD971B76831800F25D8E /* KSToastView.m */; };
 		09ADFE0C1B7E6C6D00F25D8E /* SideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE0B1B7E6C6C00F25D8E /* SideMenuController.m */; };
-		09ADFE0F1B7E6C8F00F25D8E /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */; };
 		09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE121B7E744400F25D8E /* LeftTableViewController.m */; };
 		09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D441B8609310005AB97 /* PrivacyViewController.m */; };
 		09CD5D481B860C430005AB97 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D471B860C430005AB97 /* GroupsViewController.m */; };
 		09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F4DCBE1B7EAF420069139F /* LeftViewCell.m */; };
-		09F5C3651B8683170067ECA0 /* SHMultipleSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F5C3601B8683170067ECA0 /* SHMultipleSelect.m */; };
-		09F5C3661B8683170067ECA0 /* UIImage+SHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F5C3621B8683170067ECA0 /* UIImage+SHAdditions.m */; };
-		09F5C3671B8683170067ECA0 /* UIView+SHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F5C3641B8683170067ECA0 /* UIView+SHAdditions.m */; };
 		FB0AEC919B7F6E5A8719359E /* libPods-Pinpoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B0B2CF80F85907F3200E50 /* libPods-Pinpoint.a */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09400CA21BF6154600A40C3C /* SecurityInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityInterface.h; sourceTree = "<group>"; };
-		09400CA31BF6154600A40C3C /* SecurityInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityInterface.m; sourceTree = "<group>"; };
+		0938BF7D1BFE11CE0000854C /* SCAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAHelper.h; sourceTree = "<group>"; };
+		0938BF7E1BFE11CE0000854C /* SCAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAHelper.m; sourceTree = "<group>"; };
+		0938BF801BFE19090000854C /* LocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDelegate.h; sourceTree = "<group>"; };
+		0938BF811BFE19090000854C /* LocationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDelegate.m; sourceTree = "<group>"; };
 		09529F291B6D66400080E32B /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
 		09529F2A1B6D66400080E32B /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		09529F2C1B6D6C3F0080E32B /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
@@ -57,6 +58,10 @@
 		09529F2F1B6DA8CB0080E32B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		09529F301B6DA8CB0080E32B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		095A31BD1B6E5A3500CED8E9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		095CEFB31BFD0B44007D9706 /* RSTToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTToastView.h; sourceTree = "<group>"; };
+		095CEFB41BFD0B44007D9706 /* RSTToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTToastView.m; sourceTree = "<group>"; };
+		095CEFB71BFD0FD2007D9706 /* FirebaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
+		095CEFB81BFD0FD2007D9706 /* FirebaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
 		095EF2A21B73C2C800AEAE26 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		095EF2A31B73C2C800AEAE26 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		095EF2A51B73D68D00AEAE26 /* FireUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireUser.h; sourceTree = "<group>"; };
@@ -83,8 +88,6 @@
 		09ADFD971B76831800F25D8E /* KSToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSToastView.m; path = KSToastView/KSToastView.m; sourceTree = "<group>"; };
 		09ADFE0A1B7E6C6C00F25D8E /* SideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuController.h; sourceTree = "<group>"; };
 		09ADFE0B1B7E6C6C00F25D8E /* SideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuController.m; sourceTree = "<group>"; };
-		09ADFE0D1B7E6C8F00F25D8E /* LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuController.h; sourceTree = "<group>"; };
-		09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuController.m; sourceTree = "<group>"; };
 		09ADFE111B7E744400F25D8E /* LeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewController.h; sourceTree = "<group>"; };
 		09ADFE121B7E744400F25D8E /* LeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewController.m; sourceTree = "<group>"; };
 		09CD5D431B8609310005AB97 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
@@ -93,12 +96,6 @@
 		09CD5D471B860C430005AB97 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
 		09F4DCBD1B7EAF420069139F /* LeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewCell.h; sourceTree = "<group>"; };
 		09F4DCBE1B7EAF420069139F /* LeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewCell.m; sourceTree = "<group>"; };
-		09F5C35F1B8683170067ECA0 /* SHMultipleSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHMultipleSelect.h; path = SHMultipleSelect/SHMultipleSelect.h; sourceTree = "<group>"; };
-		09F5C3601B8683170067ECA0 /* SHMultipleSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHMultipleSelect.m; path = SHMultipleSelect/SHMultipleSelect.m; sourceTree = "<group>"; };
-		09F5C3611B8683170067ECA0 /* UIImage+SHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SHAdditions.h"; path = "SHMultipleSelect/UIImage+SHAdditions.h"; sourceTree = "<group>"; };
-		09F5C3621B8683170067ECA0 /* UIImage+SHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SHAdditions.m"; path = "SHMultipleSelect/UIImage+SHAdditions.m"; sourceTree = "<group>"; };
-		09F5C3631B8683170067ECA0 /* UIView+SHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SHAdditions.h"; path = "SHMultipleSelect/UIView+SHAdditions.h"; sourceTree = "<group>"; };
-		09F5C3641B8683170067ECA0 /* UIView+SHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SHAdditions.m"; path = "SHMultipleSelect/UIView+SHAdditions.m"; sourceTree = "<group>"; };
 		96B0B2CF80F85907F3200E50 /* libPods-Pinpoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinpoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C74ED7C40729B8E77CB7 /* Pods-Pinpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinpoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinpoint/Pods-Pinpoint.release.xcconfig"; sourceTree = "<group>"; };
 		D6EF172C0F1E98D521FF84AC /* Pods-Pinpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinpoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinpoint/Pods-Pinpoint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,17 +121,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		095EF2AD1B740BAC00AEAE26 /* Account */ = {
+		095CEFB61BFD0B49007D9706 /* RSTToastView */ = {
+			isa = PBXGroup;
+			children = (
+				095CEFB31BFD0B44007D9706 /* RSTToastView.h */,
+				095CEFB41BFD0B44007D9706 /* RSTToastView.m */,
+			);
+			name = RSTToastView;
+			sourceTree = "<group>";
+		};
+		095EF2AD1B740BAC00AEAE26 /* Account-ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				09529F291B6D66400080E32B /* CreateAccountViewController.h */,
 				09529F2A1B6D66400080E32B /* CreateAccountViewController.m */,
 				095EF2B11B740BFB00AEAE26 /* LoginViewController.h */,
 				095EF2B21B740BFB00AEAE26 /* LoginViewController.m */,
-				09400CA21BF6154600A40C3C /* SecurityInterface.h */,
-				09400CA31BF6154600A40C3C /* SecurityInterface.m */,
+				0999E0F61B7664DC00D8D57D /* AddViewController.h */,
+				0999E0F71B7664DC00D8D57D /* AddViewController.m */,
 			);
-			name = Account;
+			name = "Account-ViewControllers";
 			sourceTree = "<group>";
 		};
 		0964B6C91B6D5D15009EA05D = {
@@ -162,10 +168,12 @@
 			children = (
 				0964B6D91B6D5D15009EA05D /* AppDelegate.h */,
 				0964B6DA1B6D5D15009EA05D /* AppDelegate.m */,
-				0999E0F91B7664F400D8D57D /* Data */,
-				0999E0F61B7664DC00D8D57D /* AddViewController.h */,
-				0999E0F71B7664DC00D8D57D /* AddViewController.m */,
-				095EF2AD1B740BAC00AEAE26 /* Account */,
+				0938BF7D1BFE11CE0000854C /* SCAHelper.h */,
+				0938BF7E1BFE11CE0000854C /* SCAHelper.m */,
+				0938BF801BFE19090000854C /* LocationDelegate.h */,
+				0938BF811BFE19090000854C /* LocationDelegate.m */,
+				0999E0F91B7664F400D8D57D /* Firebase */,
+				095EF2AD1B740BAC00AEAE26 /* Account-ViewControllers */,
 				09F4DCC01B7EAF680069139F /* Side Menu */,
 				09529F2C1B6D6C3F0080E32B /* ContactsViewController.h */,
 				09529F2D1B6D6C3F0080E32B /* ContactsViewController.m */,
@@ -219,15 +227,17 @@
 			name = RMPhoneFormat;
 			sourceTree = "<group>";
 		};
-		0999E0F91B7664F400D8D57D /* Data */ = {
+		0999E0F91B7664F400D8D57D /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				095EF2A21B73C2C800AEAE26 /* UserData.h */,
 				095EF2A31B73C2C800AEAE26 /* UserData.m */,
 				095EF2A51B73D68D00AEAE26 /* FireUser.h */,
 				095EF2A61B73D68D00AEAE26 /* FireUser.m */,
+				095CEFB71BFD0FD2007D9706 /* FirebaseHelper.h */,
+				095CEFB81BFD0FD2007D9706 /* FirebaseHelper.m */,
 			);
-			name = Data;
+			name = Firebase;
 			sourceTree = "<group>";
 		};
 		09ADFD991B76831D00F25D8E /* KSToastView */ = {
@@ -237,15 +247,6 @@
 				09ADFD971B76831800F25D8E /* KSToastView.m */,
 			);
 			name = KSToastView;
-			sourceTree = "<group>";
-		};
-		09ADFE101B7E6C9800F25D8E /* LGSideMenuController */ = {
-			isa = PBXGroup;
-			children = (
-				09ADFE0D1B7E6C8F00F25D8E /* LGSideMenuController.h */,
-				09ADFE0E1B7E6C8F00F25D8E /* LGSideMenuController.m */,
-			);
-			name = LGSideMenuController;
 			sourceTree = "<group>";
 		};
 		09F4DCC01B7EAF680069139F /* Side Menu */ = {
@@ -261,24 +262,10 @@
 			name = "Side Menu";
 			sourceTree = "<group>";
 		};
-		09F5C3681B86831C0067ECA0 /* SHMultipleSelect */ = {
-			isa = PBXGroup;
-			children = (
-				09F5C35F1B8683170067ECA0 /* SHMultipleSelect.h */,
-				09F5C3601B8683170067ECA0 /* SHMultipleSelect.m */,
-				09F5C3611B8683170067ECA0 /* UIImage+SHAdditions.h */,
-				09F5C3621B8683170067ECA0 /* UIImage+SHAdditions.m */,
-				09F5C3631B8683170067ECA0 /* UIView+SHAdditions.h */,
-				09F5C3641B8683170067ECA0 /* UIView+SHAdditions.m */,
-			);
-			name = SHMultipleSelect;
-			sourceTree = "<group>";
-		};
 		620660C86472AC8AEFB0A880 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				09F5C3681B86831C0067ECA0 /* SHMultipleSelect */,
-				09ADFE101B7E6C9800F25D8E /* LGSideMenuController */,
+				095CEFB61BFD0B49007D9706 /* RSTToastView */,
 				09ADFD991B76831D00F25D8E /* KSToastView */,
 				096E64841B730FC6001842F6 /* RMPhoneFormat */,
 				095A31BD1B6E5A3500CED8E9 /* MapKit.framework */,
@@ -445,25 +432,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				09ADFD981B76831800F25D8E /* KSToastView.m in Sources */,
-				09F5C3661B8683170067ECA0 /* UIImage+SHAdditions.m in Sources */,
 				0999E0F81B7664DC00D8D57D /* AddViewController.m in Sources */,
 				096E64831B730FC3001842F6 /* RMPhoneFormat.m in Sources */,
 				09529F2B1B6D66400080E32B /* CreateAccountViewController.m in Sources */,
 				095EF2A71B73D68D00AEAE26 /* FireUser.m in Sources */,
 				09ADFE0C1B7E6C6D00F25D8E /* SideMenuController.m in Sources */,
-				09ADFE0F1B7E6C8F00F25D8E /* LGSideMenuController.m in Sources */,
+				0938BF7F1BFE11CE0000854C /* SCAHelper.m in Sources */,
+				095CEFB51BFD0B44007D9706 /* RSTToastView.m in Sources */,
 				095EF2A41B73C2C800AEAE26 /* UserData.m in Sources */,
+				0938BF821BFE19090000854C /* LocationDelegate.m in Sources */,
 				09CD5D481B860C430005AB97 /* GroupsViewController.m in Sources */,
+				095CEFB91BFD0FD2007D9706 /* FirebaseHelper.m in Sources */,
 				09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */,
 				095EF2B41B740BFB00AEAE26 /* LoginViewController.m in Sources */,
 				09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */,
-				09F5C3671B8683170067ECA0 /* UIView+SHAdditions.m in Sources */,
 				0964B6DB1B6D5D15009EA05D /* AppDelegate.m in Sources */,
 				09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */,
 				09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */,
 				0964B6D81B6D5D15009EA05D /* main.m in Sources */,
-				09400CA41BF6154600A40C3C /* SecurityInterface.m in Sources */,
-				09F5C3651B8683170067ECA0 /* SHMultipleSelect.m in Sources */,
 				09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,10 +609,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -643,10 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PinpointTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spenceratkin.$(PRODUCT_NAME:rfc1034identifier)";
