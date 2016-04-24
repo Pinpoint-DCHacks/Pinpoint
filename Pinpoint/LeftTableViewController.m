@@ -12,7 +12,7 @@
 #import "UserData.h"
 
 @interface LeftTableViewController ()
-@property (strong, nonatomic) NSArray *titlesArray;
+
 @end
 
 @implementation LeftTableViewController
@@ -33,15 +33,38 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    NSLog(@"AwakeFromNib");
     [[UserData sharedInstance] load];
 #warning Doesn't work first time
-    _titlesArray = @[/*[UserData sharedInstance].username*/@"spenceratkin",
-                     @"",
-                     @"Contacts",
-                     @"Profile",
-                     @"Groups",
-                     @"Privacy"];
-    
+    if ([UserData sharedInstance].username != nil) {
+        self.titlesArray = @[[UserData sharedInstance].username,
+                             @"",
+                             @"Contacts",
+                             @"Profile",
+                             @"Groups",
+                             @"Privacy"];
+    }
+    else {
+        _titlesArray = @[@"Pinpoint",
+                         @"",
+                         @"Contacts",
+                         @"Profile",
+                         @"Groups",
+                         @"Privacy"];
+    }
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"loggedIn" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        NSLog(@"Logged in notif");
+        [[UserData sharedInstance] load];
+        if ([UserData sharedInstance].username != nil) {
+            self.titlesArray = @[[UserData sharedInstance].username,
+                                 @"",
+                                 @"Contacts",
+                                 @"Profile",
+                                 @"Groups",
+                                 @"Privacy"];
+            [self.tableView reloadData];
+        }
+    }];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(20.f, 0.f, 20.f, 0.f);
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -61,7 +84,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LeftViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     cell.textLabel.text = _titlesArray[indexPath.row];
     cell.separatorView.hidden = !(indexPath.row != _titlesArray.count-1 && indexPath.row != 1/* && indexPath.row != 2*/);
     cell.userInteractionEnabled = (indexPath.row != 1  && indexPath.row != 0);

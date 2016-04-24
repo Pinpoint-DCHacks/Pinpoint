@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UserData.h"
+#import "LocationDelegate.h"
 
 @interface AppDelegate ()
 
@@ -53,6 +54,12 @@
     NSLog(@"User data: %@", [UserData sharedInstance]);
     [[UserData sharedInstance] save];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    if ([shortcutItem.localizedTitle isEqualToString:@"Share Location"]) {
+        [[LocationDelegate sharedInstance] updateOnce];
+    }
 }
 
 @end

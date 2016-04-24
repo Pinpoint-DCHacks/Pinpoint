@@ -259,6 +259,7 @@ completionBlock changeSettingsBlock;
 // TODO: Don't log in every time the view is shown
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:nil];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         [kSideMenuController performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
@@ -278,6 +279,7 @@ completionBlock changeSettingsBlock;
                         [self.toastView showForDuration:1.0f];
                     }
                 });
+                //[[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:nil];
                 //[KSToastView ks_showToast:@"Error logging in." duration:1.0f];
             }
             else {

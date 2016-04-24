@@ -18,6 +18,7 @@
 @property (strong, nonatomic) GeoFire *geofire;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
+@property (nonatomic) FirebaseHandle handle;
 
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @end
@@ -45,7 +46,44 @@ MKPointAnnotation *annotation;
     NSMutableArray *items = [[NSMutableArray alloc] initWithArray:[self.toolbar items]];
     [items insertObject:trackingButton atIndex:0];
     [self.toolbar setItems:items];
+    [self readOneLocation];
+    [self startRefreshingLocation];
     // Do any additional setup after loading the view.
+}
+
+- (void)readOneLocation {
+    NSLog(@"Reading location");
+    [self.firebase authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
+        [self.geofire getLocationForKey:@"location" withCallback:^(CLLocation *location, NSError *error) {
+            NSLog(@"Getting location");
+            if (error == nil) {
+                NSLog(@"Location successfully retrieved");
+                // Annotation
+                [UIView beginAnimations:nil context:NULL]; // animate the following:
+                annotation.coordinate = location.coordinate; // move to new location
+                [UIView setAnimationDuration:2.0f];
+                [UIView commitAnimations];
+                /*[UIView animateWithDuration:2.0f animations:^{
+                 annotation.coordinate = location.coordinate;
+                 } completion:nil];*/
+                //[annotation setCoordinate:location.coordinate];
+                [annotation setTitle:@"Last location"];
+                NSDateFormatter *df = [[NSDateFormatter alloc] init];
+                [df setDateStyle:NSDateFormatterNoStyle];
+                [df setTimeStyle:NSDateFormatterMediumStyle];
+                [annotation setSubtitle:[df stringFromDate:location.timestamp]];
+                //[self removeAllAnnotations];
+                
+                
+                // Distance label
+                CLLocation *currentLocation = self.mapView.userLocation.location;
+                [self.distanceLabel setText:[NSString stringWithFormat:@"%.02f meters", [currentLocation distanceFromLocation:location]]];
+            }
+            else {
+                NSLog(@"Error fetching location %@", error);
+            }
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,42 +106,15 @@ MKPointAnnotation *annotation;
 }
 
 - (void)startRefreshingLocation {
-    NSLog(@"Refreshing location");
+    NSLog(@"Beginning location updates");
     NSLog(@"%@", self.recipientId);
-    [self.geofire getLocationForKey:@"location" withCallback:^(CLLocation *location, NSError *error) {
-        NSLog(@"Getting location");
-        if (error == nil) {
-            NSLog(@"Location successfully retrieved");
-            // Annotation
-            [UIView beginAnimations:nil context:NULL]; // animate the following:
-            annotation.coordinate = location.coordinate; // move to new location
-            [UIView setAnimationDuration:2.0f];
-            [UIView commitAnimations];
-            /*[UIView animateWithDuration:2.0f animations:^{
-                annotation.coordinate = location.coordinate;
-            } completion:nil];*/
-            //[annotation setCoordinate:location.coordinate];
-            [annotation setTitle:@"Last location"];
-            NSDateFormatter *df = [[NSDateFormatter alloc] init];
-            [df setDateStyle:NSDateFormatterNoStyle];
-            [df setTimeStyle:NSDateFormatterMediumStyle];
-            [annotation setSubtitle:[df stringFromDate:location.timestamp]];
-            //[self removeAllAnnotations];
-            
-            
-            // Distance label
-            CLLocation *currentLocation = self.mapView.userLocation.location;
-            [self.distanceLabel setText:[NSString stringWithFormat:@"%.02f meters", [currentLocation distanceFromLocation:location]]];
-        }
-        else {
-            NSLog(@"Error fetching location %@", error);
-        }
+    self.handle = [[self.firebase childByAppendingPath:@"location/l/0"] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [self readOneLocation];
     }];
-    [self performSelector:@selector(startRefreshingLocation) withObject:nil afterDelay:5];
 }
 
 - (void)stopRefreshingLocation {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self.firebase removeObserverWithHandle:self.handle];
 }
 
 - (void)removeAllAnnotations {
@@ -118,7 +129,6 @@ MKPointAnnotation *annotation;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     NSLog(@"LOCATION UPDATE");
-    
 }
 
 - (void)checkAlwaysAuthorization {

@@ -65,6 +65,7 @@
                     dat.email = self.emailText.text;
                     dat.password = self.passwordText.text;
                     [dat save];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:nil];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }
             }];

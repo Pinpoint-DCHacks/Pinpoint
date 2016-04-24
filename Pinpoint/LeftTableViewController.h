@@ -10,4 +10,6 @@
 
 @interface LeftTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *titlesArray;
+
 @end

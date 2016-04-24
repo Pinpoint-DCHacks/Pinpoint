@@ -28,6 +28,7 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
     self.usernameTextField.delegate = self;
     [self.usernameTextField becomeFirstResponder];
     self.toastView = [[RSTToastView alloc] initWithMessage:@""];
+    self.toastView.tintColor = [UIColor colorWithRed:(43.0/255.0) green:(65.0/255.0) blue:(98.0/255.0) alpha:1.0f];
     // Do any additional setup after loading the view.
 }
 

@@ -41,6 +41,17 @@
 	<string>Your location is used to help others find where you are</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Your location is used to help others find where you are</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeMarkLocation</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Share Location</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.spenceratkin.sharecurrent</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
