@@ -26,7 +26,6 @@ CGRect bounds;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    NSLog(@"AwakeFromNib");
     self.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContactsNavController"];
     self.leftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftTableViewController"];
     [self setLeftViewEnabledWithWidth:250.f

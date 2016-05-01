@@ -55,13 +55,10 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
         [self.usernameTextField shake:10 withDelta:5];
     }
     else {
-        NSLog(@"Not empty");
         Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
         [ref authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
             [[ref childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                NSLog(@"Observing FEventTypeValue");
                 if ([snapshot.value isKindOfClass:[NSNull class]]) {
-                    NSLog(@"Does not exist");
                     sca_dispatch_sync_on_main_thread(^{
                         if (!self.toastView.isVisible) {
                             self.toastView.message = @"That user doesn't exist";
@@ -74,7 +71,6 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
                     });
                 }
                 else {
-                    NSLog(@"Contact valid");
                     BOOL exists = NO;
                     // Checks is user with this username has already been added.
                     for (NSInteger x = 0; x < [self.contacts count]; x++) {

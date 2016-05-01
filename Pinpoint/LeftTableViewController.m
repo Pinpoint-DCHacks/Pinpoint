@@ -33,7 +33,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    NSLog(@"AwakeFromNib");
     [[UserData sharedInstance] load];
 #warning Doesn't work first time
     if ([UserData sharedInstance].username != nil) {
@@ -53,7 +52,6 @@
                          @"Privacy"];
     }
     [[NSNotificationCenter defaultCenter] addObserverForName:@"loggedIn" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-        NSLog(@"Logged in notif");
         [[UserData sharedInstance] load];
         if ([UserData sharedInstance].username != nil) {
             self.titlesArray = @[[UserData sharedInstance].username,

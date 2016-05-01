@@ -44,7 +44,6 @@
     // Checks if username is used
     FirebaseHandle handle = [[ref childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         // No user exists with this username
-        NSLog(@"snapshot value: %@", snapshot.value);
         if ([snapshot.value isKindOfClass:[NSNull class]]) {
             // Create user based on credentials
             [ref createUser:self.emailText.text password:self.passText.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {

@@ -52,10 +52,8 @@ MKPointAnnotation *annotation;
 }
 
 - (void)readOneLocation {
-    NSLog(@"Reading location");
     [self.firebase authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
         [self.geofire getLocationForKey:@"location" withCallback:^(CLLocation *location, NSError *error) {
-            NSLog(@"Getting location");
             if (error == nil) {
                 NSLog(@"Location successfully retrieved");
                 // Annotation
@@ -100,14 +98,12 @@ MKPointAnnotation *annotation;
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (self.isMovingFromParentViewController) {
-        NSLog(@"Stopping location updates");
         [self stopRefreshingLocation];
     }
 }
 
 - (void)startRefreshingLocation {
-    NSLog(@"Beginning location updates");
-    NSLog(@"%@", self.recipientId);
+    NSLog(@"Recipient: %@", self.recipientId);
     self.handle = [[self.firebase childByAppendingPath:@"location/l/0"] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         [self readOneLocation];
     }];
@@ -127,12 +123,7 @@ MKPointAnnotation *annotation;
     // Removes all annotations from the mapview, excluding user location
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"LOCATION UPDATE");
-}
-
 - (void)checkAlwaysAuthorization {
-    NSLog(@"Checking status");
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {

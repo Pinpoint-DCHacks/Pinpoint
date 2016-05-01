@@ -57,6 +57,9 @@ BOOL updateOnce = false;
     if (!self.contacts) {
         self.contacts = [[NSMutableArray alloc] init];
     }
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
+    }
     /*if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self importContacts];
     }*/
@@ -66,13 +69,54 @@ BOOL updateOnce = false;
         if (note.name != ContactsChangedNotification) {
             return;
         }
-        NSLog(@"Observed contacts change");
         self.contacts = note.object;
         [self.tableView reloadData];
         [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.contacts] forKey:@"contacts"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
     // Do any additional setup after loading the view.
+}
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    MapViewController *mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mapVC"];
+    UITableViewCell *tappedCell = (UITableViewCell *)[self.view hitTest:location withEvent:nil].superview;//(UITableViewCell *)[self visibleViewAtPoint:location];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+    mapVC.recipientId = ((FireUser *)self.contacts[indexPath.row]).uid;
+    mapVC.navigationItem.title = tappedCell.textLabel.text;
+    return mapVC;
+}
+
+- (void) findView:(UIView**)visibleView atPoint:(CGPoint)pt fromParent:(UIView*)parentView {
+    UIView *applicationWindowView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
+    
+    if(parentView == nil) {
+        parentView = applicationWindowView;
+    }
+    
+    for(UIView *view in parentView.subviews)
+    {
+        if((view.superview != nil) && (view.hidden == NO) && (view.alpha > 0))
+        {
+            CGPoint pointInView = [applicationWindowView convertPoint:pt toView:view];
+            
+            if([view pointInside:pointInView withEvent:nil]) {
+                *visibleView = view;
+            }
+            
+            [self findView:visibleView atPoint:pt fromParent:view];
+        }
+    }
+}
+
+- (UIView*) visibleViewAtPoint:(CGPoint)pt {
+    UIView *visibleView = nil;
+    [self findView:&visibleView atPoint:pt fromParent:nil];
+    
+    return visibleView;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
 }
 
 - (void)awakeFromNib {
@@ -156,9 +200,7 @@ completionBlock changeSettingsBlock;
     if (clickedBtnIndex == 1) { // Done button
         NSMutableArray *selectedUsers = [[NSMutableArray alloc] initWithCapacity:[selectedIndexPaths count]];
         for (NSInteger x = 0; x < [selectedIndexPaths count]; x++) {
-            NSLog(@"%@", ((FireUser *)self.contacts[((NSIndexPath *)selectedIndexPaths[x]).row]).username);
             selectedUsers[x] = ((FireUser *)self.contacts[((NSIndexPath *)selectedIndexPaths[x]).row]).uid;
-            NSLog(@"Added");
         }
         [FirebaseHelper updateReadRules:selectedUsers];
         changeSettingsBlock();
@@ -208,7 +250,6 @@ completionBlock changeSettingsBlock;
 }
 
 - (void)checkAlwaysAuthorization {
-    NSLog(@"Checking status");
     CLLocationManager *manager = [[CLLocationManager alloc] init];
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert

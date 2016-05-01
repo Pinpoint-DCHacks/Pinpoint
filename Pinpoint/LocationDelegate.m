@@ -46,7 +46,6 @@
 
 UIBackgroundTaskIdentifier locationBackgroundTask;
 - (void)beginUpdates {
-    NSLog(@"begun");
     [self initializeManager];
     locationBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:locationBackgroundTask];
@@ -57,12 +56,10 @@ UIBackgroundTaskIdentifier locationBackgroundTask;
 }
 
 - (void)timerSent:(NSTimer *)timer {
-    NSLog(@"timer called");
     [self.manager requestLocation];
 }
 
 - (void)endUpdates {
-    NSLog(@"Ending updates");
     [[UIApplication sharedApplication] endBackgroundTask:locationBackgroundTask];
     [self.timer invalidate];
 }
@@ -72,8 +69,6 @@ UIBackgroundTaskIdentifier locationBackgroundTask;
         NSLog(@"Expired");
         self.task = UIBackgroundTaskInvalid;
     }];
-    NSLog(@"uid: %@", [UserData sharedInstance].uid);
-    NSLog(@"username: %@", [UserData sharedInstance].username);
     if ([locations lastObject] != nil) {
         NSLog(@"Location update");
         if ([UserData sharedInstance].uid != nil) {
