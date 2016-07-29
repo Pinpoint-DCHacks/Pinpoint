@@ -65,7 +65,7 @@
     if (section == 0) {
         return 2;
     }
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,7 +86,7 @@
         cell = [[UITableViewCell alloc] init];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         if (indexPath.row == 0) {
-            cell.textLabel.text = @"Choose Default";
+            cell.textLabel.text = @"Choose Default Users";
         }
     }
     return cell;

@@ -39,16 +39,12 @@
         self.titlesArray = @[[UserData sharedInstance].username,
                              @"",
                              @"Contacts",
-                             @"Profile",
-                             @"Groups",
                              @"Privacy"];
     }
     else {
         _titlesArray = @[@"Pinpoint",
                          @"",
                          @"Contacts",
-                         @"Profile",
-                         @"Groups",
                          @"Privacy"];
     }
     [[NSNotificationCenter defaultCenter] addObserverForName:@"loggedIn" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
@@ -57,8 +53,6 @@
             self.titlesArray = @[[UserData sharedInstance].username,
                                  @"",
                                  @"Contacts",
-                                 @"Profile",
-                                 @"Groups",
                                  @"Privacy"];
             [self.tableView reloadData];
         }
@@ -101,10 +95,10 @@
     if (indexPath.row == 2) {
         newView = (UINavigationController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ContactsNavController"];
     }
-    else if (indexPath.row == 4) {
+    /*else if (indexPath.row == 4) {
         newView = (UINavigationController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GroupsNavController"];
-    }
-    else if (indexPath.row == 5) {
+    }*/
+    else if (indexPath.row == /*5*/3) {
         newView = (UINavigationController *)[self.storyboard instantiateViewControllerWithIdentifier:@"PrivacyNavController"];
     }
     
