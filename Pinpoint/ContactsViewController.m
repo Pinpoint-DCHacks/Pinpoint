@@ -28,6 +28,7 @@
 
 @interface ContactsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharingButton;
+@property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) RSTToastView *toastView;
 @end
 
@@ -250,7 +251,7 @@ completionBlock changeSettingsBlock;
 }
 
 - (void)checkAlwaysAuthorization {
-    CLLocationManager *manager = [[CLLocationManager alloc] init];
+    self.manager = [[CLLocationManager alloc] init];
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     // If the status is denied or only granted for when in use, display an alert
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
@@ -270,8 +271,8 @@ completionBlock changeSettingsBlock;
     
     else if (status == kCLAuthorizationStatusNotDetermined) {
         NSLog(@"requesting");
-        if([manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            [manager requestAlwaysAuthorization];
+        if([self.manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [self.manager requestAlwaysAuthorization];
         }
     }
     
