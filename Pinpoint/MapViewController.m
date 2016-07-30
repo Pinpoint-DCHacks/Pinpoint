@@ -10,11 +10,11 @@
 #import "UserData.h"
 #import <Firebase/Firebase.h>
 #import "FirebaseHelper.h"
-#import <GeoFire/GeoFire+Private.h>
+#import "GeoFire+Private.h"
 
 @interface MapViewController ()
 @property (strong, nonatomic) CLLocationManager *manager;
-@property (strong, nonatomic) Firebase *firebase;
+@property (strong, nonatomic) FIRDatabaseReference *firebase;
 @property (strong, nonatomic) GeoFire *geofire;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
@@ -38,7 +38,7 @@ MKPointAnnotation *annotation;
     [self.mapView addAnnotation:annotation];
     self.name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
     self.number = [[NSUserDefaults standardUserDefaults] objectForKey:@"number"];
-    self.firebase = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/locations/%@", kPinpointURL, self.recipientId]];
+    self.firebase = [[[FIRDatabase database] reference] child:[NSString stringWithFormat:@"locations/%@", self.recipientId]];
     self.geofire = [[GeoFire alloc] initWithFirebaseRef:self.firebase];
     
     // Setup bar button item
@@ -52,7 +52,7 @@ MKPointAnnotation *annotation;
 }
 
 - (void)readOneLocation {
-    [self.firebase authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    [FirebaseHelper authWithEmail:[UserData sharedInstance].email password:[UserData sharedInstance].password completion:^(FIRUser *user, NSError *error) {
         [self.geofire getLocationForKey:@"location" withCallback:^(CLLocation *location, NSError *error) {
             if (error == nil) {
                 NSLog(@"Location successfully retrieved");
@@ -104,7 +104,7 @@ MKPointAnnotation *annotation;
 
 - (void)startRefreshingLocation {
     NSLog(@"Recipient: %@", self.recipientId);
-    self.handle = [[self.firebase childByAppendingPath:@"location/l/0"] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    self.handle = [[self.firebase child:@"location/l/0"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
         [self readOneLocation];
     }];
 }

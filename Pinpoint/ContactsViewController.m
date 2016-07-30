@@ -14,7 +14,7 @@
 #import "AddViewController.h"
 #import "SideMenuController.h"
 #import "FireUser.h"
-#import <GeoFire/GeoFire+Private.h>
+#import "GeoFire+Private.h"
 //#import <SDCAlertController.h>
 #import <UITextField+Shake/UITextField+Shake.h>
 #import "KSToastView.h"
@@ -304,12 +304,9 @@ completionBlock changeSettingsBlock;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:nil];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         [kSideMenuController performSegueWithIdentifier:@"ShowLoginSegue" sender:self];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else {
-        Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
-        [ref authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
+        [FirebaseHelper authWithEmail:[UserData sharedInstance].email password:[UserData sharedInstance].password completion:^(FIRUser *user, NSError *error) {
             if (error) {
                 NSLog(@"Error logging in: %@", error);
                 if (error.code == -15) {

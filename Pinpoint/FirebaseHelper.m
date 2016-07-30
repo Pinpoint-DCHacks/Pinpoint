@@ -7,8 +7,9 @@
 //
 
 #import "FirebaseHelper.h"
-#import <GeoFire/GeoFire.h>
+#import "GeoFire.h"
 #import "UserData.h"
+#import <FirebaseAuth/FirebaseAuth.h>
 
 @interface FirebaseHelper ()
 @end
@@ -16,9 +17,9 @@
 @implementation FirebaseHelper
 
 + (void)updateLocation:(CLLocation *)location {
-    Firebase *ref = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/locations/%@", kPinpointURL, [UserData sharedInstance].uid]];
+    FIRDatabaseReference *ref = [[[FIRDatabase database] reference] child:[NSString stringWithFormat:@"locations/%@", [UserData sharedInstance].uid]];
     GeoFire *geofire = [[GeoFire alloc] initWithFirebaseRef:ref];
-    [ref authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    [FirebaseHelper authWithEmail:[UserData sharedInstance].email password:[UserData sharedInstance].password completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error logging in");
         }
@@ -36,13 +37,13 @@
 }
 
 + (void)updateReadRules:(NSArray *)canView {
-    Firebase *ref = [[Firebase alloc] initWithUrl: [NSString stringWithFormat:@"%@/locations", kPinpointURL]];
+    FIRDatabaseReference *ref = [[[FIRDatabase database] reference] child:@"locations"];
     NSMutableDictionary *users = [[NSMutableDictionary alloc] initWithCapacity:[canView count]];
     for (NSInteger x = 0; x < [canView count]; x++) {
         users[canView[x]] = @"true";
     }
     NSLog(@"users: %@", users);
-    [ref authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    [FirebaseHelper authWithEmail:[UserData sharedInstance].email password:[UserData sharedInstance].password completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error logging in: %@", error);
             if (error.code == -15) {
@@ -51,7 +52,7 @@
         }
         else {
             NSLog(@"Logged in %@ successfully", [UserData sharedInstance].email);
-            [[ref childByAppendingPath:[NSString stringWithFormat:@"%@/authUsers", [UserData sharedInstance].uid]] setValue:users withCompletionBlock:^(NSError *error, Firebase *ref) {
+            [[ref child:[NSString stringWithFormat:@"%@/authUsers", [UserData sharedInstance].uid]] setValue:users withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
                 if (error) {
                     NSLog(@"Error updating read rules");
                 }
@@ -63,6 +64,20 @@
     }];
 }
 
++ (void)authWithEmail:(NSString *)email password:(NSString *)password completion:(FirebaseHelperCompletion)completion {
+    FIRAuthStateDidChangeListenerHandle handle = [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
+        if (user) {
+            NSLog(@"Already logged in with uid: %@", user.uid);
+            completion(user, nil);
+        } else {
+            NSLog(@"Logging in");
+            [[FIRAuth auth] signInWithEmail:email password:password completion:completion];
+        }
+    }];
+    [[FIRAuth auth] removeAuthStateDidChangeListener:handle];
+}
+
+/*
 + (NSString *)firebaseURL {
     static dispatch_once_t p = 0;
     static NSString *url = nil;
@@ -72,5 +87,6 @@
     });
     return url;
 }
+*/
 
 @end

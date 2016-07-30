@@ -1,16 +1,50 @@
 PODS:
-  - Firebase (2.4.2)
-  - GeoFire (1.1.2):
-    - Firebase (~> 2.2)
-  - LGSideMenuController (1.0.8)
-  - Onboard (2.1.7)
+  - Firebase (3.3.0):
+    - Firebase/Core (= 3.3.0)
+  - Firebase/Analytics (3.3.0):
+    - FirebaseAnalytics (= 3.2.1)
+  - Firebase/Auth (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseAuth (= 3.0.3)
+  - Firebase/Core (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+  - Firebase/Database (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseDatabase (= 3.0.2)
+  - FirebaseAnalytics (3.2.1):
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.3)
+  - FirebaseAuth (3.0.3):
+    - FirebaseAnalytics (~> 3.2)
+    - GoogleNetworkingUtilities (~> 1.2)
+    - GoogleParsingUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.3)
+  - FirebaseDatabase (3.0.2):
+    - FirebaseAnalytics (~> 3.2)
+  - FirebaseInstanceID (1.0.7)
+  - GoogleInterchangeUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleNetworkingUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleParsingUtilities (1.1.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.1.1)
+  - GoogleUtilities (1.3.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - LGSideMenuController (1.0.10)
+  - Onboard (2.2.1)
   - SHMultipleSelect (0.2.2)
-  - UAObfuscatedString (0.3.1)
+  - UAObfuscatedString (0.3.2)
   - UITextField+Shake (1.1.2)
 
 DEPENDENCIES:
-  - Firebase (~> 2.4.0)
-  - GeoFire
+  - Firebase
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Database
   - LGSideMenuController
   - Onboard
   - SHMultipleSelect
@@ -18,12 +52,20 @@ DEPENDENCIES:
   - UITextField+Shake
 
 SPEC CHECKSUMS:
-  Firebase: 5e898ed5012c81d28ca5fae1113c6b61a172bc6d
-  GeoFire: 03db4e390a4cf3ff97422f19eb71ab1aa7d947dd
-  LGSideMenuController: 4c788e216647791d0de34f04a9b741862e835eaa
-  Onboard: 87648089e1b76d13b4f5bf8f7a1cdb144092f0af
+  Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
+  FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
+  FirebaseAuth: 5efddc3fae47042b73585f083f956462be4f5b8e
+  FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
+  FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
+  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
+  GoogleParsingUtilities: 30b3896f9ee167dc78747f013d3de157ced1cadf
+  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
+  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  LGSideMenuController: 8682bdbd0008c1acfbce95eaf96cc3657bca5f95
+  Onboard: 75731d0b265f5b5bab0b4bceff1778d7f6e839af
   SHMultipleSelect: 751491f4de21614622c198a760a88272cab62bf3
-  UAObfuscatedString: 292d08bb5423474b92238a40ea40269ee4e8d4b3
+  UAObfuscatedString: 128d0df4876ad570ef07c7851e27e094c6e080a9
   UITextField+Shake: 47cc0429dafb3da580686339ad2da091249a8ea2
 
 COCOAPODS: 0.39.0

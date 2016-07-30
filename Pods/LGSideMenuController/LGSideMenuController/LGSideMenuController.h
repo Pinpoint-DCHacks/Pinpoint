@@ -227,6 +227,9 @@ typedef NS_ENUM(NSUInteger, LGSideMenuSwipeGestureArea)
 /** Default is 0.5 */
 @property (assign, nonatomic) IBInspectable NSTimeInterval rightViewAnimationSpeed;
 
+@property (assign, nonatomic) IBInspectable BOOL shouldShowLeftView;
+@property (assign, nonatomic) IBInspectable BOOL shouldShowRightView;
+
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 
 - (UIView *)leftView;

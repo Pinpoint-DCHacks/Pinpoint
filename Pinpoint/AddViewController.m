@@ -14,6 +14,7 @@
 #import "SCAHelper.h"
 #import "FirebaseHelper.h"
 #import <UITextField+Shake/UITextField+Shake.h>
+#import <FirebaseAuth/FirebaseAuth.h>
 
 @interface AddViewController ()
 @property (strong, nonatomic) RSTToastView *toastView;
@@ -55,9 +56,9 @@ NSString *const ContactsChangedNotification = @"ContactsChangedNotification";
         [self.usernameTextField shake:10 withDelta:5];
     }
     else {
-        Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
-        [ref authUser:[UserData sharedInstance].email password:[UserData sharedInstance].password withCompletionBlock:^(NSError *error, FAuthData *authData) {
-            [[ref childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+        [FirebaseHelper authWithEmail:[UserData sharedInstance].email password:[UserData sharedInstance].password completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+            [[ref child:[NSString stringWithFormat:@"usernames/%@", self.usernameTextField.text]] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
                 if ([snapshot.value isKindOfClass:[NSNull class]]) {
                     sca_dispatch_sync_on_main_thread(^{
                         if (!self.toastView.isVisible) {

@@ -11,6 +11,7 @@
 #import "RMPhoneFormat.h"
 #import "FirebaseHelper.h"
 #import <Firebase/Firebase.h>
+#import <FirebaseAuth/FirebaseAuth.h>
 
 //#define kPinpointURL @"pinpoint.firebaseio.com"
 
@@ -40,26 +41,27 @@
 - (IBAction)didTapRegister:(id)sender {
     __block UserData *data = [UserData sharedInstance];
     
-    Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
+    FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+    FIRAuth *auth = [FIRAuth auth];
     // Checks if username is used
-    FirebaseHandle handle = [[ref childByAppendingPath:[NSString stringWithFormat:@"usernames/%@", data.username]] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    FIRDatabaseHandle handle = [[ref child:[NSString stringWithFormat:@"usernames/%@", data.username]] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
         // No user exists with this username
         if ([snapshot.value isKindOfClass:[NSNull class]]) {
             // Create user based on credentials
-            [ref createUser:self.emailText.text password:self.passText.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
+            [auth createUserWithEmail:self.emailText.text password:self.passText.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
                 if (error) {
                     NSLog(@"Error creating user: %@", error);
                 }
                 else {
-                    [ref authUser:self.emailText.text password:self.passText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
+                    [FirebaseHelper authWithEmail:self.emailText.text password:self.passText.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
                         if (error) {
                             NSLog(@"Error logging in %@", error);
                         }
                         else {
                             NSLog(@"Sucessfully logged in");
-                            data.uid = authData.uid;
+                            data.uid = user.uid;
                             [data save];
-                            [[ref childByAppendingPath:@"uids"] updateChildValues:@{authData.uid: self.usernameText.text} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                            [[ref child:@"uids"] updateChildValues:@{user.uid: self.usernameText.text} withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
                                 if (error) {
                                     NSLog(@"Error writing uid %@", error);
                                 }
@@ -68,7 +70,7 @@
                                     NSLog(@"Username: %@", data.username);
                                 }
                             }];
-                            [[ref childByAppendingPath:@"usernames"] updateChildValues:@{self.usernameText.text: authData.uid} withCompletionBlock:^(NSError *error, Firebase *ref) {
+                            [[ref child:@"usernames"] updateChildValues:@{self.usernameText.text: user.uid} withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
                                 if (error) {
                                     NSLog(@"Error writing username: %@", error);
                                 }
@@ -82,6 +84,8 @@
                             data.email = self.emailText.text;
                             data.password = self.passText.text;
                             [data save];
+                            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+                            [[NSUserDefaults standardUserDefaults] synchronize];
                             [self dismissViewControllerAnimated:YES completion:nil];
                         }
                     }];

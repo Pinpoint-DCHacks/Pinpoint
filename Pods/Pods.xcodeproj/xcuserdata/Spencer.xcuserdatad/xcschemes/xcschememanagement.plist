@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Firebase.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>GeoFire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>LGSideMenuController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,22 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>24DC89F6E8E34C854493BDB5C83C9F34</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4667762DEB06C713C0E451B304DAEF27</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>49DC47F633D546707AA55EF818D72645</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>569735B422E0E4CEEFC5C6955AFDE3A5</key>
+		<key>55A7373FB46FFCAEAD048B5B637A4807</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>814CA21394BA8FE158C28183DD7FC9F6</key>
+		<key>9232BF6053AD3CF822834B0BDAFEB28D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>890B13C06620508566BE1BAD732D6985</key>
+		<key>B048A21A33909AAB41108E58B6A45323</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC6237B7CD60C3EC063C89376BC880B3</key>
+		<key>B45BE39EC064EE40552372763D9FF5A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E400D19838E98B6712E8A5758B117570</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "UserData.h"
 #import "LocationDelegate.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [FIRApp configure];
     // First time init of NSUserDefaults values
     BOOL opened = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasOpenedAppOnce"];
     if (opened == NO) {

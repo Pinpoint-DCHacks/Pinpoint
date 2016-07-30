@@ -11,6 +11,7 @@
 #import "UserData.h"
 #import "FirebaseHelper.h"
 #import <Firebase/Firebase.h>
+#import <FirebaseAuth/FirebaseAuth.h>
 
 @interface LoginViewController ()
 
@@ -30,8 +31,8 @@
 
 - (IBAction)didTapLogin:(id)sender {
     NSLog(@"Logging in %@", self.emailText.text);
-    Firebase *ref = [[Firebase alloc] initWithUrl:kPinpointURL];
-    [ref authUser:self.emailText.text password:self.passwordText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+    [FirebaseHelper authWithEmail:self.emailText.text password:self.passwordText.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error logging in: %@", error);
             NSString *title = @"Error logging in";
@@ -52,9 +53,9 @@
         }
         else {
             __block UserData *dat = [UserData sharedInstance];
-            dat.uid = authData.uid;
-            NSLog(@"UID: %@", authData.uid);
-            [[ref childByAppendingPath:[NSString stringWithFormat:@"uids/%@", dat.uid]] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            dat.uid = user.uid;
+            NSLog(@"UID: %@", user.uid);
+            [[ref child:[NSString stringWithFormat:@"uids/%@", dat.uid]] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
                 if (error) {
                     NSLog(@"Error getting username: %@", error);
                 }
@@ -66,6 +67,8 @@
                     dat.password = self.passwordText.text;
                     [dat save];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:nil];
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }
             }];

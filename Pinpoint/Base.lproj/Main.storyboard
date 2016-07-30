@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hsI-vE-i0u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hsI-vE-i0u">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -39,13 +39,12 @@
                                     <constraint firstAttribute="height" constant="21" id="7Th-Ut-o8L"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89b-Sn-W05">
-                                <rect key="frame" x="133" y="234" width="57" height="30"/>
+                                <rect key="frame" x="272" y="234" width="57" height="30"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.33333333329999998" green="0.26274509800000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -53,20 +52,21 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098039220000001" green="0.43921568630000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="89b-Sn-W05" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="133" id="5rz-xh-iBl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fc5-UN-WQ2" secondAttribute="trailing" constant="74" id="4Fs-nf-CVg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ApO-PM-XcN" secondAttribute="trailing" constant="74" id="5cg-iw-JNU"/>
                             <constraint firstItem="b0F-aE-FeW" firstAttribute="top" secondItem="ApO-PM-XcN" secondAttribute="bottom" constant="8" symbolic="YES" id="6d5-1a-b7S"/>
                             <constraint firstItem="ApO-PM-XcN" firstAttribute="leading" secondItem="b0F-aE-FeW" secondAttribute="leading" id="CfO-mM-5Rk"/>
                             <constraint firstItem="b0F-aE-FeW" firstAttribute="leading" secondItem="fc5-UN-WQ2" secondAttribute="leading" id="GtY-Ee-C2i"/>
-                            <constraint firstItem="b0F-aE-FeW" firstAttribute="trailing" secondItem="fc5-UN-WQ2" secondAttribute="trailing" id="Jzw-I2-cEN"/>
+                            <constraint firstItem="89b-Sn-W05" firstAttribute="centerX" secondItem="fc5-UN-WQ2" secondAttribute="centerX" id="Kea-Ev-efm"/>
                             <constraint firstItem="fc5-UN-WQ2" firstAttribute="top" secondItem="b0F-aE-FeW" secondAttribute="bottom" constant="8" symbolic="YES" id="LcO-4W-cit"/>
                             <constraint firstItem="jS6-ce-uED" firstAttribute="top" secondItem="kYl-TN-6nE" secondAttribute="bottom" constant="45" id="P9y-VK-hDP"/>
                             <constraint firstItem="jS6-ce-uED" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="PC8-Fp-WSW"/>
                             <constraint firstItem="jS6-ce-uED" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Qqd-ri-tj1"/>
                             <constraint firstItem="ApO-PM-XcN" firstAttribute="top" secondItem="jS6-ce-uED" secondAttribute="bottom" constant="34" id="WB8-09-Kau"/>
                             <constraint firstItem="89b-Sn-W05" firstAttribute="top" secondItem="fc5-UN-WQ2" secondAttribute="bottom" constant="8" symbolic="YES" id="cRg-pZ-n3f"/>
-                            <constraint firstItem="ApO-PM-XcN" firstAttribute="trailing" secondItem="b0F-aE-FeW" secondAttribute="trailing" id="iDe-og-Rxs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b0F-aE-FeW" secondAttribute="trailing" constant="74" id="dUm-bu-mPS"/>
                             <constraint firstItem="jS6-ce-uED" firstAttribute="centerX" secondItem="ApO-PM-XcN" secondAttribute="centerX" id="rgr-lR-Ugc"/>
                             <constraint firstItem="ApO-PM-XcN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="74" id="tbZ-j3-1MC"/>
                         </constraints>
@@ -100,7 +100,7 @@
                                     <constraint firstAttribute="height" constant="21" id="ihn-SN-bRS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bht-WS-fuJ">
@@ -119,7 +119,6 @@
                                     <constraint firstAttribute="width" constant="43" id="jFI-S1-pUI"/>
                                 </constraints>
                                 <state key="normal" title="Log in">
-                                    <color key="titleColor" red="0.33333333333333331" green="0.2627450980392157" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -129,7 +128,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-Zk-3nN">
                                 <rect key="frame" x="247" y="234" width="107" height="30"/>
                                 <state key="normal" title="Create Account">
-                                    <color key="titleColor" red="0.33333333329999998" green="0.26274509800000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -137,20 +135,21 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098039220000001" green="0.43921568630000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12941176470588237" green="0.19215686274509805" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ObG-xQ-BZL" firstAttribute="leading" secondItem="3tW-Wr-mcO" secondAttribute="leadingMargin" id="5ml-RQ-KIM"/>
                             <constraint firstItem="18W-d9-JJw" firstAttribute="centerX" secondItem="8fS-Zk-3nN" secondAttribute="centerX" id="7zL-BQ-VPd"/>
                             <constraint firstItem="6bE-Qf-KIu" firstAttribute="leading" secondItem="bht-WS-fuJ" secondAttribute="leading" id="8oi-B8-SZP"/>
                             <constraint firstItem="bht-WS-fuJ" firstAttribute="top" secondItem="6bE-Qf-KIu" secondAttribute="bottom" constant="8" symbolic="YES" id="Acz-4U-CQe"/>
-                            <constraint firstItem="6bE-Qf-KIu" firstAttribute="trailing" secondItem="bht-WS-fuJ" secondAttribute="trailing" id="CIa-Hn-GFz"/>
                             <constraint firstItem="8fS-Zk-3nN" firstAttribute="top" secondItem="18W-d9-JJw" secondAttribute="bottom" constant="8" symbolic="YES" id="JCo-6k-RPu"/>
                             <constraint firstItem="ObG-xQ-BZL" firstAttribute="centerX" secondItem="6bE-Qf-KIu" secondAttribute="centerX" id="RMi-IJ-t3d"/>
                             <constraint firstItem="bht-WS-fuJ" firstAttribute="centerX" secondItem="18W-d9-JJw" secondAttribute="centerX" id="SFW-mh-tis"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6bE-Qf-KIu" secondAttribute="trailing" constant="74" id="UbT-62-Oeb"/>
                             <constraint firstItem="18W-d9-JJw" firstAttribute="top" secondItem="bht-WS-fuJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Z8D-aM-2e9"/>
                             <constraint firstItem="6bE-Qf-KIu" firstAttribute="top" secondItem="ObG-xQ-BZL" secondAttribute="bottom" constant="34" id="ZdY-Mo-U2l"/>
                             <constraint firstItem="ObG-xQ-BZL" firstAttribute="trailing" secondItem="3tW-Wr-mcO" secondAttribute="trailingMargin" id="god-mU-G4e"/>
                             <constraint firstItem="6bE-Qf-KIu" firstAttribute="leading" secondItem="3tW-Wr-mcO" secondAttribute="leadingMargin" constant="74" id="jOQ-5Y-eXz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bht-WS-fuJ" secondAttribute="trailing" constant="74" id="tjg-et-Qnp"/>
                             <constraint firstItem="ObG-xQ-BZL" firstAttribute="top" secondItem="OhZ-Kf-yGq" secondAttribute="bottom" constant="45" id="ulN-Ut-rEU"/>
                         </constraints>
                     </view>

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '67C87F622C8B7725F0A38979'
+               BlueprintIdentifier = '35A6DAE4739972A57487A19A'
                BlueprintName = 'UAObfuscatedString'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libUAObfuscatedString.a'>

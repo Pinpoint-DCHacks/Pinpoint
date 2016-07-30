@@ -32,6 +32,7 @@
 #define kLGSideMenuStatusBarOrientationIsPortrait   UIInterfaceOrientationIsPortrait(UIApplication.sharedApplication.statusBarOrientation)
 #define kLGSideMenuStatusBarOrientationIsLandscape  UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation)
 #define kLGSideMenuStatusBarHidden                  UIApplication.sharedApplication.statusBarHidden
+#define kLGSideMenuStatusBarStyle                   UIApplication.sharedApplication.statusBarStyle
 #define kLGSideMenuDeviceIsPad                      (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define kLGSideMenuDeviceIsPhone                    (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define kLGSideMenuSystemVersion                    UIDevice.currentDevice.systemVersion.floatValue
@@ -143,6 +144,8 @@
 @property (strong, nonatomic) UIView *rightViewStyleView;
 
 @property (assign, nonatomic) BOOL savedStatusBarHidden;
+@property (assign, nonatomic) UIStatusBarStyle savedStatusBarStyle;
+@property (assign, nonatomic, getter=isWaitingForUpdateStatusBar) BOOL waitingForUpdateStatusBar;
 
 @property (assign, nonatomic) BOOL currentShouldAutorotate;
 @property (assign, nonatomic) BOOL currentPreferredStatusBarHidden;
@@ -240,6 +243,11 @@
 - (void)setupDefaults
 {
     self.view.clipsToBounds = YES;
+
+    // -----
+
+    _shouldShowLeftView = YES;
+    _shouldShowRightView = YES;
 
     // -----
 
@@ -350,13 +358,24 @@
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
 {
-    return (kLGSideMenuIsMenuShowing ? _currentPreferredStatusBarUpdateAnimation : (_rootVC ? _rootVC.preferredStatusBarUpdateAnimation : UIStatusBarAnimationNone));
+    UIStatusBarAnimation animation = UIStatusBarAnimationNone;
+
+    if (self.isWaitingForUpdateStatusBar)
+    {
+        _waitingForUpdateStatusBar = NO;
+
+        animation = _currentPreferredStatusBarUpdateAnimation;
+    }
+    else if (_rootVC)
+        animation = _rootVC.preferredStatusBarUpdateAnimation;
+
+    return animation;
 }
 
 - (void)statusBarAppearanceUpdate
 {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0
-    if (kLGSideMenuSystemVersion < 9.0)
+    if (![[[NSBundle mainBundle] objectForInfoDictionaryKey:@"UIViewControllerBasedStatusBarAppearance"] boolValue])
     {
         [[UIApplication sharedApplication] setStatusBarHidden:_currentPreferredStatusBarHidden withAnimation:_currentPreferredStatusBarUpdateAnimation];
         [[UIApplication sharedApplication] setStatusBarStyle:_currentPreferredStatusBarStyle animated:_currentPreferredStatusBarUpdateAnimation];
@@ -1293,12 +1312,17 @@
 
     if (kLGSideMenuSystemVersion >= 7.0)
     {
+        _savedStatusBarHidden = kLGSideMenuStatusBarHidden;
+        _savedStatusBarStyle = kLGSideMenuStatusBarStyle;
+
         [_rootVC removeFromParentViewController];
 
         _currentShouldAutorotate = NO;
         _currentPreferredStatusBarHidden = (kLGSideMenuStatusBarHidden || !kLGSideMenuIsLeftViewStatusBarVisible);
         _currentPreferredStatusBarStyle = _leftViewStatusBarStyle;
         _currentPreferredStatusBarUpdateAnimation = _leftViewStatusBarUpdateAnimation;
+
+        _waitingForUpdateStatusBar = YES;
 
         [self statusBarAppearanceUpdate];
         [self setNeedsStatusBarAppearanceUpdate];
@@ -1315,7 +1339,7 @@
 
 - (void)showLeftViewAnimated:(BOOL)animated completionHandler:(void(^)())completionHandler
 {
-    if (!kLGSideMenuIsLeftViewAlwaysVisible && !self.isLeftViewShowing &&
+    if (!kLGSideMenuIsLeftViewAlwaysVisible && !self.isLeftViewShowing && self.shouldShowLeftView &&
         !(kLGSideMenuIsRightViewAlwaysVisible && _leftViewPresentationStyle != LGSideMenuPresentationStyleSlideAbove))
     {
         [self showLeftViewPrepare];
@@ -1393,10 +1417,10 @@
     {
         [self rootViewLayoutInvalidateWithPercentage:0.f];
         [self leftViewLayoutInvalidateWithPercentage:0.f];
+        [self hideLeftViewDone];
 
         _leftViewShowing = NO;
 
-        [self hideLeftViewDone];
         [self hiddensInvalidate];
 
         [[NSNotificationCenter defaultCenter] postNotificationName:kLGSideMenuControllerDidDismissLeftViewNotification object:self userInfo:nil];
@@ -1410,6 +1434,11 @@
     if (kLGSideMenuSystemVersion >= 7.0)
     {
         [self addChildViewController:_rootVC];
+
+        _currentPreferredStatusBarHidden = _savedStatusBarHidden;
+        _currentPreferredStatusBarStyle = _savedStatusBarStyle;
+
+        _waitingForUpdateStatusBar = YES;
 
         [self statusBarAppearanceUpdate];
         [self setNeedsStatusBarAppearanceUpdate];
@@ -1451,12 +1480,17 @@
 
     if (kLGSideMenuSystemVersion >= 7.0)
     {
+        _savedStatusBarHidden = kLGSideMenuStatusBarHidden;
+        _savedStatusBarStyle = kLGSideMenuStatusBarStyle;
+
         [_rootVC removeFromParentViewController];
 
         _currentShouldAutorotate = NO;
         _currentPreferredStatusBarHidden = (kLGSideMenuStatusBarHidden || !kLGSideMenuIsRightViewStatusBarVisible);
         _currentPreferredStatusBarStyle = _rightViewStatusBarStyle;
         _currentPreferredStatusBarUpdateAnimation = _rightViewStatusBarUpdateAnimation;
+
+        _waitingForUpdateStatusBar = YES;
 
         [self statusBarAppearanceUpdate];
         [self setNeedsStatusBarAppearanceUpdate];
@@ -1473,7 +1507,7 @@
 
 - (void)showRightViewAnimated:(BOOL)animated completionHandler:(void(^)())completionHandler
 {
-    if (!kLGSideMenuIsRightViewAlwaysVisible && !self.isRightViewShowing &&
+    if (!kLGSideMenuIsRightViewAlwaysVisible && !self.isRightViewShowing && self.shouldShowRightView &&
         !(kLGSideMenuIsLeftViewAlwaysVisible && _rightViewPresentationStyle != LGSideMenuPresentationStyleSlideAbove))
     {
         [self showRightViewPrepare];
@@ -1551,10 +1585,10 @@
     {
         [self rootViewLayoutInvalidateWithPercentage:0.f];
         [self rightViewLayoutInvalidateWithPercentage:0.f];
+        [self hideRightViewDone];
 
         _rightViewShowing = NO;
 
-        [self hideRightViewDone];
         [self hiddensInvalidate];
 
         [[NSNotificationCenter defaultCenter] postNotificationName:kLGSideMenuControllerDidDismissRightViewNotification object:self userInfo:nil];
@@ -1568,6 +1602,11 @@
     if (kLGSideMenuSystemVersion >= 7.0)
     {
         [self addChildViewController:_rootVC];
+
+        _currentPreferredStatusBarHidden = _savedStatusBarHidden;
+        _currentPreferredStatusBarStyle = _savedStatusBarStyle;
+
+        _waitingForUpdateStatusBar = YES;
 
         [self statusBarAppearanceUpdate];
         [self setNeedsStatusBarAppearanceUpdate];
@@ -1624,7 +1663,7 @@
 
     // -----
 
-    if (_leftView && self.isLeftViewSwipeGestureEnabled && !kLGSideMenuIsLeftViewAlwaysVisible && !_rightViewGestireStartX && !self.isRightViewShowing)
+    if (_leftView && self.isLeftViewSwipeGestureEnabled && !kLGSideMenuIsLeftViewAlwaysVisible && !_rightViewGestireStartX && !self.isRightViewShowing && self.shouldShowLeftView)
     {
         if (!_leftViewGestireStartX && (gestureRecognizer.state == UIGestureRecognizerStateBegan || gestureRecognizer.state == UIGestureRecognizerStateChanged))
         {
@@ -1677,7 +1716,7 @@
 
     // -----
 
-    if (_rightView && self.isRightViewSwipeGestureEnabled && !kLGSideMenuIsRightViewAlwaysVisible && !_leftViewGestireStartX && !self.isLeftViewShowing)
+    if (_rightView && self.isRightViewSwipeGestureEnabled && !kLGSideMenuIsRightViewAlwaysVisible && !_leftViewGestireStartX && !self.isLeftViewShowing && self.shouldShowRightView)
     {
         if (!_rightViewGestireStartX && (gestureRecognizer.state == UIGestureRecognizerStateBegan || gestureRecognizer.state == UIGestureRecognizerStateChanged))
         {

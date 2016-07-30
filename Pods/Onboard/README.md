@@ -1,6 +1,7 @@
 #Onboard
 
 [![Build Status](https://travis-ci.org/mamaral/Onboard.svg?branch=master)](https://travis-ci.org/mamaral/Onboard)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 ![Badge w/ Version](https://img.shields.io/cocoapods/v/Onboard.svg)
 
@@ -57,13 +58,13 @@ OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBa
 ####Swift
 ```swift
 // Image
-OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage:[UIImage imageNamed:@"background"] contents:@[firstPage, secondPage, thirdPage]];
+let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "background"), contents: [firstPage, secondPage, thirdPage])
 
 // Video
 let bundle = NSBundle.mainBundle()
 let moviePath = bundle.pathForResource("yourVid", ofType: "mp4")
 let movieURL = NSURL(fileURLWithPath: moviePath!)
-    
+
 let onboardingVC = OnboardingViewController(backgroundVideoURL: movieUrl, contents: [firstPage, secondPage, thirdPage])
 ```
 
@@ -74,13 +75,9 @@ With only a few lines of code you have a beautiful, end-to-end onboarding proces
 Customization
 =============
 
-The content pages can be customized by setting the provided padding, font, and size properties on either the pages individually (if you want something different on each) or on the OnboardingViewController itself, which will pass those properties to all of the content view controllers.
+The `iconImageView`, `titleLabel`, `bodyLabel`, and `actionButton` properties are exposed for customizing fonts, sizing, etc., and the spacing between elements on the content pages can be customized as well:
 
 ```objective-c
-OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage contents:yourContentsArray];
-onboardingVC.fontName = @"Helvetica-Light";
-onboardingVC.titleFontSize = 28;
-onboardingVC.bodyFontSize = 22;
 onboardingVC.topPadding = 20;
 onboardingVC.underIconPadding = 10;
 onboardingVC.underTitlePadding = 15;

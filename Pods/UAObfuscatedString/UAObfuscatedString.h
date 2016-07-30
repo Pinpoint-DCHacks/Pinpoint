@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 #ifndef Obfuscate
-    #define Obfuscate NSMutableString.new
+    #define Obfuscate NSMutableString.string
 #else
     #error Obfuscate macro already defined, please rename your macro.
 #endif
@@ -50,7 +50,10 @@
 - (instancetype)F;
 - (instancetype)G;
 - (instancetype)H;
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 - (instancetype)I;
+#endif
+- (instancetype)_I;
 - (instancetype)J;
 - (instancetype)K;
 - (instancetype)L;
@@ -101,6 +104,7 @@
 - (instancetype)pound;
 - (instancetype)at;
 - (instancetype)exclamation;
+- (instancetype)question_mark;
 - (instancetype)back_slash;
 - (instancetype)forward_slash;
 - (instancetype)curly_left;

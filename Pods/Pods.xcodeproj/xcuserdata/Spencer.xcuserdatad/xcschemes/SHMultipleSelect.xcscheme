@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '18ED433FC5DA45936AF023A7'
+               BlueprintIdentifier = 'B2F974C84E706D071D23F079'
                BlueprintName = 'SHMultipleSelect'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSHMultipleSelect.a'>

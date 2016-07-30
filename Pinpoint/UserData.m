@@ -20,12 +20,12 @@
     return _sharedObject;
 }
 
-+ (Firebase *)sharedRef {
++ (FIRDatabaseReference *)sharedRef {
     static dispatch_once_t o = 0;
-    static Firebase *_sharedRef = nil;
+    static FIRDatabaseReference *_sharedRef = nil;
     
     dispatch_once(&o, ^{
-        _sharedRef = [[Firebase alloc] initWithUrl: @"pinpoint.firebaseio.com"];
+        _sharedRef = [[FIRDatabase database] reference];
     });
     return _sharedRef;
 }

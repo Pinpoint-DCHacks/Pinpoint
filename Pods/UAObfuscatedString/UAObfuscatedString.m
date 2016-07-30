@@ -46,7 +46,10 @@
 - (instancetype)F { [self appendString:@"F"]; return self; }
 - (instancetype)G { [self appendString:@"G"]; return self; }
 - (instancetype)H { [self appendString:@"H"]; return self; }
-- (instancetype)I { [self appendString:@"I"]; return self; }
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
+- (instancetype)I { return [self _I]; }
+#endif
+- (instancetype)_I { [self appendString:@"I"]; return self; }
 - (instancetype)J { [self appendString:@"J"]; return self; }
 - (instancetype)K { [self appendString:@"K"]; return self; }
 - (instancetype)L { [self appendString:@"L"]; return self; }
@@ -98,6 +101,7 @@
 - (instancetype)pound         { [self appendString:@"#"];  return self; }
 - (instancetype)at            { [self appendString:@"@"];  return self; }
 - (instancetype)exclamation   { [self appendString:@"!"];  return self; }
+- (instancetype)question_mark { [self appendString:@"?"];  return self; }
 - (instancetype)back_slash    { [self appendString:@"\\"]; return self; }
 - (instancetype)forward_slash { [self appendString:@"/"];  return self; }
 - (instancetype)curly_left    { [self appendString:@"{"];  return self; }

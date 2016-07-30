@@ -32,6 +32,12 @@
 		09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ADFE121B7E744400F25D8E /* LeftTableViewController.m */; };
 		09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D441B8609310005AB97 /* PrivacyViewController.m */; };
 		09CD5D481B860C430005AB97 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CD5D471B860C430005AB97 /* GroupsViewController.m */; };
+		09E2F9B61D4BE8C200EBF1B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09E2F9B51D4BE8C200EBF1B9 /* GoogleService-Info.plist */; };
+		09E2F9D21D4BEF5A00EBF1B9 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E2F9C81D4BEF5A00EBF1B9 /* GeoFire.m */; };
+		09E2F9D31D4BEF5A00EBF1B9 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E2F9CB1D4BEF5A00EBF1B9 /* GFBase32Utils.m */; };
+		09E2F9D41D4BEF5A00EBF1B9 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E2F9CD1D4BEF5A00EBF1B9 /* GFGeoHash.m */; };
+		09E2F9D51D4BEF5A00EBF1B9 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E2F9CF1D4BEF5A00EBF1B9 /* GFGeoHashQuery.m */; };
+		09E2F9D61D4BEF5A00EBF1B9 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E2F9D01D4BEF5A00EBF1B9 /* GFQuery.m */; };
 		09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F4DCBE1B7EAF420069139F /* LeftViewCell.m */; };
 		FB0AEC919B7F6E5A8719359E /* libPods-Pinpoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B0B2CF80F85907F3200E50 /* libPods-Pinpoint.a */; };
 /* End PBXBuildFile section */
@@ -107,6 +113,22 @@
 		09CD5D441B8609310005AB97 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
 		09CD5D461B860C430005AB97 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
 		09CD5D471B860C430005AB97 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
+		09E2F9B51D4BE8C200EBF1B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09E2F9B81D4BEE0900EBF1B9 /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		09E2F9C21D4BEF3E00EBF1B9 /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		09E2F9C31D4BEF3E00EBF1B9 /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		09E2F9C41D4BEF3E00EBF1B9 /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		09E2F9C51D4BEF3E00EBF1B9 /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		09E2F9C81D4BEF5A00EBF1B9 /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		09E2F9C91D4BEF5A00EBF1B9 /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		09E2F9CA1D4BEF5A00EBF1B9 /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		09E2F9CB1D4BEF5A00EBF1B9 /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		09E2F9CC1D4BEF5A00EBF1B9 /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		09E2F9CD1D4BEF5A00EBF1B9 /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		09E2F9CE1D4BEF5A00EBF1B9 /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		09E2F9CF1D4BEF5A00EBF1B9 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		09E2F9D01D4BEF5A00EBF1B9 /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		09E2F9D11D4BEF5A00EBF1B9 /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
 		09F4DCBD1B7EAF420069139F /* LeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewCell.h; sourceTree = "<group>"; };
 		09F4DCBE1B7EAF420069139F /* LeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewCell.m; sourceTree = "<group>"; };
 		09FB7F661BFF769400B24E6E /* Pinpoint-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pinpoint-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -200,6 +222,7 @@
 				0964B6DF1B6D5D15009EA05D /* Main.storyboard */,
 				0964B6E21B6D5D15009EA05D /* Images.xcassets */,
 				0964B6E41B6D5D15009EA05D /* LaunchScreen.xib */,
+				09E2F9B51D4BE8C200EBF1B9 /* GoogleService-Info.plist */,
 				0964B6D51B6D5D15009EA05D /* Supporting Files */,
 				096E64861B7314F9001842F6 /* PhoneFormats.dat */,
 			);
@@ -263,6 +286,44 @@
 			name = KSToastView;
 			sourceTree = "<group>";
 		};
+		09E2F9BC1D4BEE0D00EBF1B9 /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				09E2F9B81D4BEE0900EBF1B9 /* GeoFire-Prefix.pch */,
+				09E2F9C71D4BEF4B00EBF1B9 /* Implementation */,
+				09E2F9C11D4BEF2B00EBF1B9 /* API */,
+			);
+			name = GeoFire;
+			sourceTree = "<group>";
+		};
+		09E2F9C11D4BEF2B00EBF1B9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				09E2F9C21D4BEF3E00EBF1B9 /* GeoFire.h */,
+				09E2F9C31D4BEF3E00EBF1B9 /* GFCircleQuery.h */,
+				09E2F9C41D4BEF3E00EBF1B9 /* GFQuery.h */,
+				09E2F9C51D4BEF3E00EBF1B9 /* GFRegionQuery.h */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		09E2F9C71D4BEF4B00EBF1B9 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				09E2F9C81D4BEF5A00EBF1B9 /* GeoFire.m */,
+				09E2F9C91D4BEF5A00EBF1B9 /* GeoFire+Private.h */,
+				09E2F9CA1D4BEF5A00EBF1B9 /* GFBase32Utils.h */,
+				09E2F9CB1D4BEF5A00EBF1B9 /* GFBase32Utils.m */,
+				09E2F9CC1D4BEF5A00EBF1B9 /* GFGeoHash.h */,
+				09E2F9CD1D4BEF5A00EBF1B9 /* GFGeoHash.m */,
+				09E2F9CE1D4BEF5A00EBF1B9 /* GFGeoHashQuery.h */,
+				09E2F9CF1D4BEF5A00EBF1B9 /* GFGeoHashQuery.m */,
+				09E2F9D01D4BEF5A00EBF1B9 /* GFQuery.m */,
+				09E2F9D11D4BEF5A00EBF1B9 /* GFQuery+Private.h */,
+			);
+			name = Implementation;
+			sourceTree = "<group>";
+		};
 		09F4DCC01B7EAF680069139F /* Side Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +343,7 @@
 				095CEFB61BFD0B49007D9706 /* RSTToastView */,
 				09ADFD991B76831D00F25D8E /* KSToastView */,
 				096E64841B730FC6001842F6 /* RMPhoneFormat */,
+				09E2F9BC1D4BEE0D00EBF1B9 /* GeoFire */,
 				095A31BD1B6E5A3500CED8E9 /* MapKit.framework */,
 				96B0B2CF80F85907F3200E50 /* libPods-Pinpoint.a */,
 				09FB7F661BFF769400B24E6E /* Pinpoint-Bridging-Header.h */,
@@ -351,7 +413,7 @@
 				TargetAttributes = {
 					0964B6D11B6D5D15009EA05D = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = R7CA38MZ25;
+						DevelopmentTeam = AW88LGV9K7;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -397,6 +459,7 @@
 				0964B6E11B6D5D15009EA05D /* Main.storyboard in Resources */,
 				096E64871B7314F9001842F6 /* PhoneFormats.dat in Resources */,
 				0964B6E61B6D5D15009EA05D /* LaunchScreen.xib in Resources */,
+				09E2F9B61D4BE8C200EBF1B9 /* GoogleService-Info.plist in Resources */,
 				0964B6E31B6D5D15009EA05D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,8 +528,10 @@
 			files = (
 				09ADFD981B76831800F25D8E /* KSToastView.m in Sources */,
 				0999E0F81B7664DC00D8D57D /* AddViewController.m in Sources */,
+				09E2F9D41D4BEF5A00EBF1B9 /* GFGeoHash.m in Sources */,
 				096E64831B730FC3001842F6 /* RMPhoneFormat.m in Sources */,
 				09529F2B1B6D66400080E32B /* CreateAccountViewController.m in Sources */,
+				09E2F9D51D4BEF5A00EBF1B9 /* GFGeoHashQuery.m in Sources */,
 				095EF2A71B73D68D00AEAE26 /* FireUser.m in Sources */,
 				09ADFE0C1B7E6C6D00F25D8E /* SideMenuController.m in Sources */,
 				0938BF7F1BFE11CE0000854C /* SCAHelper.m in Sources */,
@@ -474,12 +539,15 @@
 				095EF2A41B73C2C800AEAE26 /* UserData.m in Sources */,
 				0938BF821BFE19090000854C /* LocationDelegate.m in Sources */,
 				09CD5D481B860C430005AB97 /* GroupsViewController.m in Sources */,
+				09E2F9D61D4BEF5A00EBF1B9 /* GFQuery.m in Sources */,
 				095CEFB91BFD0FD2007D9706 /* FirebaseHelper.m in Sources */,
 				09529F2E1B6D6C3F0080E32B /* ContactsViewController.m in Sources */,
 				095EF2B41B740BFB00AEAE26 /* LoginViewController.m in Sources */,
+				09E2F9D31D4BEF5A00EBF1B9 /* GFBase32Utils.m in Sources */,
 				09529F311B6DA8CB0080E32B /* MapViewController.m in Sources */,
 				0964B6DB1B6D5D15009EA05D /* AppDelegate.m in Sources */,
 				09ADFE131B7E744400F25D8E /* LeftTableViewController.m in Sources */,
+				09E2F9D21D4BEF5A00EBF1B9 /* GeoFire.m in Sources */,
 				09F4DCBF1B7EAF420069139F /* LeftViewCell.m in Sources */,
 				0964B6D81B6D5D15009EA05D /* main.m in Sources */,
 				09CD5D451B8609310005AB97 /* PrivacyViewController.m in Sources */,
@@ -620,7 +688,7 @@
 				INFOPLIST_FILE = Pinpoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spenceratkin.Pinpoint;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atkin-labs.Pinpoint";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pinpoint-Bridging-Header.h";
@@ -643,7 +711,7 @@
 				INFOPLIST_FILE = Pinpoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spenceratkin.Pinpoint;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atkin-labs.Pinpoint";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pinpoint-Bridging-Header.h";

@@ -10,13 +10,17 @@
 #import <CoreLocation/CoreLocation.h>
 #import <Firebase/Firebase.h>
 #import <UAObfuscatedString/UAObfuscatedString.h>
+#import <FirebaseAuth/FirebaseAuth.h>
 
-#define kPinpointURL [FirebaseHelper firebaseURL]
+//#define kPinpointURL [FirebaseHelper firebaseURL]
 
 @interface FirebaseHelper : NSObject
 
+typedef void (^FirebaseHelperCompletion)(FIRUser *user, NSError *error);
+
 + (void)updateReadRules:(NSArray *)canView;
 + (void)updateLocation:(CLLocation *)location;
-+ (NSString *)firebaseURL;
++ (void)authWithEmail:(NSString *)email password:(NSString *)password completion:(FirebaseHelperCompletion)completion;
+//+ (NSString *)firebaseURL;
 
 @end
