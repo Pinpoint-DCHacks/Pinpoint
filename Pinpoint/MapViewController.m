@@ -107,10 +107,12 @@ MKPointAnnotation *annotation;
     self.handle = [[self.firebase child:@"location/l/0"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
         [self readOneLocation];
     }];
+    [self.manager startUpdatingLocation];
 }
 
 - (void)stopRefreshingLocation {
     [self.firebase removeObserverWithHandle:self.handle];
+    [self.manager stopUpdatingLocation];
 }
 
 - (void)removeAllAnnotations {
@@ -121,6 +123,12 @@ MKPointAnnotation *annotation;
     }
     [self.mapView removeAnnotations:pins];
     // Removes all annotations from the mapview, excluding user location
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    if ([annotation.title isEqualToString:@"Last location"]) {
+    [self.distanceLabel setText:[NSString stringWithFormat:@"%.02f meters", [[locations lastObject] distanceFromLocation:[[CLLocation alloc] initWithLatitude:annotation.coordinate.latitude longitude:annotation.coordinate.longitude]]]];
+    }
 }
 
 - (void)checkAlwaysAuthorization {

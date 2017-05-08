@@ -121,6 +121,7 @@ BOOL updateOnce = false;
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(openLeftView)];
 }
 

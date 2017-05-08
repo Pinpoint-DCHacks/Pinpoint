@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PinpointTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SHMultipleSelect-SHMultipleSelect.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>55A7373FB46FFCAEAD048B5B637A4807</key>
+		<key>0B2C33944D244E9402CC2628A6960752</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>597F56C54F2050BEE2BF6BC5DE49D44C</key>
+		<key>64584E3A7B138DC7D5EBA1376CF310DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71B76793A3B7514D38CE8C93A9B8C8F4</key>
+		<key>AFAB1FAD7FEBA71E517466CB08ABB4FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9232BF6053AD3CF822834B0BDAFEB28D</key>
+		<key>C667C2207FDDF3F5AF875FD61BBF6153</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B048A21A33909AAB41108E58B6A45323</key>
+		<key>CD9C8B9015C18423559210BB3665E8B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B45BE39EC064EE40552372763D9FF5A4</key>
+		<key>DE1F5FBF6E327C3081737A2263E3F04F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E400D19838E98B6712E8A5758B117570</key>
+		<key>DF9F376949F410A957E35EE6C496657F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1022135014AC3B84F17A4F91E01916A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
